@@ -17,3 +17,30 @@ __pycache__/
 
 # Original credential-bearing files; never publish this backup
 /.local-publication-backup/
+
+# Local credentials, API keys, and private-key files
+.env
+.env.*
+.secrets/
+.aws/
+.ssh/
+credentials
+credentials.*
+*_credentials.json
+api_key
+api_key.*
+api_keys
+api_keys.*
+secrets
+secrets.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Keep the oversized-file inventory locally
+/EXCLUDED_LARGE_FILES.md
