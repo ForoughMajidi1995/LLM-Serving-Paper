@@ -1,0 +1,13 @@
+repo_full_name,sglang_Speculative decoding,sglang_Early existing,sglang_Cascade inference,sglang_Paged Attention,sglang_Continuous batching,sglang_Quantization,sglang_Chunked prefill,sglang_parallelism,sglang_Prefix caching,sglang_Multi-LoRA,sglang_RadixAttention,sglang_zero overhead,sglang_prefill-decode disaggregation,sglang_speculative decoding,sglang_continuous batching,sglang_paged attention,sglang_tensor parallelism,sglang_pipeline parallelism,sglang_expert parallelism,sglang_data parallelism,sglang_all parallelism,sglang_structured outputs,sglang_chunked prefill,sglang_quantization,sglang_multi-LoRA batching,sglang_kv_cache,tool_name
+EvolvingLMMs-Lab/lmms-eval,,,,,,,,['tensor_parallel_size'],,,,,,,,,,,,,,,,,,,sglang
+FlagAI-Open/OpenSeek,,,,,['batch_size'],,,['pipeline_parallel_size'],,,,,,,,,,,,,,,,,,,sglang
+NVIDIA/TensorRT-Model-Optimizer,,,,,,['quantization'],,,,,,,,,,,,,,,,,,,,,sglang
+NovaSky-AI/SkyRL,,,,,,,,,,,,,,,,,['distributed'],['distributed'],,['distributed'],['distributed'],,,,,,sglang
+OpenDCAI/DataFlow,,,,,,,,,,,,,,,,,"['distributed', 'parallel']","['distributed', 'parallel']",,"['distributed', 'parallel']","['distributed', 'parallel']",,,,,,sglang
+pkking/sglang,,,,,,['quantization'],,,,,,,,,,,,,,,['process_group'],,,,,['kv_cache'],sglang
+qingshanlanshan/SGL-KVS,,,,,,['quantization'],,,,,,,,,,,,,,,['process_group'],,,,,['kv_cache'],sglang
+sgl-project/sglang,,,,,,,,,,['enable_lora'],,,,,,,,,,,['process_group'],,,,,['kv_cache'],sglang
+shell-nlp/gpt_server,,,,,,,,,['enable_prefix_caching'],,,,,,,,,,,,,['json_schema'],,,,,sglang
+xh092113/rl-sft,,,,,,,,,,,,,,,,,"['distributed', 'parallel']","['distributed', 'parallel']",,"['distributed', 'parallel']","['distributed', 'parallel']",,,,,,sglang
+zejia-lin/Bullet,,,,,,['quantization'],,,,,,,,,,,,,,,['process_group'],,,,,['kv_cache'],sglang
+zitian-gao/one-shot-em,,,,,,,,,,,,,,,,,"['distributed', 'parallel']","['distributed', 'parallel']",,"['distributed', 'parallel']","['distributed', 'parallel']",,,,,,sglang

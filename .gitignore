@@ -1,0 +1,19 @@
+.DS_Store
+.venv/
+.ipynb_checkpoints/
+
+# Generated Python bytecode
+__pycache__/
+*.py[cod]
+
+# Project files exceeding GitHub's regular 100 MiB per-file limit
+/dataset/Extracted_models/vllm_extracted_models.csv
+/dataset/archived_old_code_content_processed_results/vllm_all_info.csv
+/dataset/archived_old_code_content_processed_results/vllm_all_info_cleaned.csv
+/dataset/code_content/code_content_concated_files_sglang.csv
+/dataset/code_content/code_content_concated_files_vllm.csv
+/dataset/code_content_processed_results/vllm_all_info.csv
+/dataset/code_content_with_imports_asnames_subimports/sglang.csv
+
+# Original credential-bearing files; never publish this backup
+/.local-publication-backup/

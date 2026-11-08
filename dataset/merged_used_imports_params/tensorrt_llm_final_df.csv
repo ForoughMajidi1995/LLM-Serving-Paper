@@ -1,0 +1,8 @@
+repo_full_name,tensorrt_llm_Paged Attention,tensorrt_llm_Quantization,tensorrt_llm_Speculative decoding,tensorrt_llm_Early existing,tensorrt_llm_Cascade inference,tensorrt_llm_Continuous batching,tensorrt_llm_Chunked prefill,tensorrt_llm_parallelism,tensorrt_llm_Prefix caching,tensorrt_llm_Multi-LoRA,tensorrt_llm_In-Flight Batching,tensorrt_llm_Multi-GPU Multi-Node,tensorrt_llm_Speculative Decoding,tensorrt_llm_KV Cache Management,tensorrt_llm_Chunked Prefill,tensorrt_llm_LoRA Support,tensorrt_llm_Guided Decoding,tensorrt_llm_Disaggregated Serving,tool_name
+HuiResearch/FlashTTS,,,,,,['batch_size'],,,,,,,,,,,,,tensorrt_llm
+NVIDIA/TensorRT-LLM,['kvcache'],"['quant', 'quantalgo', 'quantization']",['speculative_config'],,,,,,,,['scheduler'],,"['decoding', 'ngramdecoding', 'speculative', 'eagledecoding', 'mtpdecoding', 'drafttargetdecoding', 'lookaheaddecoding', 'medusadecoding']",['kvcache'],,"['lora', 'lora_helper', 'lorarequest']",['guideddecodingparams'],,tensorrt_llm
+NVIDIA/TensorRT-Model-Optimizer,,,,,,['batch_size'],,,,,,,,,,,,,tensorrt_llm
+ai-bot-pro/achatbot,['kvcache'],,,,,['batch_size'],,,,,,['bindings.executor'],,['kvcache'],,,,,tensorrt_llm
+huggingface/optimum-nvidia,['kvcache'],['quant'],,,,['batch_size'],,,,,,['bindings.executor'],,['kvcache'],,,,,tensorrt_llm
+nvidia-cosmos/cosmos-rl,['kvcache'],,,,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,['kvcache'],,,,,tensorrt_llm
+triton-inference-server/server,,,,,,['batch_size'],,,,,,,,,,,,,tensorrt_llm

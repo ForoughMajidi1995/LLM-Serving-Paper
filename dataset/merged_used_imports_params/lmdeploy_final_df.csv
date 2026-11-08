@@ -1,0 +1,7 @@
+repo_full_name,lmdeploy_Quantization,lmdeploy_Speculative decoding,lmdeploy_Early existing,lmdeploy_Cascade inference,lmdeploy_Paged Attention,lmdeploy_Continuous batching,lmdeploy_Chunked prefill,lmdeploy_parallelism,lmdeploy_Prefix caching,lmdeploy_Multi-LoRA,tool_name
+Alpha-Innovator/StructEqTable-Deploy,,,,,,['batch_size'],,,,,lmdeploy
+DeepLink-org/AIChipBenchmark,,,,,,['batch_size'],,,,,lmdeploy
+DeepLink-org/dlinfer,,,,,,,,,['enable_prefix_caching'],,lmdeploy
+InternLM/lmdeploy,,,,,,,,,['enable_prefix_caching'],,lmdeploy
+Tendo33/Industry_pretrain_process,,,,,,['batch_size'],,,['enable_prefix_caching'],,lmdeploy
+shell-nlp/gpt_server,,,,,,,,,['enable_prefix_caching'],,lmdeploy

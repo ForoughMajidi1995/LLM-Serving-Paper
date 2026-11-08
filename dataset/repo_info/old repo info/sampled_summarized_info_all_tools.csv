@@ -1,0 +1,2864 @@
+file_name,file_path,sha,repo_full_name,url,git_url,html_url,about,keywords,open_issues,closed_issues,merged_pr,commits,last_commit_date,stars,forks,readme,repo_summary,repository_intent,technical_focus,primary_use_cases,system_design,key_technical_terms
+main.py,5-large-language-models/6-deepseek-sglang/main.py,392f8965c2d836bbb0e2ea08c1471be7c92a9648,CerebriumAI/examples,https://api.github.com/repositories/626166292/contents/5-large-language-models/6-deepseek-sglang/main.py?ref=a87a5998fceb810ab35f94de3b2ce8a8d34d921c,https://api.github.com/repositories/626166292/git/blobs/392f8965c2d836bbb0e2ea08c1471be7c92a9648,https://github.com/CerebriumAI/examples,Examples for Cerebrium Serverless GPUs,"ai, gpu, llms, ml, mlops, serverless, serverless-functions",1,7,70,361,2025-08-28T16:47:24Z,509,70,"<p align=""center"">
+  <a href=""https://cerebrium.ai"">
+    <img src=""https://cerebrium-assets.s3.eu-west-1.amazonaws.com/github-examples.png"">
+  </a>
+</p>
+
+
+Welcome to Cerebrium's official examples repository! This collection of examples helps you get started with building Machine Learning / AI applications on the platform. Whether you're looking to deploy LLMs, process voice data, or handle image and video tasks, you'll find practical, ready-to-use examples here.
+
+## How to Use This Repository
+
+Each example is a self-contained project that demonstrates a specific use case. You can explore the examples in any order, depending on your interests and needs. Each example includes detailed instructions on how to deploy the application on the Cerebrium platform.
+
+Deploy each example by cloning the repo and running the `cerebrium deploy` command in each example folder.
+
+## Categories
+We've split each of the examples by category to make them easier to find.
+
+### 1. Getting started 🚀
+
+1. [Deploy your first model](1-getting-started/1-first-cortex-deployment) 
+2. [Managing secrets and configurations](1-getting-started/2-using-cerebrium-secrets)
+3. [CPU-only workloads](1-getting-started/3-cpu-only)
+
+### 2. Advanced Concepts 🧠
+
+1. [Improve inference speed with VLLM](2-advanced-concepts/1-faster-inference-with-vllm)
+2. [Deploying Inferentia](2-advanced-concepts/2-inferentia)
+3. [Loading model weights faster](2-advanced-concepts/3-loading-model-weights-faster)
+4. [Multi-GPU inference](2-advanced-concepts/4-multi-gpu-inference)
+
+### 3. Endpoints 🛤
+1. [WebSockets](3-endpoints/1-websockets)
+2. [Implement simple output streaming](3-endpoints/2-simple-streaming)
+
+### 4. Integrations 🤝
+1. [Create a Langchain QA system](4-integrations/1-langchain-QA)
+2. [Create a virtual calendar assistant with Langsmith](4-integrations/2-tool-calling-langsmith)
+
+### 5. Large Language Models 📚
+
+1. [Create an OpenAI compatible endpoint with vLLM](5-large-language-models/1-openai-compatible-endpoint)
+2. [Stream results from Falcon 7B to a client](5-large-language-models/2-streaming-endpoint)
+3. [Build a code review tool with Winston](5-large-language-models/3-winston)
+
+### 6. Voice 🎤
+
+1. [Transcription service using Whisper](6-voice/1-whisper-transcription)
+2. [Create a realtime voice agent](6-voice/2-realtime-voice-agent)
+3. [Create a voice agent that leverages current context with RAG](6-voice/3-voice-rag-agent)
+4. [Create a WebSockets-based voice agent using Twilio](6-voice/4-twilio-voice-agent)
+5. [Clone voices with XTTS](6-voice/5-xtts)
+6. [Build your own OpenAI realtime API replacement](6-voice/6-openai-realtime-api-comparison)
+7. [Outbound LiveKit agent](6-voice/7-outbound-livekit-agent)
+8. [Real-time Voice AI Agent](6-voice/8-multilingual-agent)
+9. [Transcribing with FasterWhisper](6-voice/9-faster-whisper)
+10. [Sesame Conversational Speech Model (CSM) API](6-voice/10-sesame-voice-api)
+
+
+### 7. Image & Video 📸
+
+1. [Deploy ComfyUI on Cerebrium](7-image-and-video/1-comfyui)
+2. [Build a ControlNet logo detection system](7-image-and-video/2-logo-controlnet)
+3. [Refined image generation with SDXL](7-image-and-video/3-sdxl-refiner)
+4. [Using SDXL Lightning for image processing](7-image-and-video/4-sdxl-lightning)
+5. [Fast stable diffusion for image generation](7-image-and-video/5-fast-stable-diffusion)
+6. [Regular stable diffusion for image generation](7-image-and-video/6-regular-stable-diffusion)
+7. [How to generate images faster with SDXL](7-image-and-video/7-faster-image-generation)
+
+### 8. Migrations 🚚
+1. [Migrate your COG model to SDXL](8-migrations/1-cog-migration-sdxl)
+
+### 9. Application demos 🎬
+1. [Create a sales training tool with Mistral](8-application-demos/1-sales-trainer)
+2. [Find products for sale using a live video stream](8-application-demos/2-ecommerce-live-stream)
+3. [AI commentator](8-application-demos/3-ai-commentator)
+3. [AI coding agent](8-application-demos/4-ai-coding-agent)
+
+### 10. Batching 📦
+1. [Implement batching with LitServe - CPU version](10-batching/1-litserve-batching-cpu)
+2. [Implement batching with LitServe - GPU version](10-batching/2-litserve-batching-gpu)
+3. [Batching requests with vLLM](10-batching/3-vllm-batching-gpu)
+4. [Batching requests with transformers](10-batching/4-transformers-batching-gpu)
+
+### 11. Python apps 🌐
+
+1. [Deploy FastAPI applications](11-python-apps/1-asgi-fastapi-server)
+2. [Create ML web interfaces with Gradio](11-python-apps/2-asgi-gradio-interface)
+
+## How to Contribute 🤝
+We love contributions! Here's how you can contribute to our examples repository:
+
+- Fork the repository
+- Create a new branch for your example
+- Add your example following our template
+- Include a clear README with:
+
+  - Description of the example
+  - Requirements
+  - Step-by-step setup instructions
+  - Expected outputs
+  - (Optional) Link to a blog post or tutorial video
+
+Share your fork with us on our [Discord](https://discord.gg/ATj6USmeE2) community or on social media. Highly valuable examples for the community will be merged into the master repo.
+
+#### 🎁 Get Free Swag!
+For each successful contribution, we'll send you exclusive Cerebrium swag! To be eligible:
+
+- Your PR must be merged
+- Fill out the contributor form with your shipping details
+- Bonus swag for contributions that include:
+  - A blog post explaining your example
+  - A tutorial video demonstrating your example
+
+#### 🦮 Contribution Guidelines 
+
+- Ensure your example is well-documented
+- Make sure that your example deploys successfully
+- Add appropriate error handling
+- Follow our code style as much as possible
+- Test your example thoroughly
+- Update the main README.md to include your example
+
+## Support 🛟
+
+- 📚 [Documentation](https://docs.cerebrium.ai)
+- 💬 [Discord Community](https://discord.gg/ATj6USmeE2)
+- 📧 [Support Email](mailto:support@cerebrium.ai)","1. repository_intent: This repository provides examples for building Machine Learning and AI applications on the Cerebrium platform using serverless GPUs.
+
+2. technical_focus: The repository focuses on deploying various machine learning models and applications, including LLMs, voice processing, and image and video tasks.
+
+3. primary_use_cases: It supports workflows for deploying models, managing configurations, and integrating with different AI functionalities.
+
+4. system_design: The system is designed to be modular, with self-contained examples that can be deployed independently on the Cerebrium platform.
+
+5. key_technical_terms: serverless, GPUs, machine learning, AI applications, LLMs, deployment, examples, integrations, voice processing, image processing.",This repository provides examples for building Machine Learning and AI applications on the Cerebrium platform using serverless GPUs.,"The repository focuses on deploying various machine learning models and applications, including LLMs, voice processing, and image and video tasks.","It supports workflows for deploying models, managing configurations, and integrating with different AI functionalities.","The system is designed to be modular, with self-contained examples that can be deployed independently on the Cerebrium platform.","serverless, GPUs, machine learning, AI applications, LLMs, deployment, examples, integrations, voice processing, image processing."
+sglang.py,enova/serving/backend/sglang.py,02258b5389a85ac38944ed061eb81c50b388746f,Emerging-AI/ENOVA,https://api.github.com/repositories/800836633/contents/enova/serving/backend/sglang.py?ref=def24e194ebe6b31ee3861c3ba8d234a2f80a88f,https://api.github.com/repositories/800836633/git/blobs/02258b5389a85ac38944ed061eb81c50b388746f,https://github.com/Emerging-AI/ENOVA,"A deployment, monitoring and autoscaling service towards serverless LLM serving.",,2,2,69,243,2025-08-18T11:40:37Z,152,22,"#### [**English**](https://github.com/Emerging-AI/ENOVA) | [**中文**](https://github.com/Emerging-AI/ENOVA/blob/master/README_ZH.md)
+
+# ENOVA 
+
+<a href=''><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
+[![Code License](https://img.shields.io/badge/Code%20License-Apache-green.svg)](https://github.com/Emerging-AI/ENOVA?tab=Apache-2.0-1-ov-file)
+
+
+ENOVA is an open-source service for LLM deployment, monitoring, injection, and auto-scaling. 
+With the increasing popularity of large language model (LLM) backend systems, deploying stable 
+serverless LLM services on GPU clusters with auto-scaling has become essential. 
+However, challenges arise due to the diversity and co-location of applications in GPU clusters, 
+leading to low service quality and GPU utilization. 
+
+To address these issues, ENOVA deconstructs the LLM service execution process and incorporates
+a configuration recommendation module for automatic deployment on any GPU cluster 
+and a performance detection module for auto-scaling. 
+Additionally, ENOVA features a deployment execution engine for efficient GPU cluster scheduling.
+
+With **ENOVA**, users can:
+- Build and deploy LLM with only few command lines
+- Recommend optimal computing resources and operating parameter configurations for LLM
+- Quick experience LLM performance with ENOVA by request injection offered
+- In-depth observation of LLM operating status and abnormal self-healing
+- Achieve load balancing through autoscaling
+
+Here are ENOVA's core technical points and values:
+- **Configuration Recommendation**: ENOVA can automatically identify various LLMs (open-source or fine-tuned), 
+and recommend the most suitable parameter configurations for deploying the model, 
+such as GPU type, maximal batch size, replicas, weights etc.
+- **Performance Detection**: ENOVA enables real-time monitoring of service quality 
+and abnormal usage of computational resources. 
+- **Deep Observability**: By conducting in-depth observation of the entire chain of task execution of large models, 
+we can provide the best guidance for maximizing model performance and optimizing the utilization of computing resources.
+- **Deployment & Execution**: Achieve rapid deployment and model serving, aiming to achieve autoscaling objectives.
+
+<p align=""center"">
+<img src=""./.github/assets/ENOVA.png"">
+</p>
+
+Based on the aforementioned capabilities of ENOVA, we can ensure that LLM services with ENOVA are:
+- **Stable**: Achieve a high availability rate of over 99%, ensuring stable operation without downtime.
+- **Cost-effective**: Increase resource utilization by over 50% and enhance comprehensive GPU memory utilization from 40% to 90%.
+- **Efficient**: Boost deployment efficiency by over 10 times and run LLMs with lower latency and higher throughputs
+- **Strong Scalability**: ENOVA can automatically cluster different task types, thus adapting to applications in many fields.
+
+## ✈️ Getting Started
+
+We can demonstrate the powerful capabilities of E NOVA in model deployment and performance monitoring 
+by swiftly running an open-source AI model on your GPUs and conducting request injection tests.
+
+### Requirement
+
+- OS: Linux
+- Docker
+- Python: >=3.10
+- GPU: Nvidia GPUs with compute capability 7.0 or higher
+
+> [!NOTE]
+> 
+> If the above conditions are not met, the installation and operation of ENOVA may fail. 
+> If you do not have available GPU resources, 
+> we recommend that you use the free GPU resources on Google Colab to install and experience ENOVA.
+
+### Installation
+
+1. Make sure you have [Docker](https://docs.docker.com/engine/install/) 
+and [Python](https://docs.anaconda.com/free/anaconda/install/index.html) Environment.
+
+2. Use pip to install ENOVA:
+```bash
+# Create a new Python environment
+conda create -n enova_env python=3.10
+conda activate enova_env
+
+# Install ENOVA
+# Source: https://pypi.python.org/simple/
+pip install enova_instrumentation_llmo
+pip install enova
+```
+
+3. To verify the installation, run:
+```bash
+enova -h 
+```
+
+The expected output is:
+```text
+Usage: enova [OPTIONS] COMMAND [ARGS]...
+
+  ███████╗███╗   ██╗ ██████╗ ██╗   ██╗ █████╗
+  ██╔════╝████╗  ██║██╔═══██╗██║   ██║██╔══██╗
+  █████╗  ██╔██╗ ██║██║   ██║██║   ██║███████║
+  ██╔══╝  ██║╚██╗██║██║   ██║╚██╗ ██╔╝██╔══██║
+  ███████╗██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║
+  ╚══════╝╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝
+
+  ENOVA is an open-source llm deployment, monitoring, injection and auto-scaling service.
+  It provides a set of commands to deploy stable serverless serving of LLM on GPU clusters with auto-scaling.
+
+Options:
+  -v, --version  Show the version and exit.
+  -h, --help     Show this message and exit.
+
+Commands:
+  algo      Run the autoscaling service.
+  app       Start ENOVA application server.
+  serving     Deploy the target LLM and launch the LLM API service.
+  injector  Run the autoscaling service.
+  mon       Run the monitors of LLM server
+  pilot     Start an all-in-one LLM server with deployment, monitoring,...
+  webui     Build agent at this page based on the launched LLM API service.
+```
+
+### Quickstart
+
+1. Start an all-in-one LLM server with deployment, monitoring, injection and auto-scaling service: 
+
+```bash
+enova pilot run --model mistralai/Mistral-7B-Instruct-v0.1
+
+# openai
+enova pilot run --model mistralai/Mistral-7B-Instruct-v0.1 --vllm_mode openai
+```
+
+Use proxy to download LLMs:
+
+```bash
+enova pilot run --model mistralai/Mistral-7B-Instruct-v0.1 --hf_proxy xxx
+```
+
+> [!TIP]
+> 
+> - The default port of LLM service is 9199.
+> - The default port of grafana server is 32827.
+> - The default port of LLM webUI server is 8501.
+> - The default port of ENOVA application server is 8182.
+
+
+2. Check Deployed LLM service via ENOVA Application Server:
+
+```text
+http://localhost:8182/instance
+```
+
+<p align=""center"">
+<img src=""./.github/assets/llm_instance.png"">
+</p>
+
+
+3. Test the Deployed LLM service with an prompt:
+
+Use WebUI:
+
+```text
+http://localhost:8501
+```
+
+Use Shell:
+
+```bash
+curl -X POST http://localhost:9199/generate \
+-d '{
+""prompt"": ""San Francisco is a"",
+""max_tokens"": 1024,
+""temperature"": 0.9,
+""top_p"": 0.9
+}'
+
+# openai
+curl http://localhost:9199/v1/completions \
+-H ""Content-Type: application/json"" \
+-d '{
+""model"": ""mistralai/Mistral-7B-Instruct-v0.1"",
+""prompt"": ""San Francisco is a"",
+""max_tokens"": 128,
+""temperature"": 0
+}'
+```
+
+4. Monitor the LLM Service Quality via ENOVA Application Server:
+
+```text
+http://localhost:8182/instance
+```
+
+<p align=""center"">
+<img src=""./.github/assets/monitoring_metrics.png"">
+</p>
+
+5. Stop all service
+```
+enova pilot stop --service all
+```
+
+
+## 🏠 LLM Deployment Service
+
+In addition to offering an all-in-one solution for service deployment, monitoring, and autoscaling, 
+ENOVA also provides support for single modules.
+
+The LLM deployment service facilitates the deployment of LLMs and provides a stable API for accessing LLMs. 
+
+### Run an LLM
+
+```bash
+enova serving run --model mistralai/Mistral-7B-Instruct-v0.1
+```
+
+> [!NOTE]
+> 
+> The LLM server is launched with default vllm backend.
+> OpenAI API and Generate API are both supported. 
+> vllm config can be specified using command-line parameters like:
+```bash
+enova serving run --model mistralai/Mistral-7B-Instruct-v0.1 --host 127.0.0.1 --port 9199
+```
+
+
+### LLM WebUI Service
+
+This service features a WebUI page for dialog interaction, 
+where the serving host and port for the LLM server, and the host and port for the WebUI service, 
+are configurable parameters.
+
+```bash
+enova webui run --serving_host 127.0.0.1 --serving_port 9199 --host 127.0.0.1 --port 8501
+```
+
+<p align=""center"">
+<img src=""./.github/assets/webui.png"">
+</p>
+
+
+### Autoscaling Module
+
+The autoscaling service is automatically launched and managed by escaler module. 
+
+
+### Request Injection Module
+
+We implemented a request injection module using JMeter to simulate real user requests for evaluating LLM performance. 
+The module allows simulation of request arrival probabilities using two modes: Poisson distribution and normal distribution. 
+Further details on the injection operation are available at:
+```text
+http://localhost:8182/instance
+```
+
+<p align=""center"">
+<img src=""./.github/assets/request_inject.png"">
+</p>
+
+<p align=""center"">
+<img src=""./.github/assets/test_results.png"">
+</p>
+
+
+## 🏠 LLM Monitoring Service 
+
+### Manage LLM Monitoring Service
+
+The monitoring system is designed for monitoring and autoscaling, 
+which contains real-time data collection, storage, and consumption.
+We can manage the LLM monitoring service via:
+
+1. Start llm monitoring service
+
+```bash
+enova mon start
+```
+
+2. Check service status 
+
+```bash
+enova mon status
+```
+
+3. Stop monitoring service
+
+```bash
+enova mon stop
+```
+
+
+### Monitoring Metrics
+
+Monitoring metrics are collected using the DCGM exporter, Prometheus exporters, and the OpenTelemetry collector. 
+A brief description is provided in the following tables. For more details, please refer to the Grafana dashboard.
+
+
+| Metric Type     | Metric Description                                              |
+|-----------------|-----------------------------------------------------------------|
+| API Service     | The number of requests sent to LLM services per second          |
+| API Service     | The number of requests processed by LLM services per second     |
+| API Service     | The number of requests successfully processed per second        |
+| API Service     | The success rate of requests processed by LLM services per second |
+| API Service     | The number of requests being processed by LLM services          |
+| API Service     | The average execution time per request processed by LLM services |
+| API Service     | The average request size of requests per second                 |
+| API Service     | The average response size of requests per second                |
+| LLM Performance | The average prompt throughput per second                        |
+| LLM Performance | The average generation throughput per second                    |
+| LLM Performance | The number of requests being processed by the deployed LLM      |
+| LLM Performance | The number of requests being pended by the deployed LLM         |                           
+| LLM Performance | The utilization ratio of memory allocated for KV cache          | 
+| GPU Utilization | DCGM Metrics, like DCGM_FI_DEV_GPU_UTIL.                        |
+
+
+More detailed metrics can be viewed on our application server. 
+In the process of deploying the all-in-one llm service with ENOVA, 
+we also created the corresponding indicator dashboard in Grafana and supported viewing of more detailed trace data.
+
+- URL：http://localhost:32827/dashboards
+- Default user account：admin
+- Password：grafana
+
+
+#### GPU Metrics
+
+<p align=""center"">
+<img src=""./.github/assets/gpu_metrics.png"">
+</p>
+
+#### Traces
+
+<p align=""center"">
+<img src=""./.github/assets/trace.png"">
+</p>
+
+
+## 📚 Reference
+
+```text
+@inproceedings{tao2024ENOVA,
+  title={ENOVA: Autoscaling towards Cost-effective and Stable Serverless LLM Serving},
+  author={Tao Huang and Pengfei Chen and Kyoka Gong and Jocky Hawk and Zachary Bright and Wenxin Xie and Kecheng Huang and Zhi Ji},
+  booktitle={arXiv preprint arXiv:},
+  year={2024}
+}
+```
+
+## 🤝 Join Our Community
+
+We use Slack workspace for the collaboration on building ENOVA.
+
+- [Slack workspace](https://join.slack.com/t/emergingai/shared_invite/zt-2i9ngqa10-OU8SsVJbV0mqTBrjjt5rmQ)
+- Browse our [website](https://www.emergingai.pro/) for more informations
+","1. repository_intent: ENOVA is an open-source service for LLM deployment, monitoring, injection, and auto-scaling.
+
+2. technical_focus: The repository implements a configuration recommendation module, performance detection module, and deployment execution engine for efficient GPU cluster scheduling.
+
+3. primary_use_cases: It is intended to support the deployment of stable serverless LLM services on GPU clusters with auto-scaling.
+
+4. system_design: The system architecture includes components for real-time monitoring, resource optimization, and autoscaling capabilities.
+
+5. key_technical_terms: LLM, deployment, monitoring, auto-scaling, GPU clusters, configuration recommendation, performance detection, resource utilization, request injection.","ENOVA is an open-source service for LLM deployment, monitoring, injection, and auto-scaling.","The repository implements a configuration recommendation module, performance detection module, and deployment execution engine for efficient GPU cluster scheduling.",It is intended to support the deployment of stable serverless LLM services on GPU clusters with auto-scaling.,"The system architecture includes components for real-time monitoring, resource optimization, and autoscaling capabilities.","LLM, deployment, monitoring, auto-scaling, GPU clusters, configuration recommendation, performance detection, resource utilization, request injection."
+test_sglang_spmd.py,code-r1/tests/workers/rollout/test_sglang_spmd.py,e6b72569b39098855f789c78abad760fca1a3ee4,2572172469z-commits/llm-related,https://api.github.com/repositories/1045594281/contents/code-r1/tests/workers/rollout/test_sglang_spmd.py?ref=77f6a2539010d0acde4846c78ac5856fbb5a7834,https://api.github.com/repositories/1045594281/git/blobs/e6b72569b39098855f789c78abad760fca1a3ee4,https://github.com/2572172469z-commits/llm-related,My LLM related projects and notes,,0,0,0,2,2025-08-28T03:06:56Z,0,0,"# 复现各种大模型相关算法
+","1. repository_intent: My LLM related projects and notes.
+
+2. technical_focus: 复现各种大模型相关算法.
+
+3. primary_use_cases: 
+
+4. system_design: Uses sglang, an LLM serving framework.
+
+5. key_technical_terms: LLM, sglang, 大模型, 算法.",My LLM related projects and notes.,复现各种大模型相关算法.,,"Uses sglang, an LLM serving framework.","LLM, sglang, 大模型, 算法."
+test_sglang_async_spmd.py,verl/tests/rollout/test_sglang_async_spmd.py,d8187c96949f7b74304f71976c82447bb20ba658,AMD-AIG-AIMA/Instella-Math,https://api.github.com/repositories/1025950098/contents/verl/tests/rollout/test_sglang_async_spmd.py?ref=65534d33d47a4d1d97b6e73b35bdf169968a851c,https://api.github.com/repositories/1025950098/git/blobs/d8187c96949f7b74304f71976c82447bb20ba658,https://github.com/AMD-AIG-AIMA/Instella-Math,,,0,0,0,24,2025-08-09T23:43:56Z,6,1,"<div align=""center"">
+  <br>
+  <br>
+  <h1>Instella-Math✨: Fully Open Language Model with Reasoning Capability</h1>
+<a href='https://huggingface.co/amd/Instella-3B-Math'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+<a href='https://rocm.blogs.amd.com/artificial-intelligence/instella-math-language/README.html'><img src='https://img.shields.io/badge/Technical-Blog-red'></a> 
+</div>
+
+## Getting Started
+
+### Example Usage
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+checkpoint = ""amd/Instella-3B-Math""
+
+tokenizer = AutoTokenizer.from_pretrained(checkpoint, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map=""auto"", trust_remote_code=True)
+
+prompt = [{""role"": ""user"", ""content"": ""Natalia sold clips to 48 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May? Let's think step by step and output the final answer within \\boxed{}.""}]
+inputs = tokenizer.apply_chat_template(
+    prompt,
+    add_generation_prompt=True,
+    return_tensors='pt'
+)
+
+tokens = model.generate(
+    inputs.to(model.device),
+    max_new_tokens=1024,
+    temperature=0.8,
+    do_sample=True
+)
+
+print(tokenizer.decode(tokens[0], skip_special_tokens=False))
+```
+
+## Supervised Fine-tuning (SFT)
+We conducted two-stage math SFT to enhance the math capabilities of the base [Instella-3B-Instruct](https://huggingface.co/amd/Instella-3B-Instruct) model.
+### Stage 1
+We use the [Instella](https://github.com/AMD-AIG-AIMA/Instella) codebase for the stage 1 math SFT, where the model is trained on the [OpenMathInstruct-2](https://huggingface.co/datasets/nvidia/OpenMathInstruct-2) dataset with 4096 context length. Please follow the [installation guide](https://github.com/AMD-AIG-AIMA/Instella?tab=readme-ov-file#installation) to set up the environment.
+
+Run the following commands to prepare the stage 1 math SFT data:
+```bash
+git clone https://github.com/AMD-AIG-AIMA/Instella.git
+cd Instella
+bash scripts/prepare_math_sft_data.sh
+```
+
+Launch the SFT job with the [SFT config file](https://github.com/AMD-AIG-AIMA/Instella/blob/main/configs/instella-3b-sft-math-stage1.yaml):
+
+```
+torchrun --nproc_per_node=8 scripts/train.py configs/instella-3b-sft-math-stage1.yaml
+```
+
+Note: You need to convert the Huggingface [Instella-3B-Instruct](https://huggingface.co/amd/Instella-3B-Instruct) checkpoint to PyTorch format and then update `load_path` in the config file to the converted model checkpoint. Please see the instruction for checkpoint conversion [here](https://github.com/AMD-AIG-AIMA/Instella/tree/instella-long?tab=readme-ov-file#base-model-preparation).
+
+### Stage 2
+
+In the stage 2 math SFT, we continue to train the model on the English subset of the [AM-DeepSeek-R1-Distilled-1.4M](https://huggingface.co/datasets/a-m-team/AM-DeepSeek-R1-Distilled-1.4M) dataset with 1.3M samples, and increase the context length to 32K. We provide a [script](./sft/prepare_ammath_dataset.py) to prepare the dataset for training. The training is based on [open-instruct](https://github.com/allenai/open-instruct/tree/bcb991d4d9b297dc301e03ebaaa5d80dd76bb384/). To run the stage 2 math SFT training:
+
+```
+cd sft
+
+bash scripts/finetune_with_accelerate_config_stage3.sh configs/train_configs/instella/instella-3b-sft-math-stage2.yaml
+```
+Note: Please update `model_name_or_path` in the [config](./sft/configs/train_configs/instella/instella-3b-sft-math-stage2.yaml) to your stage 1 math SFT model. You need to convert the checkpoint to the Huggingface format (see the instruction [here](https://github.com/AMD-AIG-AIMA/Instella/tree/instella-long?tab=readme-ov-file#direct-preference-optimization-dpo)). In addition, please update `dataset_name` to the Huggingface repo of your processed dataset.
+
+## Reinforcement Learning (GRPO)
+We conduct GRPO after SFT using [VERL](https://github.com/volcengine/verl). 
+
+### Installation
+Run the following command to setup the docker image `rocm6.3.4:vllm-0.8.5-numa-patch-ubuntu-22.04-cascade-fix`
+```bash
+docker build -f docker/dockerfile -t rocm6.3.4:vllm-0.8.5-numa-patch-ubuntu-22.04-cascade-fix .
+```
+
+### Data Preparation
+Run the following commands to prepare the RL data:
+```bash
+cd verl
+python examples/data_preprocess/big_math.py
+python examples/data_preprocess/deep_math.py
+python examples/data_preprocess/deepscaler.py
+```
+
+### Training
+```bash
+cd verl
+sbatch ./scripts/run_grpo_multi_nodes.sh
+```
+
+## Evaluation
+Our evaluations are based on the [DeepScaleR](https://github.com/rllm-org/rllm/tree/deepscaler) codebase. All our evaluations are done on a single node with 8 AMD Instinct™ MI300X GPUs.
+
+Run the following commands to setup the evaluation environment:
+```bash
+# For AMD GPUs:
+cd evals
+# Start the docker container:
+bash start_docker.sh
+docker exec -it instella-math-eval bash
+# Install dependencies
+bash install_setup.sh
+```
+All the processed test datasets are avilable in `evals/deepscaler/data_processed`. Directly run the following command to reproduce our results:
+```bash
+bash run_eval_math.sh
+```
+
+## Acknowledgement
+The RL training codebase is built from [VERL](https://github.com/volcengine/verl). 
+
+The evaluation codebase is built from [DeepScaleR](https://github.com/rllm-org/rllm/tree/deepscaler).
+
+## License
+
+- The Instella-3B-Math models are licensed for academic and research purposes under a ResearchRAIL license. 
+- Refer to the [LICENSE](./LICENSE) and [NOTICE](./NOTICE) files for more information.
+
+## Citations
+Feel free to cite our Instella-3B models and give us a star⭐ if you find our work helpful :)
+
+```text
+@misc{Instella,
+    title = {Instella: Fully Open Language Models with Stellar Performance},
+    url = {https://huggingface.co/amd/Instella-3B},
+    author = {Jiang Liu and Jialian Wu and Xiaodong Yu and Prakamya Mishra and Sudhanshu Ranjan and Zicheng Liu and Chaitanya Manem and Yusheng Su and Pratik Prabhanjan Brahma and Gowtham Ramesh and Ximeng Sun and Ze Wang and Emad Barsoum},
+    month = {March},
+    year = {2025}
+}
+```
+","1. repository_intent: Instella-Math is a fully open language model designed to enhance reasoning capabilities in mathematical tasks.
+
+2. technical_focus: The repository implements a two-stage supervised fine-tuning process for a language model using specific datasets to improve its mathematical reasoning.
+
+3. primary_use_cases: It is intended to support tasks that require step-by-step mathematical reasoning and problem-solving.
+
+4. system_design: The system is built on a framework that utilizes reinforcement learning and evaluation methodologies for model training and assessment.
+
+5. key_technical_terms: language model, reasoning capability, supervised fine-tuning, reinforcement learning, evaluation, datasets, Hugging Face, PyTorch, AMD Instinct.",Instella-Math is a fully open language model designed to enhance reasoning capabilities in mathematical tasks.,The repository implements a two-stage supervised fine-tuning process for a language model using specific datasets to improve its mathematical reasoning.,It is intended to support tasks that require step-by-step mathematical reasoning and problem-solving.,The system is built on a framework that utilizes reinforcement learning and evaluation methodologies for model training and assessment.,"language model, reasoning capability, supervised fine-tuning, reinforcement learning, evaluation, datasets, Hugging Face, PyTorch, AMD Instinct."
+megatron_sglang.py,verl/workers/sharding_manager/megatron_sglang.py,0018b10a2ad5d2e83f8845331399235f50e990d6,WillDreamer/AgentRL,https://api.github.com/repositories/1036883369/contents/verl/workers/sharding_manager/megatron_sglang.py?ref=e5ba0cbd7d698f1170f2b8b871f18c51f0d30a40,https://api.github.com/repositories/1036883369/git/blobs/0018b10a2ad5d2e83f8845331399235f50e990d6,https://github.com/WillDreamer/AgentRL,,,0,0,0,106,2025-09-03T03:32:44Z,6,0,"<div align=""center"">
+ 👋 Hi, everyone! 
+    We will tell the world open-source agentic RL area is suffering!
+    <br>
+    <br>
+</div>
+
+
+<h1 style=""text-align: center;""> 🤖 Agentic RL Arena </h1>
+
+
+<p align=""center""><img src=""public/ARL.png"" width=""800px"" alt=""Agentic RL Arena Framework"" /></p>
+<p align=""center"" style=""font-size: 16px; max-width: 800px; margin: 0 auto;"">
+Figure 1: Overview of our framework
+</p>
+
+## Our Framework Design
+
+- Our benchmark profoundly analyzes the existing sufferings of Agentic RL, including tool-intergrated and multi-turn RL.
+- Our benchmark comprehensively compares existing Agentic RL algorithms and their breakthroughs.
+- Our benchmark universally provides experimental results and findings on multiple ARC tasks.
+
+### 🔥 Key Features
+
+- ✅ Support Multi-turn Math+Code Interpreter Agents
+- ✅ Support Multi-turn Game Agents
+- ✅ Support Multi-turn Shopping Agents
+
+### 🔧 Upcoming Features and Changes
+
+- ➡️ Support WebAgents
+- ➡️ Support Multimodal Agents
+- ➡️ Support Software Enginnering Agents
+
+### 📅 TODO
+
+- [ ] Cross-domain agentic reasoning
+- [ ] Multiple tool integration reasoning
+- [ ] Gap between $\pi_{\theta_{vLLM}}$ and $\pi_{\theta_{FSDP}}$
+- [ ] Turn-level rollout compactness
+- [ ] Dynamical sampling temperature
+- [x] Rollout analysis
+
+## 💡 Getting Started
+
+
+Our benchmark is based on the following main dependencies:
+
+```python
+Python=3.11, VeRL=0.4.0, PyTorch=2.6.0, and vLLM=0.8.5
+```
+
+You can install other requirements as follows:
+``` bash
+# Install conda (Optional if conda exists)
+bash set_conda.sh
+
+# Install foundational dependencies 
+bash setup_env.sh
+
+# Install dependencies for specific tasks
+conda activate verl
+pip install -r requirements_xxx.txts
+```
+
+## 🌊 Easy Extension
+
+🔹 All of the methods utilized is in `recipe`, you can warp the verl worker for your code to join our codebase. The folder under `recipe` can represent either a method for different tasks or a series methods for one task. You can refer to [Easy Extension](docs/extension.md) for examples.
+
+🔹 Add specific dependencies to `requirements_xxx.txt`
+
+🔹 Feel free to add the folder of the third-party tools, e.g., `AgentRL/sandbox` for code implementation.
+
+
+## 🚀 Existing Support
+
+> ### 🧮 **Math+CI**
+
+
+1. We use Sandbox Fusion as an asynchronous code interpreter. You can follow the [Guidance](sandbox/README.md) to run the CI.
+
+2. The training datasets are Math3-5 from SimpleRL and Deepscaler in `datasets`.
+
+```bash
+# 3. Run the demo code with:
+conda activate verl
+bash train_simpletir.sh
+```
+
+> ### 🎮 **OpenAI Game**
+
+```python
+# 1. Install the additional dependecy
+conda activate verl
+pip install -r requirements_ragen.txt
+
+# 2. Download the data
+python recipe/ragen/download_data.py
+
+# 3. Run the demo code with:
+bash train_ragen.sh
+```
+
+> ### 🛒 **Shopping Agents**
+
+```bash
+# 1. Build the webshop environments
+bash recipe/webshop/setup_webshop.sh
+
+# 2. Run the demo code with:
+conda activate verl
+bash train_webshop.sh
+```
+
+> ### 🕸️ **Search Agents**
+
+```bash
+#! 1. Build the RAG server environments
+bash recipe/search_r1/setup_search.sh
+
+#! 2. Run the RAG Server: Before running the bash script, modify the parameters in launch.sh (`file_path` is the storage location of the corpus, `retriever` is the local path of the model intfloat/e5-base-v2)
+bash recipe/search_r1/rag_server/launch.sh
+
+# 3. Run the demo code with:
+bash train_search.sh
+```
+
+## 📊 Further Analysis
+
+### Visualization of rollout
+
+1. Utilize the `custom_reward_function` to define a specific file, you can refer to `DummyRewardManager` in `recipe/webshop/main_webshop.py` for example.
+
+2. Add the hyperpapram in the training scripts as follows:
+
+```bash
+
+# claim the saving folder
+export ROLLOUT_DUMP_DIR=/workspace/AgentRL/outputs/
+export ROLLOUT_DUMP_ENABLE=True
+export ROLLOUT_SAVE_EVERY_STEPS=10
+
+# Merge all of the generated seq
+cd /abs/path/rollouts
+cat rollouts_*.jsonl > all_rollouts.jsonl
+```
+
+
+<!-- 
+
+```bash
+# Install requiremnet
+pip install mlflow
+
+# Start server
+mlflow server \
+  --host 0.0.0.0 --port 5000 \
+  --backend-store-uri sqlite:////tmp/mlruns.db \
+  --default-artifact-root /tmp/mlruns
+
+export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+
+actor_rollout_ref.rollout.trace.backend: mlflow  # or weave
+actor_rollout_ref.rollout.trace.token2text: True
+trainer.logger: ['console', 'mlflow']
+``` -->
+
+## 🎆 Awesome work for reference
+
+- [TinyZero](https://github.com/Jiayi-Pan/TinyZero): a reproduction of **DeepSeek R1 Zero** recipe for reasoning tasks ![GitHub Repo stars](https://img.shields.io/github/stars/Jiayi-Pan/TinyZero)
+- [SkyThought](https://github.com/NovaSky-AI/SkyThought): RL training for Sky-T1-7B by NovaSky AI team. ![GitHub Repo stars](https://img.shields.io/github/stars/NovaSky-AI/SkyThought)
+- [simpleRL-reason](https://github.com/hkust-nlp/simpleRL-reason): SimpleRL-Zoo: Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild ![GitHub Repo stars](https://img.shields.io/github/stars/hkust-nlp/simpleRL-reason)
+- [Easy-R1](https://github.com/hiyouga/EasyR1): **Multi-modal** RL training framework ![GitHub Repo stars](https://img.shields.io/github/stars/hiyouga/EasyR1)
+- [OpenManus-RL](https://github.com/OpenManus/OpenManus-RL): LLM Agents RL tunning framework for multiple agent environments. ![GitHub Repo stars](https://img.shields.io/github/stars/OpenManus/OpenManus-RL)
+- [rllm](https://github.com/agentica-project/rllm): async RL training with [verl-pipeline](https://github.com/agentica-project/verl-pipeline) ![GitHub Repo stars](https://img.shields.io/github/stars/agentica-project/rllm)
+- [PRIME](https://github.com/PRIME-RL/PRIME): Process reinforcement through implicit rewards ![GitHub Repo stars](https://img.shields.io/github/stars/PRIME-RL/PRIME)
+- [RAGEN](https://github.com/ZihanWang314/ragen): a general-purpose reasoning **agent** training framework ![GitHub Repo stars](https://img.shields.io/github/stars/ZihanWang314/ragen)
+- [Logic-RL](https://github.com/Unakar/Logic-RL): a reproduction of DeepSeek R1 Zero on 2K Tiny Logic Puzzle Dataset. ![GitHub Repo stars](https://img.shields.io/github/stars/Unakar/Logic-RL)
+- [Search-R1](https://github.com/PeterGriffinJin/Search-R1): RL with reasoning and **searching (tool-call)** interleaved LLMs ![GitHub Repo stars](https://img.shields.io/github/stars/PeterGriffinJin/Search-R1)
+- [DeepRetrieval](https://github.com/pat-jj/DeepRetrieval): RL Training of **Search Agent** with **Search/Retrieval Outcome** ![GitHub Repo stars](https://img.shields.io/github/stars/pat-jj/DeepRetrieval)
+- [ReSearch](https://github.com/Agent-RL/ReSearch): Learning to **Re**ason with **Search** for LLMs via Reinforcement Learning ![GitHub Repo stars](https://img.shields.io/github/stars/Agent-RL/ReSearch)
+- [Code-R1](https://github.com/ganler/code-r1): Reproducing R1 for **Code** with Reliable Rewards ![GitHub Repo stars](https://img.shields.io/github/stars/ganler/code-r1)
+- [Skywork-OR1](https://github.com/SkyworkAI/Skywork-OR1): Skywork open reaonser series ![GitHub Repo stars](https://img.shields.io/github/stars/SkyworkAI/Skywork-OR1)
+- [ToRL](https://github.com/GAIR-NLP/ToRL): Scaling tool-integrated RL ![GitHub Repo stars](https://img.shields.io/github/stars/GAIR-NLP/ToRL)
+- [verl-agent](https://github.com/langfengQ/verl-agent): A scalable training framework for **long-horizon LLM/VLM agents**, along with a new algorithm **GiGPO** ![GitHub Repo stars](https://img.shields.io/github/stars/langfengQ/verl-agent)
+- [PF-PPO](https://arxiv.org/abs/2409.06957): Policy Filtration for PPO based on the reliability of reward signals for more efficient and robust RLHF.
+- [GUI-R1](https://github.com/ritzz-ai/GUI-R1): **GUI-R1**: A Generalist R1-style Vision-Language Action Model For **GUI Agents** ![GitHub Repo stars](https://img.shields.io/github/stars/ritzz-ai/GUI-R1)
+- [DeepResearcher](https://github.com/GAIR-NLP/DeepResearcher): Scaling deep research via reinforcement learning in real-world environments ![GitHub Repo stars](https://img.shields.io/github/stars/GAIR-NLP/DeepResearcher)
+- [VAGEN](https://github.com/RAGEN-AI/VAGEN): Training VLM agents with multi-turn reinforcement learning ![GitHub Repo stars](https://img.shields.io/github/stars/RAGEN-AI/VAGEN)
+- [ReTool](https://retool-rl.github.io/): ReTool: reinforcement learning for strategic tool use in LLMs
+- [Seed-Coder](https://github.com/ByteDance-Seed/Seed-Coder): RL training of Seed-Coder boosts performance on competitive programming ![GitHub Repo stars](https://img.shields.io/github/stars/ByteDance-Seed/Seed-Coder)
+- [all-hands/openhands-lm-32b-v0.1](https://www.all-hands.dev/blog/introducing-openhands-lm-32b----a-strong-open-coding-agent-model): A strong, open coding agent model, trained with [multi-turn fine-tuning](https://github.com/volcengine/verl/pull/195)
+- [RM-R1](https://arxiv.org/abs/2505.02387): RL training of reasoning reward models ![GitHub Repo stars](https://img.shields.io/github/stars/RM-R1-UIUC/RM-R1)
+- [Absolute Zero Reasoner](https://arxiv.org/abs/2505.03335): A no human curated data self-play framework for reasoning![GitHub Repo stars](https://img.shields.io/github/stars/LeapLabTHU/Absolute-Zero-Reasoner)
+- [LUFFY](https://arxiv.org/pdf/2504.14945): Learning to Reason under Off-Policy Guidance![GitHub Repo stars](https://img.shields.io/github/stars/ElliottYan/LUFFY)
+- [verl-tool](https://github.com/TIGER-AI-Lab/verl-tool): An unified and easy-to-extend tool-agent training framework based on verl![GitHub Repo stars](https://img.shields.io/github/stars/TIGER-AI-Lab/verl-tool)
+- [DeepMath](https://github.com/zwhe99/DeepMath): DeepMath-103K data and series models for math reasoning![GitHub Repo stars](https://img.shields.io/github/stars/zwhe99/DeepMath)
+","1. repository_intent: The repository aims to benchmark and analyze the challenges in the area of Agentic Reinforcement Learning (RL).
+
+2. technical_focus: It provides a framework for comparing existing Agentic RL algorithms and their performance across various tasks.
+
+3. primary_use_cases: The repository is intended to support multi-turn agents in math, code interpretation, games, and shopping scenarios.
+
+4. system_design: The system is designed to be extensible, allowing integration of various tools and methods for different tasks.
+
+5. key_technical_terms: Agentic RL, multi-turn agents, benchmark, experimental results, tool integration, Python, PyTorch, VeRL.",The repository aims to benchmark and analyze the challenges in the area of Agentic Reinforcement Learning (RL).,It provides a framework for comparing existing Agentic RL algorithms and their performance across various tasks.,"The repository is intended to support multi-turn agents in math, code interpretation, games, and shopping scenarios.","The system is designed to be extensible, allowing integration of various tools and methods for different tasks.","Agentic RL, multi-turn agents, benchmark, experimental results, tool integration, Python, PyTorch, VeRL."
+llava_sglang.py,lmms_eval/models/llava_sglang.py,986de912646d094861e99d16dea6094298b39f08,Traveller2001/ShortV,https://api.github.com/repositories/944593963/contents/lmms_eval/models/llava_sglang.py?ref=cbc0d1d729677664a7463202ff59c1ad81fbda5a,https://api.github.com/repositories/944593963/git/blobs/986de912646d094861e99d16dea6094298b39f08,https://github.com/Traveller2001/ShortV,,,0,0,0,3,2025-03-07T16:52:14Z,0,0,"# ShortV: Freezing Visual Tokens in Ineffective Layers of Multimodal Large Language Models
+
+Anonymous Research Repository | Technical Documentation
+
+## Overview
+This repository provides a standardized pipeline for evaluating ShortV models on structured visual understanding tasks. The implementation preserves anonymity in compliance with double-blind review requirements.
+
+## Environment Setup
+
+### Conda Environment
+```bash
+conda create -n shortv python=3.10 -y
+conda activate shortv
+pip install --upgrade pip  # Enable PEP 660 support
+pip install -e .
+```
+
+## Evaluation
+```bash
+bash eval.sh
+```
+","1. repository_intent: This repository provides a standardized pipeline for evaluating ShortV models on structured visual understanding tasks.
+
+2. technical_focus: The implementation preserves anonymity in compliance with double-blind review requirements.
+
+3. primary_use_cases: The repository is intended to support evaluation of multimodal large language models on visual understanding tasks.
+
+4. system_design: 
+
+5. key_technical_terms: ShortV, visual tokens, multimodal large language models, evaluation, structured visual understanding tasks, anonymity, double-blind review.",This repository provides a standardized pipeline for evaluating ShortV models on structured visual understanding tasks.,The implementation preserves anonymity in compliance with double-blind review requirements.,The repository is intended to support evaluation of multimodal large language models on visual understanding tasks.,,"ShortV, visual tokens, multimodal large language models, evaluation, structured visual understanding tasks, anonymity, double-blind review."
+benchmark_w8a8_block_fp8.py,test/perf_test/vllm/benchmarks/kernels/benchmark_w8a8_block_fp8.py,4fcdbadd65ecd366f51ce5d9053cc700854dcb71,yuyongzhong/llm-infer,https://api.github.com/repositories/1028269707/contents/test/perf_test/vllm/benchmarks/kernels/benchmark_w8a8_block_fp8.py?ref=6ed7482c409a7d20c6c6784b3ab1c6b3b9c2a27a,https://api.github.com/repositories/1028269707/git/blobs/4fcdbadd65ecd366f51ce5d9053cc700854dcb71,https://github.com/yuyongzhong/llm-infer,,,0,0,0,53,2025-09-01T08:06:44Z,0,0,"# LLM-INFER
+
+
+
+## Getting started
+
+To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
+## Add your files
+
+- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+
+```
+cd existing_repo
+git remote add origin https://sh-code.mthreads.com/mcc-qa/llm-infer.git
+git branch -M master
+git push -uf origin master
+```
+
+## Integrate with your tools
+
+- [ ] [Set up project integrations](https://sh-code.mthreads.com/mcc-qa/llm-infer/-/settings/integrations)
+
+## Collaborate with your team
+
+- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+
+## Test and Deploy
+
+Use the built-in continuous integration in GitLab.
+
+- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
+- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+
+***
+
+# Editing this README
+
+When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+
+## Suggestions for a good README
+
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+
+## Name
+Choose a self-explaining name for your project.
+
+## Description
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+
+## Badges
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+
+## Visuals
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+
+## Installation
+Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
+
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
+
+## License
+For open source projects, say how it is licensed.
+
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+","1. repository_intent: LLM-INFER is designed to facilitate the integration and deployment of large language models.
+
+2. technical_focus: The repository utilizes sglang, an LLM serving framework.
+
+3. primary_use_cases: It supports workflows related to the deployment and management of language model applications.
+
+4. system_design: The system is structured to leverage GitLab for version control, collaboration, and continuous integration.
+
+5. key_technical_terms: LLM, sglang, GitLab, continuous integration, deployment, collaboration.",LLM-INFER is designed to facilitate the integration and deployment of large language models.,"The repository utilizes sglang, an LLM serving framework.",It supports workflows related to the deployment and management of language model applications.,"The system is structured to leverage GitLab for version control, collaboration, and continuous integration.","LLM, sglang, GitLab, continuous integration, deployment, collaboration."
+sglang_rollout.py,verl/workers/rollout/sglang_rollout/sglang_rollout.py,8fb1723b266f3e951e486cf2a312884849b07c25,Visual-Agent/DeepEyes,https://api.github.com/repositories/949032122/contents/verl/workers/rollout/sglang_rollout/sglang_rollout.py?ref=f95d594c9463cc4cb63c86e2c6c3194a7ebc0679,https://api.github.com/repositories/949032122/git/blobs/8fb1723b266f3e951e486cf2a312884849b07c25,https://github.com/Visual-Agent/DeepEyes,,,67,21,5,594,2025-08-25T05:01:06Z,796,41,"
+
+<div align=""center"">
+  <img src=""docs/logo-deepeyes.jpg"" alt=""logo"" height=""100"">
+  <h1 style=""font-size: 32px; font-weight: bold;""> DeepEyes: Incentivizing “Thinking with Images” via Reinforcement Learning </h1>
+
+  <br>
+
+  <a href=""https://arxiv.org/abs/2505.14362"">
+    <img src=""https://img.shields.io/badge/ArXiv-DeepEyes-brown?logo=arxiv"" alt=""Paper"">
+  </a>
+  <a href=""https://huggingface.co/datasets/ChenShawn/DeepEyes-Datasets-47k"">
+    <img src=""https://img.shields.io/badge/🤗 huggingface-Dataset-blue"" alt=""dataset"">
+  </a>
+  <a href=""https://huggingface.co/ChenShawn/DeepEyes-7B"">
+    <img src=""https://img.shields.io/badge/🤗 huggingface-Model-purple"" alt=""checkpoint"">
+  </a>
+  <a href=""https://visual-agent.github.io/"">
+    <img src=""https://img.shields.io/badge/-HomePage-black?logo=github"" alt=""checkpoint"">
+  </a>
+</div>
+
+*\* Logo inspired by oracle bone character ""eye"".*
+
+## DeepEyes
+Quote from [https://openai.com/index/thinking-with-images/](https://openai.com/index/thinking-with-images/)
+> They don’t just see an image, they can integrate visual information directly into the reasoning chain.
+
+![](docs/fig2.png)
+
+Key insights:
+- The capability of DeepEyes to think with images is learned via end-to-end reinforcement learning. It is directly guided by outcome reward signals, requires no cold-start or supervised fine-tuning, and does not rely on specialized external model.
+- Although there is no direct supervision applied for intermediate steps, both the grounding IoU and tool-calling efficiency was increased during the RL training stage.
+![](docs/fig_finding1.svg)
+- The end-to-end RL training yields significant performance gain on high resolution benchmarks, and shows strong generalization for visual grounding, hallucination mitigation, and math problem solving tasks.
+![](docs/accuracy_comparison.svg)
+- We observed an emergence of thinking pattern during RL training process, such as visual search for small objects, visual comparisons across different regions, using `image_zoom_in_tools` for answer verification, etc. Check [our project homepage](https://visual-agent.github.io/) for more case study.
+![](docs/fig1_sc2.png)
+
+##  Quick Start
+
+### Environment Setup
+
+```bash
+# Follow the VeRL official installation procedure
+pip install -e .
+
+# Additional dependencies required by DeepEyes
+bash scripts/install_deepeyes.sh
+```
+
+### Start Training
+
+We use [Qwen-2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) as our foundation model for RL training. [Qwen-2.5-VL-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct) is also supported.
+
+We recommend using no less than 32 GPUs (4 nodes x 8 GPUs) for 7B training, and no less than 64 GPUs (8 nodes x 8 GPUs) for 32B training. For each node, we recommend using no less than 1200GB CPU RAM, as the high resolution images in V* and ArxivQA datasets can consume large amount of memory.
+
+Step 1: Start a vllm serving of [Qwen-2.5-72B-Instruct](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct) for llm-as-a-judge verification.
+
+```bash
+# download Qwen-2.5-72B-Instruct model
+huggingface-cli download --resume-download https://huggingface.co/Qwen/Qwen2.5-72B-Instruct --local-dir /path/to/your/local/filedir --local-dir-use-symlinks False
+
+# start vllm serving
+vllm serve /path/to/your/local/filedir \
+    --port 18901 \
+    --gpu-memory-utilization 0.8 \
+    --max-model-len 32768 \
+    --tensor-parallel-size 8 \ 
+    --served-model-name ""judge"" \
+    --trust-remote-code \
+    --disable-log-requests
+```
+
+Step 2: Build a ray cluster for all of the training nodes. Prepare data before starting training. Our training dataset can be downloaded from [huggingface](https://huggingface.co/datasets/ChenShawn/DeepEyes-Datasets-47k).
+
+
+Step 3: Use one of the following scripts to start training.
+
+```bash
+# your wandb access key here...
+wandb login
+
+# the IP and port for your Qwen-2.5-72B-Instruct vllm serving
+export LLM_AS_A_JUDGE_BASE=""http://your.vllm.machine.ip:18901/v1""
+
+# umber of training nodes
+export WORLD_SIZE=8
+
+# config for 7B
+bash examples/agent/final_merged_v1v8_thinklite.sh
+
+# config for 32B
+bash examples/agent/final_merged_v1v8_thinklite_32b.sh
+```
+
+The training scripts use both [wandb](https://wandb.ai/site/) and [RL Logging Board](https://github.com/HarderThenHarder/RLLoggingBoard) (great work) to visualize the training dynamics.
+
+## Programming Guide
+
+<details>
+<summary>General Introduction for Codes</summary>
+
+### General Introduction
+
+The code in this repository is a general agentic RL training framework based on [VeRL](https://github.com/volcengine/verl). Apart from DeepEyes, it is possible to perform any form of general agentic RL (multi-turn RL) training using our code implementation.
+
+The code is designed to fulfill the following needs:
+- **High efficient Agent RL training**: Agent rollout is asynchronous among all data parallel groups.
+- **Allowing dynamic multi-modal input in agent observations**: This is the key for the RL training of ""thinking with images"" ability.
+- **Allowing hybrid training for agent data with different tools and non-agentic data**: Tool usage is not hard-coded in rollout loop, instead, each sample can specify its own tool usage constraint via `env_name` field.
+- **Support for algorithm**: PPO, GRPO, and reinforce++ are supported. We modified the advantage estimation, the policy loss masks, as well as the mrope for Qwen-VL models, to make it compatible with the interleaved structure of agentic multi-turn RL training.
+- **Compatible for latest VeRL updates**: agentic RL training is implemented as a plugin for VeRL, making it easy to merge with the latest VeRL updates. Once you turn off the plugin switch, the functionality will be no different to the original version of VeRL.
+
+</details>
+
+<details>
+<summary>Training Config</summary>
+
+### Training Config
+Most config parameters are exactly the same as in [verl official documentation](https://verl.readthedocs.io/en/latest/index.html).
+
+An additional group of config parameters is added to the default config [verl/trainer/config/ppo_trainer.yaml](verl/trainer/config/ppo_trainer.yaml) for agent RL setting.
+
+```yaml
+agent:
+  activate_agent: False
+  single_response_max_tokens: 32768
+  max_turns: 50
+  concurrent_workers: 1
+  tool_name_key: env_name
+  tool_meta_key: null
+  custom_stop: []
+  show_tqdm: True
+  vl_model_path: ${actor_rollout_ref.model.path}
+  max_vllm_images: 32
+  max_vllm_videos: 1
+```
+
+Arguments:
+- `activate_agent`: The switch to enable agent RL training. Setting this to False, the running code will be identical to the original version of verl.
+- `single_response_max_tokens`: The maximum number of tokens allowed to be generated in a single time agent interaction. Setting it to half or one third of the `max_response_length` to avoid the left padding problem.
+- `max_turns`: the maximum number os interactions that the agent is allowed to perform in an entire trajectory.
+- `concurrent_workers`: Number of threads that are used to execute the agent environment interation at the same time.
+- `custom_stop`: Forcing vllm engine to stop generating on custom strings. This is useful if agent training is based on custom prompt template.
+- `vl_model_path`: DO NOT CHANGE ITS VALUE IN YOUR SCRIPT.
+- `max_vllm_images` and `max_vllm_videos`: the limit for maximum number of images and videos in vllm engine.
+
+</details>
+
+
+
+<!-- <details>
+<summary>Code Navigation</summary>
+
+### Code Navigation
+
+Reproduction code for our [DeepEyes](https://arxiv.org/abs/2505.14362).
+- Training script: [examples/agent/final_merged_v1v8_thinklite.sh](examples/agent/final_merged_v1v8_thinklite.sh)
+- Tool definition: [verl/workers/agent/envs/mm_process_engine/visual_toolbox_v2.py](verl/workers/agent/envs/mm_process_engine/visual_toolbox_v2.py)
+- Reward definition: [verl/utils/reward_score/vl_agent.py](verl/utils/reward_score/vl_agent.py)
+
+Reproduction code for [R1-Searcher](https://github.com/RUCAIBox/R1-Searcher) using PPO.
+- Training script: [examples/agent/train_ppo_rag_v2.sh](examples/agent/train_ppo_rag_v2.sh)
+- Tool definition: [verl/workers/agent/envs/rag_engine/rag_engine_v2.py](verl/workers/agent/envs/rag_engine/rag_engine_v2.py)
+- Reward definition: [verl/utils/reward_score/agent.py](verl/utils/reward_score/agent.py)
+
+</details> -->
+
+<details>
+<summary>Training on Customized Datasets</summary>
+
+### Use your own data
+Add an additional field `env_name` to your data parquet files. The `env_name` of each sample should specify the which tool is allowed to use when performing agent rollout. For non-agent training data, leave the `env_name` to None or empty string.
+
+For DeepEyes style training, for example, `env_name` should be specified as `visual_toolbox_v2`.
+
+The rest part is no different to the original VeRL dataset format. Refer to [VeRL official documentation](https://verl.readthedocs.io/en/latest/index.html) for details.
+
+</details>
+
+<details>
+<summary>Training with Customized Tools</summary>
+
+### Implement your own tools
+Implement your tool function in a new class that inherents `ToolBase` class in [verl/workers/agent/tool_envs.py](verl/workers/agent/tool_envs.py) as its base class.
+
+The subclass MUST include `name` variable, whose value corresponds to the `env_name` field in training data parquet files.
+
+Implement the `execute` and `reset` functions. Here is an simple example:
+
+Example code:
+```python
+class CustomTool(ToolBase):
+    name = ""custom_tool_v0""
+
+    def __init__(self, _name, _desc, _params, **kwargs):
+        super().__init__(name=self.name)
+
+    def execute(self, action_string: str, **kwargs) -> tuple:
+        """"""
+        Execute the tool functionality based on the LLM generated text.
+        This function is called EACH TIME after vllm.generate
+        
+        Args:
+            action_string: The string generated by LLM via vllm.generate.
+
+        Returns:
+            observation: The structured observation with the processed image.
+            reward: setting a non-zero value if you want to assign a reward to the LAST GENERATED TOKEN in the intermediate steps.
+            done: Whether the episode is terminated.
+            info: Additional info.
+        """"""
+        pass
+
+    def reset(self, raw_prompt, multi_modal_data, origin_multi_modal_data, **kwargs):
+        """"""
+        This function is called ONLY ONCE when initializing the tools
+
+        Args:
+            raw_prompt: setting config param `data.return_raw_chat=True` to get raw prompt input.
+            multi_modal_data: refer to vllm documentation for details https://docs.vllm.ai/en/stable/features/multimodal_inputs.html
+            origin_multi_modal_data: VLM vision processor can modify the original images, typically by resizing, when they are too small or too large, use this param if you want to get access to the unmodified vision input.
+        """"""
+        pass
+```
+
+Refer to [verl/workers/agent/envs/mm_process_engine/visual_toolbox_v2.py](verl/workers/agent/envs/mm_process_engine/visual_toolbox_v2.py) as an example for the `image_zoom_in_tool` in DeepEyes.
+
+**Important**: Import your custom tool in [verl/workers/agent/__init__.py](verl/workers/agent/__init__.py)
+
+```python
+from .envs.your_custom_tool import CustomTool
+```
+
+</details>
+
+<details>
+<summary>Using latest VeRL code</summary>
+
+### Using latest VeRL code
+In case you want to use the latest VeRL code for training.
+
+```bash
+git remote add official https://github.com/volcengine/verl.git
+git pull official main
+```
+
+As shown in the commit history, we have been doing this for several times to sync latest verl updates.
+
+The last time we sync with the verl main branch was on **April 23, 2025**. In the future, to ensure the reproducibility of our code, we will only do this on dev branch.
+
+</details>
+
+<details>
+<summary>Evaluation with Automatic BBOX Processing</summary>
+Please refer to <a href=""eval/EVALUATION.md"">EVALUATION.md</a> for evaluation details.
+</details>
+
+## Star Chart
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Visual-Agent/DeepEyes&type=Date)](https://star-history.com/#Visual-Agent/DeepEyes&Date)
+
+## Licence
+
+This project is released under [Apache licence](./LICENSE).
+
+## Citation
+
+```
+@article{zheng2025deepeyesincentivizingthinkingimages,
+    title={DeepEyes: Incentivizing ""Thinking with Images"" via Reinforcement Learning}, 
+    author={Ziwei Zheng, Michael Yang, Jack Hong, Chenxiao Zhao, Guohai Xu, Le Yang, Chao Shen, Xing Yu},
+    year={2025},
+    eprint={2505.14362},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2505.14362}, 
+}
+```
+","1. repository_intent: DeepEyes aims to incentivize reasoning with images through reinforcement learning.
+
+2. technical_focus: The repository implements an end-to-end reinforcement learning framework that enhances the ability to think with images without requiring supervised fine-tuning.
+
+3. primary_use_cases: It is designed to support tasks involving visual grounding, hallucination mitigation, and math problem-solving.
+
+4. system_design: The system architecture is based on a general agentic reinforcement learning training framework compatible with VeRL.
+
+5. key_technical_terms: reinforcement learning, visual grounding, agentic RL, multi-modal input, Qwen-2.5, training dataset, tool usage, asynchronous rollout, high resolution benchmarks, DeepEyes.",DeepEyes aims to incentivize reasoning with images through reinforcement learning.,The repository implements an end-to-end reinforcement learning framework that enhances the ability to think with images without requiring supervised fine-tuning.,"It is designed to support tasks involving visual grounding, hallucination mitigation, and math problem-solving.",The system architecture is based on a general agentic reinforcement learning training framework compatible with VeRL.,"reinforcement learning, visual grounding, agentic RL, multi-modal input, Qwen-2.5, training dataset, tool usage, asynchronous rollout, high resolution benchmarks, DeepEyes."
+__init__.py,verl/workers/sharding_manager/__init__.py,d15f5133ebfb399ee045f2fd220aad5588735368,MiroMindAI/MiroMind-M1,https://api.github.com/repositories/1015125776/contents/verl/workers/sharding_manager/__init__.py?ref=3ace1ab4810bc617b8be07a9f8c601e57e233861,https://api.github.com/repositories/1015125776/git/blobs/d15f5133ebfb399ee045f2fd220aad5588735368,https://github.com/MiroMindAI/MiroMind-M1,"MiroMind-M1 is a fully open-source series of reasoning language models built on Qwen-2.5, focused on advancing mathematical reasoning.",,0,6,1,43,2025-08-12T03:02:42Z,227,16,"<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-disable html -->
+<!-- markdownlint-disable no-duplicate-header -->
+
+<div align=""center"">
+  <img src=""assets/MiromindAI_H.svg"" width=""50%"" alt=""MiroMindM1"" />
+</div>
+<!-- <hr> -->
+<div align=""center"">
+
+[![Models](https://img.shields.io/badge/Models-5EDDD2?style=for-the-badge&logo=huggingface&logoColor=ffffff&labelColor)](https://huggingface.co/miromind-ai/MiroMind-M1-RL-7B)
+[![Data](https://img.shields.io/badge/Data-0040A1?style=for-the-badge&logo=huggingface&logoColor=ffffff&labelColor)](https://huggingface.co/datasets/miromind-ai/MiroMind-M1-RL-62K)
+[![Paper](https://img.shields.io/badge/Paper-000000?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2507.14683)
+[![Github](https://img.shields.io/badge/Code-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MiroMindAsia/MiroMind-M1)
+[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://miromind.ai/)
+
+[![DISCORD](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/GPqEnkzQZd)
+[![WeChat](https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&logo=wechat&logoColor=white)](https://cdn-uploads.huggingface.co/production/uploads/68525b342230a897a65cc1c0/SGK70isvVpeJwk_fny9sb.png)
+[![RedNote](https://img.shields.io/badge/RedNote-FF2442?style=for-the-badge&logo=revoltdotchat&logoColor=white)](https://www.xiaohongshu.com/user/profile/663098830000000003033edc)
+</div>
+
+
+
+# MiroMind-M1
+
+
+## 🧾 Overview
+<div align=""center"">
+  <img src=""assets/7b_performance_training.png"" width=""80%"" alt=""7B Model Training Performance"" />
+  <p><i>Training performance of MiroMind-M1-RL-7B on AIME24 and AIME25.</i></p>
+</div>
+
+**MiroMind-M1** is a fully open-source series of reasoning language models built on `Qwen-2.5`, focused on advancing mathematical reasoning. It is trained through supervised fine-tuning (**SFT**) on 719K curated problems and reinforcement learning with verifiable rewards (**RLVR**) on 62K challenging examples, using a context-aware multi-stage policy optimization method (**CAMPO**). MiroMind-M1 achieves state-of-the-art performance among open-source 7B Qwen-2.5-based models on AIME24, AIME25, and MATH500, with all models (`MiroMind-M1-SFT-7B`, `MiroMind-M1-RL-7B`, `MiroMind-M1-RL-32B`), data (`MiroMind-M1-SFT-719K`, `MiroMind-M1-RL-62K`), and training setups openly released.
+
+
+## 📊 Evaluation
+
+### MiroMind-M1-SFT
+| Model           | Initial Checkpoint         | AIME24 (avg@64) | AIME25 (avg@64) | MATH500 (avg@5) |
+|------------------|----------------------------|--------|--------|---------|
+| DeepSeek-R1-Distill                  | Qwen2.5-Math-7B             | 55.5   | 40.4†  | 92.8    |
+| OpenThoughts                         | Qwen2.5-7-Instruct           | 31.3   | 23.3   | 83.2    |
+| Open-R1                              | Qwen2.5-Math-7B-Instruct     | 36.7   | 40.0   | 90.6    |
+| Synthetic-1                          | Qwen2.5-7B-Instruct          | 30.0   | 26.6   | 85.6    |
+| MiMo-7B-SFT                          | MiMo-7B-Base          | 58.7   | 44.3   | 93.0    |
+| **MiroMind-SFT-7B**                  | Qwen2.5-Math-7B             | **60.4**   | **45.0**   | **94.6**    |
+
+*† means that the score of DeepSeek-R1 on AIME25 is from our evaluation.*
+
+### MiroMind-M1-RL
+| Model                            | AIME24 (avg@64) | AIME25 (avg@64) | MATH500 (avg@5) |
+|----------------------------------|--------|--------|---------|
+| DeepSeek-R1                      | 79.8   | 70.0   | –       |
+| DeepSeek-R1-0528                 | 91.4   | 87.5   | –       |
+| Qwen3-8B                         | 76.0   | 67.3   | –       |
+| DeepSeek-R1-0528-Qwen3-8B        | 86.0   | 76.3   | –       |
+| MiMo-7B-RL                       | 68.2   | 55.4   | 95.8    |
+| <tr><td colspan=""4"" align=""center""><em>**32B Models trained from Qwen2.5 series**</em></td></tr> |
+| DeepSeek-R1-Distill-Qwen-32B     | 70.8   | 52.1   | 95.8    |
+| Skywork-OR1-32B-Preview          | 77.1   | **68.2**   | **97.5**    |
+| **MiroMind-M1-RL-32B**           | **77.5**   | 65.6   | 96.4    |
+| <tr><td colspan=""4"" align=""center""><em>**7B Models trained from Qwen2.5 series**</em></td></tr> |
+| DeepSeek-R1-Distill-Qwen-7B      | 55.5   | 39.2   | –       |
+| **MiroMind-M1-SFT-7B**           | 60.4   | 45.0   | 94.6    |
+| Light-R1-7B-DS                   | 59.1   | 44.3   | –       |
+| Skywork-OR1-7B                   | 72.2   | 54.6   | –       |
+| **MiroMind-M1-RL-7B**            | **73.4**   | **57.8**   | **96.7**    |
+
+
+## 🛠 Getting Started
+
+### Installation
+
+venv environment:
+
+```bash
+git clone https://github.com/MiroMindAsia/MiroMind-M1.git
+cd MiroMind-M1
+
+# Install Python 3.10 environment.
+python3.10 -m pip install virtualenv
+virtualenv -p python3.10 venv
+source venv/bin/activate
+
+# Install dependencies.
+pip3 install torch==2.6.0+cu124 --index-url https://download.pytorch.org/whl/cu124
+pip3 install numpy psutil ninja packaging cmake
+pip3 install flash_attn==2.7.4.post1 --no-build-isolation # This may take a while...
+pip3 install vllm==0.8.5.post1
+pip3 install -e .
+```
+
+## 🎨 Data Preparation
+
+Run the below commands to generate training and validation parquet files.
+
+```bash
+python data/prepare_train_data.py --local_dir data/
+python data/prepare_val_data.py --local_dir data/
+```
+
+
+## 🏋️ Training
+
+### Multi-Node Training
+
+Here is a quik guided to start Ray for multi-node training.
+
+#### On the head node
+```bash
+ray stop
+ray start --head --node-ip-address $HEAD_NODE_IP --num-gpus 8 --dashboard-host=0.0.0.0
+```
+
+#### On other nodes
+```bash
+ray stop
+ray start --address=""$HEAD_NODE_IP:6379"" --num-gpus 8
+```
+
+### Start Training
+
+First, please provde the below variables:
+
+```bash
+export MODEL_PATH=YOUR_MODEL_PATH
+export CKPTS_DIR=YOUR_CKPTS_DIR
+export TRAIN_FILE=YOUR_TRAIN_FILE
+export TEST_FILE=YOUR_TEST_FILE
+export HOME=YOUR_HOME_PATH
+```
+
+Then run the below script to start the training:
+
+```bash
+bash rl_train/campo_32b.sh
+```
+
+## ⚖️ Run Evaluation
+
+We provide ready-to-use evaluation scripts in the `eval_example_script/` directory for mathematical reasoning benchmarks.
+
+### Quick Start
+
+```bash
+# Evaluate on AIME 2024
+bash eval_example_script/evaluate_7b_aime24.sh
+
+# Evaluate on AIME 2025  
+bash eval_example_script/evaluate_7b_aime25.sh
+
+# Evaluate on Math-500
+bash eval_example_script/evaluate_7b_math500.sh
+```
+
+### Supported Benchmarks
+
+| Dataset | Script | Standard Runs |
+|---------|--------|---------------|
+| **AIME 2024** | `evaluate_7b_aime24.sh` | 64 runs |
+| **AIME 2025** | `evaluate_7b_aime25.sh` | 64 runs |
+| **Math-500** | `evaluate_7b_math500.sh` | 5 runs |
+
+### Results
+
+Results are saved in `results/[model_name]/[dataset_name]/` with:
+- `average_accuracy.txt`: Final accuracy score
+- `run[X]_inference_eval_results.csv`: Detailed results
+
+## 📚 Citation
+Please cite our technical report if you found our work helpful:
+```
+@article{li2025miromind,
+  title={MiroMind-M1: An Open-Source Advancement in Mathematical Reasoning via Context-Aware Multi-Stage Policy Optimization},
+  author={Li, Xingxuan and Xiao, Yao and Ng, Dianwen and Ye, Hai and Deng, Yue and Lin, Xiang and Wang, Bin and Mo, Zhanfeng and Zhang, Chong and Zhang, Yueyi and others},
+  journal={arXiv preprint arXiv:2507.14683},
+  year={2025}
+}
+
+@article{zhang2025100,
+  title={100 days after deepseek-r1: A survey on replication studies and more directions for reasoning language models},
+  author={Zhang, Chong and Deng, Yue and Lin, Xiang and Wang, Bin and Ng, Dianwen and Ye, Hai and Li, Xingxuan and Xiao, Yao and Mo, Zhanfeng and Zhang, Qi and others},
+  journal={arXiv preprint arXiv:2505.00551},
+  year={2025}
+}
+```
+
+## 🙏 Acknowledgement
+
+The RL trianing is built from the wonderful [`verl`](https://github.com/volcengine/verl) project.
+","1. repository_intent: MiroMind-M1 is an open-source series of reasoning language models aimed at advancing mathematical reasoning.
+
+2. technical_focus: The repository implements reasoning language models built on Qwen-2.5, utilizing supervised fine-tuning and reinforcement learning with verifiable rewards.
+
+3. primary_use_cases: It is intended to support mathematical reasoning tasks and benchmarks.
+
+4. system_design: The system employs a context-aware multi-stage policy optimization method for training.
+
+5. key_technical_terms: reasoning language models, Qwen-2.5, supervised fine-tuning, reinforcement learning, mathematical reasoning, multi-stage policy optimization, training performance, evaluation benchmarks.",MiroMind-M1 is an open-source series of reasoning language models aimed at advancing mathematical reasoning.,"The repository implements reasoning language models built on Qwen-2.5, utilizing supervised fine-tuning and reinforcement learning with verifiable rewards.",It is intended to support mathematical reasoning tasks and benchmarks.,The system employs a context-aware multi-stage policy optimization method for training.,"reasoning language models, Qwen-2.5, supervised fine-tuning, reinforcement learning, mathematical reasoning, multi-stage policy optimization, training performance, evaluation benchmarks."
+anthropic_example_chat.py,examples/frontend_language/quick_start/anthropic_example_chat.py,03d699be70bd293630938222461c97a35ebcb455,qingshanlanshan/SGL-KVS,https://api.github.com/repositories/1022039669/contents/examples/frontend_language/quick_start/anthropic_example_chat.py?ref=eb983fc3518fbe68c7c38903816d54951ded9a66,https://api.github.com/repositories/1022039669/git/blobs/03d699be70bd293630938222461c97a35ebcb455,https://github.com/qingshanlanshan/SGL-KVS,,,0,0,1,4413,2025-09-09T16:24:17Z,0,0,"<div align=""center"" id=""sglangtop"">
+<img src=""https://raw.githubusercontent.com/sgl-project/sglang/main/assets/logo.png"" alt=""logo"" width=""400"" margin=""10px""></img>
+
+[![PyPI](https://img.shields.io/pypi/v/sglang)](https://pypi.org/project/sglang)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/sglang)
+[![license](https://img.shields.io/github/license/sgl-project/sglang.svg)](https://github.com/sgl-project/sglang/tree/main/LICENSE)
+[![issue resolution](https://img.shields.io/github/issues-closed-raw/sgl-project/sglang)](https://github.com/sgl-project/sglang/issues)
+[![open issues](https://img.shields.io/github/issues-raw/sgl-project/sglang)](https://github.com/sgl-project/sglang/issues)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sgl-project/sglang)
+
+</div>
+
+--------------------------------------------------------------------------------
+
+| [**Blog**](https://lmsys.org/blog/2025-05-05-large-scale-ep/)
+| [**Documentation**](https://docs.sglang.ai/)
+| [**Join Slack**](https://slack.sglang.ai/)
+| [**Join Bi-Weekly Development Meeting**](https://meeting.sglang.ai/)
+| [**Roadmap**](https://github.com/sgl-project/sglang/issues/4042)
+| [**Slides**](https://github.com/sgl-project/sgl-learning-materials?tab=readme-ov-file#slides) |
+
+## News
+- [2025/06] 🔥 SGLang, the high-performance serving infrastructure powering trillions of tokens daily, has been awarded the third batch of the Open Source AI Grant by a16z ([a16z blog](https://a16z.com/advancing-open-source-ai-through-benchmarks-and-bold-experimentation/)).
+- [2025/06] 🔥 Deploying DeepSeek on GB200 NVL72 with PD and Large Scale EP (Part I): 2.7x Higher Decoding Throughput ([blog](https://lmsys.org/blog/2025-06-16-gb200-part-1/)).
+- [2025/05] 🔥 Deploying DeepSeek with PD Disaggregation and Large-scale Expert Parallelism on 96 H100 GPUs ([blog](https://lmsys.org/blog/2025-05-05-large-scale-ep/)).
+- [2025/03] Supercharge DeepSeek-R1 Inference on AMD Instinct MI300X ([AMD blog](https://rocm.blogs.amd.com/artificial-intelligence/DeepSeekR1-Part2/README.html))
+- [2025/03] SGLang Joins PyTorch Ecosystem: Efficient LLM Serving Engine ([PyTorch blog](https://pytorch.org/blog/sglang-joins-pytorch/))
+- [2024/12] v0.4 Release: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer, Faster Structured Outputs ([blog](https://lmsys.org/blog/2024-12-04-sglang-v0-4/)).
+- [2024/07] v0.2 Release: Faster Llama3 Serving with SGLang Runtime (vs. TensorRT-LLM, vLLM) ([blog](https://lmsys.org/blog/2024-07-25-sglang-llama3/)).
+
+<details>
+<summary>More</summary>
+
+- [2025/02] Unlock DeepSeek-R1 Inference Performance on AMD Instinct™ MI300X GPU ([AMD blog](https://rocm.blogs.amd.com/artificial-intelligence/DeepSeekR1_Perf/README.html))
+- [2025/01] SGLang provides day one support for DeepSeek V3/R1 models on NVIDIA and AMD GPUs with DeepSeek-specific optimizations. ([instructions](https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3), [AMD blog](https://www.amd.com/en/developer/resources/technical-articles/amd-instinct-gpus-power-deepseek-v3-revolutionizing-ai-development-with-sglang.html), [10+ other companies](https://x.com/lmsysorg/status/1887262321636221412))
+- [2024/10] The First SGLang Online Meetup ([slides](https://github.com/sgl-project/sgl-learning-materials?tab=readme-ov-file#the-first-sglang-online-meetup)).
+- [2024/09] v0.3 Release: 7x Faster DeepSeek MLA, 1.5x Faster torch.compile, Multi-Image/Video LLaVA-OneVision ([blog](https://lmsys.org/blog/2024-09-04-sglang-v0-3/)).
+- [2024/02] SGLang enables **3x faster JSON decoding** with compressed finite state machine ([blog](https://lmsys.org/blog/2024-02-05-compressed-fsm/)).
+- [2024/01] SGLang provides up to **5x faster inference** with RadixAttention ([blog](https://lmsys.org/blog/2024-01-17-sglang/)).
+- [2024/01] SGLang powers the serving of the official **LLaVA v1.6** release demo ([usage](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#demo)).
+
+</details>
+
+## About
+SGLang is a fast serving framework for large language models and vision language models.
+It makes your interaction with models faster and more controllable by co-designing the backend runtime and frontend language.
+The core features include:
+
+- **Fast Backend Runtime**: Provides efficient serving with RadixAttention for prefix caching, zero-overhead CPU scheduler, prefill-decode disaggregation, speculative decoding, continuous batching, paged attention, tensor parallelism, pipeline parallelism, expert parallelism, structured outputs, chunked prefill, quantization (FP8/INT4/AWQ/GPTQ), and multi-lora batching.
+- **Flexible Frontend Language**: Offers an intuitive interface for programming LLM applications, including chained generation calls, advanced prompting, control flow, multi-modal inputs, parallelism, and external interactions.
+- **Extensive Model Support**: Supports a wide range of generative models (Llama, Gemma, Mistral, Qwen, DeepSeek, LLaVA, etc.), embedding models (e5-mistral, gte, mcdse) and reward models (Skywork), with easy extensibility for integrating new models.
+- **Active Community**: SGLang is open-source and backed by an active community with industry adoption.
+
+## Getting Started
+- [Install SGLang](https://docs.sglang.ai/start/install.html)
+- [Quick Start](https://docs.sglang.ai/backend/send_request.html)
+- [Backend Tutorial](https://docs.sglang.ai/backend/openai_api_completions.html)
+- [Frontend Tutorial](https://docs.sglang.ai/frontend/frontend.html)
+- [Contribution Guide](https://docs.sglang.ai/references/contribution_guide.html)
+
+## Benchmark and Performance
+Learn more in the release blogs: [v0.2 blog](https://lmsys.org/blog/2024-07-25-sglang-llama3/), [v0.3 blog](https://lmsys.org/blog/2024-09-04-sglang-v0-3/), [v0.4 blog](https://lmsys.org/blog/2024-12-04-sglang-v0-4/), [Large-scale expert parallelism](https://lmsys.org/blog/2025-05-05-large-scale-ep/).
+
+## Roadmap
+[Development Roadmap (2025 H2)](https://github.com/sgl-project/sglang/issues/7736)
+
+## Adoption and Sponsorship
+SGLang has been deployed at large scale, generating trillions of tokens in production each day. It is trusted and adopted by a wide range of leading enterprises and institutions, including xAI, AMD, NVIDIA, Intel, LinkedIn, Cursor, Oracle Cloud, Google Cloud, Microsoft Azure, AWS, Atlas Cloud, Voltage Park, Nebius, DataCrunch, Novita, InnoMatrix, MIT, UCLA, the University of Washington, Stanford, UC Berkeley, Tsinghua University, Jam & Tea Studios, Baseten, and other major technology organizations across North America and Asia. As an open-source LLM inference engine, SGLang has become the de facto industry standard, with deployments running on over 1,000,000 GPUs worldwide.
+
+<img src=""https://raw.githubusercontent.com/sgl-project/sgl-learning-materials/refs/heads/main/slides/adoption.png"" alt=""logo"" width=""800"" margin=""10px""></img>
+
+## Contact Us
+For enterprises interested in adopting or deploying SGLang at scale, including technical consulting, sponsorship opportunities, or partnership inquiries, please contact us at contact@sglang.ai.
+
+## Acknowledgment
+We learned the design and reused code from the following projects: [Guidance](https://github.com/guidance-ai/guidance), [vLLM](https://github.com/vllm-project/vllm), [LightLLM](https://github.com/ModelTC/lightllm), [FlashInfer](https://github.com/flashinfer-ai/flashinfer), [Outlines](https://github.com/outlines-dev/outlines), and [LMQL](https://github.com/eth-sri/lmql).
+","1. repository_intent: SGLang is a fast serving framework for large language models and vision language models.
+
+2. technical_focus: It features a fast backend runtime with advanced techniques like RadixAttention, zero-overhead CPU scheduling, and various parallelism methods.
+
+3. primary_use_cases: The repository supports efficient serving and interaction with generative models, embedding models, and reward models.
+
+4. system_design: It implements a co-designed backend runtime and frontend language for enhanced model interaction.
+
+5. key_technical_terms: RadixAttention, zero-overhead CPU scheduler, prefill-decode disaggregation, tensor parallelism, expert parallelism, structured outputs, quantization.",SGLang is a fast serving framework for large language models and vision language models.,"It features a fast backend runtime with advanced techniques like RadixAttention, zero-overhead CPU scheduling, and various parallelism methods.","The repository supports efficient serving and interaction with generative models, embedding models, and reward models.",It implements a co-designed backend runtime and frontend language for enhanced model interaction.,"RadixAttention, zero-overhead CPU scheduler, prefill-decode disaggregation, tensor parallelism, expert parallelism, structured outputs, quantization."
+lmdeploy_min_infer.py,interview-questions/llm-interview/inference/examples/lmdeploy_min_infer.py,ac30f136b14b3aea2d770ca863df7f6b8234099c,gongfan1213/framework,https://api.github.com/repositories/1032916786/contents/interview-questions/llm-interview/inference/examples/lmdeploy_min_infer.py?ref=153e04b646eef5089a67aa0f83ffc8d7f1812d53,https://api.github.com/repositories/1032916786/git/blobs/ac30f136b14b3aea2d770ca863df7f6b8234099c,https://github.com/gongfan1213/framework,Ai应用开发|langgraph|langchain|crewAI|python后端｜推理｜量化｜多模态｜强化学习｜面试题｜常用API,,0,0,0,7,2025-08-26T09:32:51Z,3,1,,"1. repository_intent: Ai应用开发 using LLM serving framework.
+
+2. technical_focus: lmdeploy framework for LLM serving.
+
+3. primary_use_cases: Applications in inference, quantification, multimodal tasks, and reinforcement learning.
+
+4. system_design: Python backend architecture.
+
+5. key_technical_terms: Ai应用开发, langgraph, langchain, crewAI, 推理, 量化, 多模态, 强化学习, 常用API.",Ai应用开发 using LLM serving framework.,lmdeploy framework for LLM serving.,"Applications in inference, quantification, multimodal tasks, and reinforcement learning.",Python backend architecture.,"Ai应用开发, langgraph, langchain, crewAI, 推理, 量化, 多模态, 强化学习, 常用API."
+__init__.py,swift/llm/infer/infer_engine/__init__.py,99415ac405d2a4bf92d5acf6bf27d916392dec12,modelscope/ms-swift,https://api.github.com/repositories/673412924/contents/swift/llm/infer/infer_engine/__init__.py?ref=4bd00499722898f3c8c2cfc0ebbf64da462b1e83,https://api.github.com/repositories/673412924/git/blobs/99415ac405d2a4bf92d5acf6bf27d916392dec12,https://github.com/modelscope/ms-swift,"Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.5, DeepSeek-R1, GLM4.5, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Llava, Phi4, ...) (AAAI 2025).","llm, lora, llama, sft, multimodal, peft, internvl, liger, deepseek-r1, embedding, grpo, open-r1, megatron, llama4, qwen3, reranker, qwen3-next, moe, qwen3-vl, qwen3-omni",836,3745,2954,3045,2026-03-05T10:37:49Z,12927,1232,"# SWIFT (Scalable lightWeight Infrastructure for Fine-Tuning)
+
+<p align=""center"">
+    <br>
+    <img src=""asset/banner.png""/>
+    <br>
+<p>
+<p align=""center"">
+<a href=""https://modelscope.cn/home"">ModelScope Community Website</a>
+<br>
+        <a href=""README_CN.md"">中文</a> &nbsp ｜ &nbsp English &nbsp
+</p>
+
+<p align=""center"">
+<img src=""https://img.shields.io/badge/python-3.11-5be.svg"">
+<img src=""https://img.shields.io/badge/pytorch-%E2%89%A52.0-orange.svg"">
+<a href=""https://github.com/modelscope/modelscope/""><img src=""https://img.shields.io/badge/modelscope-%E2%89%A51.23-5D91D4.svg""></a>
+<a href=""https://pypi.org/project/ms-swift/""><img src=""https://badge.fury.io/py/ms-swift.svg""></a>
+<a href=""https://github.com/modelscope/ms-swift/blob/main/LICENSE""><img src=""https://img.shields.io/github/license/modelscope/ms-swift""></a>
+<a href=""https://pepy.tech/project/ms-swift""><img src=""https://pepy.tech/badge/ms-swift""></a>
+<a href=""https://github.com/modelscope/ms-swift/pulls""><img src=""https://img.shields.io/badge/PR-welcome-55EB99.svg""></a>
+</p>
+
+<p align=""center"">
+<a href=""https://trendshift.io/repositories/6427"" target=""_blank""><img src=""https://trendshift.io/api/badge/repositories/6427"" alt=""modelscope%2Fswift | Trendshift"" style=""width: 250px; height: 55px;"" width=""250"" height=""55""/></a>
+</p>
+
+<p align=""center"">
+        <a href=""https://arxiv.org/abs/2408.05517"">Paper</a> &nbsp ｜ <a href=""https://swift.readthedocs.io/en/latest/"">English Documentation</a> &nbsp ｜ &nbsp <a href=""https://swift.readthedocs.io/zh-cn/latest/"">中文文档</a> &nbsp
+</p>
+
+## 📖 Table of Contents
+- [Groups](#-Groups)
+- [Introduction](#-introduction)
+- [News](#-news)
+- [Installation](#%EF%B8%8F-installation)
+- [Quick Start](#-quick-Start)
+- [Usage](#-Usage)
+- [License](#-License)
+- [Citation](#-citation)
+
+
+## ☎ Groups
+
+You can contact us and communicate with us by adding our group:
+
+
+[Discord Group](https://discord.com/invite/D27yfEFVz5)              |  WeChat Group
+:-------------------------:|:-------------------------:
+<img src=""asset/discord_qr.jpg"" width=""200"" height=""200"">  |  <img src=""asset/wechat.png"" width=""200"" height=""200"">
+
+
+## 📝 Introduction
+🍲 **ms-swift** is a large model and multimodal large model fine-tuning and deployment framework provided by the ModelScope community. It now supports training (pre-training, fine-tuning, human alignment), inference, evaluation, quantization, and deployment for 600+ text-only large models and 400+ multimodal large models. Large models include: Qwen3, Qwen3.5, InternLM3, GLM4.5, Mistral, DeepSeek-R1, Llama4, etc. Multimodal large models include: Qwen3-VL, Qwen3-Omni, Llava, InternVL3.5, MiniCPM-V-4, Ovis2.5, GLM4.5-V, DeepSeek-VL2, etc.
+
+🍔 In addition, ms-swift integrates the latest training technologies, including Megatron parallelism techniques such as TP, PP, CP, EP to accelerate training, as well as numerous GRPO algorithm family reinforcement learning algorithms including: GRPO, DAPO, GSPO, SAPO, CISPO, RLOO, Reinforce++, etc. to enhance model intelligence. ms-swift supports a wide range of training tasks, including preference learning algorithms such as DPO, KTO, RM, CPO, SimPO, ORPO, as well as Embedding, Reranker, and sequence classification tasks. ms-swift provides full-pipeline support for large model training, including acceleration for inference, evaluation, and deployment modules using vLLM, SGLang, and LMDeploy, as well as model quantization using GPTQ, AWQ, BNB, and FP8 technologies.
+
+**Why Choose ms-swift?**
+
+- 🍎 **Model Types**: Supports **600+ text-only large models**, **400+ multimodal large models**, and All-to-All full modality models from training to deployment full pipeline, with Day-0 support for popular models.
+- **Dataset Types**: Built-in 150+ datasets for pre-training, fine-tuning, human alignment, multimodal and various other tasks, with support for custom datasets. Users only need to prepare datasets for one-click training.
+- **Hardware Support**: Supports A10/A100/H100, RTX series, T4/V100, CPU, MPS, and domestic hardware Ascend NPU, etc.
+- **Lightweight Training**: Supports lightweight fine-tuning methods such as LoRA, QLoRA, DoRA, LoRA+, LLaMAPro, LongLoRA, LoRA-GA, ReFT, RS-LoRA, Adapter, LISA, etc.
+- **Quantized Training**: Supports training on BNB, AWQ, GPTQ, AQLM, HQQ, EETQ quantized models, requiring only 9GB training resources for 7B models.
+- **Memory Optimization**: GaLore, Q-Galore, UnSloth, Liger-Kernel, Flash-Attention 2/3, and **Ulysses and Ring-Attention sequence parallelism techniques** support, reducing memory consumption for long-text training.
+- **Distributed Training**: Supports distributed data parallelism (DDP), device_map simple model parallelism, DeepSpeed ZeRO2 ZeRO3, FSDP/FSDP2, and Megatron distributed training technologies.
+- 🍓 **Multimodal Training**: Supports multimodal packing technology to improve training speed by 100%+, supports mixed modality data training with text, images, video and audio, and supports independent control of vit/aligner/llm.
+- **Agent Training**: Supports Agent templates, allowing one dataset to be used for training different models.
+- 🍊 **Training Tasks**: Supports pre-training and instruction fine-tuning, as well as training tasks such as DPO, GKD, KTO, RM, CPO, SimPO, ORPO, and supports **Embedding/Reranker** and sequence classification tasks.
+- 🥥 **Megatron Parallelism**: Provides TP/PP/SP/CP/ETP/EP/VPP parallel strategies to significantly boost **MoE model training speed**. Supports full-parameter and LoRA training methods for 300+ pure text large models and 100+ multimodal large models. Supports CPT/SFT/GRPO/DPO/KTO/RM training tasks.
+- 🍉 **Reinforcement Learning**: Built-in **rich GRPO family algorithms**, including GRPO, DAPO, GSPO, SAPO, CISPO, CHORD, RLOO, Reinforce++, etc. Supports synchronous and asynchronous vLLM engine inference acceleration, with extensible reward functions, multi-turn inference Schedulers, and environments through plugins.
+- **Full-Pipeline Capabilities**: Covers the entire workflow of training, inference, evaluation, quantization, and deployment.
+- **UI Training**: Provides Web-UI interface for training, inference, evaluation, and quantization, completing the full pipeline for large models.
+- **Inference Acceleration**: Supports Transformers, vLLM, SGLang, and LmDeploy inference acceleration engines, providing OpenAI interfaces for accelerating inference, deployment, and evaluation modules.
+- **Model Evaluation**: Uses EvalScope as the evaluation backend, supporting 100+ evaluation datasets for evaluating text-only and multimodal models.
+- **Model Quantization**: Supports quantization export for AWQ, GPTQ, FP8, and BNB. Exported models support inference acceleration using vLLM/SGLang/LmDeploy.
+
+
+## 🎉 News
+- 🎁 2026.03.03: **ms-swift v4.0** major version is officially released. For release notes, please refer to [here](https://github.com/modelscope/ms-swift/releases/tag/v4.0.0). You can provide your suggestions to us in [this issue](https://github.com/modelscope/ms-swift/issues/7250). Thank you for your support.
+- 🎁 2025.11.14: Megatron GRPO is now available!  Check out the [docs](./docs/source_en/Megatron-SWIFT/GRPO.md) and [examples](examples/megatron/grpo).
+- 🎁 2025.11.04: Support for [Mcore-Bridge](docs/source_en/Megatron-SWIFT/Mcore-Bridge.md), making Megatron training as simple and easy to use as transformers.
+- 🎁 2025.10.28: Ray [here](docs/source_en/Instruction/Ray.md).
+- 🎁 2025.09.07: Added support for CHORD training algorithm. See the [documentation](./docs/source_en/Instruction/GRPO/AdvancedResearch/CHORD.md).
+- 🎁 2025.09.06: Ulysses can now be used with ring-attention, allowing sequences to be sharded into any number of chunks (no longer limited by the number of heads). The argument remains `--sequence_parallel_size N`.
+- 🎁 2025.09.02: Megatron-SWIFT now supports multimodal model training. Documentation can be found [here](./docs/source_en/Megatron-SWIFT/Multimodal-Model.md).
+- 🎁 2025.08.12: Support [Dynamic Fine-Tuning](https://arxiv.org/abs/2508.05629)(DFT) in SFT training, use parameter `--enable_dft_loss true`. Training scripts can be found [here](https://github.com/modelscope/ms-swift/blob/main/examples/train/full/dft.sh).
+- 🎁 2025.07.09: Megatron-SWIFT supports LoRA training. Compared to ms-swift, it achieves significant speedup on MoE models. Training scripts can be found [here](https://github.com/modelscope/ms-swift/blob/main/examples/megatron/lora).
+- 🎁 2025.06.23: Fine-tuning of reranker models is supported. Training scripts can be found here: [Reranker](https://github.com/modelscope/ms-swift/blob/main/examples/train/reranker/train_reranker.sh).
+- 🎁 2025.06.15: Support for GKD training on both pure text large models and multimodal models. Training scripts can be found here: [Pure Text](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/gkd), [Multimodal](https://github.com/modelscope/ms-swift/blob/main/examples/train/multimodal/rlhf/gkd).
+
+<details><summary>More</summary>
+
+- 🎁 2025.06.11: Support for using Megatron parallelism techniques for RLHF training. The training script can be found [here](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf).
+- 🎁 2025.05.29: Support sequence parallel in pretrain, sft, dpo and grpo, check script [here](https://github.com/modelscope/ms-swift/tree/main/examples/train/sequence_parallel).
+- 🎁 2025.05.11: GRPO now supports custom processing logic for reward models. See the GenRM example [here](./docs/source_en/Instruction/GRPO/DeveloperGuide/reward_model.md).
+- 🎁 2025.04.15: The ms-swift paper has been accepted by AAAI 2025. You can find the paper at [this link](https://ojs.aaai.org/index.php/AAAI/article/view/35383).
+- 🎁 2025.03.23: Multi-round GRPO is now supported for training multi-turn dialogue scenarios (e.g., agent tool calling). Please refer to the [doc](./docs/source_en/Instruction/GRPO/DeveloperGuide/multi_turn.md).
+- 🎁 2025.03.16: Support for Megatron's parallel training techniques is now available. Please see the [Megatron-SWIFT training documentation](https://swift.readthedocs.io/en/latest/Megatron-SWIFT/Quick-start.html).
+- 🎁 2025.03.15: Fine-tuning of embedding models for both pure text and multimodal models is supported. Please check the [training script](examples/train/embedding).
+- 🎁 2025.03.05: The hybrid mode for GRPO is supported, with a script for training a 72B model on 4 GPUs (4*80G) available [here](examples/train/grpo/internal/vllm_72b_4gpu.sh). Tensor parallelism with vllm is also supported, with the training script available [here](examples/train/grpo/internal).
+- 🎁 2025.02.21: The GRPO algorithm now supports LMDeploy, with the training script available [here](examples/train/grpo/internal/full_lmdeploy.sh). Additionally, the performance of the GRPO algorithm has been tested, achieving a training speed increase of up to 300% using various tricks. Please check the WanDB table [here](https://wandb.ai/tastelikefeet/grpo_perf_test?nw=nwuseryuzezyz).
+- 🎁 2025.02.21: The `swift sample` command is now supported. The reinforcement fine-tuning script can be found [here](docs/source_en/Instruction/Reinforced-Fine-tuning.md), and the large model API distillation sampling script is available [here](examples/sampler/distill/distill.sh).
+- 🔥 2025.02.12: Support for the GRPO (Group Relative Policy Optimization) training algorithm has been added. Documentation is available [here](docs/source_en/Instruction/GRPO/GetStarted/GRPO.md).
+- 🎁 2024.12.04: Major update to **ms-swift 3.0**. Please refer to the [release notes and changes](docs/source_en/Instruction/ReleaseNote3.0.md).
+
+- 🎉 2024.08.12: The ms-swift paper has been published on arXiv and can be read [here](https://arxiv.org/abs/2408.05517).
+- 🔥 2024.08.05: Support for using [evalscope](https://github.com/modelscope/evalscope/) as a backend for evaluating large models and multimodal models.
+- 🔥 2024.07.29: Support for using [vllm](https://github.com/vllm-project/vllm) and [lmdeploy](https://github.com/InternLM/lmdeploy) to accelerate inference for large models and multimodal models. When performing infer/deploy/eval, you can specify `--infer_backend vllm/lmdeploy`.
+- 🔥 2024.07.24: Support for human preference alignment training for multimodal large models, including DPO/ORPO/SimPO/CPO/KTO/RM/PPO.
+- 🔥 2024.02.01: Support for Agent training! The training algorithm is derived from [this paper](https://arxiv.org/pdf/2309.00986.pdf).
+</details>
+
+## 🛠️ Installation
+To install using pip:
+```shell
+pip install ms-swift -U
+```
+
+To install from source:
+```shell
+# pip install git+https://github.com/modelscope/ms-swift.git
+
+git clone https://github.com/modelscope/ms-swift.git
+cd ms-swift
+# The main branch is for swift 4.x. To install swift 3.x, please run the following command:
+# git checkout release/3.12
+pip install -e .
+```
+
+Running Environment:
+
+|              | Range        | Recommended         | Notes                                     |
+|--------------|--------------|---------------------|-------------------------------------------|
+| python       | >=3.9        | 3.10/3.11                |                                           |
+| cuda         |              | cuda12              | No need to install if using CPU, NPU, MPS |
+| torch        | >=2.0        | 2.8.0/2.9.1         |   torch2.9 [conv3d slow](https://swift.readthedocs.io/en/latest/BestPractices/Qwen3-VL-Best-Practice.html#environment-setup)       |
+| transformers | >=4.33       | 4.57.6/5.2.0              |                          |
+| modelscope   | >=1.23       |                     |                                           |
+| peft         | >=0.11,<0.19 |                     |                                           |
+| flash_attn   |              | 2.8.3/3.0.0b1 |                                           |
+| trl          | >=0.15,<0.29 | 0.28.0              | RLHF                                      |
+| deepspeed    | >=0.14       | 0.18.6              | Training                                  |
+| vllm         | >=0.5.1      | 0.11.0/0.15.1       | Inference/Deployment                      |
+| sglang       | >=0.4.6      |          | Inference/Deployment                      |
+| lmdeploy     | >=0.5   | 0.10.1                 | Inference/Deployment                      |
+| evalscope    | >=1.0       |                     | Evaluation                                |
+| gradio       |              | 5.32.1              | Web-UI/App                                |
+
+For more optional dependencies, you can refer to [here](https://github.com/modelscope/ms-swift/blob/main/requirements/install_all.sh).
+
+
+## 🚀 Quick Start
+
+10 minutes of self-cognition fine-tuning of Qwen3-4B-Instruct-2507 on a single 3090 GPU:
+
+### Command Line Interface (Recommended)
+
+```shell
+# 13GB
+CUDA_VISIBLE_DEVICES=0 \
+swift sft \
+    --model Qwen/Qwen3-4B-Instruct-2507 \
+    --tuner_type lora \
+    --dataset 'AI-ModelScope/alpaca-gpt4-data-zh#500' \
+              'AI-ModelScope/alpaca-gpt4-data-en#500' \
+              'swift/self-cognition#500' \
+    --torch_dtype bfloat16 \
+    --num_train_epochs 1 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --learning_rate 1e-4 \
+    --lora_rank 8 \
+    --lora_alpha 32 \
+    --target_modules all-linear \
+    --gradient_accumulation_steps 16 \
+    --eval_steps 50 \
+    --save_steps 50 \
+    --save_total_limit 2 \
+    --logging_steps 5 \
+    --max_length 2048 \
+    --output_dir output \
+    --warmup_ratio 0.05 \
+    --dataloader_num_workers 4 \
+    --model_author swift \
+    --model_name swift-robot
+```
+
+Tips:
+
+- If you want to train with a custom dataset, you can refer to [this guide](https://swift.readthedocs.io/en/latest/Customization/Custom-dataset.html) to organize your dataset format and specify `--dataset <dataset_path>`.
+- The `--model_author` and `--model_name` parameters are only effective when the dataset includes `swift/self-cognition`.
+- To train with a different model, simply modify `--model <model_id/model_path>`.
+- By default, **ModelScope** is used for downloading models and datasets. If you want to use HuggingFace, simply specify `--use_hf true`.
+
+After training is complete, use the following command to infer with the trained weights:
+
+- Here, `--adapters` should be replaced with the last checkpoint folder generated during training. Since the adapters folder contains the training parameter file `args.json`, there is no need to specify `--model`, `--system` separately; Swift will automatically read these parameters. To disable this behavior, you can set `--load_args false`.
+
+```shell
+# Using an interactive command line for inference.
+CUDA_VISIBLE_DEVICES=0 \
+swift infer \
+    --adapters output/vx-xxx/checkpoint-xxx \
+    --stream true \
+    --temperature 0 \
+    --max_new_tokens 2048
+
+# merge-lora and use vLLM for inference acceleration
+CUDA_VISIBLE_DEVICES=0 \
+swift infer \
+    --adapters output/vx-xxx/checkpoint-xxx \
+    --stream true \
+    --merge_lora true \
+    --infer_backend vllm \
+    --vllm_max_model_len 8192 \
+    --temperature 0 \
+    --max_new_tokens 2048
+```
+
+Finally, use the following command to push the model to ModelScope:
+
+```shell
+CUDA_VISIBLE_DEVICES=0 \
+swift export \
+    --adapters output/vx-xxx/checkpoint-xxx \
+    --push_to_hub true \
+    --hub_model_id '<your-model-id>' \
+    --hub_token '<your-sdk-token>' \
+    --use_hf false
+```
+
+
+### Web-UI
+The Web-UI is a **zero-threshold** training and deployment interface solution based on Gradio interface technology. For more details, you can check [here](https://swift.readthedocs.io/en/latest/GetStarted/Web-UI.html).
+
+```shell
+SWIFT_UI_LANG=en swift web-ui
+```
+
+![image.png](./docs/resources/web-ui-en.jpg)
+
+### Using Python
+
+ms-swift also supports training and inference using Python. Below is pseudocode for training and inference. For more details, you can refer to [here](https://github.com/modelscope/ms-swift/blob/main/examples/notebook/qwen2_5-self-cognition/self-cognition-sft.ipynb).
+
+Training:
+
+```python
+from peft import LoraConfig, get_peft_model
+from swift import get_model_processor, get_template, load_dataset, EncodePreprocessor
+from swift.trainers import Seq2SeqTrainer, Seq2SeqTrainingArguments
+# Retrieve the model and template, and add a trainable LoRA module
+model, tokenizer = get_model_processor(model_id_or_path, ...)
+template = get_template(tokenizer, ...)
+lora_config = LoraConfig(...)
+model = get_peft_model(model, lora_config)
+
+# Download and load the dataset, and encode the text into tokens
+train_dataset, val_dataset = load_dataset(dataset_id_or_path, ...)
+train_dataset = EncodePreprocessor(template=template)(train_dataset, num_proc=num_proc)
+val_dataset = EncodePreprocessor(template=template)(val_dataset, num_proc=num_proc)
+
+# Train the model
+training_args = Seq2SeqTrainingArguments(...)
+trainer = Seq2SeqTrainer(
+    model=model,
+    args=training_args,
+    template=template,
+    train_dataset=train_dataset,
+    eval_dataset=val_dataset,
+)
+trainer.train()
+```
+Inference:
+
+```python
+from swift import TransformersEngine, InferRequest, RequestConfig
+# Perform inference using the native Transformers engine
+engine = TransformersEngine(model_id_or_path, adapters=[lora_checkpoint])
+infer_request = InferRequest(messages=[{'role': 'user', 'content': 'who are you?'}])
+request_config = RequestConfig(max_tokens=max_new_tokens, temperature=temperature)
+
+resp_list = engine.infer([infer_request], request_config)
+print(f'response: {resp_list[0].choices[0].message.content}')
+```
+
+## ✨ Usage
+Here is a minimal example of training to deployment using ms-swift. For more details, you can check the [examples](https://github.com/modelscope/ms-swift/tree/main/examples).
+
+- If you want to use other models or datasets (including multimodal models and datasets), you only need to modify `--model` to specify the corresponding model's ID or path, and modify `--dataset` to specify the corresponding dataset's ID or path.
+- By default, ModelScope is used for downloading models and datasets. If you want to use HuggingFace, simply specify `--use_hf true`.
+
+|   Useful Links |
+| ------ |
+|   [🔥Command Line Parameters](https://swift.readthedocs.io/en/latest/Instruction/Command-line-parameters.html)   |
+|   [Megatron-SWIFT](https://swift.readthedocs.io/en/latest/Megatron-SWIFT/Quick-start.html)   |
+|   [GRPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/GetStarted/GRPO.html)   |
+|   [Supported Models and Datasets](https://swift.readthedocs.io/en/latest/Instruction/Supported-models-and-datasets.html)   |
+|   [Custom Models](https://swift.readthedocs.io/en/latest/Customization/Custom-model.html), [🔥Custom Datasets](https://swift.readthedocs.io/en/latest/Customization/Custom-dataset.html)   |
+|   [LLM Tutorial](https://github.com/modelscope/modelscope-classroom/tree/main/LLM-tutorial)   |
+
+### Training
+
+Supported Training Methods:
+
+| Method                                                       | Full-Parameter                                               | LoRA | QLoRA                                                        | Deepspeed                                                    | Multi-Machine                                                | Multimodal                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Pre-training](https://github.com/modelscope/ms-swift/blob/main/examples/train/pretrain) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [Supervised Fine-Tuning](https://github.com/modelscope/ms-swift/blob/main/examples/train/lora_sft.sh) | [✅](https://github.com/modelscope/ms-swift/blob/main/examples/train/full/train.sh) | ✅    | [✅](https://github.com/modelscope/ms-swift/tree/main/examples/train/qlora) | [✅](https://github.com/modelscope/ms-swift/tree/main/examples/train/multi-gpu/deepspeed) | [✅](https://github.com/modelscope/ms-swift/tree/main/examples/train/multi-node) | [✅](https://github.com/modelscope/ms-swift/tree/main/examples/train/multimodal) |
+| [GRPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/grpo) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [GKD](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/gkd) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | [✅](https://github.com/modelscope/ms-swift/blob/main/examples/train/multimodal/rlhf/gkd) |
+| [PPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/ppo) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ❌                                                            |
+| [DPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/dpo) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | [✅](https://github.com/modelscope/ms-swift/blob/main/examples/train/multimodal/rlhf/dpo) |
+| [KTO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/kto.sh) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | [✅](https://github.com/modelscope/ms-swift/blob/main/examples/train/multimodal/rlhf/kto.sh) |
+| [Reward Model](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/rm.sh) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [CPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/cpo.sh) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [SimPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/simpo.sh) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [ORPO](https://github.com/modelscope/ms-swift/blob/main/examples/train/rlhf/orpo.sh) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [Embedding](https://github.com/modelscope/ms-swift/blob/main/examples/train/embedding) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [Reranker](https://github.com/modelscope/ms-swift/tree/main/examples/train/reranker) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+| [Sequence Classification](https://github.com/modelscope/ms-swift/blob/main/examples/train/seq_cls) | ✅                                                            | ✅    | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            |
+
+
+Pre-training:
+```shell
+# 8*A100
+NPROC_PER_NODE=8 \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+swift pt \
+    --model Qwen/Qwen2.5-7B \
+    --dataset swift/chinese-c4 \
+    --streaming true \
+    --tuner_type full \
+    --deepspeed zero2 \
+    --output_dir output \
+    --max_steps 10000 \
+    ...
+```
+
+Fine-tuning:
+```shell
+CUDA_VISIBLE_DEVICES=0 swift sft \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --dataset AI-ModelScope/alpaca-gpt4-data-en \
+    --tuner_type lora \
+    --output_dir output \
+    ...
+```
+
+RLHF:
+```shell
+CUDA_VISIBLE_DEVICES=0 swift rlhf \
+    --rlhf_type dpo \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --dataset hjh0119/shareAI-Llama3-DPO-zh-en-emoji \
+    --tuner_type lora \
+    --output_dir output \
+    ...
+```
+
+
+### Megatron-SWIFT
+
+ms-swift supports using Megatron parallelism techniques to accelerate training, including large-scale cluster training and MoE model training. The following training methods are supported:
+
+| Method                 | Full-Parameter | LoRA | MoE  | Multimodal | FP8  |
+| ---------------------- | -------------- | ---- | ---- | ---------- | ---- |
+| Pre-training           | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [Supervised Fine-Tuning](https://github.com/modelscope/ms-swift/tree/main/examples/megatron) | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [GRPO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/grpo)                   | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [DPO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/dpo)                    | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [KTO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/kto)                    | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [RM](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/rm)                     | ✅              | ✅    | ✅    | ✅          | ✅    |
+| [Embedding](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/embedding) | ✅ | ✅| ✅ | ✅ | ✅ |
+| [Reranker](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/reranker) | ✅ | ✅| ✅ | ✅ | ✅ |
+| [Sequence Classification](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/seq_cls)    | ✅              | ✅    | ✅    | ✅          | ✅    |
+
+
+```shell
+NPROC_PER_NODE=2 CUDA_VISIBLE_DEVICES=0,1 megatron sft \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --save_safetensors true \
+    --dataset AI-ModelScope/alpaca-gpt4-data-zh \
+    --tuner_type lora \
+    --output_dir output \
+    ...
+```
+
+### Reinforcement Learning
+
+ms-swift supports a rich set of GRPO family algorithms:
+
+| Method                                                       | Full-Parameter | LoRA | Multimodal | Multi-Machine |
+| ------------------------------------------------------------ | -------------- | ---- | ---------- | ------------- |
+| [GRPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/GetStarted/GRPO.html) | ✅              | ✅    | ✅          | ✅             |
+| [DAPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/DAPO.html) | ✅              | ✅    | ✅          | ✅             |
+| [GSPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/GSPO.html) | ✅              | ✅    | ✅          | ✅             |
+| [SAPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/SAPO.html) | ✅              | ✅    | ✅          | ✅             |
+| [CISPO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/CISPO.html) | ✅              | ✅    | ✅          | ✅             |
+| [CHORD](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/CHORD.html) | ✅              | ✅    | ✅          | ✅             |
+| [RLOO](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/RLOO.html) | ✅              | ✅    | ✅          | ✅             |
+| [Reinforce++](https://swift.readthedocs.io/en/latest/Instruction/GRPO/AdvancedResearch/REINFORCEPP.html) | ✅              | ✅    | ✅          | ✅             |
+
+```shell
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift rlhf \
+    --rlhf_type grpo \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --tuner_type lora \
+    --use_vllm true \
+    --vllm_mode colocate \
+    --dataset AI-MO/NuminaMath-TIR#10000 \
+    --output_dir output \
+    ...
+```
+
+
+### Inference
+```shell
+CUDA_VISIBLE_DEVICES=0 swift infer \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --stream true \
+    --infer_backend transformers \
+    --max_new_tokens 2048
+
+# LoRA
+CUDA_VISIBLE_DEVICES=0 swift infer \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --adapters swift/test_lora \
+    --stream true \
+    --infer_backend transformers \
+    --temperature 0 \
+    --max_new_tokens 2048
+```
+
+### Interface Inference
+```shell
+CUDA_VISIBLE_DEVICES=0 swift app \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --stream true \
+    --infer_backend transformers \
+    --max_new_tokens 2048
+```
+
+### Deployment
+```shell
+CUDA_VISIBLE_DEVICES=0 swift deploy \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --infer_backend vllm
+```
+
+### Sampling
+```shell
+CUDA_VISIBLE_DEVICES=0 swift sample \
+    --model LLM-Research/Meta-Llama-3.1-8B-Instruct \
+    --sampler_engine transformers \
+    --num_return_sequences 5 \
+    --dataset AI-ModelScope/alpaca-gpt4-data-zh#5
+```
+
+### Evaluation
+```shell
+CUDA_VISIBLE_DEVICES=0 swift eval \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --infer_backend lmdeploy \
+    --eval_backend OpenCompass \
+    --eval_dataset ARC_c
+```
+
+### Quantization
+```shell
+CUDA_VISIBLE_DEVICES=0 swift export \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --quant_bits 4 --quant_method awq \
+    --dataset AI-ModelScope/alpaca-gpt4-data-zh \
+    --output_dir Qwen2.5-7B-Instruct-AWQ
+```
+
+### Push Model
+```shell
+swift export \
+    --model <model-path> \
+    --push_to_hub true \
+    --hub_model_id '<model-id>' \
+    --hub_token '<sdk-token>'
+```
+
+## 🏛 License
+
+This framework is licensed under the [Apache License (Version 2.0)](https://github.com/modelscope/modelscope/blob/master/LICENSE). For models and datasets, please refer to the original resource page and follow the corresponding License.
+
+## 📎 Citation
+
+```bibtex
+@misc{zhao2024swiftascalablelightweightinfrastructure,
+      title={SWIFT:A Scalable lightWeight Infrastructure for Fine-Tuning},
+      author={Yuze Zhao and Jintao Huang and Jinghan Hu and Xingjun Wang and Yunlin Mao and Daoze Zhang and Zeyinzi Jiang and Zhikai Wu and Baole Ai and Ang Wang and Wenmeng Zhou and Yingda Chen},
+      year={2024},
+      eprint={2408.05517},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2408.05517},
+}
+```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=modelscope/swift&type=Date)](https://star-history.com/#modelscope/ms-swift&Date)
+","1. repository_intent: A framework for fine-tuning and deploying large language models and multimodal models.
+
+2. technical_focus: Implements training, inference, evaluation, quantization, and deployment for over 600 text-only and 400 multimodal large models.
+
+3. primary_use_cases: Supports tasks such as pre-training, fine-tuning, human alignment, and reinforcement learning for various large models.
+
+4. system_design: A scalable and lightweight infrastructure that integrates advanced training technologies and parallelism techniques.
+
+5. key_technical_terms: LLM, multimodal, fine-tuning, GRPO, LoRA, Megatron, reinforcement learning, quantization, inference, deployment.",A framework for fine-tuning and deploying large language models and multimodal models.,"Implements training, inference, evaluation, quantization, and deployment for over 600 text-only and 400 multimodal large models.","Supports tasks such as pre-training, fine-tuning, human alignment, and reinforcement learning for various large models.",A scalable and lightweight infrastructure that integrates advanced training technologies and parallelism techniques.,"LLM, multimodal, fine-tuning, GRPO, LoRA, Megatron, reinforcement learning, quantization, inference, deployment."
+trt.py,inference-optim-LLM/inference_optim_llm/engines/trt.py,bfe0669d5a75b1eba094bb9c77584d864a0d3f3f,Quentin-aq/ai-build,https://api.github.com/repositories/902263598/contents/inference-optim-LLM/inference_optim_llm/engines/trt.py?ref=98419d1e0a8f818962058937d99603bd2ba242f3,https://api.github.com/repositories/902263598/git/blobs/bfe0669d5a75b1eba094bb9c77584d864a0d3f3f,https://github.com/Quentin-aq/ai-build,Projets IA ,,0,0,2,215,2025-08-05T09:06:14Z,60,33,,"1. repository_intent: Projets IA.
+
+2. technical_focus: The repository uses tensorrt_llm, an LLM serving framework.
+
+3. primary_use_cases: 
+
+4. system_design: 
+
+5. key_technical_terms: tensorrt_llm, LLM, serving framework.",Projets IA.,"The repository uses tensorrt_llm, an LLM serving framework.",,,"tensorrt_llm, LLM, serving framework."
+transcriber_tensorrt.py,services/WhisperLive/whisper_live/transcriber_tensorrt.py,8742e69ed33828ec194911bbad337090d92e71b5,shaike1/vexa,https://api.github.com/repositories/1017602013/contents/services/WhisperLive/whisper_live/transcriber_tensorrt.py?ref=5bda1ed55fc2e5c75934f4ed79e40d2152593006,https://api.github.com/repositories/1017602013/git/blobs/8742e69ed33828ec194911bbad337090d92e71b5,https://github.com/shaike1/vexa,,,0,0,0,178,2025-08-05T04:55:52Z,0,0,"<p align=""left"">
+  <img src=""assets/logodark.svg"" alt=""Vexa Logo"" width=""40""/>
+</p>
+
+  [![Run Locally](https://img.shields.io/badge/Docker-Run_Locally-2496ED?style=flat-square&logo=docker&logoColor=white)](DEPLOYMENT.md) [![Self Hosted](https://img.shields.io/badge/Server-Self_Hosted-2EA44F?style=flat-square&logo=serverless&logoColor=white)](DEPLOYMENT.md)
+
+# Vexa: API for **Real-Time Meeting Transcription**
+
+
+<p align=""center"">
+  <b>🚀 Help us reach 1000 stars! 🚀</b><br>
+  <b>Current: <img src=""https://img.shields.io/github/stars/Vexa-ai/vexa?style=social"" /> → Goal: 1000 ⭐️</b><br>
+  <a href=""https://github.com/Vexa-ai/vexa/stargazers"">
+
+  </a>
+</p>
+
+
+
+💬 [Join Discord Community!](https://discord.gg/Ga9duGkVz9)
+
+Vexa is an API for **real-time meeting transcription** using **meeting bots** and direct **streaming from web/mobile apps**. It extracts knowledge from various platforms including:
+
+- **Google Meet**
+- **Microsoft Teams**
+- **Zoom** (coming soon)
+
+It serves as an **privacy-first**, **open source** alternative to `recall.ai`.
+
+It focuses on doing one job well: **clean, private, real-time transcription under your control so you can safely build on top**.
+
+
+
+
+## Build on Top. In Hours, Not Months
+
+
+
+**Build powerful meeting assistants (like Otter.ai, Fireflies.ai, Fathom) for your startup, internal use, or custom integrations.**
+
+The Vexa API provides powerful abstractions and a clear separation of concerns, enabling you to build sophisticated applications on top with a safe and enjoyable coding experience. 
+
+For instance, the **Vexa Example Client** (see [Projects Built with Vexa](BUILT-WITH-VEXA.md)) was built in just 3 hours of live coding with Cursor, showcasing the rapid development possible with Vexa.
+
+Furthermore, with our **n8n integration** (see [Projects Built with Vexa](BUILT-WITH-VEXA.md) for examples), you can create incredibly complex workflows with no code, leveraging real-time transcription from Google Meet (with support for other platforms coming soon).
+
+<p align=""center"">
+  <img src=""assets/simplified_flow.png"" alt=""Vexa Architecture Flow"" width=""100%""/>
+</p>
+
+
+- [api-gateway](./services/api-gateway): Routes API requests to appropriate services
+- [bot-manager](./services/bot-manager): Handles bot lifecycle management
+- [vexa-bot](./services/vexa-bot): The bot that joins meetings and captures audio
+- [WhisperLive](./services/WhisperLive): Real-time audio transcription service
+- [transcription-collector](./services/transcription-collector): Processes and stores transcription segments
+- [Database models](./libs/shared-models/shared_models/models.py): Data structures for storing meeting information
+
+
+
+## Public Hosted API
+
+> 🔑 Get your API key at [www.vexa.ai](https://www.vexa.ai/?utm_source=github&utm_medium=readme&utm_campaign=vexa_repo) to try Vexa instantly. 
+
+> 🚀 Read [DEPLOYMENT.md](DEPLOYMENT.md) for self-hosting and local run with single `make all` on CPU even on laptop or on your GPU server.
+
+The Vexa API is **publicly available** at [www.vexa.ai](https://www.vexa.ai/?utm_source=github&utm_medium=readme&utm_campaign=vexa_repo) with **self-service access** - get your API key in just 3 clicks and have everything running in under 5 minutes.
+
+
+### Key features in this release:
+
+- **Instant API Access**: Self-service API keys available directly from [www.vexa.ai](https://www.vexa.ai/?utm_source=github&utm_medium=readme&utm_campaign=vexa_repo)
+- **Google Meet Bot Integration**: Programmatically send bots to join and transcribe meetings
+- **Real-Time Transcription**: Access meeting transcripts as they happen through the API
+- **Real-Time Translation**: Change the language of transcription to get instant translations across 99 languages
+
+
+## API Capabilities
+
+
+## Simple API Integration
+**Set up and running in under 5 minutes**
+
+Get your API key in 3 clicks at [www.vexa.ai](https://www.vexa.ai/?utm_source=github&utm_medium=readme&utm_campaign=vexa_repo) and start using the API immediately.
+
+### Create a meeting bot
+```bash
+# POST /bots
+curl -X POST https://gateway.dev.vexa.ai/bots \
+  -H ""Content-Type: application/json"" \
+  -H ""X-API-Key: YOUR_API_KEY"" \
+  -d '{
+    ""native_meeting_id"": ""xxx-xxxx-xxx"",
+    ""platform"": ""google_meet""
+  }'
+
+# For Microsoft Teams
+curl -X POST https://gateway.dev.vexa.ai/bots \
+  -H ""Content-Type: application/json"" \
+  -H ""X-API-Key: YOUR_API_KEY"" \
+  -d '{
+    ""native_meeting_id"": ""meeting_example%40thread.v2"",
+    ""platform"": ""teams""
+  }'
+```
+
+### Retrieve meeting transcript
+```bash
+# GET /transcripts/{platform}/{native_meeting_id}
+# For Google Meet - Example assumes native_meeting_id is derived from the meeting URL
+curl -H ""X-API-Key: YOUR_CLIENT_API_KEY"" \
+  https://gateway.dev.vexa.ai/transcripts/google_meet/xxx-xxxx-xxx
+
+# For Microsoft Teams
+curl -H ""X-API-Key: YOUR_CLIENT_API_KEY"" \
+  https://gateway.dev.vexa.ai/transcripts/teams/meeting_example%40thread.v2
+```
+
+```json
+{
+  ""data"": {
+    ""meeting_id"": ""meet_abc123"",
+    ""transcripts"": [
+      {
+        ""time"": ""00:01:15"",
+        ""speaker"": ""John Smith"",
+        ""text"": ""Let's discuss the quarterly results.""
+      },
+      {
+        ""time"": ""00:01:23"",
+        ""speaker"": ""Sarah Johnson"",
+        ""text"": ""The Q3 revenue exceeded our projections by 15%.""
+      },
+      {
+        ""time"": ""00:01:42"",
+        ""speaker"": ""Michael Chen"",
+        ""text"": ""Customer acquisition costs decreased by 12% from last quarter.""
+      }
+    ]
+  }
+}
+```
+
+## Projects Built with Vexa
+
+To see examples of projects built using the Vexa API, including our example client and other community contributions, please see the [BUILT-WITH-VEXA.md](BUILT-WITH-VEXA.md) file.
+
+> 💫 If you're building with Vexa, we'd love your support! [Star our repo](https://github.com/Vexa-ai/vexa/stargazers) to help us reach 600 stars.
+
+### Features:
+- **Real-time multilingual transcription** supporting **99 languages** with **Whisper**
+- **Real-time translation** across all 99 supported languages
+- (**Note:** Additional features like LLM processing, RAG, and MCP server access are planned - see 'Coming Next')
+
+
+## Current Status
+
+- **Public API**: Fully available with self-service API keys at [www.vexa.ai](https://www.vexa.ai/?utm_source=github&utm_medium=readme&utm_campaign=vexa_repo)
+- **Google Meet Bot:** Fully operational bot for joining Google Meet calls
+- **Microsoft Teams Bot:** Fully operational bot for joining Microsoft Teams meetings
+- **Real-time Transcription:** Low-latency, multilingual transcription service is live
+- **Real-time Translation:** Instant translation between 99 supported languages
+- **Pending:** Speaker identification is under development
+
+## Coming Next
+
+- **Zoom Bot:** Integration for automated meeting attendance (July 2025)
+- **Direct Streaming:** Ability to stream audio directly from web/mobile apps
+- **Real-time LLM Processing:** Enhancements for transcript readability and features
+- **Meeting Knowledge Extraction (RAG):** Post-meeting analysis and Q&A
+- **MCP Server:** Access to transcription data for agents
+
+## Production-Ready Infrastructure
+
+### Complete Docker Compose Orchestration 
+Vexa includes a **fully optimized Docker Compose configuration** with all required containers properly configured for production deployment:
+
+#### 🎯 **Core Services (12/12 Containers)**
+- ✅ **API Gateway** (18056) - Main API endpoint with health monitoring
+- ✅ **Admin API** (18057) - User & token management system
+- ✅ **Bot Manager** (8080) - Bot lifecycle management with Docker integration  
+- ✅ **WhisperLive CPU x2** (9090) - Dual transcription processing replicas
+- ✅ **WebSocket Proxy** (8088/8090) - Bot ↔ WhisperLive communication bridge
+- ✅ **Transcription Collector** (18123) - Real-time data processing & storage
+- ✅ **AI Service Adapter** (8000) - AI routing & optimization layer
+- ✅ **Redis** (6379) - Message queue & caching with persistence
+- ✅ **PostgreSQL** (15438) - Production database with health checks  
+- ✅ **Traefik** (18080/18085) - Load balancer & reverse proxy
+- ✅ **Vexa Bot Service** - Containerized Teams meeting bots
+- ✅ **Health Monitor** (19000) - Centralized system status monitoring
+
+#### 🔧 **Production Features**
+- **Health Monitoring**: Comprehensive health checks for all critical services
+- **Auto-Recovery**: Automatic restart policies with proper backoff strategies
+- **Resource Optimization**: Memory limits and CPU allocation for stable operation
+- **Security**: Container security profiles and proper volume configurations  
+- **Audio Support**: Enhanced PulseAudio/X11 support for Teams bot functionality
+- **Service Discovery**: Advanced Traefik routing with health-aware load balancing
+- **Scalability**: Dual WhisperLive replicas for distributed transcription processing
+- **Persistence**: Proper volume configuration for data durability
+
+#### 📊 **Service URLs**
+```bash
+# Core API Endpoints
+API Gateway:              http://localhost:18056  
+Admin API:               http://localhost:18057
+Transcription Collector: http://localhost:18123
+WebSocket Proxy:         http://localhost:8088 (HTTP) / ws://localhost:8090 (WS)
+
+# Monitoring & Management  
+Traefik Dashboard:       http://localhost:18085
+Health Monitor:          http://localhost:19000
+
+# Database Access
+PostgreSQL:              localhost:15438
+Redis:                   localhost:6379
+```
+
+#### 🚀 **Quick Start**
+```bash
+# Start all services with CPU profile
+COMPOSE_PROFILES=cpu docker compose up -d --build
+
+# Check service status
+docker compose ps
+
+# View centralized health status
+curl http://localhost:19000/status
+
+# Deploy a bot via API
+curl -X POST http://localhost:18056/bots \
+  -H ""Content-Type: application/json"" \
+  -H ""X-API-Key: YOUR_API_KEY"" \
+  -d '{
+    ""platform"": ""teams"",
+    ""native_meeting_id"": ""your_meeting_id"",
+    ""meeting_url"": ""https://teams.microsoft.com/l/meetup-join/..."",
+    ""bot_name"": ""VexaAI-Transcriber"",
+    ""language"": ""en"",
+    ""task"": ""transcribe""
+  }'
+```
+
+## Self-Deployment
+
+For **security-minded companies**, Vexa offers complete **self-deployment** options.
+
+To run Vexa locally on your own infrastructure, the primary command you'll use after cloning the repository is `make all`. This command sets up the environment (CPU by default, or GPU if specified), builds all necessary Docker images, and starts the services. 
+
+[3 min video tutorial](https://www.youtube.com/watch?v=bHMIByieVek)
+
+Detailed instructions: [Local Deployment and Testing Guide](DEPLOYMENT.md).
+
+## Contributing
+
+Contributors are welcome! Join our community and help shape Vexa's future. Here's how to get involved:
+
+1.  **Understand Our Direction**:
+    *   Check out the **project roadmap** to see where we're headed: [Vexa Project Roadmap](https://github.com/orgs/Vexa-ai/projects/1)
+
+2.  **Engage on Discord** ([Discord Community](https://discord.gg/Ga9duGkVz9)):
+    *   **Introduce Yourself**: Start by saying hello in the introductions channel.
+    *   **Stay Informed**: Check the Discord channel for known issues, feature requests, and ongoing discussions. Issues actively being discussed often have dedicated channels.
+    *   **Discuss Ideas**: Share your feature requests, report bugs, and participate in conversations about a specific issue you're interested in delivering.
+    *   **Get Assigned**: If you feel ready to contribute, discuss the issue you'd like to work on and ask to get assigned on Discord.
+
+3.  **Development Process**:
+    *   Browse available **tasks** (often linked from Discord discussions or the roadmap).
+    *   Request task assignment through Discord if not already assigned.
+    *   Submit **pull requests** for review.
+
+- **Critical Tasks & Bounties**:
+  - Selected **high-priority tasks** may be marked with **bounties**.
+  - Bounties are sponsored by the **Vexa core team**.
+  - Check task descriptions (often on the roadmap or Discord) for bounty details and requirements.
+
+We look forward to your contributions!
+
+
+## Project Links
+
+- 🌐 [Vexa Website](https://vexa.ai)
+- 💼 [LinkedIn](https://www.linkedin.com/company/vexa-ai/)
+- 🐦 [X (@grankin_d)](https://x.com/grankin_d)
+- 💬 [Discord Community](https://discord.gg/Ga9duGkVz9)
+
+[![Meet Founder](https://img.shields.io/badge/LinkedIn-Dmitry_Grankin-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dmitry-grankin/)
+
+[![Join Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/Ga9duGkVz9)
+
+## License
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Vexa is licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE) for the full license text.
+
+The Vexa name and logo are trademarks of **Vexa.ai Inc**.
+","1. repository_intent: Vexa is an API for real-time meeting transcription using meeting bots and direct streaming from web/mobile apps.
+
+2. technical_focus: The repository implements a privacy-first, open-source API that integrates with platforms like Google Meet and Microsoft Teams for real-time transcription.
+
+3. primary_use_cases: It is intended to support the development of meeting assistants and custom integrations for real-time transcription and translation.
+
+4. system_design: The system is designed with a microservices architecture, utilizing Docker for orchestration and providing a complete production-ready infrastructure.
+
+5. key_technical_terms: real-time transcription, Google Meet, Microsoft Teams, Docker, API, multilingual transcription, self-hosted, WhisperLive, bot management.",Vexa is an API for real-time meeting transcription using meeting bots and direct streaming from web/mobile apps.,"The repository implements a privacy-first, open-source API that integrates with platforms like Google Meet and Microsoft Teams for real-time transcription.",It is intended to support the development of meeting assistants and custom integrations for real-time transcription and translation.,"The system is designed with a microservices architecture, utilizing Docker for orchestration and providing a complete production-ready infrastructure.","real-time transcription, Google Meet, Microsoft Teams, Docker, API, multilingual transcription, self-hosted, WhisperLive, bot management."
+convert_checkpoint.py,src/tart/runtime/triton_trtllm/scripts/convert_checkpoint.py,22dad65bccc1b0c97d1e228e7ab09d8b1f4ac21c,Mylesmunore/tart,https://api.github.com/repositories/982986532/contents/src/tart/runtime/triton_trtllm/scripts/convert_checkpoint.py?ref=97bf6ec53286c563aa7bf47ee1573bb47aa0c6c6,https://api.github.com/repositories/982986532/git/blobs/22dad65bccc1b0c97d1e228e7ab09d8b1f4ac21c,https://github.com/Mylesmunore/tart,,,0,0,0,2,2025-05-13T17:48:25Z,0,0,"
+","1. repository_intent: 
+
+2. technical_focus: The repository uses tensorrt_llm, an LLM serving framework.
+
+3. primary_use_cases: 
+
+4. system_design: 
+
+5. key_technical_terms: tensorrt_llm, LLM, serving framework",,"The repository uses tensorrt_llm, an LLM serving framework.",,,"tensorrt_llm, LLM, serving framework"
+trt_llm.py,nemo_aligner/utils/trt_llm.py,9f1a9345f610d699c21fd468be020ca52cba37ba,NVIDIA/NeMo-Aligner,https://api.github.com/repositories/686160414/contents/nemo_aligner/utils/trt_llm.py?ref=af2b3bd96ad78190f6ebfb552b9e599e313ce027,https://api.github.com/repositories/686160414/git/blobs/9f1a9345f610d699c21fd468be020ca52cba37ba,https://github.com/NVIDIA/NeMo-Aligner,Scalable toolkit for efficient model alignment,,77,16,321,232,2025-05-16T21:09:40Z,839,100,"# NVIDIA NeMo-Aligner
+
+⚠️ **As of 5/15/2025, this repository is no longer actively maintained. We recommend switching to [NeMo RL](https://github.com/NVIDIA/NeMo-RL), a scalable and modular post-training library with seamless Hugging Face integration, Megatron Core optimizations, and uses Ray as the scheduling backbone.** ⚠️
+
+# Latest News
+- We released Nemotron-4-340B [Base](https://huggingface.co/nvidia/Nemotron-4-340B-Base), [Instruct](https://huggingface.co/nvidia/Nemotron-4-340B-Instruct), [Reward](https://huggingface.co/nvidia/Nemotron-4-340B-Reward). The Instruct and Reward variants are trained in Nemo-Aligner. Please see the [Helpsteer2](https://arxiv.org/abs/2406.08673) paper for more details on the reward model training.
+- We are excited to announce the release of accelerated generation support in our RLHF pipeline using [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM). For more information, please refer to our [RLHF documentation](https://docs.nvidia.com/nemo-framework/user-guide/latest/modelalignment/rlhf.html).
+- [NeMo-Aligner Paper](https://arxiv.org/abs/2405.01481) is now out on arxiv!
+
+## Introduction
+
+NeMo-Aligner is a scalable toolkit for efficient model alignment. The toolkit has support for state-of-the-art model alignment algorithms such as SteerLM, DPO, and Reinforcement Learning from Human Feedback (RLHF). These algorithms enable users to align language models to be more safe, harmless, and helpful. Users can perform end-to-end model alignment on a wide range of model sizes and take advantage of all the parallelism techniques to ensure their model alignment is done in a performant and resource-efficient manner. For more technical details, please refer to our [paper](https://arxiv.org/abs/2405.01481).
+
+The NeMo-Aligner toolkit is built using the NeMo Framework, which enables scalable training across thousands of GPUs using tensor, data, and pipeline parallelism for all alignment components. Additionally, our checkpoints are cross-compatible with the NeMo ecosystem, facilitating inference deployment and further customization (https://github.com/NVIDIA/NeMo-Aligner).
+
+The toolkit is currently in it's early stages. We are committed to improving the toolkit to make it easier for developers to pick and choose different alignment algorithms to build safe, helpful, and reliable models.
+
+## Key Features
+
+* **SteerLM: Attribute Conditioned SFT as an (User-Steerable) alternative to RLHF.** 
+    * [Llama3-70B-SteerLM-Chat](https://huggingface.co/nvidia/Llama3-70B-SteerLM-Chat) aligned with NeMo-Aligner.
+    * Corresponding reward model [Llama3-70B-SteerLM-RM](https://huggingface.co/nvidia/Llama3-70B-SteerLM-RM).
+    * Learn more at our [SteerLM](https://arxiv.org/abs/2310.05344) and [HelpSteer2](https://arxiv.org/abs/2406.08673) papers.
+* **Supervised Fine Tuning**
+* **Reward Model Training**
+* **Reinforcement Learning from Human Feedback using the [PPO](https://arxiv.org/pdf/1707.06347.pdf) Algorithm**
+    * [Llama3-70B-PPO-Chat](https://huggingface.co/nvidia/Llama3-70B-PPO-Chat) aligned with NeMo-Aligner using TRT-LLM.
+* **Reinforcement Learning from Human Feedback using the REINFORCE Algorithm**
+    * [Llama-3.1-Nemotron-70B-Instruct](https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct) aligned with NeMo-Aligner using TRT-LLM.
+* **Direct Preference Optimization** as described in [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290)
+    * [Llama3-70B-DPO-Chat](https://huggingface.co/nvidia/Llama3-70B-DPO-Chat) aligned with NeMo Aligner.
+* **Self-Play Fine-Tuning (SPIN)** as described in [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/pdf/2401.01335)
+
+## Learn More
+* [Documentation](https://github.com/NVIDIA/NeMo-Aligner/blob/main/docs/README.md)
+* [Examples](https://github.com/NVIDIA/NeMo-Aligner/tree/main/examples/nlp/gpt)
+* [Tutorials](https://docs.nvidia.com/nemo-framework/user-guide/latest/modelalignment/index.html)
+* [Paper](https://arxiv.org/abs/2405.01481)
+
+## Latest Release
+
+For the latest stable release, please see the [releases page](https://github.com/NVIDIA/NeMo-Aligner/releases). All releases come with a pre-built container. Changes within each release will be documented in [CHANGELOG](https://github.com/NVIDIA/NeMo-Aligner/blob/main/CHANGELOG.md).
+
+## Install Your Own Environment
+
+### Requirements
+NeMo-Aligner has the same requirements as the [NeMo Toolkit Requirements](https://github.com/NVIDIA/NeMo#requirements) with the addition of [PyTriton](https://github.com/triton-inference-server/pytriton).
+
+### Quick start inside NeMo container
+NeMo Aligner comes included with NeMo containers. On a machine with NVIDIA GPUs and drivers installed run NeMo container:
+```bash
+docker run --gpus all -it --rm --shm-size=8g --ulimit memlock=-1 --ulimit stack=67108864  nvcr.io/nvidia/nemo:24.07
+```
+Once you are inside the container, NeMo-Aligner is already installed and together with NeMo and other tools can be found under ```/opt/``` folder.
+
+### Install NeMo-Aligner
+Please follow the same steps as outlined in the [NeMo Toolkit Installation Guide](https://github.com/NVIDIA/NeMo#installation).  After installing NeMo, execute the following additional command:
+```bash
+pip install nemo-aligner
+```
+Alternatively, if you prefer to install the latest commit:
+```bash
+pip install .
+```
+
+### Docker Containers
+
+We provide an official NeMo-Aligner Dockerfile which is based on stable, tested versions of NeMo, Megatron-LM, and TransformerEngine. The primary objective of this Dockerfile is to ensure stability, although it might not always reflect the very latest versions of those three packages. You can access our Dockerfile [here](https://github.com/NVIDIA/NeMo-Aligner/blob/main/Dockerfile).
+
+Alternatively, you can build the NeMo Dockerfile here [NeMo Dockerfile](https://github.com/NVIDIA/NeMo/blob/main/Dockerfile) and add `RUN pip install nemo-aligner` at the end.
+
+## Future work
+- We will continue improving the stability of the PPO learning phase.
+- Improve the performance of RLHF.
+- Add TRT-LLM inference support for Rejection Sampling.
+
+## Contribute to NeMo-Aligner
+We welcome community contributions! Please refer to [CONTRIBUTING.md](https://github.com/NVIDIA/NeMo-Aligner/blob/main/CONTRIBUTING.md) for guidelines.
+
+## Cite NeMo-Aligner in Your Work
+```
+@misc{shen2024nemoaligner,
+      title={NeMo-Aligner: Scalable Toolkit for Efficient Model Alignment},
+      author={Gerald Shen and Zhilin Wang and Olivier Delalleau and Jiaqi Zeng and Yi Dong and Daniel Egert and Shengyang Sun and Jimmy Zhang and Sahil Jain and Ali Taghibakhshi and Markel Sanz Ausin and Ashwath Aithal and Oleksii Kuchaiev},
+      year={2024},
+      eprint={2405.01481},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+## License
+This toolkit is licensed under the [Apache License, Version 2.0.](https://github.com/NVIDIA/NeMo-Aligner/blob/main/LICENSE)
+","1. repository_intent: Scalable toolkit for efficient model alignment.
+
+2. technical_focus: The toolkit supports state-of-the-art model alignment algorithms such as SteerLM, DPO, and RLHF.
+
+3. primary_use_cases: It is intended to align language models to be more safe, harmless, and helpful.
+
+4. system_design: The toolkit is built using the NeMo Framework, enabling scalable training across thousands of GPUs.
+
+5. key_technical_terms: model alignment, SteerLM, DPO, RLHF, supervised fine tuning, reward model training, tensor parallelism, data parallelism, pipeline parallelism.",Scalable toolkit for efficient model alignment.,"The toolkit supports state-of-the-art model alignment algorithms such as SteerLM, DPO, and RLHF.","It is intended to align language models to be more safe, harmless, and helpful.","The toolkit is built using the NeMo Framework, enabling scalable training across thousands of GPUs.","model alignment, SteerLM, DPO, RLHF, supervised fine tuning, reward model training, tensor parallelism, data parallelism, pipeline parallelism."
+__init__.py,python/tvm/relax/backend/cuda/__init__.py,df1a1f98e3769a4d0899c9a735d3493d7fc4b990,Anna-Bele/LLM_MCTS_Search,https://api.github.com/repositories/959673977/contents/python/tvm/relax/backend/cuda/__init__.py?ref=0ee0c43bce59ee5fd7dbd46d39a095e8b784df11,https://api.github.com/repositories/959673977/git/blobs/df1a1f98e3769a4d0899c9a735d3493d7fc4b990,https://github.com/Anna-Bele/LLM_MCTS_Search,"Official implementation of ""REASONING COMPILER: LLM-Guided Optimizations for Efficient Model Serving"" (NeurIPS 2025)",,1,0,0,12914,2025-12-05T09:00:49Z,99,12,"<!--- Licensed to the Apache Software Foundation (ASF) under one -->
+<!--- or more contributor license agreements.  See the NOTICE file -->
+<!--- distributed with this work for additional information -->
+<!--- regarding copyright ownership.  The ASF licenses this file -->
+<!--- to you under the Apache License, Version 2.0 (the -->
+<!--- ""License""); you may not use this file except in compliance -->
+<!--- with the License.  You may obtain a copy of the License at -->
+
+<!---   http://www.apache.org/licenses/LICENSE-2.0 -->
+
+<!--- Unless required by applicable law or agreed to in writing, -->
+<!--- software distributed under the License is distributed on an -->
+<!--- ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY -->
+<!--- KIND, either express or implied.  See the License for the -->
+<!--- specific language governing permissions and limitations -->
+<!--- under the License. -->
+
+# REASONING COMPILER
+This is the official implementation of [**REASONING COMPILER: LLM-Guided Optimizations for Efficient Model Serving**](https://arxiv.org/abs/2506.01374) (NeurIPS 2025)
+
+In our project, we use TVM since it is an open source compiler stack for deep learning systems with [Apache-2.0](LICENSE) license. 
+
+## Quick Start
+To run this repo, follow these steps:
+1. Clone this repo. Configure the environment as detailed in TVM's documentation https://tvm.apache.org/docs/install/index.html
+2. Instead of using the default strategy, create the LLM guided MCTS search strategy object by
+
+```
+llm_mcts_strategy = MCTSSearchPyFull(
+    use_llm=True,
+    llm_budget=600,
+    llm_model_name=""API_MODEL_NAME"",
+)
+```
+
+If you want to run the pure MCTS search, set use_llm = False so you do not enable LLM.
+
+To use the function tune_tir for tuning, pass llm_mcts_strategy as a parameter of tune_tir, like
+
+```
+database = ms.tune_tir(
+    mod=MyModule,
+    target=""llvm --num-cores=1"",
+    max_trials_global=64,
+    num_trials_per_iter=64,
+    work_dir=""./tune_tmp"",
+    strategy=llm_mcts_strategy,
+)
+```
+
+## Citation
+```bibtex
+@inproceedings{
+tang2025reasoning,
+title={{REASONING} {COMPILER}: {LLM}-Guided Optimizations for Efficient Model Serving},
+author={Annabelle Sujun Tang and Christopher Priebe and Rohan Mahapatra and Lianhui Qin and Hadi Esmaeilzadeh},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025}
+}
+```
+","1. repository_intent: Official implementation of LLM-guided optimizations for efficient model serving.
+
+2. technical_focus: The repository implements a reasoning compiler using LLM-guided Monte Carlo Tree Search (MCTS) for optimizing deep learning model serving.
+
+3. primary_use_cases: It is intended to support efficient model serving through optimization strategies in deep learning systems.
+
+4. system_design: The system is designed around the TVM compiler stack for deep learning.
+
+5. key_technical_terms: LLM, MCTS, optimization, TVM, model serving, deep learning, tuning.",Official implementation of LLM-guided optimizations for efficient model serving.,The repository implements a reasoning compiler using LLM-guided Monte Carlo Tree Search (MCTS) for optimizing deep learning model serving.,It is intended to support efficient model serving through optimization strategies in deep learning systems.,The system is designed around the TVM compiler stack for deep learning.,"LLM, MCTS, optimization, TVM, model serving, deep learning, tuning."
+utils.py,python/triton_dist/models/utils.py,d5bcd5e4693bb7bd76692b208e5ad1e1b0012a65,ByteDance-Seed/Triton-distributed,https://api.github.com/repositories/959035472/contents/python/triton_dist/models/utils.py?ref=71aeff3333cee09ee6236e02bba09a3b2efe1dc9,https://api.github.com/repositories/959035472/git/blobs/d5bcd5e4693bb7bd76692b208e5ad1e1b0012a65,https://github.com/ByteDance-Seed/Triton-distributed,Distributed Compiler based on Triton for Parallel Systems,,31,52,61,223,2026-02-13T13:34:23Z,1379,129,"<div align=""center"">
+ 👋 Hi, everyone!
+    <br>
+    We are <b>ByteDance Seed team.</b>
+</div>
+
+<p align=""center"">
+  You can get to know us better through the following channels👇
+  <br>
+  <a href=""https://team.doubao.com/"">
+    <img src=""https://img.shields.io/badge/Website-%231e37ff?style=for-the-badge&logo=bytedance&logoColor=white""></a>
+  <a href=""https://github.com/user-attachments/assets/93481cda-a7f3-47f3-b333-fe6b3da86b78"">
+    <img src=""https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&logo=wechat&logoColor=white""></a>
+ <a href=""https://www.xiaohongshu.com/user/profile/668e7e15000000000303157d?xsec_token=ABl2-aqekpytY6A8TuxjrwnZskU-6BsMRE_ufQQaSAvjc%3D&xsec_source=pc_search"">
+    <img src=""https://img.shields.io/badge/Xiaohongshu-%23FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white""></a>
+  <a href=""https://www.zhihu.com/org/dou-bao-da-mo-xing-tuan-dui/"">
+    <img src=""https://img.shields.io/badge/zhihu-%230084FF?style=for-the-badge&logo=zhihu&logoColor=white""></a>
+</p>
+
+![seed logo](https://github.com/user-attachments/assets/c42e675e-497c-4508-8bb9-093ad4d1f216)
+
+# Triton-distributed
+
+<!-- <p align=""center"">
+  <a href=""https://github.com/bytedance/flux"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Project Page-yellow""></a>
+  <a href=""https://arxiv.org/pdf/xxxx.xxxx"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Tech Report-red""></a>
+  <br>
+  <a href=""https://github.com/user-attachments/assets/d3fcb3bf-466b-4efe-8c3f-5f85258202ae"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Wechat Communication Group-07C160""></a>
+  <a href=""XXX"">
+    <img src=""https://img.shields.io/badge/License-MIT-blue""></a>
+</p> -->
+
+[Original Triton README](https://github.com/triton-lang/triton/blob/main/README.md) | [README in Chinese](README-cn.md)
+
+Triton-distributed is a distributed compiler designed for computation-communication overlapping, which is based on OpenAI Triton.
+
+Using Triton-distributed, programmers are able to develop efficient kernels comparable to highly-optimized libraries (including [Distributed-GEMM](https://github.com/NVIDIA/cutlass/tree/main/examples/65_distributed_gemm) and [FLUX](https://github.com/bytedance/flux/blob/main/README.md)).
+Triton-distributed currently mainly targets Nvidia GPU and AMD GPU. It can also be ported to other hardware platforms.
+Feel free to contact us if you want to use Triton-distributed on your own hardware.
+
+## News
+- 12/22/2025 ✨✨✨: Updated EP functions, support low-latency mode, token saving, and Mega-EP.
+- 21/10/2025 🔥🔥🔥: Triton-distributed is presented at [Triton Conference 2025](https://tritonconference.eventbuilder.com/TritonDeveloperConference?ref=TritonDeveloperConference), see the [talk](https://www.youtube.com/playlist?list=PLc_vA1r0qoiQqCdWFDUDqI90oY5EjfGuO) for details.
+- 09/03/2025 ✨✨✨: Introduced Intra-Kernel Profiler, See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/profiler/intra_kernel_profiler.md) for details.
+- 08/24/2025 ⚡⚡⚡: Support inference acceleration for [ByteDance-Seed/Seed-OSS-36B-Instruct](https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct), achieving a 1.33x speedup.
+- 08/13/2025 ✨✨✨: Introduced the MegaTritonKernel and provided a Qwen3 TP demo on H20/H800, See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/megakernel/megakernel.md) for details.
+- 08/06/2025 ✨✨✨: Support GEMM+AllReduce on H800 and support MoE operators on L20, see [GEMM+AR Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_gemm_ar.py) and [MOE Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_moe_reduce_rs.py) for detail.
+- 07/24/2025 🤖🤖🤖: Introduced end-to-end inference acceleration demo with unified support for both NVIDIA and AMD GPUs. See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/e2e/e2e_dense.md) for details.
+- 07/11/2025 ✨✨✨: Fast AllReduce implemented with Triton-distributed, see [AllReduce Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_allreduce.py).
+- 07/11/2025 ✨✨✨: Improved MoE operators for tensor parallel. See [AG+MoE Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_ag_moe.py) and [MoE+RS Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_moe_reduce_rs.py).
+- 07/11/2025 ✨✨✨: Triton 3.4 support with NVSHMEM4py ([MR](https://github.com/ByteDance-Seed/Triton-distributed/pull/54)). `pip install` is also supported without any need to modify NVSHMEM code.
+- 05/12/2025 🚀🚀🚀: Our paper `TileLink: Generating Efficient Compute-Communication Overlapping Kernels using Tile-Centric Primitives` accepted by MLSys 2025.
+
+## Getting started
+
+### Install Triton-distributed
+
+#### Method 1. From source
+
+See [build from source](docs/build.md).
+
+#### Method 2. Using pip
+
+Prepare PyTorch container
+
+```sh
+docker run --name triton-dist --ipc=host --network=host --privileged --cap-add=SYS_ADMIN --shm-size=10g --gpus=all -itd nvcr.io/nvidia/pytorch:25.04-py3 /bin/bash
+docker exec -it triton-dist /bin/bash
+```
+
+Install Dependencies
+
+```sh
+pip3 install cuda.core==0.2.0 nvidia-nvshmem-cu12==3.3.9 Cython==0.29.24 nvshmem4py-cu12==0.1.2
+pip3 install cuda-python==12.4 setuptools==69.0.0 wheel pybind11
+```
+
+Then, pip install triton-dist.
+```sh
+# Remove triton installed with torch
+pip uninstall triton
+pip uninstall triton_dist # remove previous triton-dist
+rm -rf /usr/local/lib/python3.12/dist-packages/triton
+# Install Triton-distributed
+VERSION=v0.0.2 # use the latest version
+pip install https://github.com/ByteDance-Seed/Triton-distributed/releases/download/${VERSION}/triton_dist-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+```
+
+
+### How to use Triton-distributed
+Triton-distributed provides a set of easy-to use primitives to support the development of distributed compute-communication overlapping kernels. The primitives are divided into low-level primitives and high-level primitives. Currently, we have released our low-level primitives, and we plan to release high-level primitives in future.
+
+[Triton-distributed Primitives](docs/primitives.md)
+
+Using these primitives, users can program communication kernels easily. For example, a low-latency AllToAll (with better latency than [DeepEP](https://github.com/deepseek-ai/DeepEP) for inference) is shown below.
+The performance of this example on 32 H800 GPUs is 137us (128 tokens per rank, topk=8, hidden_size=7168, dtype=fp8), while DeepEP is 182 us (note: DeepEP doesn't use NVLink for inference).
+```py
+@triton_dist.jit
+def all_to_all_kernel(
+    data_src,
+    data_dst,
+    splits_src,
+    splits_dst,
+    signal,
+    splits_cumsum,
+    scale_src,
+    scale_dst,
+    rank: int,
+    call_count: int,
+    WITH_SCALE: tl.constexpr,
+    WORLD_SIZE: tl.constexpr,
+    HIDDEN: tl.constexpr,
+    MAX_M: tl.constexpr,
+    EXPERTS_PER_RANK: tl.constexpr,
+    NUM_TOT_EXPERTS: tl.constexpr,
+    ELEMENT_SIZE: tl.constexpr = 2,
+    SCALE_ELEMENT_SIZE: tl.constexpr = 4,
+):
+    pid = tl.program_id(0)
+    threadidx = tid(axis=0)
+
+    exp_st = pid * EXPERTS_PER_RANK
+    exp_ed = exp_st + EXPERTS_PER_RANK
+
+    m_st = tl.load(splits_cumsum + exp_st)
+    m_ed = tl.load(splits_cumsum + exp_ed)
+    num_rows_cur_block = m_ed - m_st
+
+    src_off = m_st
+    dst_off = rank * MAX_M
+
+    split_src_ptr = splits_src + exp_st
+    off0 = exp_st + tl.arange(0, EXPERTS_PER_RANK)
+    off1 = exp_st + tl.arange(0, EXPERTS_PER_RANK) + 1
+    cumsum_sts = tl.load(splits_cumsum + off0)
+    cumsum_eds = tl.load(splits_cumsum + off1)
+    tl.store(split_src_ptr + tl.arange(0, EXPERTS_PER_RANK), cumsum_eds - cumsum_sts)
+
+    act_pos = call_count % 2
+    data_dst_ptr = data_dst + act_pos * WORLD_SIZE * MAX_M * HIDDEN + dst_off * HIDDEN
+    split_dst_ptr = splits_dst + act_pos * NUM_TOT_EXPERTS + rank * EXPERTS_PER_RANK
+    signal_ptr = signal + act_pos * WORLD_SIZE + rank
+
+    libshmem_device.putmem_nbi_block(
+        data_dst_ptr,
+        data_src + src_off * HIDDEN,
+        num_rows_cur_block * HIDDEN * ELEMENT_SIZE,
+        pid,
+    )
+    libshmem_device.putmem_nbi_block(
+        split_dst_ptr,
+        split_src_ptr,
+        EXPERTS_PER_RANK * 4,  # now we use `int32` for splits
+        pid,
+    )
+    if WITH_SCALE:
+        scale_dst_ptr = scale_dst + act_pos * WORLD_SIZE * MAX_M + dst_off
+        libshmem_device.putmem_signal_nbi_block(
+            scale_dst_ptr,
+            scale_src + src_off,
+            num_rows_cur_block * SCALE_ELEMENT_SIZE,
+            signal_ptr,
+            call_count,
+            libshmem_device.NVSHMEM_SIGNAL_SET,
+            pid,
+        )
+
+    libshmem_device.fence()
+    if threadidx == 0:
+        if not WITH_SCALE:
+            libshmem_device.signal_op(
+                signal_ptr,
+                call_count,
+                libshmem_device.NVSHMEM_SIGNAL_SET,
+                pid,
+            )
+        libshmem_device.signal_wait_until(
+            signal + act_pos * WORLD_SIZE + pid,
+            libshmem_device.NVSHMEM_CMP_EQ,
+            call_count,
+        )
+```
+
+Also, users can combine the communication part with computation part to design overlapping kernels. We have provided example implementations in `python/triton_dist/kernels`.
+
+## Performance
+Triton-distributed can achieve comparable or better performance than hand-tuned libraries.
+
+
+### AllGather GEMM on single node of H800x8
+![Ag-GEMM-inter-node](asset/ag-gemm-intra-node.png)
+
+### GEMM ReduceScatter on single node of H800x8
+![Ag-GEMM-inter-node](asset/gemm-rs-intranode-perf.png)
+
+### AllGather GEMM on 2 nodes of H800x8
+![Ag-GEMM-inter-node](asset/ag-gemm-internode-perf.png)
+
+### GEMM ReduceScatter on 2 nodes of H800x8
+![GEMM-Rs-inter-node](asset/gemm-rs-internode-perf.png)
+
+### Scaling of Distributed Flash-Decode from 1 GPU to 32 GPUs
+The batch size is 1 (one query) for decoding.
+![flash-decode-inter-node](asset/flash-decode-scaling.png)
+
+### Performance on Other Platforms
+[AMD GPUs](docs/amd-perf.md)
+
+
+## Roadmaps
+
+### Functionalities
+- [x] Release low-level primitives
+- [ ] Release high-level primitives
+- [x] Tutorials
+- [x] Pre-built binary
+
+### Kernels
+- [x] Release single-node GEMM TP overlapping kernels
+- [x] Release single-node MoE TP overlapping kernels
+- [x] Release single-node distributed Flash-Decoding kernels
+- [ ] Release single-node MoE EP overlapping kernels
+- [x] Release cross-node GEMM TP overlapping kernels
+- [x] Release cross-node MoE TP overlapping kernels
+- [x] Release cross-node distributed Flash-Decoding kernels
+- [x] Release cross-node EP all-to-all kernels (similar to [DeepEP](https://github.com/deepseek-ai/DeepEP))
+- [x] Provide tutorials for kernel implementation
+
+### Backends
+Computation
+- [x] Nvidia SM90a support
+- [x] Nvidia SM80 support
+- [x] Nvidia SM89 support
+- [x] AMD CDNA3 support
+
+Communication
+- [x] NVLink
+- [x] IB
+- [x] PCIe
+
+### Performance
+- [x] Performance report
+
+## License
+The Triton-distributed project is under MIT license.
+Part of our code is under Apache-2.0 License:
+- `python/triton_dist/kernels/flash_decode.py`
+
+
+## Citation
+If you use Triton-distributed in a scientific publication, we encourage you to add the following reference to the related papers:
+```bibtex
+@misc{zheng2025tritondistributed,
+      title={Triton-distributed: Programming Overlapping Kernels on Distributed AI Systems with the Triton Compiler},
+      author={Size Zheng and Wenlei Bao and Qi Hou and Xuegui Zheng and Jin Fang and Chenhui Huang and Tianqi Li and Haojie Duanmu and Renze Chen and Ruifan Xu and Yifan Guo and Ningxin Zheng and Ziheng Jiang and Xinyi Di and Dongyang Wang and Jianxi Ye and Haibin Lin and Li-Wen Chang and Liqiang Lu and Yun Liang and Jidong Zhai and Xin Liu},
+      year={2025},
+      eprint={2504.19442},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2504.19442},
+}
+
+@article{zheng2025tilelink,
+  title={Tilelink: Generating efficient compute-communication overlapping kernels using tile-centric primitives},
+  author={Zheng, Size and Fang, Jin and Zheng, Xuegui and Hou, Qi and Bao, Wenlei and Zheng, Ningxin and Jiang, Ziheng and Wang, Dongyang and Ye, Jianxi and Lin, Haibin and others},
+  journal={arXiv preprint arXiv:2503.20313},
+  year={2025}
+}
+```
+
+# About [ByteDance Seed Team](https://team.doubao.com/)
+
+Founded in 2023, ByteDance Seed Team is dedicated to crafting the industry's most advanced AI foundation models. The team aspires to become a world-class research team and make significant contributions to the advancement of science and society.
+
+# Discussion and Contribution
+Please use issues or pull requests for discussion and contribution (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+","1. repository_intent: Distributed compiler based on Triton for efficient computation-communication overlapping.
+
+2. technical_focus: Implements low-level and high-level primitives for developing distributed compute-communication overlapping kernels.
+
+3. primary_use_cases: Supports the development of efficient kernels for parallel systems, particularly targeting Nvidia and AMD GPUs.
+
+4. system_design: Designed as a distributed system architecture that facilitates overlapping computation and communication.
+
+5. key_technical_terms: Triton, distributed compiler, compute-communication overlapping, low-latency, kernels, Nvidia GPU, AMD GPU, primitives, AllToAll, GEMM.",Distributed compiler based on Triton for efficient computation-communication overlapping.,Implements low-level and high-level primitives for developing distributed compute-communication overlapping kernels.,"Supports the development of efficient kernels for parallel systems, particularly targeting Nvidia and AMD GPUs.",Designed as a distributed system architecture that facilitates overlapping computation and communication.,"Triton, distributed compiler, compute-communication overlapping, low-latency, kernels, Nvidia GPU, AMD GPU, primitives, AllToAll, GEMM."

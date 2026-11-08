@@ -1,0 +1,1227 @@
+repo_full_name,vllm_Speculative decoding,vllm_Quantization,vllm_Chunked prefill,vllm_parallelism,vllm_Multi-LoRA,vllm_Early existing,vllm_Cascade inference,vllm_Paged Attention,vllm_Continuous batching,vllm_Prefix caching,vllm_CUDA,vllm_KVCaching,tool_name
+0russwest0/Agent-R1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+0xLDF/Seg2Any,,,,['tensor_parallel_size'],,,,,,,,,vllm
+0xk1h0/sven_modified,,,,['tensor_parallel_size'],,,,,,,,,vllm
+18907305772/FuseAI,,,,['tensor_parallel_size'],,,,,,,,,vllm
+1Wata/mllmTracker,,,,,,,,,,['enable_prefix_caching'],,,vllm
+1a3orn/grpo-changes,,,,['tensor_parallel_size'],,,,,,,,,vllm
+2noise/ChatTTS,,,,['parallel'],,,,,,,,,vllm
+46319943/DianpingAnalyzer,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+666xz666/CoH-Impl,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+A-baoYang/LLM-Finetune-Guide,,,,['tensor_parallel_size'],,,,,,,,,vllm
+A11en0/knowtrans,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+ACEBench/ACEBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AFan2025/spongeAttack,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AI4HEALTH-LAB-THU/LLM-Aging,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+AIDC-AI/Marco-o1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AIDotNet/AntSK,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+AIRI-Institute/SAE-Reasoning,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+AK391/ai-gradio,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+ALEX-nlp/UFEval,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+AMAP-ML/GPG,,,,,,,,,,['enable_prefix_caching'],,,vllm
+AMAP-ML/UniVG-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+AMD-AIG-AIMA/Gumiho,['speculative_config'],,"['enable_chunked_prefill', 'scheduler']","['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,['cache'],vllm
+AMD-AIG-AIMA/Instella,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+AMD-AIG-AIMA/Instella-Math,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+AMD-AIG-AIMA/PARD,['speculative_config'],,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+ASTRAL-Group/AlphaOne,,['quantization'],,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+AUGMXNT/MI300-testing,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+Aashena/Manga2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Abhiramkns/trl_fit,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+AbrahamSanders/realtime-codec-agent,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+AkagawaTsurunaki/zerolan-core,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AkshayM21/obs-scaling-inference-opts,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+AlanJiang98/SOLAMI,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Alex-Gurung/CHIRON,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Alexguld1234/Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AlibabaPAI/llumnix,,,['scheduler'],,"['lora', 'lorarequest']",,,,,,,"['cache', 'kvtransfer']",vllm
+AlibabaResearch/DAMO-ConvAI,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+AlignRM/CheemsRM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+All-Hands-AI/OpenHands,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Alpha-Innovator/MME-Reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Alpha-Innovator/OmniCaptioner,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AndeJokela/localLLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Andrew-Zhang/vllm-context-shrinking-scratch,['speculative'],"['quant', 'quantization']",['scheduler'],"['tensor_parallel_size', 'parallel']","['enable_lora', 'lora', 'lorarequest']",,,,,,,"['cache', 'kvtransfer']",vllm
+AndyZhou952/mindrlhf-packing,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+AngKM/LLM_Healthcare,,,,['tensor_parallel_size'],,,,,,,,,vllm
+AngelaZZZ-611/reasoning_models_probing,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Aorunfa/deepseek_learning,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ArmelRandy/ICL-MT,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+ArmelRandy/tree-of-problems,,['quantization'],,,,,,,,,,,vllm
+Atipico1/finetune_rag,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+BIDS-Xu-Lab/medical-evaluation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+BabitMF/bmf,,,,,,,,,['batch_size'],,,,vllm
+BambooStreet/HelloWorld_AI_Personal,,['quantization'],,,,,,,,,,,vllm
+BaohaoLiao/RSD,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+BaohaoLiao/frac-cot,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+BaohaoLiao/jam3d,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,['enable_prefix_caching'],,,vllm
+BenoitWang/What_Are_They_Doing,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+BiNLP/LogiEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+BiNLP/verl4prm,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+BinZhu-ece/UniLLM,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+BlackSoi1/code_preview,,,,['tensor_parallel_size'],,,,,,,,,vllm
+BowenYinIS/Reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+BruceXcluding/vllm_poc,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+ByteDance-Seed/FlexPrefill,,,['enable_chunked_prefill'],,,,,,,,,,vllm
+ByungKwanLee/DeepSick-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+CHTC/templates-GPUs,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CSHaitao/LexRAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CSSLab/SEAM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CVMI-Lab/Hita,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+CankatSarac/wearforce-clean,,,,['parallel'],,,,,,,,,vllm
+CassperW/RAG-LongEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CatIIIIIIII/VeriPrefer,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CatilonyZhang/CriticGPT-Lean,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CerebriumAI/examples,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Cesarinn1/DeepSeek-Coder,,,,"['pipeline_parallel_size', 'tensor_parallel_size']",,,,,['max_num_batched_tokens'],,,,vllm
+Chajii/CSTS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Chen-Yang-Liu/Change-Agent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Chengziha0/Travel-R1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Chenwei-1999/Sparse-Video-R1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+ChenyangWangjohn/294submission,,,['enable_chunked_prefill'],,,,,,,,,,vllm
+Chivier/gswarm,,,,"['tensor_parallel_size', 'parallel']",,,,,['batch_size'],,,,vllm
+ChnQ/MI-Peaks,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+ChrisHartline/smolagentAgent,,,,['parallel'],,,,,,,,,vllm
+ChristopheYe/llm_disambiguator,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ClaasBeger/StructuralCodeUnderstanding,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Clement25/EDIT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CliBench/CliBench,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+CodeEditorBench/CodeEditorBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CodeEff/ECCO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+CodeGoat24/UnifiedReward,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+Cohere-Labs-Community/m-rewardbench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Coldwave96/LLM-Sec-Evaluation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Colin-rgb/verl-training,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ContextualAI/HALOs,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+CycloneBoy/csc_sql,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+D2I-ai/Route,,,,['tensor_parallel_size'],,,,,,,,,vllm
+D2I-ai/struxgpt,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+DAMO-NLP-SG/SeaBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DAMO-NLP-SG/SeaExam,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DAMO-NLP-SG/translation-all-you-need,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+DBMing/TFGame,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+DBMing/rStar,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DD-DuDa/BitDistiller,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DSTTSD/MoHoBench,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+DVampire/AgentScope,,,,['parallel'],,,,,,,,,vllm
+DVampire/FinWorld,,,,['parallel'],,,,,,,,,vllm
+DahaKot/llms-and-puzzles,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DarioVajda/povejmo_dpo,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+DataArcTech/Select2Reason,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+DataScienceUIBK/Rankify,,,,['tensor_parallel_size'],,,,,,,,,vllm
+David-Barnes-Data-Imaginations/llm_data_scientist,,,,['parallel'],,,,,,,,,vllm
+DeJayDev/juno-runpod-handler,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Dear-Sloth/TS-RL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Deep-Spark/DeepSparkHub,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+Deep-wang/EM_SLOT,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,,['cache'],vllm
+DeepAuto-AI/hip-attention,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,"['batch_size', 'max_num_batched_tokens']",,,,vllm
+DeepFlowcc/DeepFlow,,,,['parallel'],,,,,,,,,vllm
+DeityAG/VLM-eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Devon018/CN-SarcasmBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DimensionSTP/llm-fine-tune-hf,,,,['tensor_parallel_size'],,,,,,,,,vllm
+DivijVignesh/vit-mor,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Dizga/llm-Nego,,,,['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+DongheonYeon/KECE251R-NLP-Final-Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Dongzhijin/SDPO,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+Dutch-voyage/Logic-RL-trl,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Duxiaoman-DI/XuanYuan,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ECNU-ICALK/EasyCL,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+ECNU-ICALK/EduChat,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ECNU-SII/Continual-NExT,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+EEElisa/LLM-Guardrails,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Education-IT/AMU-Master-Thesis-Project,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+El1aNn/LLM,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ElPlaguister/Def-DTS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+EleutherAI/delphi,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+EleutherAI/lm-evaluation-harness,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Emilia0608/TAG,,,,,,,,,,['enable_prefix_caching'],,,vllm
+EnesGumuskaynak/micro-action-recognition,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+EnigmaYYY/RLAMG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Eruin4/SFT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+EthanVeselka/free-genai-bootcamp-2025,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+EugenioTL/mostlyai-engine-custom,,,,['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+EuroEval/EuroEval,,['quantization'],,"['tensor_parallel_size', 'parallel']","['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+Evanwu1125/ChartCards,,,,['tensor_parallel_size'],,,,,,,,,vllm
+EvidenceBench/EvidenceBench,,['quantization'],,,,,,,,,,,vllm
+EvolvingLMMs-Lab/lmms-eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Exgc/R1V-Free,,,,,,,,,,['enable_prefix_caching'],,,vllm
+FSoft-AI4Code/code-llm-evaluator,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+FacerAin/EHR-R1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Fanziyang-v/FastV,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Fanziyang-v/FasterVLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Fanziyang-v/contrastive-decoding,,,,['tensor_parallel_size'],,,,,,,,,vllm
+FederatedAI/FATE-LLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Fighoture/MMLU_series_benchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+FlagAI-Open/OpenSeek,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+FlagOpen/FlagEmbedding,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+FlagOpen/FlagGems,,,,['tensor_parallel_size'],,,,,,,,,vllm
+FlagOpen/FlagPerf,,,,['tensor_parallel_size'],,,,,,,,,vllm
+FlagOpen/FlagScale,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,,['cache'],vllm
+FlagOpen/RoboOS,,,,['parallel'],,,,,,,,,vllm
+Flakeeeet/capravens,,,,['tensor_parallel_size'],,,,,,,,,vllm
+FoundationVision/LlamaGen,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+FoundationVision/UniTok,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+FractalAIResearchLabs/Fathom-R1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GAIR-NLP/AIME-Preview,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GAIR-NLP/abel,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GAIR-NLP/lm-open-science-evaluation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GaotangLi/Optimize_P,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+Geaming2002/Ruler,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Gen-Verse/ScoreFlow,,,,['tensor_parallel_size'],,,,,,,,,vllm
+General-Analysis/GA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GeomeunByeol/Language2Thought,,['quantization'],,,,,,,,,,,vllm
+Ghiara/DAHLIA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GlacierEQ/FILEBOSS,,,,"['pipeline_parallel_size', 'tensor_parallel_size']",,,,,['max_num_batched_tokens'],,,,vllm
+Gloriatoney/fufan-chat-api,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+GoogleCloudPlatform/kubernetes-engine-samples,,,,['tensor_parallel_size'],,,,,,,,,vllm
+GrainForge/DeepSeek-Math,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HCY123902/atg-w-fg-rw,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HITsz-TMG/VerIPO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HKUNLP/ChunkLlama,,"['quant', 'quantization']",['scheduler'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,['enable_prefix_caching'],['cuda'],['cache'],vllm
+HKUNLP/critic-rl,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+HKUST-KnowComp/AutoSchemaKG,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+HPUhushicheng/elm,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+HVision-NKU/GlimpsePrune,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+HabanaAI/Setup_and_Install,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+HahmDY/finetuned-agent-misalignment,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+Hanpx20/open-r1-dev,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Hanzhang-lang/SELF-Graph,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HaozheZhao/MENTOR,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+Happy-Corpse/SafeMT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HarryHsing/EchoInk,,,,,,,,,,['enable_prefix_caching'],,,vllm
+HazyResearch/minions,,,,,,,,,,['enable_prefix_caching'],,['kvtransfer'],vllm
+HazyResearch/scaling-verification,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Heewq7/Visual-RFT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+HelloWorld-AICC/HelloWorld-AI,,['quantization'],,,,,,,,,,,vllm
+Hesse73/resample,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+HiromasaYamanishi/TourMix1M,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Hsueh008/RL2024-final-team-6,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HuipengXu/DISC-MedLLM-Evaluaiton,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HumanMLLM/HumanOmniV2,,,,,,,,,,['enable_prefix_caching'],,,vllm
+HumanMLLM/R1-Omni,,,,,,,,,,['enable_prefix_caching'],,,vllm
+HychTus/BRACE_Evaluation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+HyperPotatoNeo/llm_mc_distill,,,,['tensor_parallel_size'],,,,,,,,,vllm
+IAAR-Shanghai/Meta-Chunking,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+IAMXII/unitok,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+IBM/unitxt,,,,,,,,,['max_num_batched_tokens'],,,,vllm
+IBM/vllm,,['quant'],['scheduler'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+IDEA-CCNL/Ziya-Coding,,,,['tensor_parallel_size'],,,,,,,,,vllm
+IEIT-Yuan/Yuan2.0-M32,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",['early_stopping'],,,,,['cuda'],['cache'],vllm
+IKMLab/MUDI,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+InternLM/InternLM-Math,,,,['tensor_parallel_size'],,,,,,,,,vllm
+InternLM/lagent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+InternRobotics/InternSR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+InternRobotics/MMSI-Bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ItsTYtan/Policy_RLHF,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+J12-Kyrie/vllm-mindspore-project,,,,['parallel'],"['lora', 'lorarequest']",,,,,,,,vllm
+JHU-CLSP/NeoCoder,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Ja1Zhou/vllm,"['speculative_config', 'speculative']","['quant', 'quantization']",['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],"['kvtransfer', 'cache']",vllm
+Jackxiini/MockLLM-ChatTTS,,,,['parallel'],,,,,,,,,vllm
+Jakhongir0103/multimodal_cot,,,,,,,,,,['enable_prefix_caching'],,,vllm
+JasonZuu/MedTPE,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Javiery3889/AttackSeqBench,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+Jaykef/ai-algorithms,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Jecci-cmd/qwenagent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+JeffWang0835/MedicalTemplateGenerate,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+JiBinquan/Yafeng,,,,['tensor_parallel_size'],,,,,,,,,vllm
+JiaWANG-TJ/SocioBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Jiaxin-Pei/Prompting-with-Social-Roles,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Jike338/file_transfer,,,,,,,,,,['enable_prefix_caching'],,,vllm
+JimXiongGM/Interactive-KBQA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+JingruG/MatLLMSearch,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Jinwwnn/ADAMS-frontend,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Jinxiaolong1129/Foot-in-the-door-Jailbreak,,,,['tensor_parallel_size'],,,,,,,,,vllm
+JiuhaiChen/BLIP3o,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+Jo-Pan/TaxoDrivenKG,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+JosuBarru/VisualReason-CodeGen,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Julien-pour/eval_model2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Julien-pour/multi_node_inference,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+JulienEnigma/instacommand,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+Junronggg/CP2107,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+KaiHe-better/story_generation,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+KaiLi0822/RAG-LLM-Metric,,,,['tensor_parallel_size'],,,,,,,,,vllm
+KentoNishi/KE-ICML-2025,,,,['tensor_parallel_size'],"['enable_lora', 'lora_request', 'lora', 'lorarequest']",,,,,,,,vllm
+KeplerC/robo2VLM,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+KevinDayve/MultiModal-Reasoning,,,,,,,,,,['enable_prefix_caching'],,,vllm
+KevinDayve/R1V-0,,,,,,,,,,['enable_prefix_caching'],,,vllm
+KhushalM/GRPO_Finetuning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+KingVec7r/AI_plus,,,,['tensor_parallel_size'],,,,,,,,,vllm
+KingVec7r/Geo9G,,,,['tensor_parallel_size'],,,,,,,,,vllm
+KodCode-AI/kodcode,,['quantization'],,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Kwai-Klear/AR-GRPO,,,['scheduler'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,"['batch_size', 'max_num_batched_tokens']",,['cuda'],['cache'],vllm
+KwaiVGI/RoboMaster,,,,['tensor_parallel_size'],,,,,,,,,vllm
+KyleLuoma/llama_inference,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LALAYANG/translation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LAMDASZ-ML/ChinaTravel,,,,,,,,,,['enable_prefix_caching'],,,vllm
+LCM-Lab/LOOM-Scope,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LDLINGLINGLING/Eagle3_for_MiniCPM4,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LHRLAB/Graph-R1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+LLM360/Reasoning360,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LLM4DRL/LLM_FJSP_Benchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LLMforLRL/AfriInstruct,,['quantization'],,,,,,,,['enable_prefix_caching'],,,vllm
+LLaVA-VL/LLaVA-NeXT,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+LMCache/LMCache,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,['kvtransfer'],vllm
+LSquaredM/mutual_info_scaling_law,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LaVieEnRose365/AutoGraph,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LastDance500/OntoURL,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+Lavezlyn/computing_culture,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LearnerYueCHEN/MiniCPM-finetune,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Lecterz/z_datatest,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+LeonGuertler/UnstableBaselines,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Lephuoctuyen/Meta_prompting_with_g4f,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LexiYin-mh/T2I-ICL-Low-Semantic,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+LimOkii/nlp_lab,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Linwei94/LLM-Calibration-Study,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LiuHengyu321/IR3D-Bench,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+LiuPeiP-CS/CodeInverter,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Liuziyu77/Visual-RFT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+LiveCodeBench/LiveCodeBench,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Liyan06/MiniCheck,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+LougineShalaby234/NLP-project-Youmna-and-Lougine,,,,['parallel'],,,,,,,,,vllm
+LthreeC/SecBen,,,,['tensor_parallel_size'],,,,,,,,,vllm
+LukaMeladze/CP2107,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Luxor9/lux,,,,['parallel'],,,,,,,,,vllm
+Lyaction/BatchLLM,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Lycus99/ClinBench-HPB,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Lyshc-cgc/LSP-NER,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+Lyshc-cgc/UFER,,,,['tensor_parallel_size'],,,,,,,,,vllm
+MHashemzadeh/gen_prm,,,,"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+MLGroupJLU/MixupModelMerge,,,,['tensor_parallel_size'],,,,,,,,,vllm
+MPWARE-TEAM/DR,,['quantization'],,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+MaJinWakeUp/LLMRerank,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+MaLA-LM/GlotEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Madhav-Kanda/SLM-Debugger,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+Man-snow/llm2025compet_Man-snow,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+MananAg007/diverse-data-synthesis,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+Manoj2boss/DeepSick-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Manuel-2011/neural_networks_experiments,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Manuel-2011/rl_translator,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Marioiacobelli/Evolutionary-Merging-for-L2S-Math-Reasoning,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+Marker-Inc-Korea/AutoRAG,,,,['parallel'],,,,,,,,,vllm
+Marker-Inc-Korea/COT_steering,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Marker-Inc-Korea/KoLLM_Eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Marker-Inc-Korea/Logickor-Gemma2-Eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+MattYoon/mm-eval-anonymized,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Mayer-Domminic/code-assistant,,['quantization'],,,,,,,,,,,vllm
+McGill-NLP/nano-aha-moment,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+MedHallu/MedHallu,,,,['tensor_parallel_size'],,,,,,,,,vllm
+MeetKai/functionary,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Meltryllisde/bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Michael-Shaffer/Chatbot,,['quantization'],,,,,,,,,,,vllm
+Michal1337/projects,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+MihirP007/Pi_labs_inference,,,['enable_chunked_prefill'],,,,,,,,,,vllm
+MiuLab/FactAlign,,,,['tensor_parallel_size'],,,,,,,,,vllm
+MiuLab/TMLU,,['quantization'],,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+Mochi0213/Non-stop-Reasoning-Attack-Phase1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+ModelCloud/GPTQModel,,,,['parallel'],,,,,,,,,vllm
+MraDonkey/rethinking_prompting,,,,['tensor_parallel_size'],,,,,,,,,vllm
+N00bcak/CP2107,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+N00bcak/nano-aha-moment-improved,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+NEU-CS/Attack-pretrained-models-of-code,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+NEUIR/LegalDelta,,,,,,,,,,['enable_prefix_caching'],,,vllm
+NEWMES-AI/ReCT-VLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+NJUNLP/PATS,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+NKWBTB/SummaCoz,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+NVIDIA-NeMo/Curator,,['quantization'],,,,,,,['max_num_batched_tokens'],,,,vllm
+NVIDIA-NeMo/NeMo,,,['scheduler'],['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,['cache'],vllm
+NVIDIA-NeMo/RL,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+NVIDIA/TensorRT-Model-Optimizer,,['quantization'],,,,,,,,,,,vllm
+NVlabs/RocketKV,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+Nan-Huo/Micro-Act,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Nardien/agent-distillation,,,,['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+NastyMarcus/PhyX,,,,['tensor_parallel_size'],,,,,,,,,vllm
+NbAiLab/nb-magpie,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Neehan/PoIW,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+Neilus03/GUIDEX,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Nexround/ftg,,,,['tensor_parallel_size'],,,,,,,,,vllm
+NineAbyss/S2R,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+Nkluge-correa/lm-evaluation-harness-bengali,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+NoakLiu/SandGraphX,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+OSU-NLP-Group/Deductive-Beam-Search,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+OSU-NLP-Group/HippoRAG,,['quantization'],,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,['enable_prefix_caching'],,,vllm
+OSU-NLP-Group/In-Context-Reranking,,,,['tensor_parallel_size'],,,,,,,,,vllm
+OceanGPT/OceanGPT,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+OndineMrCai/RLEE,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+OoDBag/VisTA,,,,,,,,,,['enable_prefix_caching'],,,vllm
+OpenBMB/MiniCPM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+OpenBMB/UltraFeedback,,,,['tensor_parallel_size'],,,,,,,,,vllm
+OpenBlatam/TruthGPT-chatGPT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+OpenDCAI/DataFlow,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+OpenGVLab/VideoChat-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+OpenMOSS/VLABench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+OpenNebula/one-apps,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+OpenPipe/OpenPipe,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+OpenRLHF/OpenRLHF,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+OpenSafetyLab/SALAD-BENCH,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Optima-CityU/LLM4AD,,,,['tensor_parallel_size'],,,,,,,,,vllm
+OptimalScale/LMFlow,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+OuyangKun10/SpaceR,,,,,,,,,,['enable_prefix_caching'],,,vllm
+OzDuys/diplomacy_self_play,,,,"['tensor_parallel_size', 'parallel']",,,,,['batch_size'],['enable_prefix_caching'],,,vllm
+PHMbench/PHM_Agent,,,,['parallel'],,,,,,,,,vllm
+PKU-Alignment/align-anything,,,,['tensor_parallel_size'],,,,,,,,,vllm
+PKU-Alignment/eval-anything,,,,['tensor_parallel_size'],,,,,,,['cuda'],,vllm
+PKU-SDS-lab/POQD-ICML25,,,,['tensor_parallel_size'],,,,,,,,,vllm
+PKU-YuanGroup/PiCO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+PaddlePaddle/PaddleNLP,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+PaperSubmission123321/NIPS2025,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+PascalPolygon/trl,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Pikus16/GRPO_modality_fuse,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Prakyathkantharaju/GRPO_updated,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ProbablyFaiz/rl,,,,['parallel'],"['lora', 'lorarequest']",,,,,,,,vllm
+PruthviVKadam/SP25-DS677004-Final-Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+QDRhhhh/SciVer,,,,['tensor_parallel_size'],,,,,,,,,vllm
+QiWang98/VideoRFT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+QinYang79/ICL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+QingFei1/PrefRAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Question406/LLM-Project-Template,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+QwenLM/Qwen,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+QwenLM/Qwen3-Coder,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+R2MED/R2MED,,,,['tensor_parallel_size'],,,,,,,,,vllm
+RAGEN-AI/RAGEN,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+RD211/zero-waste-GRPO,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+RTR1776/olmocr,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+RUC-GSAI/YuLan-Mini,,,,['tensor_parallel_size'],,,,,,,,,vllm
+RUC-NLPIR/ARPO,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+RUC-NLPIR/FlashRAG,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+RUC-NLPIR/OmniEval,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+RUC-NLPIR/Tool-Star,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+RUCAIBox/LLMBox,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+RUCAIBox/OlymMATH,,,,['tensor_parallel_size'],,,,,,,,,vllm
+RUCAIBox/Slow_Thinking_with_LLMs,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+Rajarshi12321/TRL-FPO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Ramnarayan-Choudhary/UGRIP_R,,['quantization'],,,,,,,,,,,vllm
+RefalMachine/llmtf_open,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+RenlyH/VLMEvalKit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+RoBBR-Benchmark/RoBBR,,['quantization'],,,,,,,,,,,vllm
+Robert-Stackflow/LLaMA-Factory,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+RoldSI/smolagents-multi-tenant,,,,['parallel'],,,,,,,,,vllm
+RomanKoshkin/toLLMatch,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Rubaith123/DS-677-Course-Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+RylanSchaeffer/KoyejoLab-Collapse-or-Thrive,,,,['parallel'],,,,,,,,,vllm
+SKNETWORKS-FAMILY-AICAMP/SKN12-FINAL-3TEAM,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+SOSBench/SOSBenchEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SUFE-AIFLM-Lab/FinEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SaFoLab-WISC/AutoDAN-Turbo,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SaFoLab-WISC/OET,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+Saga9103/t2yLLM,,,,['parallel'],,,,,,,,,vllm
+SalesforceAIResearch/BingoGuard,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SalesforceAIResearch/SFRJudge,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+SalesforceAIResearch/SweRank,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+SalesforceAIResearch/perfcodegen,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Seansyx123/Dual-Multi-RAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SebastianBodza/blog_projects,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ServerlessLLM/ServerlessLLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SeungyounShin/minimal-mcts-llm,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+SharkyBamboozle/iVISPAR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ShenJiarun/LLM_Reasoning,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+ShootingWong/RichRAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SilentView/GigaTok,,,['scheduler'],['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+SimonOuellette35/OODGenARC-AGI,,,,['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Simple-Efficient/RL-Factory,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+SirNosh/Neuroplastic-LLM,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+SkogAI/smol,,,,['parallel'],,,,,,,,,vllm
+SkyworkAI/DeepResearchAgent,,,,['parallel'],,,,,,,,,vllm
+SkyworkAI/Skywork-R1V,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SliMM-X/CoMP-MM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SloLama/local_ocr,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Speakn0w/Controllable-Code-Completion-Benchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+SqueezeBits/GraLoRA,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+StarsfieldAI/R1-V,,,,,,,,,,['enable_prefix_caching'],,,vllm
+SteveAshore/EAST_Reproduction,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+StigLidu/DualDistill,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Su-informatics-lab/nova,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+SunzeY/SEAgent,,,,,,,,,,['enable_prefix_caching'],,,vllm
+TIGER-AI-Lab/MAmmoTH,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TIGER-AI-Lab/MMLU-Pro,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TIGER-AI-Lab/PixelWorld,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TTTTTTris/lm_eval,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+TTZX2ke/FirstChat,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Tandemn-Labs/tandemn-vllm,,['quantization'],,['tensor_parallel_size'],,,,,,,,"['cache', 'kvtransfer']",vllm
+Tanny2109/HEART,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Teddy-Li/MulVOIEL,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Tencent/digitalhuman,,,,"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,,['cache'],vllm
+TencentARC/GRPO-CARE,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TencentARC/Video-Holmes,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Tendo33/Industry_pretrain_process,,['quantization'],,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+TergelMunkhbat/concise-reasoning,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+ThanhRise/instruction-data-generator,,['quantization'],,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+Thanitkul/PxC-book-recommendation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+The-kamisato/MatryoshkaKV-cache,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+TheClassicTechno/MathDatasetBenchmarking,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Thesys-lab/Helix-ASPLOS25,,,['scheduler'],['parallel'],['lora'],,,,,,['cuda'],['cache'],vllm
+TianheWu/VisualQuality-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+TideDra/lmm-r1,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Tim4Dec/CogNote,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+TingYi028/AICUP,,,['scheduler'],['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,['cache'],vllm
+TingchenFu/MathIF,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Tongyi-Zhiwen/QwenLong-L1,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+TranNhiem/FoxBrain_LLMs,,,,['parallel'],,,,,,,,,vllm
+Tristan-alpha/Temp-Reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TurkuNLP/LLM_document_descriptors,,,,['tensor_parallel_size'],,,,,,,,,vllm
+TurkuNLP/linewise_quality_filtering,,,,['tensor_parallel_size'],,,,,,,,,vllm
+UBC-NLP/pearl,,,,['tensor_parallel_size'],,,,,,,,,vllm
+UCSC-VLAA/MedVLThinker,,,,['tensor_parallel_size'],,,,,,,,,vllm
+UMass-Embodied-AGI/BudgetGuidance,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+USTCLLM/Nexus,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Ultramarine-spec/LR2Bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Unakar/LLM-Math-Eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Unakar/Wait-For-Attention,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Uysim/Qwen-testing,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+V-Droid-Agent/V-Droid,,['quantization'],,,"['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+V01D-FVXER/Ai.Xeen,,['quantization'],,,,,,,,,,,vllm
+VITA-MLLM/VITA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+VinitraMk/696ds-playground,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+Visual-Agent/DeepEyes,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+VisualSphinx/VisualSphinx,,,,['tensor_parallel_size'],,,,,,,,,vllm
+WGLab/MINT-LLM,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+WangYC-99/SoAyLLaMA_Training,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Wendy-1222/SLM_Jailbreak,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+WendyCheun/QwenSearchEnhancer,,,,['tensor_parallel_size'],,,,,,,,,vllm
+WhiteGiver-Plus/RAPO,,,,['tensor_parallel_size'],,,,,"['batch_size', 'max_num_batched_tokens']",,,,vllm
+WillDreamer/AgentRL,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+WillQvQ/LearningVerl,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Wind0121/vLLM,['speculative'],"['quant', 'quantization']",['scheduler'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+WindyLee0822/prm_eval,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+WolverineX23/chinese-llama2-alpaca,,,,['tensor_parallel_size'],,,,,,,,,vllm
+WooooDyy/AgentGym,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+X1nyuLu/rl-llm,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+XXares/TODO_reward_bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XZ-X/gennm-ndss-ae,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XiaofengLin7/REIL,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+Xiaopengli1/PDR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XiaoyangLiu-sjtu/GTED,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XinXU-USTC/CoLeG-Math,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XinXing3/CroFinben,,,,['tensor_parallel_size'],,,,,,,,,vllm
+XuTiany1/Cross-Lingual_MathMarkup_Langauge_Prompting,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Xuekai-Zhu/toedit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YJiangcm/FollowBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YJiangcm/WebR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YOURENXIAKE/CDQA,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+YOUSSEF-MOKNIA/askjuri,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YXB-NKU/SE-GUI,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Yanbin-Yin/De-Arena,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YangLing0818/SuperCorrect-llm,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+Yerind1129/NLP_Assignment3,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YiandLi/math_focal_loss_sft,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YiboWANG214/ProjectTest,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YuSun-Work/ReasonMed,,,,['tensor_parallel_size'],,,,,,,,,vllm
+YuYingLi0/MathClean,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Yueeeeeeee/HRPO,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Yuliang-Liu/MonkeyOCR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Yuqi-Zhou/GUI-G1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+Yuxiang-Lai117/Med-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+YuxiangZhang0114/verl_fork,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+ZNLP/LR2Bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ZZOMING-K/Korean-cipher,,['quantization'],,,,,,,,,,,vllm
+ZeYang1025/MORALISE,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Zeng-WH/step-by-step-ppo,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+ZeonLap/UndergraduateHomework,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+Zh1yuShen/HopWeaver,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Zhanghahah/ChemActor,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ZhaolinGao/REBEL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ZhaoningYu1996/GRPO,,,,['parallel'],,,,,,,,,vllm
+Zhengsh123/FREE-Merging,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ZitongYang/tinylm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+Ziyang412/Video-RTS,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ZiyuanMa/llm-math-post-training,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+Zkli-hub/MoD_dev,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+Zpressen/livebenchcode_test,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+Zxia0130/gradio,,,,['tensor_parallel_size'],,,,,,,,,vllm
+a-tabaza/binding_music,,['quantization'],,,,,,,,,,,vllm
+aakashks/aimo,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+aaronwu901225main/python-,,['quantization'],,,,,,,,,,,vllm
+abblock/bema,,,,['parallel'],,,,,,,,,vllm
+abdelfattah-lab/SplitReason,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+abdulhaim/consistency_LLMs,,,,['tensor_parallel_size'],,,,,,,,,vllm
+abhishekpanigrahi1996/MOSS,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+abyMosa/neural_chat,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+adgohar/aegis-agent,,,,['parallel'],,,,,,,,,vllm
+adityavavre/VidEgoVLM,,,,,,,,,,['enable_prefix_caching'],,,vllm
+adobe-research/NoLiMa,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+adwardlee/SALAD,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aelaradi11/benchmarking,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+agentica-project/verl,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],,['cuda'],,vllm
+agiresearch/AutoFlow,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+agiresearch/CoRE,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+agiresearch/ContextHub,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+ahalterman/NGEC-2025,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ai-bot-pro/achatbot,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+ai-dynamo/dynamo,,,,,,,,,,,,['cache'],vllm
+ai-nikolai/StateAct,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aigc-apps/VideoX-Fun,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+aime-labs/aime-api_vllm,,,,['parallel'],,,,,,,,,vllm
+aimerib/smollmfinetune,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+akkky02/LLM-Inference,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+albertan017/LLM4Decompile,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aleversn/LLM_PEFT,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+alex2awesome/news-discourse-students,,,,['tensor_parallel_size'],,,,,,,,,vllm
+alexxchen/open-r1-vision,,,,,,,,,,['enable_prefix_caching'],,,vllm
+algoprog/InteRank,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+ali-vilab/CAPability,,,,['tensor_parallel_size'],,,,,,,,,vllm
+alibaba/ChatLearn,,,,"['tensor_parallel_size', 'pipeline_parallel_size', 'parallel']",,,,,"['batch_size', 'max_num_batched_tokens']",,,,vllm
+alibaba/OmniRL,,,,,,,,,,['enable_prefix_caching'],,,vllm
+alibaba/ROLL,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+alipay/PainlessInferenceAcceleration,,['quantization'],,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+allen-li1231/refiner-rag,,,,['tensor_parallel_size'],,,,,,,,,vllm
+allenai/CommonGen-Eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+allenai/FlexOlmo,,,,['tensor_parallel_size'],,,,,,,,,vllm
+allenai/WildBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+allenai/olmocr,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+allenai/open-instruct,,,,,,,,,,['enable_prefix_caching'],,,vllm
+allenai/reward-bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+alphadl/LanguageAware_Tuning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+alterdim/vlmvlm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+amazon-science/RefChecker,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ammar-abagumbul/KG4Py,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+andrewhinh/mhf,,,,['tensor_parallel_size'],,,,,,,,,vllm
+andyjliu/s25-coopai,,,,['tensor_parallel_size'],,,,,,,,,vllm
+andysingal/llm-course,,['quantization'],,,,,,,,,,,vllm
+annasoligo/EM_interp,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+anonepo/LLM4Decompile,,,,['tensor_parallel_size'],,,,,,,,,vllm
+anonloftune/LoFTune,,,,,"['lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+ansschh/Scraft,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+antmicro/kenning,,"['quantization', 'quant']",,,,,,,,,,,vllm
+anyscale/anyscale-mongodb-multi-modal-search-app,,,,,['enable_lora'],,,,,,,,vllm
+anyscale/templates,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+apicurius/deepconf-paper-replication,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aplesner/llm-inference,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+apvidul/setup-scripts,,,,['tensor_parallel_size'],,,,,,,,,vllm
+argonne-lcf/ALCF_Hands_on_HPC_Workshop,,"['quantization', 'quant']",['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,['enable_prefix_caching'],,,vllm
+argonne-lcf/ATPESC_MachineLearning,,"['quantization', 'quant']",['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,['enable_prefix_caching'],,,vllm
+asanchez75/slm-mcq-eval,,['quantization'],,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+asdfo123/SimpleR1-Reproduction,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+ashmalvayani/CAP5516_MedicalImageComputing,,,,['tensor_parallel_size'],,,,,,,,,vllm
+athenarc/experimental-analysis-of-value-linking,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+atomgptlab/atomgpt,,"['quant', 'quantization']",,['parallel'],"['lora', 'lorarequest']",,,,,,,,vllm
+augustepoiroux/LeanInteract,,['quantization'],,,,,,,,,,,vllm
+avinanakarmi/DL_Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+avitrost/exploration,,,,['tensor_parallel_size'],,,,,,,,,vllm
+awdadawdad/ntu_paslab,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aws-samples/amazon-sagemaker-generativeai,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+aws-samples/aws-ai-ml-workshop-kr,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aws-samples/awsome-distributed-training,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aws-samples/mistral-on-aws,,,,['tensor_parallel_size'],,,,,,,,,vllm
+aws-samples/sagemaker-distributed-training-workshop,,,,['tensor_parallel_size'],,,,,,,,,vllm
+axolotl-ai-cloud/axolotl-cookbook,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+axolotl-ai-cloud/plugin-atropos,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+ayushsi42/R1-VLM,,,,,,,,,,['enable_prefix_caching'],,,vllm
+azerttsds/chapter-llama,,,,['tensor_parallel_size'],,,,,,,,,vllm
+baaivision/UniVLA,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+bachvietdo01/seqrecllmgnn,,,,['tensor_parallel_size'],,,,,,,,,vllm
+baday19/project-specific_code_completion,,,,['tensor_parallel_size'],,,,,,,,,vllm
+badlogicmanpreet/grpo,,,,,,,,,,['enable_prefix_caching'],,,vllm
+barmenteros/aimo2_project_2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+basetenlabs/truss-examples,,,,['tensor_parallel_size'],,,,,,,,,vllm
+bbOwOdd/vllm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+beccabai/hallu_med,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+beir-cellar/beir,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+besteaydemir/vlm-rl,,,,,,,,,,['enable_prefix_caching'],,,vllm
+bgeneto/olmocr-streamlit,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+bghira/SimpleTuner,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+bhimrazy/chat-with-pixtral-12B,,,['enable_chunked_prefill'],,,,,,,,,,vllm
+bigcode-project/bigcodebench,,,,,"['enable_lora', 'lora_request', 'lora', 'lorarequest']",,,,,,,,vllm
+bio-mlhui/MedGround-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+biswesh456/Representation-and-storage-of-grounded-information,,,,['tensor_parallel_size'],,,,,,,,,vllm
+bnewm0609/epistemic-training,,,,['parallel'],"['lora', 'lorarequest']",,,,,,,,vllm
+bodasadallah/RevUtil,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+bowang-lab/BioReason,,,,,,,,,,['enable_prefix_caching'],,,vllm
+brando90/ultimate-utils,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+bridge-ai-neuro/SORT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+buptNLP/nlp2025_group_22,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+buyaojinchang/calvin_world,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+camilobrownpinilla/CF_DCLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+candywal/drift-tuning,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+caprilovel/financebench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cassanof/CodeRM,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+causalNLP/MultiTP,,,,['tensor_parallel_size'],,,,,,,,,vllm
+celine-lee/critical_thinking,,,,['parallel'],,,,,,,,,vllm
+centerforaisafety/HarmBench,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+centerforaisafety/emergent-values,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cfiken/run-elyza-tasks-100,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chaoyuhao/AnomalyR1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+chapoteaud/gatap,,,,['tensor_parallel_size'],,,,,,,,,vllm
+charliedream1/ai_wiki,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+charukad/final,,,,['tensor_parallel_size'],,,,,,,,,vllm
+charukad/finalrepo2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+charukad/llm-v2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+charukad/llm-v3,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chen-judge/SPC,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chenpipi0807/PIP_Tool,,,,,,,,,,['enable_prefix_caching'],,,vllm
+chenxuniu/TokenSpark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chkwy/SSFO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chunhuizhang/llm_rl,,,,['tensor_parallel_size'],,,,,,,,,vllm
+chunhuizhang/multi-turn-verl,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+chunhuizng/audio-long-form-reasoner,,,,,,,,,,['enable_prefix_caching'],,,vllm
+citadel-ai/langcheck,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cjmcv/pocket-ai,,,,['parallel'],,,,,,,,,vllm
+cloudera/CML_AMP_Knowledge_Distillation_With_Private_Data,,['quantization'],,"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+cogito233/WikiRL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+colinzhaoust/fact-and-reflection,,,,['tensor_parallel_size'],,,,,,,,,vllm
+collinear-ai/curator-evals,,,,['tensor_parallel_size'],,,,,,,,,vllm
+compl-ai/compl-ai,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cool9203/llm-train,,['quantization'],,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+cspzyy/RealHiTBench,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+ctrl-gaurav/DataSense,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ctrl-gaurav/LLMThinkBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cuongnguyenx/CounselingBench,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+cxb-student/secure_rl,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cyzhh/MMOS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+cyzhh/ZZ-Math,,,,['tensor_parallel_size'],,,,,,,,,vllm
+d223302/TRACT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+d223302/rag-metadata,,,,['tensor_parallel_size'],,,,,,,,,vllm
+danascott329/Mixtral-8x7b-QLoRA-finetuning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+darien-schettler/aimo-solver,,,,['tensor_parallel_size'],,,,,,,,,vllm
+databricks/databricks-ml-examples,,,,['tensor_parallel_size'],,,,,,,,,vllm
+databrickslabs/doc-qa,,,,['tensor_parallel_size'],,,,,,,,,vllm
+dataesr/llm-finetuning,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+datagems-eosc/cross-dataset-discovery,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+datarubrics/datarubrics,,,,['tensor_parallel_size'],,,,,,,,,vllm
+datawhalechina/self-llm,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+dddraxxx/laughing-potato,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+deep-info/Chinese-LLaMA-Alpaca-2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+deepseek-ai/DeepSeek-Math,,,,['tensor_parallel_size'],,,,,,,,,vllm
+deutsche-nationalbibliothek/semeval25_llmensemble,,,,['parallel'],,,,,,,,,vllm
+dgme-syz/MOE-LPR,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+dhdbsrlw/SILMM-Implementation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+diegonoti/MMLU-Pro,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ding523/Curr_REFT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+dingyue772/o1-evals,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+dkdk22/forkQwenMathEval,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+dma2077/Visual-RFT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+dmaxtec/vllm,,"['quant', 'quantization']",['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,,['cuda'],,vllm
+dmis-lab/OLAPH,,,,['tensor_parallel_size'],,,,,,,,,vllm
+dmis-lab/self-biorag,,,,['tensor_parallel_size'],,,,,,,,,vllm
+dorogit/inteLearn_ML,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+draidev/LLM_PEFT_with_Sentiment_Dataset,,['quantization'],,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+drive-bench/toolkit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+dry86/HCD_R,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ds4dh/GLiNER-biomed,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+dshah02/passk_verl,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+ducphuE10/ZeroEval,,,,['tensor_parallel_size'],"['enable_lora', 'lora_request', 'lora', 'lorarequest']",,,,,,,,vllm
+dvlab-research/ARPO,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+dvlab-research/Logits-Based-Finetuning,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+dvlab-research/MoTCoder,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+dvlab-research/Seg-Zero,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+dvlab-research/Step-DPO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+dvlab-research/VisionThink,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+echen333/stanford-lm,,,,,,,,,,['enable_prefix_caching'],,,vllm
+echonoshy/cgft-llm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+efeslab/Nanoflow,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+egangu/StructFact,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ekonwang/VLMEvalKit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+elviswxy/RAG_fairness,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+emattia/metaflow-post-training,,,,['tensor_parallel_size'],,,,,,,,,vllm
+emattia/tune-sft,,,,['tensor_parallel_size'],,,,,,,,,vllm
+emory-irlab/pyterrier_genrank,,,,['tensor_parallel_size'],,,,,,,,,vllm
+emotion-analysis-project/BRIGHTER,,,,['tensor_parallel_size'],,,,,,,,,vllm
+enyst/play,,,,['tensor_parallel_size'],,,,,,,,,vllm
+epolewski/EricLLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+eth-sri/matharena,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ethanrimes/llm-coverage-project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ethanrimes/mcts-math-reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+euclidgame/minimal-inference,,,,['tensor_parallel_size'],,,,,,,,,vllm
+euiin/MAD_as_TTS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+eunseongc/R2C,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+evardhen/VLM-Grocery-Fine-Tuning,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+evnkm/probARC,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+facebookresearch/CausalVQA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+fengzi258/Ocean-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+fffeifang/GenTorrent,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,['kvtransfer'],vllm
+fixstars/mdk,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+flageval-baai/FlagEvalMM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+flowersteam/aces,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+foundation-model-stack/fms-dgt,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+frandoLin/legal_assistant,,,,['tensor_parallel_size'],,,,,,,,,vllm
+frankdarkluo/TSRR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+fufankeji/fufan-chat-api,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+function2-llx/MMMM,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+gabrielkmbo/explore-rl,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+gaeun0112/Character-Hallucination-Benchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+gagan3012/self_rewarding_models,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+ganler/code-r1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+gaurav8297/hextech,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,['max_num_batched_tokens'],,,,vllm
+gautierdag/plancraft,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+gccnlp/BeamLoRA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+gchochla/LLM-multilabel-differently,,['quantization'],,,,,,,,,,,vllm
+gchochla/LiaHR,,['quantization'],,,,,,,,,,,vllm
+geek-dream999/EasyAnimate,,,,['tensor_parallel_size'],,,,,,,,,vllm
+geniusrise/text,,['quantization'],['scheduler'],"['pipeline_parallel_size', 'tensor_parallel_size', 'parallel']","['enable_lora', 'lora']",,,,['max_num_batched_tokens'],,,['cache'],vllm
+georcons/mathyx,,,,['tensor_parallel_size'],,,,,,,,,vllm
+gersteinlab/ML-Bench,,,,"['tensor_parallel_size', 'pipeline_parallel_size']","['enable_lora', 'lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+geshang777/Seg-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+gjq100/Bohdi,,,,['tensor_parallel_size'],,,,,,,,,vllm
+gkswns0531/trt_build_model,,['quantization'],,,,,,,,,,,vllm
+glitchinthematrix/codeforces_sft,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+gmuggs/Urban-Mobility-LLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+gnekt/Pirates-of-the-RAG-Adaptively-Attacking-LLMs-to-Leak-Knowledge-Bases,,['quantization'],,,,,,,,,,,vllm
+goliaro/flexllm,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+gongfan1213/cohere,,,,"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+gongfan1213/framework,,,,['tensor_parallel_size'],,,,,,,,,vllm
+goodbai-nlp/LLMTuning-devel,,,,['tensor_parallel_size'],,,,,,,,,vllm
+google-research/google-research,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+groundlight/r1_vlm,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+gtfintechlab/KG-QAGen,,,['enable_chunked_prefill'],,,,,,,['enable_prefix_caching'],,,vllm
+gtxygyzb/EvoCoT,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+guijinSON/MM-Eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+guochenmeinian/cs336-assignment5,,,,,,,,,,['enable_prefix_caching'],,,vllm
+guozixunnicolas/Moonbeam-MIDI-Foundation-Model,,,,['tensor_parallel_size'],,,,,,,,,vllm
+haesungpyun/RefpyDST,,['quantization'],,,,,,,,,,,vllm
+haizelabs/bijection-learning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+haizelabs/redteaming-resistance-benchmark,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+handler85/apollo-split-prover,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+hangeol/UniR,,,,['tensor_parallel_size'],,,,,"['batch_size', 'max_num_batched_tokens']",,,,vllm
+hanhainebula/Nexus,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hanstong/Ploutos,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hao-ai-lab/vllm-ltr,,"['quantization', 'quant']",['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+haoxiongliu/ProofAug,,,,['tensor_parallel_size'],,,,,,,,,vllm
+happyZYM/cs2916-2025,,,,['tensor_parallel_size'],,,,,,,,,vllm
+haseeburrehmanfaheem/framework-embeddings-llms,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hauteuar/agentic_RAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hauteuar/research_agent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hbnu-kilab/ScholarBenchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+heiandecongtou/Chinese-LLaMA-Alpaca-2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hemingkx/TokenSkip,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+heng380/assignment-5,,,,,,,,,,['enable_prefix_caching'],,,vllm
+hgissbkh/translation-alignment,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hieum98/action-selected-rag,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hiroaki-1-1-0/TRL_for_Experiment,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+hiyouga/EasyR1,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+hkust-nlp/Laser,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+hkust-nlp/RL-Verifier-Pitfalls,,,,"['tensor_parallel_size', 'pipeline_parallel_size', 'parallel']",,,,,,,,,vllm
+hkust-nlp/simpleRL-reason,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+hlzhang109/nanoEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+hoanganhpham1006/speech_classification,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+homles11/SaLoRA,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+hoorangyee/LRAGE,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+howard-hou/RWKV-X,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+hpcaitech/ColossalAI,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+hqhQAQ/Hint-GRPO,,,,,,,,,,['enable_prefix_caching'],,,vllm
+huggingface/lighteval,,,,['parallel'],,,,,,,,,vllm
+huggingface/smolagents,,,,['parallel'],,,,,,,,,vllm
+huggingface/trl,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+hustvl/AlphaDrive,,,,,,,,,,['enable_prefix_caching'],,,vllm
+hwangchahae/Performance_Evaluation,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+i2vec/MM-R5,,,,,,,,,,['enable_prefix_caching'],,,vllm
+iKora128/kanji-2-kana,,,,['tensor_parallel_size'],,,,,,,,,vllm
+iamnotpi/SPPO-KD,,,,['tensor_parallel_size'],,,,,,,,,vllm
+icip-cas/ShortV,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ictmldm/SCAPE,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ictnlp/FlexRAG,,,,['tensor_parallel_size'],,,,,,,,,vllm
+idanshen/multi_ref,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ielab/llm-rankers,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+ignorejjj/LongRefiner,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+iie-ycx/DEER,,,,['tensor_parallel_size'],,,,,,,,,vllm
+iiis-ai/cumulative-reasoning,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+imoneoi/openchat,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+impel-intelligence/dippy-bittensor-subnet,,,,"['tensor_parallel_size', 'parallel']",['enable_lora'],,,,,,,,vllm
+inclusionAI/AgenticLearning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+inferless/mixtral-8x7b-v0.1,,['quantization'],,,,,,,,,,,vllm
+inferless/qwen2-72b-instruct,,['quantization'],,,,,,,,,,,vllm
+inflaton/fake-news,,['quantization'],,,,,,,,,,,vllm
+insop/kernel-coder,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+intel/auto-round,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+intel/ipex-llm,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+iris-sast/iris,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ironbar/arc24,,,,"['tensor_parallel_size', 'parallel']","['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+isShayulajiao/CCL25-Eval-ZhengMing,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ishida-lab/IW-DPO,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+israel-adewuyi/test_time_scaling_papers,,,,['tensor_parallel_size'],,,,,,,,,vllm
+israfelsr/kaleidoscope,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ivangabriele/trl-sandbox,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+jackboyla/GLiREL,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+jagane-oxmiq/smolagents,,,,['parallel'],,,,,,,,,vllm
+jakob-bjorner/optimal-explorer-dev,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+james-tn/llm-fine-tuning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jcguo123/Temporal-Consistency,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+jd730/BRIDGE,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+jeffgong047/LLM_ProblemConversion,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+jerry3027/MSQA,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+jerryyang1231/TransKD-ASR,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+jettjaniak/chainscope,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jgi-genomeocean/genomeocean,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jianzhnie/Open-R1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jingyi0000/R1-VL,,,,,,,,,,['enable_prefix_caching'],,,vllm
+jinpz/dtv,,['quantization'],,,,,,,,,,,vllm
+jmhb0/PaperSearchRL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jmtitan/HypoGen,,,,,,,,,,['enable_prefix_caching'],,,vllm
+joel-wu/how-large-language-models-encode-theory-of-mind,,,,['tensor_parallel_size'],,,,,,,,,vllm
+johnson111788/SpatialReasoner,,,,,,,,,,['enable_prefix_caching'],,,vllm
+johny-b/misalignment-generalization,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jonathanlu31/evals,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jorahn/RookWorld,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jordansauce/sandbagging-research-sprint,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+josejuanmartinez/mindcraft,,['quantization'],,,,,,,,,,,vllm
+jou2024/EXPRAG,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+jr-john/ehrsql-2024,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jroo162000/cmp-use,,,,['tensor_parallel_size'],,,,,,,,,vllm
+jurgen-paul/smolagents,,,,['parallel'],,,,,,,,,vllm
+just1nseo/verifying-the-verifiers,,,,['tensor_parallel_size'],,,,,,,,,vllm
+justtherightsize/empo,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kamaravichow/seed-gathering,,,,['tensor_parallel_size'],,,,,,,,,vllm
+katiekang1998/reasoning_generalization,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kaushal0494/SelectLLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kaushal0494/aitutor_assessmentkit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kclaudeeager/Quen_model,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kcxain/musl,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+kerkathy/causal-prompt,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kfq20/SIV-Bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kimsh0507/RewardMATH_official,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kimsh0507/rethinking_rm_eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+knightyxp/Filter_Video_In_context_data,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kokolerk/TON,,,,,,,,,,['enable_prefix_caching'],,,vllm
+kristen-ji/Thesis,,,,['tensor_parallel_size'],,,,,,,,,vllm
+kubeedge/ianvs,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+kwikconsult/ClinicianClone-inference,,['quantization'],,,,,,,,,,,vllm
+ky295/reasoning-manipulation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lacoco-lab/always_a_transformer,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lakshmanok/generative-ai-design-patterns,,,,['tensor_parallel_size'],,,,,,,,,vllm
+langfengQ/verl-agent,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+laputak/llm-study-deploy,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+lcy80366872/knowledgeable-r1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+leakless21/omoai,,['quantization'],,,,,,,['max_num_batched_tokens'],,,,vllm
+lean-dojo/LeanCopilot,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lennendd/Table-Agent,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+leonunix/Japanese-LLaMA2-Alpaca,,,,['tensor_parallel_size'],,,,,,,,,vllm
+leozhilin/grpo_experiment,,,,,,,,,,['enable_prefix_caching'],,,vllm
+lesleychou/NetPress_benchmark,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+lianqi1008/Hi-Guard,,,,,,,,,,['enable_prefix_caching'],,,vllm
+lindingyang/tugraph_text2cypher,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+lingxiaotang/CodeReasoner,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+liuchengwucn/Safe,,,,,,,,,['max_num_batched_tokens'],,,,vllm
+liuhanzuo/DriveVLMs,['speculative_config'],,,,,,,,,,,,vllm
+liushiliushi/ConfTuner,,,,['tensor_parallel_size'],,,,,,,,,vllm
+liushiliushi/Uncertainty_ft,,,,['tensor_parallel_size'],,,,,,,,,vllm
+liushiliushi/llm-uncertainty,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lixixi89055465/llm_stu,,,,['tensor_parallel_size'],,,,,,,,,vllm
+liyongqi2002/SEAM,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,['max_num_batched_tokens'],,,,vllm
+lll6gg/UI-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+llyx97/video_reason_bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lm-cyber/few_shot_gen_synt,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lmmx/r1-cli,,,,,,,,,,['enable_prefix_caching'],,,vllm
+lofibrainwav/BANANAI,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lone17/llm-activation-control,,,,['parallel'],,,,,,,,,vllm
+longtanle/LLM_Alignment,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+longtraan06/Finetune,,,,"['tensor_parallel_size', 'parallel']",,,,,['batch_size'],,,,vllm
+loongfeili/lmms-eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ltl3A87/ComPA,,,,,,,,,,['enable_prefix_caching'],,,vllm
+ltzheng/SimpleTIR,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+lu-christina/persona-subspace,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ludolara/ds2d,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+luka-group/Execution-Grounded-Reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+luoyuchenmlcv/SENTINEL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+luxinyu1/inverse-value-learning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lxirich/OphthaReason,,,,['tensor_parallel_size'],,,,,,,,,vllm
+lzy248/e-verify,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+magpie-align/magpie,,,,['tensor_parallel_size'],,,,,,,,,vllm
+maitrix-org/de-arena,,,,['tensor_parallel_size'],,,,,,,,,vllm
+maitrix-org/llm-reasoners,,,,['tensor_parallel_size'],,,,,,,,,vllm
+maiush/CharacterTraining,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+maiush/PersonalityTraining,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+makexine/CDIT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+manon-reusens/native_en_bias,,,,['tensor_parallel_size'],,,,,,,,,vllm
+maochiyu1111/verl-disaggregate,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+mapengAdam/qianwen-72B-web-demo,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+marcodsn/SOC,,,,['tensor_parallel_size'],,,,,,,,,vllm
+marek357/lora_interp,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+markmartirosian1/LLMSummerSchoolMarkMartirosian,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+mbcoalson/engineering_calcs,,,,['parallel'],,,,,,,,,vllm
+meiru-cam/AttentionInstruction,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+menloresearch/Speech-Model-Demo,,,,['tensor_parallel_size'],,,,,,,,,vllm
+menloresearch/visual-thinker,,,,['tensor_parallel_size'],,,,,,,,,vllm
+merlerm/ViPlan,,,,['tensor_parallel_size'],,,,,,,,,vllm
+mesolitica/malaya,,,,['tensor_parallel_size'],,,,,,,,,vllm
+meta-llama/llama-cookbook,,,,['tensor_parallel_size'],,,,,,,,,vllm
+meta-prompting/meta-prompting,,,,['tensor_parallel_size'],,,,,,,,,vllm
+metareflection/dafny-annotator,,,,['tensor_parallel_size'],,,,,,,,,vllm
+mickrideout/make_data_count_kaggle,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+microsoft/BitBLAS,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,,['cuda'],,vllm
+microsoft/CollabLLM,,['quantization'],,,['enable_lora'],,,,,,,,vllm
+microsoft/LMOps,,,,['tensor_parallel_size'],,,,,,,,,vllm
+microsoft/MInference,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+microsoft/eureka-ml-insights,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+microsoft/unilm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+mindspore-ai/mindarmour,,,,['tensor_parallel_size'],,,,,,,,,vllm
+minglllli/CLS-RL,,,,,,,,,,['enable_prefix_caching'],,,vllm
+minji0916/SNSNewsFinance,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+mlcommons/inference,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+mlfoundations/evalchemy,,,,['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+mnoukhov/async_rlhf,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+moXmiller/mental-modeling,,,,['tensor_parallel_size'],,,,,,,,,vllm
+modelscope/easydistill,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+modelscope/modelscope,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+molsionmo/theAvengers_llm_fin_trade_framework,,,,,,,,,,['enable_prefix_caching'],,,vllm
+molumolua/Code-Math-Generator,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+molumolua/MyLLaMA-Factory,,,,"['tensor_parallel_size', 'pipeline_parallel_size']","['lora', 'lorarequest']",,,,,,,,vllm
+montehoover/DynaGuard,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+morganmcg1/sonic,,,,['tensor_parallel_size'],,,,,,,,,vllm
+mostly-ai/mostlyai-engine,,,,"['tensor_parallel_size', 'parallel']","['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+moussaKam/OfflineLLMDistill,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+mst272/LLM-Dojo,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+mtare28/snitchmail-eda,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+mtkresearch/RAD-Bench,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+muyiahhh/U2A,,,,['tensor_parallel_size'],,,,,,,,,vllm
+naver-ai/ALMoST,,,,['tensor_parallel_size'],,,,,,,,,vllm
+naver/bergen,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ndif-team/nnsight,,,,['parallel'],,,,,,,,,vllm
+negar-foroutan/WikiMixQA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+neulab/CulturalGround,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nigelyaoj/VAR-MATH,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+njuyxw/FormalML,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nlp-waseda/JCQ-judge,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nlpai-lab/MIRAGE,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+nlpxucan/WizardLM,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nlzy/vllm-gfx906,['speculative_config'],['quant'],,['parallel'],"['lora', 'lorarequest']",,,,,,,['cache'],vllm
+nmmm9/SKN12TH_FinalProject,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+normster/torchllms,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nowang6/llm-tools,,['quantization'],,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+nsol-nmsu/NetPrompt,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nuprl/CanItEdit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nuprl/MultiPL-E,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nv-action/vllm-benchmarks,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+nvidia-china-sae/mair-hub,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nvidia-cosmos/cosmos-curate,,"['quantization', 'quant']",,,,,,,['max_num_batched_tokens'],,,,vllm
+nvidia-cosmos/cosmos-reason1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+nvidia-cosmos/cosmos-rl,,['quantization'],['enable_chunked_prefill'],"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+offendo/formalize,,,,['tensor_parallel_size'],,,,,,,,,vllm
+oguz-kolukisa/719,,,,,,,,,,['enable_prefix_caching'],,,vllm
+olonok69/LLM_Notebooks,,['quantization'],,,,,,,,,,,vllm
+om-ai-lab/VLM-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+omni-ai-npu/omni-infer,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,['kvtransfer'],vllm
+omrisapir1/trl-public,,,,['parallel'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+omron-sinicx/STRoGeNS,,,,,,,,,['max_num_batched_tokens'],,,,vllm
+on1262/deep-reasoning,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+oneonlee/Meme-Safety-Bench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ooyinet/WeClone,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+opea-project/GenAIEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+open-compass/VLMEvalKit,,,,['tensor_parallel_size'],,,,,,,,,vllm
+open-thoughts/open-thoughts,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+openai/gpt-oss,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+openfoodfacts/openfoodfacts-ai,,['quantization'],,,,,,,,,,,vllm
+openfoodfacts/robotoff,,['quantization'],,,,,,,,,,,vllm
+openreasoner/openr,,,,,,,,,,['enable_prefix_caching'],,,vllm
+oracle-devrel/technology-engineering,,,,['tensor_parallel_size'],,,,,,,,,vllm
+orion-moe/sppo-dataset-generator,,,,['tensor_parallel_size'],,,,,,,,,vllm
+orionw/rank1,,,,['tensor_parallel_size'],,,,,,,,,vllm
+osoblanco/ArmLLM,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+outerbounds/sft-project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+p88h/fake-vqa,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+pan-webis-de/pan-code,,,,['tensor_parallel_size'],,,,,,,,,vllm
+pangddu123/MODELNET_PN-main,,,,['tensor_parallel_size'],,,,,,,,,vllm
+pangpang-xuan/Private-doctor-bot,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+panruotong/CAG,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+parameterlab/leaky_thoughts,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+pass-lin/CMCTS,,,,['tensor_parallel_size'],['enable_lora'],,,,,['enable_prefix_caching'],,,vllm
+patour/nano-r1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+penfever/wildchat-50m,,,,['tensor_parallel_size'],,,,,,,,,vllm
+pengfei-luo/ImageScope,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+pengzhangzhi/Open-dLLM,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+pisterlabs/promptset,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+planetyoon/Patch-Matters,,,,['tensor_parallel_size'],,,,,,,,,vllm
+poludmik/TableQA-LLMAgent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+poludmik/rag-poc-deployment,,['quantization'],,,,,,,,,,,vllm
+pravpandit/NLP_works,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+princenimo/Health-LLM-Evaluation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+princeton-nlp/HELMET,,,,['tensor_parallel_size'],,,,,,,,,vllm
+princeton-pli/AdaptMI,,,,['tensor_parallel_size'],,,,,,,,,vllm
+prometheus-eval/prometheus-eval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+pwr-ai/JuDDGES,,,,"['pipeline_parallel_size', 'tensor_parallel_size']","['enable_lora', 'lora', 'lorarequest']",,,,['batch_size'],['enable_prefix_caching'],,,vllm
+pytorch/ao,,,,['tensor_parallel_size'],,,,,,,,,vllm
+pytorch/rl,,,,['parallel'],,,,,['max_num_batched_tokens'],,,,vllm
+pytorch/torchtune,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+qiancheng0/EscapeBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+qianpeisheng/VLM-R1_Smol,,,,,,,,,,['enable_prefix_caching'],,,vllm
+qqtang-code/SparseAttn,,,,['tensor_parallel_size'],,,,,,,,,vllm
+qte123/Chinese-LLaMA-Alpaca,,,,['tensor_parallel_size'],,,,,,,,,vllm
+quangvinh2110/reward_model,,,,,,,,,['max_num_batched_tokens'],,,,vllm
+quic/efficient-transformers,,['quantization'],,,,,,,,,,,vllm
+qunzhongwang/better-reward-model,,,,['tensor_parallel_size'],,,,,['batch_size'],,,,vllm
+rabiulcste/vismin,,,,['tensor_parallel_size'],,,,,,,,,vllm
+rasdani/smolR1,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+ray-project/kuberay,,,,['tensor_parallel_size'],,,,,,,,,vllm
+rayfok/trout,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+raymin0223/mixture_of_recursions,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+refuel-ai/autolabel,,,,['tensor_parallel_size'],,,,,,,,,vllm
+resistzzz/Co-Reward,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,['max_num_batched_tokens'],,,,vllm
+rikia07/smolagents,,,,['parallel'],,,,,,,,,vllm
+rishabbala/RoPE-Playground,,,,['tensor_parallel_size'],,,,,,,,,vllm
+robbypambudi/DiLLeMa,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+robbypambudi/ray-vllm-benchmark,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+rsinghlab/K-Paths,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+run-house/runhouse,,,,['tensor_parallel_size'],,,,,,,,,vllm
+runpod/ai-infra-benchmarks,,"['quantization', 'quant']",['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+ryoungj/BoLT,,,,,,,,,,['enable_prefix_caching'],,,vllm
+s-nlp/Evergreen-classification,,,,['tensor_parallel_size'],,,,,,,,,vllm
+safety-research/inverse-scaling-ttc,,,,['tensor_parallel_size'],['enable_lora'],,,,,,,,vllm
+sail-sg/SEA-WildBench,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sammshen/TorahQA,,,,,,,,,,,,['kvtransfer'],vllm
+sanagno/scalable_oversight,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sanjibanc/agent_prm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sanowl/BEYOND-CONTEXT-LIMITS-SUBCONSCIOUS-THREADS-FOR-LONG-HORIZON-REASONING,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+sattvika-bhatt/bronco-buddies,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+seal-rg/recurrent-pretraining,,"['quant', 'quantization']",,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+seokhyunan/response-tuning,,,,['parallel'],,,,,,,,,vllm
+seungrokj/llm_inference_DLM,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+shahmeer99/HCT-QA-Benchmark,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shallinan1/NGramCoverageAttack,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shaochon/HDS-BWH_Capstone,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shashidharjavaji/CLAIM_BENCH-Research-Paper-,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shaunzzhou/CrediNews,,['quantization'],,,,,,,,,,,vllm
+shell-nlp/gpt_server,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+shinymoon99/Llama2_ft,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shiv-ux-designer/langflow,,,,['parallel'],,,,,,,,,vllm
+shivank21/code_golf,,,,['tensor_parallel_size'],,,,,,,,,vllm
+shreyasbachi/llm_od,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sieve-community/examples,,['quantization'],,,,,,,,,,,vllm
+sii-research/siiRL,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+sixtyoneeightyjake/AgMojo,,,,['tensor_parallel_size'],,,,,,,,,vllm
+siyue-zhang/MRAG,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+sjtu-zwh/vllm,,['quant'],,"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,['cuda'],['cache'],vllm
+slabstech/llm-recipes,,,['enable_chunked_prefill'],,,,,,,,,,vllm
+smiles724/LLM-RL,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+snowflakedb/ArcticInference,['speculative_config'],['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+snowflakedb/ArcticTraining,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,,,,vllm
+socialfoundations/lm-harmony,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+softicelee2/aishare,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+sohamchatterjee50/ATCS_Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sourceuser-1/neurips_2025_code,,,,['tensor_parallel_size'],,,,,,,,,vllm
+sparse-generative-ai/open-moe-llm-leaderboard,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+spcl/CheckEmbed,,,,['tensor_parallel_size'],,,,,,,,,vllm
+stardust-coder/japanese-lm-med-harness,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+sunnynexus/WebThinker,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+superSukhoi57/RAG-contract-review-system,,,,['tensor_parallel_size'],,,,,,,,,vllm
+surrey-nlp/LLM4MT_eval,,['quantization'],,,,,,,,,,,vllm
+swiss-ai/alignment,,,,['tensor_parallel_size'],,,,,,,,,vllm
+swjeong9/test-repo,,"['quantization', 'quant']",,['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],"['kvtransfer', 'cache']",vllm
+swjeong9/vllm-example,,,,['tensor_parallel_size'],,,,,,,,,vllm
+szafrix/rotten_tomatoes,,,,['parallel'],,,,,,,,,vllm
+szhou611/Constructions-Are-So-Difficult,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tablegpt/tablegpt-agent,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+taegyunjjang/PetQA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+taekb/eval-medical-dapt,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+tan92hl/Complex-Question-Answering-Evaluation-of-GPT-family,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tanikina/multilingual-generation,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tarochan0803/finetune-RAG,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+taterowney/LeanRAG-Python,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tctsung/LLM_quantize,,['quantization'],,,,,,,,,,,vllm
+tengxiaoliu/LM_skip,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tensorgi/TPA,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+test-time-interaction/TTI,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+texttron/BrowseComp-Plus,,,,['tensor_parallel_size'],,,,,,,,,vllm
+texttron/tevatron,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+thaihungle/Memory-R,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+thanhtlx/deepseek-eval,,,,"['pipeline_parallel_size', 'tensor_parallel_size']",,,,,['max_num_batched_tokens'],,,,vllm
+the-crypt-keeper/can-ai-code,,['quantization'],,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+theworldofagents/Agentic-Reasoning,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+thomas-yanxin/MT-SFT-ShareGPT,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+thu-coai/JPS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+thunlp/DeepNote,,,,['tensor_parallel_size'],,,,,,,,,vllm
+thunlp/KBAlign,,,,['parallel'],,,,,,,,,vllm
+tile-ai/tilelang,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,,['cuda'],,vllm
+tjunlp-lab/MCTS-VCB,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tmychow/modal_convo,,,,,"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+tnt305/TimeZero,,,,,,,,,,['enable_prefix_caching'],,,vllm
+tommy-yjw/vlm-finetune,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tongyx361/sample-difficulty-adaptive-tuning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tongzeliang/EvoPrompt,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tonyzstt/Finetune_LLM_RL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+trestad/CogAttn,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+trevel1959/CAD_score,,,,['tensor_parallel_size'],,,,,,,,,vllm
+trinity4ai/ProConSuL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tsinghua-fib-lab/AgentSquare,,,,['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+tutu329/life-agent,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tyfeng1997/qwen3-finetune,,,,['tensor_parallel_size'],,,,,,,,,vllm
+tzteyang/_codeprm,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ucfxj/PowerGPT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ulab-uiuc/IRanker,,,,['tensor_parallel_size'],,,,,,,,,vllm
+umurkarakas/surgery-sft,,,['enable_chunked_prefill'],,,,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+unslothai/unsloth-zoo,,"['quant', 'quantization']",,['parallel'],"['lora', 'lorarequest']",,,,,,['cuda'],,vllm
+upb-nlp/LLM-Scoring-Endpoint,,,,,,,,,,['enable_prefix_caching'],,,vllm
+usail-hkust/CoLLMLight,,,,['tensor_parallel_size'],,,,,,,,,vllm
+uukuguy/speechless,,,,['tensor_parallel_size'],,,,,,,,,vllm
+uw-nsl/safechain,,,,['tensor_parallel_size'],,,,,,,,,vllm
+vessl-ai/examples,,['quantization'],,,,,,,,,,,vllm
+vetlefo/omegagent,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+vinli0921/KG-Prover,,,,,,,,,['max_num_batched_tokens'],,,,vllm
+vllm-project/vllm,,"['quant', 'quantization']",['scheduler'],['parallel'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,"['cache', 'kvtransfer']",vllm
+vllm-project/vllm-ascend,,['quantization'],['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+vllm-project/vllm-gaudi,['speculative_config'],,,,,,,,,,,['cache'],vllm
+vllm-project/vllm-spyre,,,,['tensor_parallel_size'],,,,,,,,,vllm
+volcengine/verl,,,['enable_chunked_prefill'],['tensor_parallel_size'],"['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+wangruobing2/DeepNote,,,,['tensor_parallel_size'],,,,,,,,,vllm
+we1k/LLM_IR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+we1pingyu/rag,,,,['tensor_parallel_size'],,,,,,,,,vllm
+wengwanjiang/Axolotl-EAGLE3,,,,['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+wenzhaoabc/tcdr,,,,['tensor_parallel_size'],,,,,,,,,vllm
+whoisaaronfoss/CausalVQA_NeurIPS,,,,['tensor_parallel_size'],,,,,,,,,vllm
+wingAGI/clean-llm,,,,,,,,,,['enable_prefix_caching'],,,vllm
+wingardl/rl_exp,,,,['tensor_parallel_size'],,,,,,,,,vllm
+wj210/refusal_sae,,,,['tensor_parallel_size'],,,,,,,,,vllm
+wonnowone/ARC-IDEA,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+wshiman/Action-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+www-Ye/Time-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+wzj1718/ModelMergingAnalysis,,,,['tensor_parallel_size'],['enable_lora'],,,,,,,,vllm
+xcczach/SJTU-Echo,,['quantization'],,,,,,,,,,,vllm
+xh092113/rl-sft,,,,"['tensor_parallel_size', 'pipeline_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,,,vllm
+xianruizhong/ChemRAG,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,,,,vllm
+xiaow190/RoboOS-HIS,,,,['parallel'],,,,,,,,,vllm
+xiatingyu/eval_scripts,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+xiezhiprime/verl-alpha,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+xinyue097/medical-reasoning,,,,['tensor_parallel_size'],,,,,,,,,vllm
+xiwenc1/DRA-GRPO,,,,,,,,,,['enable_prefix_caching'],,,vllm
+xming521/WeClone,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+xu3kev/BARC,,,,['tensor_parallel_size'],"['enable_lora', 'lora', 'lorarequest']",,,,,['enable_prefix_caching'],,,vllm
+xubuvd/LLMs,,,,['tensor_parallel_size'],,,,,,,,,vllm
+xueml3/agent_r1,,,['enable_chunked_prefill'],"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,['max_num_batched_tokens'],['enable_prefix_caching'],,,vllm
+xufangzhi/phi-Decoding,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yale-nlp/FinanceMath,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+yale-nlp/RoMMath,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yangzhch6/introspect,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,['max_num_batched_tokens'],,,,vllm
+yann-oss/QW,,['quantization'],,['tensor_parallel_size'],,,,,,,,,vllm
+yash-kamlesh-shah/SP25-DS677004-Final-Project,,,,['tensor_parallel_size'],,,,,,,,,vllm
+ycyaw66/vllm-old,,,,"['tensor_parallel_size', 'parallel']","['lora', 'lorarequest']",,,,,,,"['cache', 'kvtransfer']",vllm
+yecchen/MIRAI,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yejinc00/PREMIR,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yeyimilk/CrowdVLM-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm
+yflyzhang/simpleR1,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+yfyuan01/RAVENEA,,,,['parallel'],"['lora', 'lorarequest']",,,,,,,,vllm
+yichaeyoung/chAt-me,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yin-gz/SPARK,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yinyueqin/DenseRewardRLHF-PPO,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yiyepiaoling0715/codellm-data-preprocess-pipeline,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yizhilll/selfboostrapping_reasoning,,,,"['tensor_parallel_size', 'pipeline_parallel_size']",,,,,,,,,vllm
+ykyaol7/template_tuning,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+ymcui/Chinese-LLaMA-Alpaca-2,,,,['tensor_parallel_size'],,,,,,,,,vllm
+young-j-park/instance-adaptive-scaling,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+yourarnav/gaudi,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yuhkalhic/RARE,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+yuki-younai/MTSA,,,,,,,,,,['enable_prefix_caching'],,,vllm
+yuki-younai/easy-alignment,,,,"['tensor_parallel_size', 'parallel']",,,,,,['enable_prefix_caching'],,,vllm
+yukiwukii/coding-creativity,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yuyq96/R1-Vision,,,,,,,,,,['enable_prefix_caching'],,,vllm
+yyysjz1997/Time-RA,,,,['tensor_parallel_size'],,,,,,,,,vllm
+yzhHoward/IntelliCare,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zbmed-semtec/mlentory-etl-pipeline,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zexuanqiu/CLongEval,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zfkarl/CellVerse,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zhangshuibai/llada-reproduce,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+zhehengluoK/eval_empec,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zheng-zf/trl,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zhengkid/Truth_Table_Logical_Reasoning,,,,"['tensor_parallel_size', 'parallel']",,,,,,,,,vllm
+zhenlan0426/MathComp,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zhoujiawei3/SafeMVDrive,,,,,,,,,,['enable_prefix_caching'],,,vllm
+zhoujiawei3/SafeMVDrive-Anoymous,,,,,,,,,,['enable_prefix_caching'],,,vllm
+zhxlia/MULTITAT,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zihaomu/cuda_notebook,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zirui-HIT/DAC,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zirui-HIT/ICTL,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zitian-gao/one-shot-em,,,,"['tensor_parallel_size', 'pipeline_parallel_size', 'parallel']",,,,,,,,,vllm
+zjunlp/EasyInstruct,,,,,"['lora', 'lorarequest']",,,,,,,,vllm
+zjunlp/KnowRL,,,,,,,,,,['enable_prefix_caching'],,,vllm
+zjunlp/KnowSelf,,,['enable_chunked_prefill'],['tensor_parallel_size'],"['lora', 'lorarequest']",,,,,,,,vllm
+zjunlp/OneGen,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zq0x/zzvllm48,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+zq0x/zzvllm49,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+zq0x/zzvllm50,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+zq0x/zzvllm51,,,['enable_chunked_prefill'],['tensor_parallel_size'],,,,,,['enable_prefix_caching'],,,vllm
+zwhe99/DeepMath,,,,['tensor_parallel_size'],,,,,,,,,vllm
+zzzhhzzz/Ground-R1,,,,,,,,,,['enable_prefix_caching'],,,vllm

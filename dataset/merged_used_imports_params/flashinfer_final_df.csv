@@ -1,0 +1,38 @@
+repo_full_name,flashinfer_Speculative decoding,flashinfer_Early existing,flashinfer_Cascade inference,flashinfer_Paged Attention,flashinfer_Continuous batching,flashinfer_Quantization,flashinfer_Chunked prefill,flashinfer_parallelism,flashinfer_Prefix caching,flashinfer_Multi-LoRA,flashinfer_FlashInfer Attention Kernels,flashinfer_flashinfer.gemm,flashinfer_fused_moe,flashinfer_cascade,flashinfer_comm,flashinfer_sparse,flashinfer_page,flashinfer_sampling,flashinfer_topk,flashinfer_logits_processor,flashinfer_norm,flashinfer_rope,flashinfer_activation,flashinfer_quantization,flashinfer_green_ctx,flashinfer_testing,tool_name
+Andrew-Zhang/vllm-context-shrinking-scratch,,,,,['batch_size'],,,,,,"['decode', 'prefill', 'mla']",['gemm'],['fused_moe'],['cascade'],['comm'],,['page'],['sampling'],['topk'],,['norm'],,,['quantization'],,,flashinfer
+Gen-Verse/dLLM-RL,,,,,,,,,,,,,,,,,,,['topk'],['logits_processor'],,,,,,,flashinfer
+HKUNLP/ChunkLlama,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,,,,,,,flashinfer
+IBM/vllm,,,,,['batch_size'],,,,,,"['decode', 'prefill', 'mla']",['gemm'],['fused_moe'],['cascade'],['comm'],,['page'],['sampling'],['topk'],,['norm'],,,['quantization'],,,flashinfer
+Ja1Zhou/vllm,,,,,,,,,,,"['decode', 'prefill', 'mla']",,,['cascade'],['comm'],,['page'],['sampling'],['topk'],,['norm'],,,,,,flashinfer
+LMCache/LMCache,,,,,,,,,,,,,,,,['sparse'],['page'],,,,,,,,,,flashinfer
+MananAg007/diverse-data-synthesis,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],,,,,,,['quantization'],,,flashinfer
+MetaX-MACA/vLLM-metax,,,,,['batch_size'],,,,,,"['decode', 'prefill', 'mla']",,,['cascade'],['comm'],,['page'],,,,,,,,,,flashinfer
+ModelTC/LightLLM,,,,,,,,,,,,,,,,,,,,,,,,['quantization'],,,flashinfer
+NVIDIA/TensorRT-LLM,,,,,,,,,,,,,,,,,,,,,['norm'],['rope'],['activation'],['quantization'],,,flashinfer
+Wind0121/vLLM,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,,,,,,,flashinfer
+WukLab/preble,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],,,,,,,['quantization'],,,flashinfer
+aphrodite-engine/aphrodite-engine,,,,,['batch_size'],,,,,,"['prefill', 'decode']",['gemm'],['fused_moe'],['cascade'],,,['page'],['sampling'],,,,,,,,,flashinfer
+bytedance/ByteMLPerf,,,,,,,,,,,,,,,,,,,,,['norm'],,,,,,flashinfer
+dmaxtec/vllm,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,,,,,,,flashinfer
+efeslab/Nanoflow,,,,,,,,,,,['prefill'],,,,,,,,,,,,,,['green_ctx'],,flashinfer
+feifeibear/long-context-attention,,,,,,,,,,,['prefill'],,,,,,,,,,,,,,,,flashinfer
+fffeifang/GenTorrent,,,,,,,,,,,"['decode', 'prefill']",,,['cascade'],,,['page'],['sampling'],,,['norm'],,,,,,flashinfer
+flashinfer-ai/flashinfer,,,,,['batch_size'],,,,,,"['mla', 'prefill', 'decode', 'xqa']",['gemm'],['fused_moe'],,"['comm', 'comm.trtllm_mnnvl_ar', 'comm.mnnvl']",,['page'],['sampling'],['topk'],['logits_processor'],['norm'],['rope'],,"['fp4_quantization', 'quantization']",,['testing'],flashinfer
+goliaro/flexllm,,,,,,,,,,,,,,,,,,,,,['norm'],,,,,,flashinfer
+guqiong96/lktransformers,,,,,['batch_size'],,,,,,,,,,,,,['sampling'],,,['norm'],,,,,,flashinfer
+jd730/BRIDGE,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],,,,,,,['quantization'],,,flashinfer
+knote2019/vllm-v0.6.3,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,,,,,,,flashinfer
+kvcache-ai/ktransformers,,,,,['batch_size'],,,,,,,,,,,,,['sampling'],,,['norm'],,,,,,flashinfer
+microsoft/vattention,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],,,,,,,,,,flashinfer
+nlzy/vllm-gfx906,,,,,,,,,,,"['decode', 'prefill']",,,['cascade'],['comm'],,['page'],['sampling'],['topk'],,['norm'],,,,,,flashinfer
+omni-ai-npu/omni-infer,,,,,,,,,,,,['gemm'],['fused_moe'],,,,,,['topk'],,,,,['quantization'],,,flashinfer
+pkking/sglang,,,,,,,,,,,"['decode', 'prefill', 'mla']",['gemm'],['fused_moe'],['cascade'],,,['page'],,['topk'],,['norm'],,,['quantization'],,,flashinfer
+qingshanlanshan/SGL-KVS,,,,,,,,,,,"['decode', 'prefill', 'mla']",['gemm'],['fused_moe'],['cascade'],,,['page'],,['topk'],,['norm'],,,['quantization'],,,flashinfer
+sgl-project/sglang,,,,,['batch_size'],,,,,,"['decode', 'mla', 'prefill']",['gemm'],['fused_moe'],['cascade'],['comm'],,['page'],,['topk'],,['norm'],,,['quantization'],,,flashinfer
+sjtu-zwh/vllm,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,['norm'],,,,,,flashinfer
+snowflakedb/ArcticInference,,,,,,,,,,,['decode'],,,,,,,['sampling'],,['logits_processor'],['norm'],,,['quantization'],,,flashinfer
+swjeong9/test-repo,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,['norm'],,,,,,flashinfer
+tensorwavecloud/ScalarLM,,,,,,,,,,,"['decode', 'prefill']",,,,,,['page'],['sampling'],,,,,,,,,flashinfer
+vllm-project/vllm,,,,,['batch_size'],,,,,,"['decode', 'prefill', 'mla']",['gemm'],['fused_moe'],['cascade'],['comm'],,['page'],['sampling'],['topk'],,['norm'],,,['quantization'],,,flashinfer
+youngchan2/Trinity,,,,,,,,,,,,,,,,,,,,,['norm'],,,,,,flashinfer
+zejia-lin/Bullet,,,,,,,,,,,"['decode', 'mla', 'prefill']",['gemm'],['fused_moe'],['cascade'],,,['page'],,['topk'],,['norm'],,,['quantization'],,,flashinfer

@@ -1,0 +1,2804 @@
+file_name,file_path,sha,repo_full_name,url,git_url,html_url,about,keywords,open_issues,closed_issues,merged_pr,commits,last_commit_date,stars,forks,readme,repo_summary
+__init__.py,python/tvm/relax/backend/cuda/__init__.py,df1a1f98e3769a4d0899c9a735d3493d7fc4b990,Anna-Bele/LLM_MCTS_Search,https://api.github.com/repositories/959673977/contents/python/tvm/relax/backend/cuda/__init__.py?ref=0ee0c43bce59ee5fd7dbd46d39a095e8b784df11,https://api.github.com/repositories/959673977/git/blobs/df1a1f98e3769a4d0899c9a735d3493d7fc4b990,https://github.com/Anna-Bele/LLM_MCTS_Search/blob/0ee0c43bce59ee5fd7dbd46d39a095e8b784df11/python/tvm/relax/backend/cuda/__init__.py,"Official implementation of ""REASONING COMPILER: LLM-Guided Optimizations for Efficient Model Serving"" (NeurIPS 2025)",,1,0,0,12914,2025-12-05T09:00:49Z,99,12,"<!--- Licensed to the Apache Software Foundation (ASF) under one -->
+<!--- or more contributor license agreements.  See the NOTICE file -->
+<!--- distributed with this work for additional information -->
+<!--- regarding copyright ownership.  The ASF licenses this file -->
+<!--- to you under the Apache License, Version 2.0 (the -->
+<!--- ""License""); you may not use this file except in compliance -->
+<!--- with the License.  You may obtain a copy of the License at -->
+
+<!---   http://www.apache.org/licenses/LICENSE-2.0 -->
+
+<!--- Unless required by applicable law or agreed to in writing, -->
+<!--- software distributed under the License is distributed on an -->
+<!--- ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY -->
+<!--- KIND, either express or implied.  See the License for the -->
+<!--- specific language governing permissions and limitations -->
+<!--- under the License. -->
+
+# REASONING COMPILER
+This is the official implementation of [**REASONING COMPILER: LLM-Guided Optimizations for Efficient Model Serving**](https://arxiv.org/abs/2506.01374) (NeurIPS 2025)
+
+In our project, we use TVM since it is an open source compiler stack for deep learning systems with [Apache-2.0](LICENSE) license. 
+
+## Quick Start
+To run this repo, follow these steps:
+1. Clone this repo. Configure the environment as detailed in TVM's documentation https://tvm.apache.org/docs/install/index.html
+2. Instead of using the default strategy, create the LLM guided MCTS search strategy object by
+
+```
+llm_mcts_strategy = MCTSSearchPyFull(
+    use_llm=True,
+    llm_budget=600,
+    llm_model_name=""API_MODEL_NAME"",
+)
+```
+
+If you want to run the pure MCTS search, set use_llm = False so you do not enable LLM.
+
+To use the function tune_tir for tuning, pass llm_mcts_strategy as a parameter of tune_tir, like
+
+```
+database = ms.tune_tir(
+    mod=MyModule,
+    target=""llvm --num-cores=1"",
+    max_trials_global=64,
+    num_trials_per_iter=64,
+    work_dir=""./tune_tmp"",
+    strategy=llm_mcts_strategy,
+)
+```
+
+## Citation
+```bibtex
+@inproceedings{
+tang2025reasoning,
+title={{REASONING} {COMPILER}: {LLM}-Guided Optimizations for Efficient Model Serving},
+author={Annabelle Sujun Tang and Christopher Priebe and Rohan Mahapatra and Lianhui Qin and Hadi Esmaeilzadeh},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025}
+}
+```
+","1. repository_intent: Official implementation of LLM-guided optimizations for efficient model serving.  
+2. technical_focus: Utilizes TVM as an open source compiler stack for deep learning systems.  
+3. primary_use_cases: Supports LLM guided MCTS search strategy for tuning deep learning models.  
+4. system_design: Integrates LLM guidance into MCTS search for optimizing model serving.  
+5. key_technical_terms: REASONING COMPILER, LLM, MCTS, TVM, model serving, optimization, tuning, Apache-2.0, deep learning."
+utils.py,python/triton_dist/models/utils.py,d5bcd5e4693bb7bd76692b208e5ad1e1b0012a65,ByteDance-Seed/Triton-distributed,https://api.github.com/repositories/959035472/contents/python/triton_dist/models/utils.py?ref=71aeff3333cee09ee6236e02bba09a3b2efe1dc9,https://api.github.com/repositories/959035472/git/blobs/d5bcd5e4693bb7bd76692b208e5ad1e1b0012a65,https://github.com/ByteDance-Seed/Triton-distributed/blob/71aeff3333cee09ee6236e02bba09a3b2efe1dc9/python/triton_dist/models/utils.py,Distributed Compiler based on Triton for Parallel Systems,,31,52,61,223,2026-02-13T13:34:23Z,1379,129,"<div align=""center"">
+ 👋 Hi, everyone!
+    <br>
+    We are <b>ByteDance Seed team.</b>
+</div>
+
+<p align=""center"">
+  You can get to know us better through the following channels👇
+  <br>
+  <a href=""https://team.doubao.com/"">
+    <img src=""https://img.shields.io/badge/Website-%231e37ff?style=for-the-badge&logo=bytedance&logoColor=white""></a>
+  <a href=""https://github.com/user-attachments/assets/93481cda-a7f3-47f3-b333-fe6b3da86b78"">
+    <img src=""https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&logo=wechat&logoColor=white""></a>
+ <a href=""https://www.xiaohongshu.com/user/profile/668e7e15000000000303157d?xsec_token=ABl2-aqekpytY6A8TuxjrwnZskU-6BsMRE_ufQQaSAvjc%3D&xsec_source=pc_search"">
+    <img src=""https://img.shields.io/badge/Xiaohongshu-%23FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white""></a>
+  <a href=""https://www.zhihu.com/org/dou-bao-da-mo-xing-tuan-dui/"">
+    <img src=""https://img.shields.io/badge/zhihu-%230084FF?style=for-the-badge&logo=zhihu&logoColor=white""></a>
+</p>
+
+![seed logo](https://github.com/user-attachments/assets/c42e675e-497c-4508-8bb9-093ad4d1f216)
+
+# Triton-distributed
+
+<!-- <p align=""center"">
+  <a href=""https://github.com/bytedance/flux"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Project Page-yellow""></a>
+  <a href=""https://arxiv.org/pdf/xxxx.xxxx"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Tech Report-red""></a>
+  <br>
+  <a href=""https://github.com/user-attachments/assets/d3fcb3bf-466b-4efe-8c3f-5f85258202ae"">
+    <img src=""https://img.shields.io/badge/Triton-distributed-Wechat Communication Group-07C160""></a>
+  <a href=""XXX"">
+    <img src=""https://img.shields.io/badge/License-MIT-blue""></a>
+</p> -->
+
+[Original Triton README](https://github.com/triton-lang/triton/blob/main/README.md) | [README in Chinese](README-cn.md)
+
+Triton-distributed is a distributed compiler designed for computation-communication overlapping, which is based on OpenAI Triton.
+
+Using Triton-distributed, programmers are able to develop efficient kernels comparable to highly-optimized libraries (including [Distributed-GEMM](https://github.com/NVIDIA/cutlass/tree/main/examples/65_distributed_gemm) and [FLUX](https://github.com/bytedance/flux/blob/main/README.md)).
+Triton-distributed currently mainly targets Nvidia GPU and AMD GPU. It can also be ported to other hardware platforms.
+Feel free to contact us if you want to use Triton-distributed on your own hardware.
+
+## News
+- 12/22/2025 ✨✨✨: Updated EP functions, support low-latency mode, token saving, and Mega-EP.
+- 21/10/2025 🔥🔥🔥: Triton-distributed is presented at [Triton Conference 2025](https://tritonconference.eventbuilder.com/TritonDeveloperConference?ref=TritonDeveloperConference), see the [talk](https://www.youtube.com/playlist?list=PLc_vA1r0qoiQqCdWFDUDqI90oY5EjfGuO) for details.
+- 09/03/2025 ✨✨✨: Introduced Intra-Kernel Profiler, See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/profiler/intra_kernel_profiler.md) for details.
+- 08/24/2025 ⚡⚡⚡: Support inference acceleration for [ByteDance-Seed/Seed-OSS-36B-Instruct](https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct), achieving a 1.33x speedup.
+- 08/13/2025 ✨✨✨: Introduced the MegaTritonKernel and provided a Qwen3 TP demo on H20/H800, See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/megakernel/megakernel.md) for details.
+- 08/06/2025 ✨✨✨: Support GEMM+AllReduce on H800 and support MoE operators on L20, see [GEMM+AR Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_gemm_ar.py) and [MOE Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_moe_reduce_rs.py) for detail.
+- 07/24/2025 🤖🤖🤖: Introduced end-to-end inference acceleration demo with unified support for both NVIDIA and AMD GPUs. See the [doc](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/docs/getting-started/e2e/e2e_dense.md) for details.
+- 07/11/2025 ✨✨✨: Fast AllReduce implemented with Triton-distributed, see [AllReduce Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_allreduce.py).
+- 07/11/2025 ✨✨✨: Improved MoE operators for tensor parallel. See [AG+MoE Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_ag_moe.py) and [MoE+RS Test](https://github.com/ByteDance-Seed/Triton-distributed/blob/main/python/triton_dist/test/nvidia/test_moe_reduce_rs.py).
+- 07/11/2025 ✨✨✨: Triton 3.4 support with NVSHMEM4py ([MR](https://github.com/ByteDance-Seed/Triton-distributed/pull/54)). `pip install` is also supported without any need to modify NVSHMEM code.
+- 05/12/2025 🚀🚀🚀: Our paper `TileLink: Generating Efficient Compute-Communication Overlapping Kernels using Tile-Centric Primitives` accepted by MLSys 2025.
+
+## Getting started
+
+### Install Triton-distributed
+
+#### Method 1. From source
+
+See [build from source](docs/build.md).
+
+#### Method 2. Using pip
+
+Prepare PyTorch container
+
+```sh
+docker run --name triton-dist --ipc=host --network=host --privileged --cap-add=SYS_ADMIN --shm-size=10g --gpus=all -itd nvcr.io/nvidia/pytorch:25.04-py3 /bin/bash
+docker exec -it triton-dist /bin/bash
+```
+
+Install Dependencies
+
+```sh
+pip3 install cuda.core==0.2.0 nvidia-nvshmem-cu12==3.3.9 Cython==0.29.24 nvshmem4py-cu12==0.1.2
+pip3 install cuda-python==12.4 setuptools==69.0.0 wheel pybind11
+```
+
+Then, pip install triton-dist.
+```sh
+# Remove triton installed with torch
+pip uninstall triton
+pip uninstall triton_dist # remove previous triton-dist
+rm -rf /usr/local/lib/python3.12/dist-packages/triton
+# Install Triton-distributed
+VERSION=v0.0.2 # use the latest version
+pip install https://github.com/ByteDance-Seed/Triton-distributed/releases/download/${VERSION}/triton_dist-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+```
+
+
+### How to use Triton-distributed
+Triton-distributed provides a set of easy-to use primitives to support the development of distributed compute-communication overlapping kernels. The primitives are divided into low-level primitives and high-level primitives. Currently, we have released our low-level primitives, and we plan to release high-level primitives in future.
+
+[Triton-distributed Primitives](docs/primitives.md)
+
+Using these primitives, users can program communication kernels easily. For example, a low-latency AllToAll (with better latency than [DeepEP](https://github.com/deepseek-ai/DeepEP) for inference) is shown below.
+The performance of this example on 32 H800 GPUs is 137us (128 tokens per rank, topk=8, hidden_size=7168, dtype=fp8), while DeepEP is 182 us (note: DeepEP doesn't use NVLink for inference).
+```py
+@triton_dist.jit
+def all_to_all_kernel(
+    data_src,
+    data_dst,
+    splits_src,
+    splits_dst,
+    signal,
+    splits_cumsum,
+    scale_src,
+    scale_dst,
+    rank: int,
+    call_count: int,
+    WITH_SCALE: tl.constexpr,
+    WORLD_SIZE: tl.constexpr,
+    HIDDEN: tl.constexpr,
+    MAX_M: tl.constexpr,
+    EXPERTS_PER_RANK: tl.constexpr,
+    NUM_TOT_EXPERTS: tl.constexpr,
+    ELEMENT_SIZE: tl.constexpr = 2,
+    SCALE_ELEMENT_SIZE: tl.constexpr = 4,
+):
+    pid = tl.program_id(0)
+    threadidx = tid(axis=0)
+
+    exp_st = pid * EXPERTS_PER_RANK
+    exp_ed = exp_st + EXPERTS_PER_RANK
+
+    m_st = tl.load(splits_cumsum + exp_st)
+    m_ed = tl.load(splits_cumsum + exp_ed)
+    num_rows_cur_block = m_ed - m_st
+
+    src_off = m_st
+    dst_off = rank * MAX_M
+
+    split_src_ptr = splits_src + exp_st
+    off0 = exp_st + tl.arange(0, EXPERTS_PER_RANK)
+    off1 = exp_st + tl.arange(0, EXPERTS_PER_RANK) + 1
+    cumsum_sts = tl.load(splits_cumsum + off0)
+    cumsum_eds = tl.load(splits_cumsum + off1)
+    tl.store(split_src_ptr + tl.arange(0, EXPERTS_PER_RANK), cumsum_eds - cumsum_sts)
+
+    act_pos = call_count % 2
+    data_dst_ptr = data_dst + act_pos * WORLD_SIZE * MAX_M * HIDDEN + dst_off * HIDDEN
+    split_dst_ptr = splits_dst + act_pos * NUM_TOT_EXPERTS + rank * EXPERTS_PER_RANK
+    signal_ptr = signal + act_pos * WORLD_SIZE + rank
+
+    libshmem_device.putmem_nbi_block(
+        data_dst_ptr,
+        data_src + src_off * HIDDEN,
+        num_rows_cur_block * HIDDEN * ELEMENT_SIZE,
+        pid,
+    )
+    libshmem_device.putmem_nbi_block(
+        split_dst_ptr,
+        split_src_ptr,
+        EXPERTS_PER_RANK * 4,  # now we use `int32` for splits
+        pid,
+    )
+    if WITH_SCALE:
+        scale_dst_ptr = scale_dst + act_pos * WORLD_SIZE * MAX_M + dst_off
+        libshmem_device.putmem_signal_nbi_block(
+            scale_dst_ptr,
+            scale_src + src_off,
+            num_rows_cur_block * SCALE_ELEMENT_SIZE,
+            signal_ptr,
+            call_count,
+            libshmem_device.NVSHMEM_SIGNAL_SET,
+            pid,
+        )
+
+    libshmem_device.fence()
+    if threadidx == 0:
+        if not WITH_SCALE:
+            libshmem_device.signal_op(
+                signal_ptr,
+                call_count,
+                libshmem_device.NVSHMEM_SIGNAL_SET,
+                pid,
+            )
+        libshmem_device.signal_wait_until(
+            signal + act_pos * WORLD_SIZE + pid,
+            libshmem_device.NVSHMEM_CMP_EQ,
+            call_count,
+        )
+```
+
+Also, users can combine the communication part with computation part to design overlapping kernels. We have provided example implementations in `python/triton_dist/kernels`.
+
+## Performance
+Triton-distributed can achieve comparable or better performance than hand-tuned libraries.
+
+
+### AllGather GEMM on single node of H800x8
+![Ag-GEMM-inter-node](asset/ag-gemm-intra-node.png)
+
+### GEMM ReduceScatter on single node of H800x8
+![Ag-GEMM-inter-node](asset/gemm-rs-intranode-perf.png)
+
+### AllGather GEMM on 2 nodes of H800x8
+![Ag-GEMM-inter-node](asset/ag-gemm-internode-perf.png)
+
+### GEMM ReduceScatter on 2 nodes of H800x8
+![GEMM-Rs-inter-node](asset/gemm-rs-internode-perf.png)
+
+### Scaling of Distributed Flash-Decode from 1 GPU to 32 GPUs
+The batch size is 1 (one query) for decoding.
+![flash-decode-inter-node](asset/flash-decode-scaling.png)
+
+### Performance on Other Platforms
+[AMD GPUs](docs/amd-perf.md)
+
+
+## Roadmaps
+
+### Functionalities
+- [x] Release low-level primitives
+- [ ] Release high-level primitives
+- [x] Tutorials
+- [x] Pre-built binary
+
+### Kernels
+- [x] Release single-node GEMM TP overlapping kernels
+- [x] Release single-node MoE TP overlapping kernels
+- [x] Release single-node distributed Flash-Decoding kernels
+- [ ] Release single-node MoE EP overlapping kernels
+- [x] Release cross-node GEMM TP overlapping kernels
+- [x] Release cross-node MoE TP overlapping kernels
+- [x] Release cross-node distributed Flash-Decoding kernels
+- [x] Release cross-node EP all-to-all kernels (similar to [DeepEP](https://github.com/deepseek-ai/DeepEP))
+- [x] Provide tutorials for kernel implementation
+
+### Backends
+Computation
+- [x] Nvidia SM90a support
+- [x] Nvidia SM80 support
+- [x] Nvidia SM89 support
+- [x] AMD CDNA3 support
+
+Communication
+- [x] NVLink
+- [x] IB
+- [x] PCIe
+
+### Performance
+- [x] Performance report
+
+## License
+The Triton-distributed project is under MIT license.
+Part of our code is under Apache-2.0 License:
+- `python/triton_dist/kernels/flash_decode.py`
+
+
+## Citation
+If you use Triton-distributed in a scientific publication, we encourage you to add the following reference to the related papers:
+```bibtex
+@misc{zheng2025tritondistributed,
+      title={Triton-distributed: Programming Overlapping Kernels on Distributed AI Systems with the Triton Compiler},
+      author={Size Zheng and Wenlei Bao and Qi Hou and Xuegui Zheng and Jin Fang and Chenhui Huang and Tianqi Li and Haojie Duanmu and Renze Chen and Ruifan Xu and Yifan Guo and Ningxin Zheng and Ziheng Jiang and Xinyi Di and Dongyang Wang and Jianxi Ye and Haibin Lin and Li-Wen Chang and Liqiang Lu and Yun Liang and Jidong Zhai and Xin Liu},
+      year={2025},
+      eprint={2504.19442},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2504.19442},
+}
+
+@article{zheng2025tilelink,
+  title={Tilelink: Generating efficient compute-communication overlapping kernels using tile-centric primitives},
+  author={Zheng, Size and Fang, Jin and Zheng, Xuegui and Hou, Qi and Bao, Wenlei and Zheng, Ningxin and Jiang, Ziheng and Wang, Dongyang and Ye, Jianxi and Lin, Haibin and others},
+  journal={arXiv preprint arXiv:2503.20313},
+  year={2025}
+}
+```
+
+# About [ByteDance Seed Team](https://team.doubao.com/)
+
+Founded in 2023, ByteDance Seed Team is dedicated to crafting the industry's most advanced AI foundation models. The team aspires to become a world-class research team and make significant contributions to the advancement of science and society.
+
+# Discussion and Contribution
+Please use issues or pull requests for discussion and contribution (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+","1. repository_intent: Distributed Compiler based on Triton for Parallel Systems.
+2. technical_focus: Triton-distributed is designed for computation-communication overlapping using OpenAI Triton.
+3. primary_use_cases: It supports the development of efficient kernels comparable to highly-optimized libraries for Nvidia and AMD GPUs.
+4. system_design: The system architecture includes low-level and high-level primitives for programming distributed compute-communication overlapping kernels.
+5. key_technical_terms: distributed compiler, computation-communication overlapping, Triton, Nvidia GPU, AMD GPU, low-latency mode, AllToAll, GEMM, MoE operators, NVLink."
+load_llama.py,models/acceleration/x-attention/xattn/src/load_llama.py,8489865bdfdf1509435a2e744cca9e4cbd55948d,LCM-Lab/LOOM-Scope,https://api.github.com/repositories/1011265291/contents/models/acceleration/x-attention/xattn/src/load_llama.py?ref=42edbb14f1046016031f8d510de8884a1fbe8903,https://api.github.com/repositories/1011265291/git/blobs/8489865bdfdf1509435a2e744cca9e4cbd55948d,https://github.com/LCM-Lab/LOOM-Scope/blob/42edbb14f1046016031f8d510de8884a1fbe8903/models/acceleration/x-attention/xattn/src/load_llama.py,A comprehensive and efficient long-context model evaluation framework,"long-context-evaluation, benchmark-suite",0,3,1,35,2026-02-25T11:36:26Z,31,4,"<img src=""assets/LOOM-Eval-Logo.png""
+      alt=""LOOM-Eval Logo"" img>
+<h1 align=""center"" style=""white-space: nowrap; font-size: 1.8em; line-height: 1.3;"">
+  LOOM-Eval: LOng-cOntext Model Evaluation Framework
+</h1>
+
+<!-- [中文版本](README_ZH.md) | [English](README.md) | [Project Page](https://loomeval.github.io/) -->
+
+<p align=""center"">
+  <a href=""README_ZH.md"">
+    <img src=""https://img.shields.io/badge/中文说明-zh-red?style=plastic&logo=appveyor"" alt=""中文版本"">
+  </a>
+  <a href=""README.md"">
+    <img src=""https://img.shields.io/badge/English README-en-blue?style=plastic&logo=readthedocs"" alt=""English"">
+  </a>
+  <a href=""https://loomeval.github.io/"">
+    <img src=""https://img.shields.io/badge/Project_Page-homepage-brightgreen?style=plastic&logo=githubpages"" alt=""Project Page"">
+  </a>
+  <a href=""https://loom-eval.readthedocs.io/en/latest/"">
+    <img src=""https://img.shields.io/badge/Documentation-docs-orange?style=plastic&logo=readthedocs"" alt=""Documentation"">
+  </a>
+  <a href=""https://huggingface.co/datasets/AmamiSora/LOOMBench"">
+    <img src=""https://img.shields.io/badge/HuggingFace-LOOMBench-blue?style=plastic&logo=huggingface"" alt=""HuggingFace Dataset"">
+  </a>
+</p>
+
+<!-- <video controls=""controls"">
+<!-- <video controls width=""assets/demo.mp4"" height=""360""> -->
+
+<!-- <source src=""assets/demo.mp4"" type=""video/mp4"">
+</video> -->
+
+<!-- ![Demo Video](assets/demo.gif) -->
+## 📣 Latest News
+
+<details open>
+  <summary><strong>🗓️ February 2026</strong></summary>
+  <ul>
+    <li><strong>Completely Redesigned UI:</strong> You can now launch the web UI via <strong>loomeval.ui</strong>.</li>
+  </ul>
+</details>
+
+<details open>
+  <summary><strong>🗓️ january 2026</strong></summary>
+  <ul>
+    <li><strong>Integrated New Benchmarks:</strong> Added <strong>LongReward</strong> (see <a href=""https://arxiv.org/abs/2410.21252"">paper</a>) and <strong>MemReward</strong> (see <a href=""https://github.com/LCM-Lab/MemRewardBench"">repository</a>).</li>
+    <li><strong>Advanced Acceleration Suite:</strong> Introduced multiple state-of-the-art techniques to optimize long-context inference:
+      <ul>
+        <li><strong>NSA:</strong> Native Sparse Attention implementation. (<a href=""https://aclanthology.org/2025.acl-long.1126/"">Paper</a>)</li>
+        <li><strong>MOBA:</strong> Mixture-of-Batch-Agnostic acceleration. (<a href=""https://github.com/fms-explainability/MOBA"">GitHub</a>)</li>
+        <li><strong>InfLLM:</strong> Training-free long-context inference. (<a href=""https://github.com/thunlp/InfLLM"">GitHub</a>)</li>
+        <li><strong>DuoAttention:</strong> Efficient long-context LLM inference via dual-pass attention. (<a href=""https://github.com/mit-han-lab/duo-attention"">GitHub</a>)</li>
+      </ul>
+    </li>
+    <li><strong>MRCR Benchmark:</strong> Integrated the <strong>MRCR</strong> (Multi-Round Context Retrieval) benchmark. See the <a href=""https://arxiv.org/pdf/2409.12640v2"">technical paper</a> for details.</li>
+    <li><strong>Framework Optimization:</strong> Enhanced the inference pipeline by refactoring core workflows and optimizing the telemetry visualization system.</li>
+  </ul>
+</details>
+
+<details open>
+  <summary><strong>🗓️ December 2025</strong></summary>
+  <ul>
+    <li><strong>Benchmark Catalog:</strong> Added <code>loomeval.benchmarks</code>, providing a centralized interface to browse all supported evaluation suites.</li>
+    <li><strong>Workflow Automation:</strong> Released the <code>easy_run.py</code> script for streamlined, cross-directory evaluation execution.</li>
+  </ul>
+</details>
+
+<details open>
+  <summary><strong>🗓️ November 2025</strong></summary>
+  <ul>
+    <li><strong>Sparse Attention Support:</strong> Integrated <strong>SparseAttn</strong> to accelerate long-context processing. View the source <a href=""https://github.com/qqtang-code/SparseAttn"">here</a>.</li>
+    <li><strong>Extended Configuration:</strong> Expanded API with comprehensive tunable parameters; see <a href=""./scripts/utils/interface.md"">interface.md</a> for details.</li>
+  </ul>
+</details>
+
+<details open>
+  <summary><strong>🗓️ June 2025</strong></summary>
+  <ul>
+    <li><strong>LOOM-Eval Launch:</strong> Officially released <strong>LOOM-Eval</strong>, a high-efficiency framework for comprehensive Long-Context Model evaluation.</li>
+    <li><strong>Leaderboard Update:</strong> Updated the <a href=""#-llm-leaderboard"">LLM Leaderboard</a> to reflect the latest state-of-the-art long-context performance.</li>
+  </ul>
+</details>
+
+
+## 🔍 Features
+
+<details close>
+<summary><strong>User friendly and low code</strong></summary>
+
+- Few lines of command automatically detects datasets and models, seamlessly handling download, implementation, and evaluation.
+- WebUI (Gradio) available for users.
+
+</details>
+
+<details close>
+<summary><strong>Comprehensive Long-context Benchmarks</strong></summary>
+
+- Currently, we support 26 standard long-context benchmarks for LLMs, with hundreds of subtasks and variants implemented.
+
+</details>
+
+<details close>
+<summary><strong>Efficient Inference</strong></summary>
+
+- Support for fast and memory-efficient inference with [vLLM](https://github.com/vllm-project/vllm).
+- 17 computational efficient inference (acceleration) methods such as [CakeKV](https://github.com/antgroup/cakekv.git) and [FlexPrefill](https://github.com/bytedance/FlexPrefill).
+
+</details>
+
+<details close>
+<summary><strong>Model Compatibility</strong></summary>
+
+- Different model architectures, including: [Transformers](https://github.com/huggingface/transformers/), [Mamba](https://github.com/state-spaces/mamba), and [RWKV](https://github.com/BlinkDL/RWKV-LM).
+- Different Retrieval Augmented Generation (RAG) techniques, such as [BM25](https://github.com/dorianbrown/rank_bm25) and [LlamaIndex](https://github.com/run-llama/LlamaIndexTS).
+- Evaluation for adapters (e.g. LoRA) via [HuggingFace&#39;s PEFT](https://github.com/huggingface/peft).
+
+</details>
+
+<details close>
+<summary><strong>Reproducibility</strong></summary>
+
+- Publicly available runtime metrics and results across different platforms (including 24GB 3090, 40GB A100, and 92GB H20 GPUs) .
+- Publicly available prompts for different benchmarks.
+
+</details>
+
+## 💻 Environment & Installation
+
+**Basic Environment Installation**
+
+```bash
+conda create -n loom python=3.11 -y
+conda activate loom
+cd LOOM-Eval/loomeval
+pip install -e .
+```
+
+**Flash Attention**
+
+Install the suitable version of `flash_attn` from https://github.com/Dao-AILab/flash-attention/releases in the loom environment
+
+## 🚀 Quickly Start
+
+### Automatic Evaluation (One-Click Execution)
+
+> 🔷 **_Best for quick and complete evaluation with minimal setup._**
+
+<details open>
+<summary>Click to expand</summary>
+
+```shell
+loomeval.benchmarks
+```
+> Explanation: View available benchmarks and select one for evaluation.
+```shell
+loom-eval.run \
+    --model_path /path/to/Meta-Llama-3.1-8B-Instruct \
+    --benchmark L_CiteEval \
+    --gpu_ids 0 \
+    --gpu_allocation 1 \
+    --eval \
+    --save_tag L-CiteEval_Data \
+    --data_path ./data \
+    --output_dir ./results
+```
+
+> Explanation: Taking the L_CiteEval benchmark and the Meta-Llama-3.1-8B-Instruct model as an example, the following code can be used to quickly implement the following workflow: `→ downloading the benchmark/model → deploying the model → model prediction on benchmark → evaluating on the generated results with specified metricsn`
+
+</details>
+
+### Manual Evaluation (Step-by-Step Control)
+
+> 🧩 **_Recommended for advanced users who need customization or partial runs._**
+
+
+<details close>
+<summary><strong>Command-line Interface</strong></summary>
+
+| Category | Parameter | Type/Format | Description | Required/Default |
+| :--- | :--- | :--- | :--- | :--- |
+| **Core Configuration** | | | | |
+| | `--model_path` | `str` | Path to the model weights or HuggingFace ID. | **Required** |
+| | `--cfg_path` | `str` | Path to the benchmark configuration file (e.g., `benchmarks/General/LongBench/test.py`). | **Required** (or use `--benchmark`) |
+| | `--benchmark` | `str` | Quickly run a benchmark by name (e.g., `LongBench`). Overrides `--cfg_path` if set. | `None` |
+| | `--output_dir` | `str` | Root directory for saving predictions. | `None` |
+| **Inference & Hardware** | | | | |
+| | `--server` | `str` | Backend engine. Choices: `['transformers', 'vllm', 'rwkv', 'sglang', 'api']`. | `transformers` |
+| | `--gpu_ids` | `List[int]` | GPU device IDs (e.g., `--gpu_ids 0 1`). Uses all available if not set. | `None` |
+| | `--gpu_allocation` | `str` | GPUs per instance. Supports fractions (e.g., `1/2`) or integers. | `1` |
+| | `--dynamic_gpu_allocation`| `bool` | Enable per-round GPU count scaling based on input length. | `False` |
+| | `--acceleration` | `str` | Acceleration/Compression technique (e.g., `SnapKV`, `PyramidKV`). | `""""` |
+| | `--torch_dtype` | `str` | Data type for model weights. | `torch.bfloat16` |
+| **vLLM Settings** | | | | |
+| | `--max_model_len` | `int` | Maximum context length for the vLLM engine. | `131072` |
+| | `--gpu_memory_utilization`| `float` | Fraction of GPU memory reserved for vLLM KV cache. | `0.95` |
+| **Data & Sampling** | | | | |
+| | `--max_length` | `int` | Maximum sequence length for data truncation. | `131072` |
+| | `--limit` | `int` | Limit the number of samples to evaluate (`-1` for all). | `None` |
+| | `--limit_model` | `str` | Scope of the limit: `['global', 'per_task']`. | `global` |
+| **RAG Configuration** | | | | |
+| | `--rag_method` | `str` | Retrieval method: `['LlamaRAG', 'openai', 'BM25', 'llamaindex', 'contriever']`. | `None` |
+| | `--rag_config_path` | `str` | Path to the RAG logic configuration. | `./models/rag/config.yaml` |
+| | `--skip_rag_processing` | `bool` | Use existing pre-computed RAG data instead of retrieving again. | `False` |
+| **Generation & Logic** | | | | |
+| | `--rope_scaling` | `str` | Override RoPE config (e.g., `dynamic:8.0`). | `None` |
+| | `--infer_kwargs` | `json` | Inference parameters (e.g., `'{""temperature"": 0.0}'`). | `None` |
+| | `--enable_thinking` | `bool` | Enable Chain-of-Thought (CoT) reasoning pipeline. | `False` |
+| | `--thinking_tokens` | `int` | Max tokens reserved for thinking steps. | `32000` |
+| | `--template` | `str` | Override default chat template. | `None` |
+| **Execution** | | | | |
+| | `--eval` | `bool` | Perform evaluation immediately after generation. | `False` |
+| | `--skip_existing` | `bool` | Do not re-process existing output files. | `False` |
+| **API Configuration** | | | | |
+| | `--api_key` | `str` | API Key (defaults to `OPENAI_API_KEY` env var). | `ENV` |
+| | `--base_url` | `str` | API Endpoint URL. | `https://api.openai.com/v1...` |
+| | `--api_workers` | `int` | Number of parallel API requests. | `8` |
+| | `--format_type` | `str` | API protocol format: `['openai', 'anthropic']`. | `openai` |
+
+</details>
+
+  <details close>
+  <summary><strong>Evaluation of Model Prediction</strong></summary>
+
+  To evaluate generated model outputs (useful when you already have model predictions and only need scoring), you can use `--folder_name` flag:
+
+  ```shell
+  loom-eval.eval \
+    --output_dir <path_to_generation_outputs> \  # Root directory containing generated prediction files
+    --save_tag <model_tag> \                     # Optional tag used during generation (typically model name/version)
+    --benchmark <benchmark_name>                 # Target benchmark for scoring (e.g., 'L_CiteEval', 'LOOMBench')
+  ```
+
+  > Example Usage
+
+  ```shell
+  loom-eval.eval \
+      --output_dir ./outputs \
+      --save_tag Llama-3.1-8B-Instruct_LOOMBench \
+      --benchmark LOOMBench
+  ```
+
+</details>
+
+## 🌐 WebUI Implementation
+
+<div class=""image-container h-64 md:h-80"">
+  <img src=""assets/WebUI.png"" 
+       alt=""LOOM-Eval WebUI Interface"" 
+       title=""LOOM-Eval WebUI Interface"" 
+       class=""webui-image"">
+</div>
+<details close>
+<summary><strong>Click to expand WebUI Implementation</strong></summary>
+
+#### Start Local WebUI
+
+To launch the WebUI, simply run:
+
+```shell
+loomeval.ui 
+```
+
+The interface will be accessible at `http://0.0.0.0:7860` by default. You can also specify a different port using the `--port` flag:
+
+```shell
+loomeval.ui --port 8080
+```
+
+#### How to use the WebUI ?
+
+1. **Interactive Model Selection**: Choose from available models through a dropdown interface.
+2. **Benchmark Configuration**: Select and configure benchmarks.
+3. **Real-time Progress Tracking**: Monitor evaluation progress with live updates.
+4. **Results Visualization**: View evaluation results in formatted tables and charts.
+5. **Export Capabilities**: Download evaluation results in various formats.
+
+For a detailed demonstration of the WebUI functionality, please refer to the [demo video](assets/demo.gif) at the beginning of this document.
+
+</details>
+
+## 📊 Benchmark Dashboard
+
+<details close>
+<summary><strong>Tasks Overview</strong></summary>
+
+<div class=""image-container h-64 md:h-80"">
+  <img src=""assets/newplot.png"" 
+       alt=""LOOM-Eval Logo"" 
+       title=""LOOM-Eval Logo"" 
+       class=""logo-image"">
+</div>
+</details>
+
+<details close>
+<summary><strong> Paritial Evaluation Results</strong></summary>
+
+LOOM-Eval's computational costs for each benchmark (across implementations) are documented in [Computational Costs](./benchmarks/README.md).
+
+> **Example**: L-Eval Benchmark
+
+| Benchmark | Hardware Configuration | Inference Time (ALL tasks) |
+| --------- | ---------------------- | -------------------------- |
+| LEval     | 3090 (24GB) × 8       | 6:09:10                    |
+| LEval     | A100 (40GB) × 4       | 3:58:46                    |
+| LEval     | H20 (96GB) × 2        | 3:41:35                    |
+
+| Benchmark | Subtask  | Metrics     | Model                      | Results | Official Results |
+| --------- | -------- | ----------- | -------------------------- | ------- | ---------------- |
+| LEval     | TOEFL    | exam        | Meta-Llama-3.1-8B-Instruct | 81.40   | 82.89            |
+| LEval     | QuALITY  | exam        | Meta-Llama-3.1-8B-Instruct | 63.37   | 64.85            |
+| LEval     | Coursera | exam        | Meta-Llama-3.1-8B-Instruct | 54.94   | 53.77            |
+| LEval     | SFiction | exact_match | Meta-Llama-3.1-8B-Instruct | 78.90   | 69.53            |
+| LEval     | GSM      | exam        | Meta-Llama-3.1-8B-Instruct | 78.00   | 79.00            |
+| LEval     | CodeU    | exam        | Meta-Llama-3.1-8B-Instruct | 6.60    | 2.20             |
+
+</details>
+
+## 🎯 LOOMBench: A Lightweigh yet Comprehensive Benchmark
+
+LOOMBench is a streamlined evaluation suite derived from our comprehensive long-context evaluation framework. It is up-sampled and reorganized from 15 different available benchmarks, allowing for comprehensive evaluation of an 8B LCLM within 4.5 hours.
+
+
+### Running Evaluation
+
+<details close>
+<summary><strong>LOOMBench Evaluation</strong></summary>
+
+To evaluate the entire **LOOMBench** suite (or specific sub-tasks), use the following command:
+
+```shell
+loom-eval.run \
+    --model_path Meta-Llama/Meta-Llama-3.1-8B-Instruct \
+    --benchmark LOOMBench \
+    --gpu_ids 4 5 6 7 \
+    --gpu_allocation 1 \
+    --eval \
+    --save_tag Llama-3.1-8B-Instruct_LOOMBench
+```
+
+**Parameters:**
+
+- `--model_path`: Path or name of the model to evaluate.
+- `--benchmark`: ""Name of the benchmark to run (e.g.,LOOMBench). This is a shortcut that overrides --cfg_path. ""
+- `--cfg_path`: Configuration file for the specific benchmark.
+- `--gpu_ids`: GPU device(s) to use for evaluation.
+- `--gpu_allocation`: Number of GPU processes.
+- `--eval`: Enable evaluation mode.
+- `--save_tag`: Tag for saving results.
+> **💡 Customizing the Benchmark:**
+>
+> By default, the `--benchmark LOOMBench` flag loads the configuration from:
+> `LOOM-Eval/configs/General/LOOMBench/LOOMBench.yaml`
+>
+> If you wish to evaluate specific sub-tasks separately or modify the dataset composition, you can edit this YAML configuration file directly.
+
+
+
+
+### LLM Leaderboard on LOOMBench
+
+<details>
+<summary>Click to expand detailed leaderboard results (Non-Thinking Models)</summary>
+
+| Rank | Model | Avg Score | L_CiteEval | LEval | RULER | LongBench_EN | Counting_Stars_EN | LVEval_EN | LongBench_v2 | NIAH | MRCR | LongWriter | LIBRA | Counting_Stars_ZH | LongBench_ZH | CLongEval | LVEval_ZH | LongReward | MemReward |
+| :--: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | GLM-4.5-Air | **58.16** | 64.21 | 38.50 | 87.33 | 50.62 | 71.71 | 30.52 | 36.80 | 90.91 | 40.41 | 81.83 | 52.53 | 79.58 | 53.90 | 57.90 | 33.59 | 51.22 | 67.17 |
+| 2 | Qwen3-Next-80B-A3B-Instruct | **56.92** | 48.51 | 40.15 | 85.71 | 53.91 | 68.95 | 30.89 | 41.85 | 81.75 | 39.02 | 80.26 | 52.46 | 83.45 | 51.51 | 57.78 | 34.04 | 53.15 | 64.32 |
+| 3 | Qwen3-235B-A22B | **54.81** | 47.13 | 41.25 | 78.58 | 47.43 | 65.12 | 21.08 | 36.80 | 78.00 | 46.83 | 81.39 | 58.82 | 80.09 | 52.21 | 48.68 | 26.51 | 51.15 | 70.71 |
+| 4 | Qwen3-14B | **54.10** | 45.55 | 41.83 | 78.97 | 42.66 | 54.20 | 25.92 | 33.50 | 83.09 | 37.17 | 87.03 | 53.73 | 73.92 | 55.49 | 49.02 | 32.08 | 57.84 | 67.67 |
+| 5 | Qwen3-32B | **53.67** | 44.37 | 37.64 | 82.01 | 41.58 | 64.08 | 25.32 | 36.40 | 85.60 | 31.95 | 78.00 | 55.86 | 82.38 | 52.95 | 49.29 | 27.71 | 49.01 | 68.18 |
+| 6 | GLM-4.7-Flash | **50.08** | 63.63 | 36.48 | 67.93 | 43.79 | 49.24 | 24.90 | 29.32 | 79.28 | 30.23 | 62.36 | 43.45 | 77.58 | 50.90 | 53.02 | 38.43 | 43.21 | 57.58 |
+| 7 | Llama-3.1-70B-Instruct | **48.11** | 40.30 | 43.10 | 79.16 | 43.30 | 40.92 | 41.37 | 34.00 | 77.09 | 29.06 | 45.28 | 58.59 | 61.61 | 48.70 | 40.92 | 36.50 | 39.92 | 58.08 |
+| 8 | Qwen2.5-14B-Instruct | **47.93** | 35.68 | 38.52 | 67.45 | 39.35 | 50.44 | 25.52 | 38.40 | 82.43 | 38.11 | 57.25 | 51.78 | 58.22 | 53.08 | 37.29 | 26.34 | 51.38 | 63.64 |
+| 9 | Qwen3-30B-A3B | **47.52** | 43.74 | 36.69 | 62.06 | 40.77 | 46.32 | 20.35 | 26.80 | 78.17 | 34.62 | 81.03 | 48.92 | 67.36 | 55.69 | 44.08 | 29.11 | 40.05 | 52.02 |
+| 10 | Qwen3-8B | **47.25** | 37.80 | 39.18 | 67.27 | 37.87 | 44.28 | 18.04 | 30.80 | 69.35 | 35.63 | 82.45 | 48.55 | 65.22 | 47.51 | 42.16 | 24.29 | 45.62 | 67.17 |
+| 11 | NVIDIA-Nemotron-3-Nano-30B | **46.69** | 36.97 | 34.45 | 94.15 | 42.81 | 36.32 | 34.97 | 29.20 | 90.88 | 32.69 | 65.04 | 44.28 | 40.44 | 40.83 | 37.93 | 33.38 | 44.36 | 55.05 |
+| 12 | Llama-3.1-8B-Instruct | **43.39** | 39.21 | 35.05 | 81.51 | 37.84 | 39.44 | 29.09 | 31.20 | 89.76 | 30.50 | 48.30 | 47.81 | 47.12 | 36.84 | 35.27 | 37.43 | 34.45 | 36.87 |
+| 13 | Qwen2.5-7B-Instruct | **43.08** | 23.56 | 37.18 | 58.33 | 39.20 | 42.80 | 21.02 | 30.80 | 73.67 | 29.05 | 55.99 | 50.10 | 50.98 | 49.25 | 34.06 | 28.99 | 48.32 | 59.09 |
+
+</details>
+
+<details>
+<summary>Click to expand detailed leaderboard results (Thinking Models)</summary>
+
+| Rank | Model | Avg Score | L_CiteEval | LEval | RULER | LongBench_EN | Counting_Stars_EN | LVEval_EN | LongBench_v2 | NIAH | MRCR | LongWriter | LIBRA | Counting_Stars_ZH | LongBench_ZH | CLongEval | LVEval_ZH | LongReward | MemReward |
+| :--: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | step-3.5-flash | **58.40** | 50.59 | 44.21 | 77.58 | 54.84 | 68.74 | 23.28 | 55.19 | 75.49 | 58.17 | 71.23 | 64.21 | 80.67 | 64.06 | 63.17 | 27.89 | 50.89 | 62.62 |
+| 2 | Qwen3-14B | **56.63** | 46.50 | 43.32 | 82.82 | 50.22 | 62.65 | 27.46 | 43.84 | 83.82 | 44.95 | 80.68 | 62.28 | 82.86 | 53.09 | 47.40 | 36.55 | 49.18 | 65.15 |
+| 3 | Qwen3-4B-Thinking-2507 | **56.26** | 45.76 | 39.11 | 80.81 | 48.09 | 71.43 | 36.58 | 38.00 | 92.67 | 43.16 | 57.61 | 65.94 | 83.42 | 53.35 | 50.19 | 39.78 | 42.29 | 68.18 |
+| 4 | Qwen3-32B | **55.75** | 40.10 | 39.38 | 84.94 | 43.74 | 65.13 | 26.65 | 46.31 | 82.50 | 50.37 | 68.51 | 63.37 | 80.47 | 50.09 | 48.61 | 34.03 | 51.80 | 71.72 |
+| 5 | Qwen3-235B-A22B | **55.56** | 45.80 | 41.08 | 83.28 | 47.60 | 63.25 | 35.39 | 44.80 | 75.84 | 45.40 | 65.02 | 66.51 | 76.56 | 50.73 | 45.00 | 34.30 | 51.71 | 72.22 |
+| 6 | GLM-4.7-Flash | **52.26** | 59.66 | 35.68 | 75.25 | 42.46 | 31.00 | 31.50 | 0.00 | 89.29 | 70.69 | 69.35 | 67.61 | 82.22 | 42.18 | 39.37 | 38.73 | 50.35 | 63.13 |
+| 7 | Qwen3-30B-A3B | **49.35** | 41.17 | 39.30 | 67.37 | 47.50 | 46.88 | 23.99 | 41.40 | 69.62 | 33.97 | 74.94 | 63.99 | 57.90 | 51.76 | 45.81 | 28.51 | 39.51 | 65.40 |
+| 8 | Qwen3-8B | **48.43** | 34.37 | 40.38 | 76.72 | 42.17 | 44.25 | 21.57 | 35.20 | 69.55 | 32.03 | 74.76 | 58.60 | 71.70 | 51.35 | 39.86 | 27.43 | 39.26 | 64.14 |
+| 9 | trinity-large-preview | **48.03** | 41.44 | 41.95 | 71.56 | 54.66 | 42.85 | 25.90 | 35.74 | 82.63 | 26.90 | 31.70 | 59.85 | 64.55 | 51.96 | 44.20 | 40.14 | 46.97 | 53.54 |
+| 10 | aurora-alpha | **47.08** | 26.51 | 37.04 | 62.73 | 50.64 | 48.46 | 43.27 | 0.00 | 81.07 | 51.05 | 66.87 | 73.30 | 58.56 | 37.84 | 33.28 | 25.51 | 40.53 | 63.65 |
+
+</details>
+
+</details>
+
+## 🚄 RAG and Efficient Inference Options
+
+This section provides a unified approach to `optimize inference efficiency` through configurable `retrieval engines`, flexible `inference servers and architectures`, and advanced `acceleration techniques`.Key features include customizable RAG parameters across multiple engines, framework selection tailored for throughput (vLLM), compatibility (Transformers), or memory efficiency (RWKV), and accelerated inference via token eviction, quantization, and context optimization methods compatible with mainstream GPUs (A100, 3090, H20).
+
+<details close>
+<summary><strong>RAG Options</strong></summary>
+
+### 🔍 RAG Implementation Guide
+
+#### **1. Install**
+
+```bash
+pip install -r ./models/rag/requirements.txt
+```
+
+#### **2. Quick Start**
+
+Example: Benchmark Evaluation with Configurable Retrieval
+To assess the `Meta-Llama-3.1-8B-Instruct model` on the `L_CiteEval` benchmark using the `BM25` retrieval method, run:
+
+```bash
+loom-eval.run \
+    --model_path Meta-Llama/Meta-Llama-3.1-8B-Instruct \
+    --benchmark L_CiteEval \ 
+    --gpu_ids 0 \
+    --eval \
+    --save_tag L-CiteEval_Data \
+    --rag_method BM25 
+```
+
+Select a retrieval engine using the --rag_method flag, with supported options:`BM25`, `llamaindex`, `openai`, `contriever`
+
+#### **3. Configuration Guide**
+
+To customize the RAG settings, you will need to edit the RAG configuration file,click [here](./models/rag/config.yaml). Below are the key parameters you can adjust:
+
+```yaml
+# === Core Retrieval Parameters ===
+chunk_size: 512          # Number of tokens/characters per chunk.
+num_chunks: 15           # Total number of chunks generated from the input text.
+num_processes: 4        # Number of parallel processes for task execution.
+#only for llamaindex
+chunk_overlap: 128      # Overlapping tokens/characters between consecutive chunks.
+#only for openai
+embedding_model: text-embedding-3-small  # OpenAI embedding model for generating text embeddings.for --rag_method openai.
+openai_api: """"  # API key for OpenAI authentication. --rag_method openai.
+base_url: ""https://api.openai.com/v1""  # Base URL for the API endpoint. --rag_method openai.
+```
+
+#### **4. ⚠Limitations**
+
+Since the problems in the following tasks are `unsuitable` for text retrieval, direct retrieval yields poor results. It is recommended to apply RAG discretionarily for these tasks.
+
+| **benchmark**     | **Subtasks Unsuitable for Retrieval**                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **L-CiteEval**    | qmsum multi_news gov_report                                                                                                                |
+| **LEval**         | tv_show_summ, patent_summ, paper_assistant, news_summ, gov_report_summ, codeU                                                              |
+| **LongBench**     | gov_report, vcsum, multi_news, samsum    passage_count  passage_retrieval_en   ""passage_retrieval_zh"", ""lcc"", ""repobench-p""  ""trec"" ""lsht"" |
+| **LooGLE**        | summarization                                                                                                                              |
+| **RULER**         | cwe, fwe, vt                                                                                                                               |
+| **LongWriter**    | ----                                                                                                                                       |
+| **InfiniteBench** | longbook_sum_eng  math_find  math_calc  code_run code_debug    longdialogue_qa_eng                                                         |
+| **LongIns**       | ----                                                                                                                                       |
+| **LongHealth**    | ----                                                                                                                                       |
+| **Ada_LEval**     | ----                                                                                                                                       |
+| **BAMBOO**        | altqa senhallu abshallu meetingpred showspred reportsumsort showssort private_eval                                                         |
+
+> Note `----` indicates that all subtasks are unsuitable for retrieval.
+
+</details>
+
+<details>
+<summary><strong> Inference Server Options</strong></summary>
+
+### 🧠 Inference Server Selection
+
+LOOM-Eval implements multiple standardized interfaces for seamless integration of pre-trained language models:
+
+#### **1. vLLM Optimized Configuration**
+
+```bash
+loom-eval.run \
+    --model_path Meta-Llama/Meta-Llama-3.1-8B-Instruct \
+    --benchmark L_CiteEval \                 
+    --server vllm \              
+    --max_model_len 128000 \         
+    --gpu_memory_utilization 0.95 \ 
+    --eval \                       
+```
+
+#### **2. SGLang Optimized Configuration**
+
+```bash
+loom-eval.run \
+    --model_path Meta-Llama/Meta-Llama-3.1-8B-Instruct \
+    --benchmark L_CiteEval \                 
+    --server sglang \              
+    --max_model_len 128000 \         
+    --gpu_memory_utilization 0.90 \ 
+    --eval \   
+```
+
+#### **3. API Interface**
+Please modify the configuration file under this path ""./models/API/APISettings.py"". For specific supported services, please refer to the configuration file.
+```bash
+loom-eval.run \
+    --model_name gpt-4o-2024-05-13 \
+    --benchmark L_CiteEval \
+    --eval \
+    --format_type openai \
+    --base_url https://api.openai.com/v1 \
+    --api_key sk-...
+```
+
+</details>
+
+<details>
+<summary><strong> Architecture Options</strong></summary>
+
+### 🏛️ Architecture Selection
+
+LOOM-Eval supports a diverse range of model architectures for long-context processing:
+
+#### **1. Transformer-base Models**
+
+```bash
+loom-eval.run \
+    --server transformers \
+    --benchmark L_CiteEval \ 
+    --model_path Meta-Llama/Meta-Llama-3.1-8B-Instruct \
+    --eval      
+```
+
+#### **2. RWKV Configuration (Memory Efficiency)**
+
+```bash
+loom-eval.run \
+    --server rwkv \                 
+    --benchmark L_CiteEval \ 
+    --model_path RWKV-x070-World-2.9B-v3-20250211-ctx4096 \  
+    --gpu_ids 0 \
+    --eval \                       
+```
+
+#### **3. Linear-Attention Models (TODO)**
+
+Efficient linear-complexity attention variants.
+
+</details>
+
+<details>
+<summary><strong>Acceleration Method Options</strong></summary>
+
+### ⚡ Acceleration Methods
+
+#### **1. Overview**
+
+The Acceleration Toolkit currently supports the following acceleration methods:
+
+| **Acceleration Type**     | **Method**                                          | **Remark**                                                                         |
+| :------------------------------ | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
+| **KV Cache Optimization** | [H2O](https://github.com/FMInference/H2O)                    | Attention-based selection                                                                |
+|                                 | [StreamingLLM](https://github.com/mit-han-lab/streaming-llm) | Retain first few tokens                                                                  |
+|                                 | [SnapKV](https://github.com/FasterDecoding/SnapKV)           | Attention Pooling before selection                                                       |
+|                                 | [L2Compress](https://github.com/alessiodevoto/l2compress)    | L2 Norm is better than attention as a metrics                                            |
+|                                 | [PyramidKV](https://github.com/Zefan-Cai/KVCache-Factory)    | Layer-wise budget allocation                                                             |
+|                                 | [CakeKV](https://github.com/antgroup/cakekv)                 | Layer-specific preference score                                                          |
+|                                 | [KIVI](https://github.com/jy-yuan/KIVI)                      | Asymmetric 2bit Quantization                                                             |
+|                                 | [ThinK](https://github.com/SalesforceAIResearch/ThinK)       | Thinner Key Cache by Query-Driven Pruning                                                |
+|                                 | [CaM](https://github.com/zyxxmu/cam)                         | Cache Merging for Memory-efficient LLMs Inference                                        |
+| **Sparse Attention**      | [FlexPrefill](https://github.com/bytedance/FlexPrefill)      | Dynamic and context-aware sparse attention mechanism                                     |
+|                                 | [XAttention](https://github.com/mit-han-lab/x-attention)     | Dynamic and context-aware sparse attention mechanism by the Strided Antidiagonal Scoring |
+
+All supported acceleration methods, except for L2Compress, are capable of performing **single-GPU inference for 128K tasks on 40GB A100 GPUs**. These methods are fully optimized for **multi-GPU inference** and are compatible with a variety of high-performance GPUs, including **NVIDIA 3090, A-series, and H-series cards**.
+
+#### **2. Environment & Installation**
+
+Please note that these acceleration frameworks have specific requirements for environment setup and model compatibility. Refer to each framework's official documentation **(or the [README files](loomeval/models/acceleration/README.md))** to configure your environment and ensure your model is compatible.
+
+#### **3. Command-line Interface**
+
+You can easily enable any of these methods by specifying the `--acceleration` flag followed by the method name, e.g., `--acceleration L2Compress`.
+
+| **Category**        | **Parameter** | **Type/Format** | **Description**                                                  | **Required/Default**  |
+| :------------------------ | :------------------ | :-------------------- | :--------------------------------------------------------------------- | :-------------------------- |
+| **Core Parameters** |                     |                       |                                                                        |                             |
+|                           | `--model_path`    | `str`               | Model path/service provider (e.g., Meta-Llama-3-70B-Instruct)          | Required                    |
+|                           | `--cfg_path`      | `str` (YAML)        | Benchmark configuration file (e.g., benchmarks/General/LongBench.yaml) | Required                    |
+|                           | `--gpu_ids`        | `List[int]`         | GPU indices (e.g.,`0 1 3`)                                           | Default: All available GPUs |
+|                           | `--torch_dtype`   | `str \| torch.dtype` | Precision (e.g.,`float16`, `bfloat16`)                             | Default:`torch.bfloat16`  |
+
+</details>
+
+## 📖 Citation
+
+If you use LOOM-Eval in your research, please cite our work:
+
+```bibtex
+@article{
+
+}
+```
+","1. repository_intent: A comprehensive and efficient long-context model evaluation framework  
+2. technical_focus: The repository implements a long-context evaluation framework with support for various benchmarks and efficient inference methods.  
+3. primary_use_cases: It supports automatic and manual evaluation of long-context models across multiple benchmarks.  
+4. system_design: The software architecture includes a command-line interface, a web UI, and compatibility with various model architectures and retrieval methods.  
+5. key_technical_terms: long-context evaluation, benchmark suite, efficient inference, model compatibility, RAG techniques, telemetry visualization, user-friendly interface, reproducibility, flashinfer"
+common.py,vllm_metax/v1/attention/backends/mla/common.py,221c275b2bc77c64a1700a20c1adea5487cb7e14,MetaX-MACA/vLLM-metax,https://api.github.com/repositories/1004778813/contents/vllm_metax/v1/attention/backends/mla/common.py?ref=26b5da51cc9910c404599d5d72d31219a32a23a7,https://api.github.com/repositories/1004778813/git/blobs/221c275b2bc77c64a1700a20c1adea5487cb7e14,https://github.com/MetaX-MACA/vLLM-metax/blob/26b5da51cc9910c404599d5d72d31219a32a23a7/vllm_metax/v1/attention/backends/mla/common.py,,,10,52,99,173,2026-02-26T10:18:55Z,111,42,"<!-- markdownlint-disable MD001 MD041 -->
+<p align=""center"">
+  <picture>
+    <source media=""(prefers-color-scheme: dark)"" srcset=""https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm-logo-text-dark.png"">
+    <img alt=""vLLM"" src=""https://raw.githubusercontent.com/MetaX-MACA/vLLM-metax/master/docs/assets/logos/vllm-metax-logo.png"" width=55%>
+  </picture>
+</p>
+
+<h3 align=""center"">
+vLLM MetaX Plugin
+</h3>
+
+<p align=""center"">
+| <a href=""https://www.metax-tech.com/en/""><b>About MetaX</b></a> | <a href=""https://vllm-metax.readthedocs.io/en/latest/""><b>Documentation</b></a> | <a href=""https://slack.vllm.ai""><b>#sig-maca</b></a> </a> |
+</p>
+
+---
+
+*Latest News* 🔥
+- [2026/2] Released vllm-metax **v0.13.0** 🧨 — aligned with vLLM *v0.13.0*, brings you the latest features and model in v0.13.0!
+- [2026/1] Released vllm-metax **v0.12.0** 😎 — aligned with vLLM *v0.12.0*, supported more models and improved performance.
+- [2026/1] Released vllm-metax **v0.11.2** 👻 — aligned with vLLM *v0.11.2*, supported more models and improved performance.
+- [2025/11] Released vllm-metax **v0.10.2** 🎉 — aligned with vLLM *v0.10.2*, improved model performance, and fixed key decoding bugs.
+- [2025/11] We hosted [vLLM Beijing Meetup](https://mp.weixin.qq.com/s/xSrYXjNgr1HbCP4ExYNG1w) focusing on distributed inference and diverse accelerator support with vLLM! Please find the meetup slides [here](https://drive.google.com/drive/folders/1nQJ8ZkLSjKxvu36sSHaceVXtttbLvvu-?usp=drive_link).
+- [2025/08] We hosted [vLLM Shanghai Meetup](https://mp.weixin.qq.com/s/pDmAXHcN7Iqc8sUKgJgGtg) focusing on building, developing, and integrating with vLLM! Please find the meetup slides [here](https://drive.google.com/drive/folders/1OvLx39wnCGy_WKq8SiVKf7YcxxYI3WCH).
+
+
+## About
+
+vLLM MetaX is a hardware plugin for running vLLM seamlessly on MetaX GPU, which is a cuda_alike backend and provided near-native CUDA experiences on MetaX Hardware with [*MACA*](https://www.metax-tech.com/en/goods/platform.html?cid=4).
+
+It is the recommended approach for supporting the MetaX backend within the vLLM community. 
+
+The plugin follows the vLLM plugin RFCs by default:
+ - [[RFC]: Hardware pluggable](https://github.com/vllm-project/vllm/issues/11162)
+ - [[RFC]: Enhancing vLLM Plugin Architecture](https://github.com/vllm-project/vllm/issues/19161)
+
+Which ensured the hardware features and functionality support on integration of the MetaX GPU with vLLM.
+
+## Prerequisites
+
+- Hardware: MetaX C-series
+- OS: Linux
+- Software:
+  - Python >= 3.9, < 3.12
+  - vLLM (the same version as vllm-metax)
+  - Docker support
+
+## Getting Started
+
+vLLM MetaX currently only support starting on docker images release by [MetaX develop community](https://developer.metax-tech.com/softnova/docker?chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&package_kind=AI&dimension=docker&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=vllm-metax) which is out of box. (DockerFile for other OS is undertesting)
+
+If you want to develop, debug or test the newest feature on vllm-metax, you may need to build from scratch and follow this [*source build tutorial*](https://vllm-metax.readthedocs.io/en/v0.13.0/getting_started/installation/maca.html). 
+
+## Branch
+
+vllm-metax has three kind of branches.
+
+- **master**: main branch，catching up with main branch of vLLM upstream.
+- **releases/vX.Y.Z**: release branch, created when a new version of vLLM is released. For example, `releases/v0.13.0` is the release branch for vLLM `v0.13.0` version. (Same tag name)
+- **vX.Y.Z-dev**: development branch, created with part of new releases of vLLM. For example, `v0.14.0-dev` is the dev branch for vLLM `v0.14.0` version.
+
+Below is maintained branches:
+
+| Branch      | Status       | Note                                 |
+|-------------|--------------|--------------------------------------|
+| master      | N/A | trying to support vllm main, no gurantee on functionality |
+| v0.15.0-dev | N/A | under testing |
+| v0.14.0-dev | N/A | under testing |
+| releases/v0.13.0 | Released | related to vllm release v0.13.0 |
+| releases/v0.12.0 | Released | related to vllm release v0.12.0 |
+| releases/v0.11.2 | Released | related to vllm release v0.11.2 |
+| releases/v0.10.2 | Released | related to vllm release v0.10.2 |
+
+
+Please check [here](https://vllm-metax.readthedocs.io/en/v0.13.0/getting_started/quickstart.html) for v0.13.0 details.
+
+## License
+
+Apache License 2.0, as found in the [LICENSE](./LICENSE) file.
+","1. repository_intent: vLLM MetaX Plugin aims to provide seamless integration of vLLM with MetaX GPU hardware.  
+2. technical_focus: The repository implements a hardware plugin that aligns with vLLM's architecture and supports CUDA-like experiences on MetaX hardware.  
+3. primary_use_cases: It supports running vLLM models efficiently on MetaX GPUs, enhancing performance and compatibility.  
+4. system_design: The system is designed to operate within Docker environments and follows vLLM plugin RFCs for hardware integration.  
+5. key_technical_terms: vLLM, MetaX, CUDA, Docker, hardware plugin, performance improvement, model support, Linux, Python, MACA"
+model_runner.py,python/sglang/srt/managers/router/model_runner.py,7023b94426ebfcbd93895d107c5479f9950c4162,WukLab/preble,https://api.github.com/repositories/767227429/contents/python/sglang/srt/managers/router/model_runner.py?ref=1a35eae20c416f7062ca81775aab72890323fd97,https://api.github.com/repositories/767227429/git/blobs/7023b94426ebfcbd93895d107c5479f9950c4162,https://github.com/WukLab/preble/blob/1a35eae20c416f7062ca81775aab72890323fd97/python/sglang/srt/managers/router/model_runner.py,Stateful LLM Serving,,0,15,59,546,2025-03-11T05:11:09Z,97,15,"# Preble
+
+Preble is a load balancer for effecient prefix caching systems. 
+PrePrint release at https://arxiv.org/abs/2407.00023
+## Installation
+
+You can install the package using pip:
+
+# Code Structure
+The `multi_node` directory contains the code for running as a separate abstraction layer to SGLang/vLLM in a distributed setting. This code is responsible for coordinating and managing the execution of the distributed system.
+
+Editable Installation
+```
+pip3 install -e .
+pip install -e ""python[all]""
+pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3/
+```
+
+Regular Pip Installation:
+```
+pip3 install preble
+pip install git+https://github.com/wuklab/preble.git#egg=preble[all]
+pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3/
+```
+
+
+We release a custom version of sglang that supports chunked prefill
+
+## Programatically starting the server
+We can support providing a list of runtime urls
+```
+from preble.main import start_server
+
+start_server(
+    runtime_selection_policy=""custom"",
+    runtime_urls=""http://127.0.0.1:30000/generate,http://127.0.0.1:30001/generate"",
+    host='127.0.0.1',
+    port=8000,
+    model=""mistralai/Mistral-7B-v0.1""
+)
+```
+
+We can also support dynamically loading the models to seperate cuda devices
+```
+from preble.main import start_server_and_load_models
+
+start_server_and_load_models(
+    model_name=""mistralai/Mistral-7B-v0.1"",
+    devices=[0, 1],
+    host=""127.0.0.1"",
+    port=8000
+)
+```
+
+The server can be run via:
+```
+python3 multi_node/server/server.py <server/deploy_and_run>
+```
+- server runs the server given a list of urls
+- deploy_and_run generates two endpoints
+
+CLI Configuration
+```
+    runtime_selection_policy: The policy to select the runtime (e.g., custom, round_robin).
+    runtime_urls: Comma-separated list of runtime URLs.
+    host: The host address for the server.
+    port: The port number for the server.
+    model: The model to be used (e.g., mistralai/Mistral-7B-v0.1).
+```
+
+## Citation And Acknowledgment
+The code is forked of sglang
+```
+@inproceedings{
+srivatsa2025preble,
+title={Preble: Efficient Distributed Prompt Scheduling for {LLM} Serving},
+author={Vikranth Srivatsa and Zijian He and Reyna Abhyankar and Dongming Li and Yiying Zhang},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+}
+```
+
+# pypi build and install instructions
+Currently uploaded at:
+```python setup.py bdist_wheel```
+``` twine upload --repository testpypi dist/* --verbose```
+```python3 -m pip install --index-url https://test.pypi.org/simple/ preble```
+
+ 
+# Test running the server in isolation
+Launch the server in isolation to help debug issues
+```
+python -m sglang.launch_server --model-path mistralai/Mistral-7B-v0.1 --cuda-devices 0 --tp-size 2 
+```
+
+# License
+
+This project is licensed under the Apache 2.0 License. See the LICENSE file for details.
+
+","1. repository_intent: Preble is a load balancer for efficient prefix caching systems in LLM serving.  
+2. technical_focus: The repository implements a distributed system for managing and executing LLM serving using a custom version of sglang.  
+3. primary_use_cases: It supports programmatically starting a server and dynamically loading models to separate CUDA devices.  
+4. system_design: The software architecture includes a multi-node setup that coordinates execution across distributed nodes.  
+5. key_technical_terms: load balancer, prefix caching, distributed system, runtime selection policy, CUDA devices, model loading, sglang, LLM serving, flashinfer."
+mxfp4.py,aphrodite/quantization/mxfp4.py,7e38fda0baaf9d285022f93cc51b725cd8807c70,aphrodite-engine/aphrodite-engine,https://api.github.com/repositories/657414607/contents/aphrodite/quantization/mxfp4.py?ref=e4bd7a2322d2eb1506a0c96e37d87f1085ee6a30,https://api.github.com/repositories/657414607/git/blobs/7e38fda0baaf9d285022f93cc51b725cd8807c70,https://github.com/aphrodite-engine/aphrodite-engine/blob/e4bd7a2322d2eb1506a0c96e37d87f1085ee6a30/aphrodite/quantization/mxfp4.py,Large-scale LLM inference engine,"api-rest, inference-engine, machine-learning, cuda, inferentia, rocm, intel, lora, speculative-decoding, tpu",80,164,1204,1579,2026-02-17T20:55:13Z,1666,187,"<h1 align=""center"">
+Breathing Life into Language
+</h1>
+
+
+![aphrodite](https://raw.githubusercontent.com/PygmalionAI/aphrodite-engine/main/assets/aphrodite.png)
+
+Aphrodite is an inference engine that optimizes the serving of HuggingFace-compatible models at scale. Built on vLLM's Paged Attention technology, it delivers high-performance model inference for multiple concurrent users. Developed through a collaboration between [PygmalionAI](https://pygmalion.chat) and [Ruliad](https://ruliad.co), Aphrodite serves as the backend engine powering both organizations' chat platforms and API infrastructure.
+
+Aphrodite builds upon and integrates the exceptional work from [various projects](#acknowledgements), primarily [vLLM](https://vllm.ai).
+
+## Features
+
+- Continuous Batching
+- Efficient K/V management with [PagedAttention](https://vllm.ai) from vLLM
+- Optimized CUDA kernels for improved inference
+- Quantization support via [AQLM](https://arxiv.org/abs/2401.06118), [AutoRound](https://arxiv.org/abs/2309.05516), [AWQ](https://arxiv.org/abs/2306.00978), [BitNet](https://arxiv.org/abs/2310.11453), [Bitsandbytes](https://arxiv.org/abs/2208.07339), [EETQ](https://github.com/NetEase-FuXi/EETQ), [GGUF](https://github.com/ggml-org/llama.cpp), [GPTQ](https://arxiv.org/abs/2210.17323), [QuIP#](https://arxiv.org/abs/2402.04396), [SqueezeLLM](https://arxiv.org/abs/2306.07629), [Marlin](https://arxiv.org/abs/2408.11743), FP2-FP12 [[1]](https://arxiv.org/abs/2401.14112) [[2]](https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html) [[3]](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/), [NVIDIA ModelOpt](https://github.com/NVIDIA/TensorRT-Model-Optimizer), [TorchAO](https://github.com/pytorch/ao), [VPTQ](https://arxiv.org/abs/2409.17066), [compressed_tensors](https://github.com/vllm-project/llm-compressor), [MXFP4](https://huggingface.co/blog/RakshitAralimatti/learn-ai-with-me), and more.
+- Distributed inference
+- 8-bit KV Cache for higher context lengths and throughput, at both FP8 E5M3 and E4M3 formats
+- Support for modern samplers such as DRY, XTC, Mirostat, and more
+- Disaggregated inference
+- Speculative decoding
+- Multimodal support
+- Multi-LoRA support
+
+
+## Quickstart
+
+Install the engine:
+```sh
+pip install -U aphrodite-engine
+```
+
+> [!TIP]
+> You will need to install the kernels separately. See the [installation guide](https://aphrodite.pygmalion.chat/installation/installation/) for more details. Running Aphrodite without the kernels will give you the installation instructions as well.
+
+Then launch a model:
+
+```sh
+aphrodite run Qwen/Qwen3-0.6B
+```
+
+If you're not serving at scale, you can append the `--single-user-mode` flag to limit memory usage.
+
+This will create a [OpenAI](https://platform.openai.com/docs/api-reference/)-compatible API server that can be accessed at port 2242 of the localhost. You can plug in the API into a UI that supports OpenAI, such as [SillyTavern](https://github.com/SillyTavern/SillyTavern).
+
+Please refer to the [documentation](https://aphrodite.pygmalion.chat) for the full list of arguments and flags you can pass to the engine, or simply run `aphrodite run -h` to see the full list of arguments.
+
+You can play around with the engine in the demo here:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AlpinDale/misc-scripts/blob/main/Aphrodite.ipynb)
+
+### Docker
+
+Additionally, we provide a Docker image for easy deployment. Here's a basic command to get you started:
+
+```sh
+docker run --runtime nvidia --gpus all \
+    -v ~/.cache/huggingface:/root/.cache/huggingface \
+    #--env ""CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7"" \
+    -p 2242:2242 \
+    --ipc=host \
+    alpindale/aphrodite-openai:latest \
+    --model NousResearch/Meta-Llama-3.1-8B-Instruct \
+    --tensor-parallel-size 8 \
+    --api-key ""sk-empty""
+```
+
+This will pull the Aphrodite Engine image, and launch the engine with the Llama-3.1-8B-Instruct model at port 2242.
+
+## Requirements
+
+- Operating System: Linux, Windows (WSL2)
+- Python: 3.9 to 3.12
+
+#### Build Requirements:
+- CUDA >= 12
+
+For supported devices, see [here](https://aphrodite.pygmalion.chat/pages/quantization/support-matrix.html). Generally speaking, all semi-modern GPUs are supported - down to Pascal (GTX 10xx, P40, etc.) We also support AMD GPUs, Intel CPUs and GPUs, Google TPU, and AWS Inferentia.
+
+
+
+
+### Notes
+
+1. By design, Aphrodite takes up 90% of your GPU's VRAM. If you're not serving an LLM at scale, you may want to limit the amount of memory it takes up. You can do this in the API example by launching the server with the `--gpu-memory-utilization 0.6` (0.6 means 60%), or `--single-user-mode` to only allocate as much memory as needed for a single sequence.
+
+2. You can view the full list of commands by running `aphrodite run --help`.
+
+## Acknowledgements
+Aphrodite Engine would have not been possible without the phenomenal work of other open-source projects. A (non-exhaustive) list:
+- [vLLM](https://github.com/vllm-project/vllm)
+- [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM)
+- [xFormers](https://github.com/facebookresearch/xformers)
+- [Flash Attention](https://github.com/Dao-AILab/flash-attention)
+- [llama.cpp](https://github.com/ggerganov/llama.cpp)
+- [AutoAWQ](https://github.com/casper-hansen/AutoAWQ)
+- [AutoGPTQ](https://github.com/PanQiWei/AutoGPTQ)
+- [SqueezeLLM](https://github.com/SqueezeAILab/SqueezeLLM/)
+- [Exllamav2](https://github.com/turboderp/exllamav2)
+- [TabbyAPI](https://github.com/theroyallab/tabbyAPI)
+- [AQLM](https://github.com/Vahe1994/AQLM)
+- [KoboldAI](https://github.com/henk717/KoboldAI)
+- [Text Generation WebUI](https://github.com/oobabooga/text-generation-webui)
+- [Megatron-LM](https://github.com/NVIDIA/Megatron-LM)
+- [Ray](https://github.com/ray-project/ray)
+
+### Sponsors
+Past and present, in alphabetical order:
+
+- [Arc Compute](https://www.arccompute.io/)
+- [Lium](https://lium.io)
+- [Prime Intellect](https://www.primeintellect.ai/)
+- [PygmalionAI](https://pygmalion.chat)
+- [Ruliad AI](https://ruliad.ai)
+
+
+## Contributing
+Everyone is welcome to contribute. You can support the project by opening Pull Requests for new features, fixes, or general UX improvements.
+","1. repository_intent: Aphrodite is an inference engine that optimizes the serving of HuggingFace-compatible models at scale.  
+2. technical_focus: It is built on vLLM's Paged Attention technology and includes features like continuous batching and optimized CUDA kernels.  
+3. primary_use_cases: The repository supports high-performance model inference for multiple concurrent users and provides an API for integration with chat platforms.  
+4. system_design: The software architecture includes distributed inference, 8-bit KV cache, and support for modern samplers and multimodal capabilities.  
+5. key_technical_terms: inference engine, HuggingFace, Paged Attention, CUDA, distributed inference, quantization, API, multi-LoRA, speculative decoding, machine learning"
+test.py,packages/attention/flashinfer/test.py,dba306f4f887019b7531df11a65bf293a922f5ca,dusty-nv/jetson-containers,https://api.github.com/repositories/260027545/contents/packages/attention/flashinfer/test.py?ref=a8fb1a800a5338688f746acb37294879e55ebe47,https://api.github.com/repositories/260027545/git/blobs/dba306f4f887019b7531df11a65bf293a922f5ca,https://github.com/dusty-nv/jetson-containers/blob/a8fb1a800a5338688f746acb37294879e55ebe47/packages/attention/flashinfer/test.py,Machine Learning Containers for NVIDIA Jetson and JetPack-L4T,"machine-learning, dockerfiles, jetson, pytorch, tensorflow, pandas, scikit-learn, numpy, ros-containers, ros2-foxy, docker, containers, nvidia",156,726,572,5216,2026-03-05T16:57:26Z,4444,803,"[![a header for a software project about building containers for AI and machine learning](https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/header_blueprint_rainbow.jpg)](https://www.jetson-ai-lab.com)
+
+[![jetson-ai-lab.io status](https://img.shields.io/website?label=jetson-ai-lab.io&url=https%3A%2F%2Fpypi.jetson-ai-lab.io&up_message=up&up_color=brightgreen&down_message=down&down_color=red)](https://pypi.jetson-ai-lab.io)
+# CUDA Containers for Edge AI & Robotics
+
+Modular container build system that provides the latest [**AI/ML packages**](https://pypi.jetson-ai-lab.io/) for [NVIDIA Jetson](https://jetson-ai-lab.com) :rocket::robot:
+
+|                    |                                                                                |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **ML**             | [`pytorch`](packages/ml/pytorch) [`tensorflow`](packages/ml/tensorflow) [`jax`](packages/ml/jax) [`onnxruntime`](packages/ml/onnxruntime) [`deepstream`](packages/cv/deepstream) [`holoscan`](packages/cv/holoscan) [`CTranslate2`](packages/ml/ctranslate2) [`JupyterLab`](packages/code/jupyterlab)                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **LLM**            | [`SGLang`](packages/llm/sglang) [`vLLM`](packages/llm/vllm) [`MLC`](packages/llm/mlc) [`AWQ`](packages/llm/awq) [`transformers`](packages/llm/transformers) [`text-generation-webui`](packages/llm/text-generation-webui) [`text-generation-inference`](packages/llm/text-generation-inference) [`ollama`](packages/llm/ollama) [`optimum`](packages/llm/optimum) [`openai`](packages/llm/openai)[`gptqmodel`](packages/llm/gptqmodel) [`llama.cpp`](packages/llm/llama_cpp) [`llama-factory`](packages/llm/llama-factory) [`exllama`](packages/llm/exllama) [`ktransformers`](packages/llm/ktransformers) [`FlashAttention`](packages/attention/flash-attention) [`DeepSpeed`](packages/llm/deepspeed) [`bitsandbytes`](packages/llm/bitsandbytes) [`xformers`](packages/attention/xformers) [`xgrammar`](packages/llm/xgrammar)                                                                                                      |
+| **VLM**            | [`llava`](packages/vlm/llava) [`llama-vision`](packages/vlm/llama-vision) [`VILA`](packages/vlm/vila) [`LITA`](packages/vlm/lita) [`NanoLLM`](packages/llm/nano_llm) [`Prismatic`](packages/vlm/prismatic) [`xtuner`](packages/vlm/xtuner) [`gemma_vlm`](packages/vlm/gemma_vlm)                                                                                                                                                                                                                                                                                                                                                                                  |
+| **VIT**            | [`NanoOWL`](packages/vit/nanoowl) [`NanoSAM`](packages/vit/nanosam) [`Segment Anything (SAM)`](packages/vit/sam) [`Track Anything (TAM)`](packages/vit/tam) [`clip_trt`](packages/vit/clip_trt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **RAG**            | [`llama-index`](packages/rag/llama-index) [`langchain`](packages/rag/langchain) [`jetson-copilot`](packages/rag/jetson-copilot) [`NanoDB`](packages/vectordb/nanodb) [`FAISS`](packages/vectordb/faiss) [`RAFT`](packages/ml/rapids/raft)                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **L4T**            | [`l4t-pytorch`](packages/ml/l4t/l4t-pytorch) [`l4t-tensorflow`](packages/ml/l4t/l4t-tensorflow) [`l4t-ml`](packages/ml/l4t/l4t-ml) [`l4t-diffusion`](packages/ml/l4t/l4t-diffusion) [`l4t-text-generation`](packages/ml/l4t/l4t-text-generation)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **CUDA**           | [`cupy`](packages/ml/numeric/cupy) [`cuda-python`](packages/cuda/cuda-python) [`pycuda`](packages/cuda/pycuda) [`cv-cuda`](packages/cv/cv-cuda) [`opencv:cuda`](packages/cv/opencv) [`numba`](packages/ml/numeric/numba)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Robotics**       | [`ROS`](packages/physicalAI/ros) [`LeRobot`](packages/physicalAI/lerobot) [`OpenVLA`](packages/physicalAI/vla/openvla) [`3D Diffusion Policy`](packages/cv/diffusion/3d_diffusion_policy) [`Crossformer`](packages/physicalAI/vla/crossformer) [`MimicGen`](packages/physicalAI/sim/mimicgen) [`OpenDroneMap`](packages/physicalAI/opendronemap) [`ZED`](packages/hw/zed)  [`openpi`](packages/physicalAI/openpi)                                                                                                                                                                                                                                                                                                                              |
+| **Simulation**     | [`Isaac Sim`](packages/physicalAI/sim/isaac-sim) [`Genesis`](packages/physicalAI/sim/genesis) [`Habitat Sim`](packages/physicalAI/sim/habitat-sim) [`MimicGen`](packages/physicalAI/sim/mimicgen) [`MuJoCo`](packages/physicalAI/sim/mujoco) [`PhysX`](packages/physicalAI/sim/physx) [`Protomotions`](packages/physicalAI/protomotions) [`RoboGen`](packages/physicalAI/sim/robogen) [`RoboMimic`](packages/physicalAI/sim/robomimic) [`RoboSuite`](packages/physicalAI/sim/robosuite) [`Sapien`](packages/physicalAI/sim/sapien)                                                                                                                                                                                                                                                                                          |
+| **Graphics**       | [`3D Diffusion Policy`](packages/cv/diffusion/3d_diffusion_policy) [`AI Toolkit`](packages/cv/diffusion/ai-toolkit) [`ComfyUI`](packages/cv/diffusion/comfyui) [`Cosmos`](packages/cv/diffusion/cosmos) [`Diffusers`](packages/cv/diffusion/diffusers) [`Diffusion Policy`](packages/cv/diffusion/diffusion_policy) [`FramePack`](packages/cv/diffusion/framepack) [`Stable Diffusion WebUI`](packages/cv/diffusion/stable-diffusion-webui) [`SD.Next`](packages/cv/diffusion/sdnext) [`nerfstudio`](packages/cv/3d/nerf/nerfstudio) [`meshlab`](packages/cv/3d/3dvision/meshlab) [`gsplat`](packages/cv/3d/gaussian_splatting/gsplat) |
+| **Mamba**          | [`mamba`](packages/ml/mamba) [`mambavision`](packages/ml/mamba/mambavision) [`cobra`](packages/ml/mamba/cobra) [`dimba`](packages/ml/mamba/dimba) [`videomambasuite`](packages/ml/mamba/videomambasuite)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **KANs**           | [`pykan`](packages/ml/kans/pykan) [`kat`](packages/ml/kans/kat)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **xLTSM**          | [`xltsm`](packages/ml/xlstm/xlstm) [`mlstm_kernels`](packages/ml/xlstm/mlstm_kernels)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Speech**         | [`whisper`](packages/speech/whisper) [`whisper_trt`](packages/speech/whisper_trt) [`faster-whisper`](packages/speech/faster-whisper) [`espeak`](packages/speech/espeak) [`whisperx`](packages/speech/whisperx) [`Chatterbox TTS`](packages/speech/chatterbox-tts) [`piper`](packages/speech/piper1-tts) [`riva`](packages/speech/riva-client) [`speech-dispatcher`](packages/speech/speech-dispatcher) [`speaches`](packages/speech/speaches) [`SparkTTS`](packages/speech/spark-tts) [`riva-client`](packages/speech/riva-client) [`audiocraft`](packages/speech/audiocraft) [`voicecraft`](packages/speech/voicecraft) [`voice-pro`](packages/speech/voice-pro) [`xtts`](packages/speech/xtts)                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Home/IoT**       | [`homeassistant-core`](packages/smart-home/homeassistant-core) [`wyoming-whisper`](packages/smart-home/wyoming/wyoming-whisper) [`wyoming-openwakeword`](packages/smart-home/wyoming/wyoming-openwakeword) [`wyoming-piper`](packages/smart-home/wyoming/wyoming-piper)                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **3DPrintObjects** | [`PartPacker`](packages/cv/3d/3dobjects/partpacker) [`Sparc3D`](packages/cv/3d/3dobjects/sparc3d)                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
+See the [**`packages`**](packages) directory for the full list, including pre-built container images for JetPack/L4T.
+
+Using the included tools, you can easily combine packages together for building your own containers.  Want to run ROS2 with PyTorch and Transformers?  No problem - just do the [system setup](/docs/setup.md), and build it on your Jetson:
+
+```bash
+$ jetson-containers build --name=my_container pytorch transformers ros:humble-desktop
+```
+
+There are shortcuts for running containers too - this will pull or build a [`l4t-pytorch`](packages/ml/l4t/l4t-pytorch) image that's compatible:
+
+```bash
+$ jetson-containers run $(autotag l4t-pytorch)
+```
+> <sup>[`jetson-containers run`](/docs/run.md) launches [`docker run`](https://docs.docker.com/engine/reference/commandline/run/) with some added defaults (like `--runtime nvidia`, mounted `/data` cache and devices)</sup><br>
+> <sup>[`autotag`](/docs/run.md#autotag) finds a container image that's compatible with your version of JetPack/L4T - either locally, pulled from a registry, or by building it.</sup>
+
+If you look at any package's readme (like [`l4t-pytorch`](packages/ml/l4t/l4t-pytorch)), it will have detailed instructions for running it.
+
+#### Changing CUDA Versions
+
+You can rebuild the container stack for different versions of CUDA by setting the `CUDA_VERSION` variable:
+
+```bash
+CUDA_VERSION=12.6 jetson-containers build transformers
+```
+
+It will then go off and either pull or build all the dependencies needed, including PyTorch and other packages that would be time-consuming to compile.  There is a [Pip server](/docs/build.md#pip-server) that caches the wheels to accelerate builds.  You can also request specific versions of cuDNN, TensorRT, Python, and PyTorch with similar environment variables like [here](/docs/build.md#changing-versions).
+
+## Documentation
+
+<a href=""https://www.jetson-ai-lab.com""><img align=""right"" width=""200"" height=""200"" src=""https://nvidia-ai-iot.github.io/jetson-generative-ai-playground/images/JON_Gen-AI-panels.png""></a>
+
+* [Package List](/packages)
+* [Package Definitions](/docs/packages.md)
+* [System Setup](/docs/setup.md)
+* [Building Containers](/docs/build.md)
+* [Running Containers](/docs/run.md)
+
+Check out the tutorials at the [**Jetson Generative AI Lab**](https://www.jetson-ai-lab.com)!
+
+## Getting Started
+
+Refer to the [System Setup](/docs/setup.md) page for tips about setting up your Docker daemon and memory/storage tuning.
+
+```bash
+# install the container tools
+git clone https://github.com/dusty-nv/jetson-containers
+bash jetson-containers/install.sh
+
+# automatically pull & run any container
+jetson-containers run $(autotag l4t-pytorch)
+```
+
+Or you can manually run a [container image](https://hub.docker.com/r/dustynv) of your choice without using the helper scripts above:
+
+```bash
+sudo docker run --runtime nvidia -it --rm --network=host dustynv/l4t-pytorch:r36.2.0
+```
+
+Looking for the old jetson-containers?   See the [`legacy`](https://github.com/dusty-nv/jetson-containers/tree/legacy) branch.
+
+
+### Only Tested and supported Jetpack 6.2 (Cuda 12.6) and JetPack 7 (CUDA 13.x).
+
+> [!NOTE]
+> Ubuntu 24.04 containers for JetPack 6 and JetPack 7 are now available (with CUDA support)
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`LSB_RELEASE=24.04 jetson-containers build pytorch:2.8`
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`jetson-containers run dustynv/pytorch:2.8-r36.4-cu128-24.04`
+>
+> ARM SBSA (Server Base System Architecture) is supported for GH200 / GB200.
+> To install CUDA 13.0 SBSA wheels for Python 3.12 / 24.04:
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`uv pip install torch torchvision torchaudio \`
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--index-url https://pypi.jetson-ai-lab.io/sbsa/cu129`
+>
+> See the **[`Ubuntu 24.04`](/docs/build.md#2404-containers)** section of the docs for details and a list of available containers 🤗
+> Thanks to all our contributors from **[`Discord`](https://discord.gg/BmqNSK4886)** and AI community for their support 🤗
+
+
+## Code Style
+
+The project uses automated code formatting tools to maintain consistent code style. See [Code Style Guide](docs/code-style.md) for details on:
+- Setting up formatting tools
+- Adding your package to formatting checks
+- Troubleshooting common issues
+
+
+## Gallery
+
+<a href=""https://www.youtube.com/watch?v=UOjqF3YCGkY""><img src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/llamaspeak_llava_clip.gif""></a>
+> [Multimodal Voice Chat with LLaVA-1.5 13B on NVIDIA Jetson AGX Orin](https://www.youtube.com/watch?v=9ObzbbBTbcc) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+<br/>
+
+<a href=""https://www.youtube.com/watch?v=hswNSZTvEFE""><img src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/llamaspeak_70b_yt.jpg"" width=""800px""></a>
+> [Interactive Voice Chat with Llama-2-70B on NVIDIA Jetson AGX Orin](https://www.youtube.com/watch?v=wzLHAgDxMjQ) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+<br/>
+
+<a href=""https://www.youtube.com/watch?v=OJT-Ax0CkhU""><img src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/nanodb_tennis.jpg""></a>
+> [Realtime Multimodal VectorDB on NVIDIA Jetson](https://www.youtube.com/watch?v=ayqKpQNd1Jw) (container: [`nanodb`](/packages/vectordb/nanodb))
+
+<br/>
+
+<a href=""https://www.jetson-ai-lab.com/tutorial_nanoowl.html""><img src=""https://github.com/NVIDIA-AI-IOT/nanoowl/raw/main/assets/jetson_person_2x.gif""></a>
+> [NanoOWL - Open Vocabulary Object Detection ViT](https://www.jetson-ai-lab.com/tutorial_nanoowl.html) (container: [`nanoowl`](/packages/vit/nanoowl))
+
+<a href=""https://www.youtube.com/watch?v=w48i8FmVvLA""><img src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/live_llava.gif""></a>
+> [Live Llava on Jetson AGX Orin](https://youtu.be/X-OXxPiUTuU) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+<a href=""https://www.youtube.com/watch?v=wZq7ynbgRoE""><img width=""640px"" src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/live_llava_bear.jpg""></a>
+> [Live Llava 2.0 - VILA + Multimodal NanoDB on Jetson Orin](https://youtu.be/X-OXxPiUTuU) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+<a href=""https://www.jetson-ai-lab.com/tutorial_slm.html""><img src=""https://www.jetson-ai-lab.com/images/slm_console.gif""></a>
+> [Small Language Models (SLM) on Jetson Orin Nano](https://www.jetson-ai-lab.com/tutorial_slm.html) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+<a href=""https://www.jetson-ai-lab.com/tutorial_nano-vlm.html#video-sequences""><img src=""https://raw.githubusercontent.com/dusty-nv/jetson-containers/docs/docs/images/video_vila_wildfire.gif""></a>
+> [Realtime Video Vision/Language Model with VILA1.5-3b](https://www.jetson-ai-lab.com/tutorial_nano-vlm.html#video-sequences) (container: [`NanoLLM`](https://dusty-nv.github.io/NanoLLM/))
+
+## Citation
+
+Please see [CITATION.cff](CITATION.cff) for citation information.
+","1. repository_intent: Machine Learning Containers for NVIDIA Jetson and JetPack-L4T.
+2. technical_focus: Modular container build system providing AI/ML packages for NVIDIA Jetson.
+3. primary_use_cases: Building and running containers for various AI and machine learning applications.
+4. system_design: The system allows easy combination of packages to create custom containers with specific dependencies.
+5. key_technical_terms: machine-learning, dockerfiles, jetson, pytorch, tensorflow, containers, nvidia, robotics, simulation, LLM"
+test_overlap.py,tests/test_overlap.py,3626a83e8e92ec7b9949506279e48a757eb7978c,efeslab/Nanoflow,https://api.github.com/repositories/844386084/contents/tests/test_overlap.py?ref=8a28a8cd1fdf10cdaf2d93e5a7e7e358e4337497,https://api.github.com/repositories/844386084/git/blobs/3626a83e8e92ec7b9949506279e48a757eb7978c,https://github.com/efeslab/Nanoflow/blob/8a28a8cd1fdf10cdaf2d93e5a7e7e358e4337497/tests/test_overlap.py,A throughput-oriented high-performance serving framework for LLMs,"cuda, inference, llama2, llm, llm-serving, model-serving",17,25,3,147,2025-09-17T06:17:39Z,948,46,"# Nanoflow
+<p align=""center"">
+  <img src=""./figures/NanoflowLogo.png"" alt=""Image description"" width=""500"">
+</p>
+
+<p align=""center"">
+  <a href=""https://arxiv.org/abs/2408.12757"">Paper</a> | <a href=""https://github.com/efeslab/Nanoflow"">Slides</a>
+</p>
+
+
+
+NanoFlow is a throughput-oriented high-performance serving framework for LLMs.  NanoFlow consistently delivers superior throughput compared to vLLM, Deepspeed-FastGen, and TensorRT-LLM. **NanoFlow achieves up to 1.91x throughput boost compared to TensorRT-LLM.** The key features of NanoFlow include:
+
+- **Intra-device parallelism**: Maximizes hardware utilization by exploiting nano-batching and execution unit scheduling to overlap different resource demands inside a single device.
+- **Asynchronous CPU scheduling**: Achieves highly efficient CPU scheduling by adopting asynchronous control flow for GPU execution, CPU batch formation and KV-cache management.
+
+
+
+## News
+- [2024/09] 🚀 Nanoflow now supports Llama2 70B, Llama3 70B, Llama3.1 70B, Llama3 8B, Llama3.1 8B and Qwen2 72B models. We also released experiment scripts to reproduce the evaluation results.
+
+## Introduction
+
+
+
+The key insight behinds NanoFlow is that traditional pipeline design of existing frameworks under-utilizes hardware resources due to the sequential execution of operations. Therefore, NanoFlow proposes intra-device parallelism (as shown in the following gif), which use nano-batches to schedule the compute-, memory-, network-bound operations for simultaneous execution. Such overlapping leaves compute-bound operations on the critical path and boost the resource utilization.
+<p align=""center"">
+  <img src=""./figures/SystemDesign.png"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Overview of NanoFlow's key components</em></p>
+
+<p align=""center"">
+  <img src=""./figures/pipeline.gif"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Illustration of intra-device parallelism</em></p>
+
+With highly utilized GPU, the overhead of CPU, which consists of KV-cache management, batch formation, and retired requests selection, takes significant part ($>10$%) of inference time. Therefore, NanoFlow adopts an asyncronous control flow as shown in the following figure. At any iteration $i$, NanoFlow makes batching decisions and allocates the KV-cache entries for the next iteration before the end of the current iteration. NanoFlow directly launches iteration $i + 1$ without detecting the end-of-sequence (EOS) tokens generated in iteration $i$ and retires completed requests at iteration $i+2$.
+
+
+<p align=""center"">
+  <img src=""./figures/async-schedule.png"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Explanation of asyncronous control flow scheduling</em></p>
+
+To avoid recomputation and reuse the KV-cache from multi-round conversations, NanoFlow eagerly offloads the KV-cache of finished requests to SSDs. In one iteration, NanoFlow selects the KV-cache of the retired requests and copies them to the host in parallel to the on-the-fly inference operations, via a layer-by-layer manner. Our calculation shows that only 5GB/s are needed for the offloading bandwidth of serving LLaMA2-70B, while a single SSD can reach 3GB/s. 
+
+With all mentioned techniques implemented, we now open-source NanoFlow of a Cpp-based backend and a Python-based demo frontend in ~4K lines. NanoFlow integrates state-of-the-art kernel libraries including [CUTLASS](https://github.com/NVIDIA/cutlass) for GEMM, [FlashInfer](https://github.com/flashinfer-ai/flashinfer) for Attention, and [MSCCL++](https://github.com/microsoft/mscclpp) for Network. This codebase also contains necessary scripts for environment setup and experiment reproduction.
+
+## Benchmarks
+We list some of the primary benchmarks. Please check our paper for more details. We evaluate on A100 80GB SXM and choose [vLLM v0.5.3](https://github.com/vllm-project/vllm/pull/6696), [Deepspeed-FastGen v0.2.3](https://github.com/microsoft/DeepSpeed-MII/pull/433), and [TensorRT-LLM v0.8.0](https://github.com/NVIDIA/TensorRT-LLM/tree/v0.8.0) as baselines. Note that all frameworks turn off specific optimizations like quantization, speculative decoding, prefix cache, etc..
+### Offline throughput: Llama2-70B on 8xA100 (80GB)
+We conduct offline througput in two settings: practical workloads from collected traces ([Splitwise](https://arxiv.org/abs/2311.18677), [LMSYS-Chat-1M](https://arxiv.org/abs/2309.11998), [ShareGPT](https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered)), and constant input/output length. NanoFlow consistently surpasses all the baselines.
+
+<p align=""center"">
+  <img src=""./figures/OfflineThroughput.png"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Offline throughput benchmarks</em></p>
+
+### Online latency: Llama2-70B on 8xA100 (80GB)
+We test the normalized latency (which is the end-to-end request latency divided by number of output tokens) with the three real-world traces and set different request rate (incoming requests per second). NanoFlow is able to sustain a higher request rate with low latency compared to baselines among all the datasets.
+
+<p align=""center"">
+  <img src=""./figures/online-latency.png"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Online latency benchmarks</em></p>
+
+### Feasibility: offline throughput on different models
+We ported NanoFlow to 5 representative models to showcase its flexibility. We evaluate the offline throughput of NanoFlow (tokens per second per GPU) on these LLMs with constant length of input 1024 and output 512.
+
+<p align=""center"">
+  <img src=""./figures/feasibility.png"" alt=""system design"" width=""90%"">
+</p>
+<p align=""center""><em>Offline throughput of NanoFlow on different models</em></p>
+
+# Codebase
+## Abstract
+
+The increasing usage of Large Language Models (LLMs) has resulted in a surging demand for planet-scale serving systems, where tens of thousands of GPUs continuously serve hundreds of millions of users. Consequently, throughput (under reasonable latency constraints) has emerged as a key metric that determines serving systems’ performance. To boost throughput, various methods of inter-device parallelism (e.g., data, tensor, pipeline) have been explored. However, existing methods do not consider overlapping the utilization of different resources within a single device, leading to underutilization and sub-optimal performance.
+
+We propose NanoFlow, a novel serving framework that exploits intra-device parallelism, which overlaps the usage of resources including compute, memory, and network within a single device through operation co-scheduling. To exploit intra-device parallelism, NanoFlow introduces two key innovations: First, NanoFlow proposes nano-batching to split requests at the granularity of operations, which breaks the dependency of sequential operations in LLM inference and enables overlapping them; then, to get benefit from overlapping, NanoFlow uses a device-level pipeline with execution unit scheduling, which partitions the device’s functional units and simultaneously executes different operations in each unit. NanoFlow automates the pipeline setup using a parameter search algorithm, which enables easily porting NanoFlow to work with different models. We implement NanoFlow on NVIDIA GPUs and evaluate end-to-end serving throughput on several popular models such as LLaMA-2-70B, Mixtral 8×7B, LLaMA-3-8B, etc. We show that NanoFlow achieves 68.5% of optimal throughput. With practical workloads, NanoFlow provides 1.91× throughput boost compared to state-of-the-art serving systems achieving 59% to 72% of optimal throughput across ported models.
+
+## Installation
+### Docker setup
+
+``` bash
+mkdir -p ~/framework-test
+docker run --gpus all --net=host --privileged -v /dev/shm:/dev/shm --name nanoflow -v ~/framework-test:/code -it nvcr.io/nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04
+
+apt update
+apt install pybind11-dev
+apt install liburing-dev
+apt install libopenmpi-dev
+sysctl -w kernel.io_uring_disabled=0
+sysctl -w vm.nr_hugepages=65536
+```
+
+### Gurobi License Setup (for Docker)
+
+Follow these steps to obtain a Gurobi license and configure it so your Docker container can use it.
+
+#### 1. Request a Gurobi License
+
+1. Go to the Gurobi website and create an account (https://www.gurobi.com/).
+2. After logging in, navigate to **My Gurobi → Get License**.
+3. Choose the ""WLS Academic"" license type and fill out any required fields.
+4. Gurobi will email you a license file named `gurobi.lic` (or provide you with a license key string).
+
+#### 2. Place the License on Your Host Machine
+``` bash
+mkdir -p ~/gurobi/license
+mv /path/to/downloaded/gurobi.lic ~/gurobi/license/
+ls ~/gurobi/license
+echo ""export GRB_LICENSE_FILE=$(pwd)/gurobi.lic"" >> ~/.bashrc
+```
+
+### Install Dependencies
+
+``` bash
+git clone git@github.com:efeslab/Nanoflow.git
+cd Nanoflow
+chmod +x ./installAnaconda.sh
+./installAnaconda.sh
+# restart the terminal
+source ~/.bashrc
+
+# login to huggingface
+mkdir -p hf
+echo ""export HF_HOME=$(pwd)/hf"" >> ~/.bashrc
+source ~/.bashrc
+
+huggingface-cli login
+
+# set up the environment
+cd Nanoflow-python
+yes | bash setup.sh
+```
+
+### Build
+
+``` bash
+cd pybind
+mkdir -p build
+cmake ..
+make -j 256
+```
+
+### End-to-end Test
+
+``` bash
+cd entry
+python run_llama3.py -load_hf_weight=True
+```
+
+## Citation
+
+If you use NanoFlow for your research, please cite our [paper](https://arxiv.org/abs/2408.12757):
+```bibtex
+@misc{zhu2024nanoflowoptimallargelanguage,
+      title={NanoFlow: Towards Optimal Large Language Model Serving Throughput}, 
+      author={Kan Zhu and Yilong Zhao and Liangyu Zhao and Gefei Zuo and Yile Gu and Dedong Xie and Yufei Gao and Qinyu Xu and Tian Tang and Zihao Ye and Keisuke Kamahori and Chien-Yu Lin and Stephanie Wang and Arvind Krishnamurthy and Baris Kasikci},
+      year={2024},
+      eprint={2408.12757},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2408.12757}, 
+}
+```
+
+## Acknowledgement
+NanoFlow is inspired by and reuses code from the following projects: [CUTLASS](https://github.com/NVIDIA/cutlass), [FlashInfer](https://github.com/flashinfer-ai/flashinfer), [MSCCL++](https://github.com/microsoft/mscclpp), and [Punica](https://github.com/punica-ai/punica). Development of NanoFlow is made easier thanks to these tools: [GoogleTest](https://github.com/google/googletest), [NVBench](https://github.com/NVIDIA/nvbench), and [spdlog](https://github.com/gabime/spdlog). We thank Siqin Chen for her help in the design of NanoFlow logo.
+","1. repository_intent: A throughput-oriented high-performance serving framework for LLMs.
+2. technical_focus: NanoFlow implements intra-device parallelism and asynchronous CPU scheduling to optimize resource utilization.
+3. primary_use_cases: The repository supports serving large language models with superior throughput and low latency.
+4. system_design: NanoFlow features a Cpp-based backend and a Python-based demo frontend, utilizing operation co-scheduling and nano-batching.
+5. key_technical_terms: cuda, inference, llama2, llm, llm-serving, model-serving, asynchronous scheduling, intra-device parallelism, KV-cache management, nano-batching"
+attention.py,yunchang/kernels/attention.py,02c6fce3ca8aa4986ed58c4685c0bc506259a93a,feifeibear/long-context-attention,https://api.github.com/repositories/778281287/contents/yunchang/kernels/attention.py?ref=e59b8f81540e7ecf7f045b3d808783b4f5007441,https://api.github.com/repositories/778281287/git/blobs/02c6fce3ca8aa4986ed58c4685c0bc506259a93a,https://github.com/feifeibear/long-context-attention/blob/e59b8f81540e7ecf7f045b3d808783b4f5007441/yunchang/kernels/attention.py,"USP: Unified (a.k.a. Hybrid, 2D) Sequence Parallel Attention for Long Context Transformers Model Training and Inference","attention-is-all-you-need, llm-inference, llm-training, pytorch, ring-attention, deepspeed-ulysses",9,26,125,261,2026-01-15T11:55:25Z,644,78,"#  YunChang: A Unified Sequence Parallel (USP) Attention for Long Context LLM Model Training and Inference.
+
+[\[Tech Report\] USP: A Unified Sequence Parallelism Approach for Long Context Generative AI](https://arxiv.org/abs/2405.07719)
+
+
+<p align=""center"">
+    <img src=""./media/yun_chang.jpg"" width=""200"" />
+</p>
+
+This repo provides a sequence parallel approach that synergizes the strengths of two popular distributed attentions, i.e. DeepSpeed-Ulysses-Attention and Ring-Attention, delivering a more general and stronger versatility and better performance. 
+The project is built on [zhuzilin/ring-flash-attention](https://github.com/zhuzilin/ring-flash-attention) and refers to the [DeepSpeed-Ulysses](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-ulysses/README.md).
+
+USP has been applied in [NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine/blob/54aa12a9a1f166c53a20f17f309adeab5698f5f6/transformer_engine/pytorch/attention.py#L1542) `AttnFuncWithCPAndKVP2P`. You can use it in API `attn_forward_func_with_cp`.
+
+
+## Why not apply Ulysses and Ring Attention Individually?
+
+- Ulysses is sensitive to the number of attention heads. 
+The parallelism degree in Ulysses cannot exceed the number of heads. 
+Consequently, it is not suitable for GQA (Grouped Query Attention) and MQA (Multi-Query Attention) scenarios. For instance, Ulysses does not operate effectively with a single head. 
+In addition, since Tensor Parallelism also requires division across the head number dimension, achieving compatibility between Ulysses and TP can be challenging.
+
+- Ring-Attention is ineffient than Ulysses in computation and communication.
+Ring-Attention segments the Query, Key, and Value (QKV) into smaller blocks, which can lead to a decrease in efficiency when using FlashAttention.
+Even with the communication and computation processes fully overlapped, the total execution time lags behind that of Ulysses. 
+Furthermore, Ring-Attention utilizes asynchronous peer-to-peer communication, which not only has a lower bandwidth utilization compared to collective communication methods but also poses the risk of potential communication deadlocks in large-scale deployments.
+
+
+## LongContextAttention, also known as Unified Sequence Parallelism and Hybrid Sequence Parallelism
+
+`LongContextAttention` is a **unified sequence parallel** , also known as **hybrid sequence parallel** ,that hybrid DeepSpeed-Ulysses-Attention and Ring-Attention therefore addressing the limitations of both methods.
+
+<p align=""center"">
+    <img src=""./media/usp.png"">
+</p>
+
+
+### 1. Installation
+
+FlashAttention is the most important external dependency and is often the cause of errors when installing and using yunchang. 
+Yunchang supports flash_attn 2.6.x and 2.7.x, both v3 and v2 versions. Additionally, yunchang supports runs without flash_attn, which is suitable for NPUs.
+
+As shown in the figure below, there are three usage methods based on the flash_attn situation:
+
+1. For H100, B100, hardware that supports FA v3, ring_flash_attn uses FA v3.
+
+2. For A100, L40, hardware that supports FA v2, ring_flash_attn uses FA v2.
+
+3. For hardware such as NPUs that does not support FA, use torch to implement attention computation. In this case, there is no need to install `flash_attn`, and you should apply `LongContextAttention(ring_impl_type=""basic"", attn_type=AttnType.TORCH_EFFICIENT)`. *Note: the backward pass is not supported for AttnType.TORCH_EFFICIENT.*
+
+Option 1: pip install
+
+`pip install flash-attn`
+
+`pip install yunchang`
+
+#### Apply FlashAttention V3: Since FA V3 is beta-released, you need to install FlashAttention V3 from source code.
+
+Follow the [FlashAttention beta-release](https://github.com/Dao-AILab/flash-attention?tab=readme-ov-file#flashattention-3-beta-release) to install V3 for NVIDIA Hopper GPUs.
+
+We applied the Nov 10 2024 commit `b443207c1fc4c98e4532aad4e88cfee1d590d996`.
+
+
+Option 2: build from local.
+
+`pip install .`
+
+Install for AMD GPU: [install_amd.md](./docs/install_amd.md)
+
+
+### 2. Usage
+
+Please refer to [test/test_hybrid_qkvpacked_attn.py](./test/test_hybrid_qkvpacked_attn.py) and [test/test_hybrid_attn.py](./test/test_hybrid_attn.py) for usage.
+
+In short, we take the `zigzag` ring attention implementation as an example:
+
+1. apply `set_seq_parallel_pg` to set the process group
+2. extract local tensors with `zigzag_extract_local`. We need reorder the input tokens or input tensors for load balance ring attention.
+3. then apply `LongContextAttention(ring_impl_type=""zigzag"")` as a drop-in replacement for Attention implementation.
+
+```python
+from yunchang import (
+    AsyncLongContextAttention,
+    LongContextAttention,
+    set_seq_parallel_pg,
+    EXTRACT_FUNC_DICT
+)
+from yunchang.kernels import AttnType
+
+sp_ulysses_degree = 2
+sp_ring_degree = 4
+
+# support world_size = 8
+set_seq_parallel_pg(sp_ulysses_degree, sp_ring_degree, rank, world_size)
+
+# attn_type could be FA, FA3, TORCH_EFFICIENT.
+longctx_attn = LongContextAttention(ring_impl_type=""zigzag"", attn_type=AttnType.FA)
+
+# if you use NPUs, where no flash_attn is supported, you can use the following code.
+# LongContextAttention(ring_impl_type=""zigzag"", attn_type=AttnType.TORCH_EFFICIENT)
+
+# extract a local shard for the global Q, K, V.
+local_q = EXTRACT_FUNC_DICT[""zigzag""](
+        Q, rank, world_size=world_size, rd=sp_ring_degree, ud=sp_ulysses_degree
+    ).detach().clone()
+...
+
+local_out = usp_attn(
+        local_q,
+        local_k,
+        local_v,
+        dropout_p=dropout_p,
+        causal=True, # zigzag and stripe is load balance strategy for causal=True
+        window_size=window_size,
+        softcap=0.0,
+        alibi_slopes=alibi_slopes,
+        deterministic=deterministic,
+        return_attn_probs=True,
+    )
+
+```
+
+### 3.Test
+
+if you do not install yuanchang, add the project root directory to the PYTHONPATH:
+```
+export PYTHONPATH=$PWD:$PYTHONPATH
+````
+
+- FlashAttn/Torch Test
+```bash
+torchrun --nproc_per_node=4 ./test/test_hybrid_attn.py --sp_ulysses_degree 2 --ring_impl_type ""zigzag"" --causal --attn_impl fa --use_bwd
+torchrun --nproc_per_node=4 ./test/test_hybrid_attn.py --sp_ulysses_degree 2 --ring_impl_type ""zigzag"" --causal --attn_impl torch
+torchrun --nproc_per_node 8 test/test_hybrid_qkvpacked_attn.py
+```
+
+- Sage/SpargeAttention Test (fwd only, Non causal)
+
+you need install [SpargeAttn](https://github.com/thu-ml/SpargeAttn) and [SageAttention](https://github.com/thu-ml/SageAttention) from source.
+
+```bash
+torchrun --nproc_per_node=4 ./test/test_hybrid_attn.py --sp_ulysses_degree 2 --attn_impl sage_fp8
+```
+
+```bash
+torchrun --nproc_per_node=4 ./test/test_hybrid_attn.py --sp_ulysses_degree 4 --attn_impl sparse_sage --sparse_sage_tune_mode
+```
+
+- FlashInfer Test (fwd only)
+
+Install FlashInfer from [here](https://docs.flashinfer.ai/installation.html#quick-start).
+
+```bash
+torchrun --nproc_per_node=4 --master_port=1234 ./test/test_hybrid_attn.py --sp_ulysses_degree 2 --ring_impl_type 'basic_flashinfer' --attn_impl flashinfer
+```
+
+### 4. Verified in Megatron-LM
+The loss curves for Data Parallel (DP) and Unified Sequence Parallel (ulysses=2+ring=2) are closely aligned, as illustrated in the figure. This alignment confirms the accuracy of the unified sequence parallel.
+
+<p align=""center"">
+    <img src=""./media/loss.png"">
+</p>
+
+When utilizing load-balance Ring Attention with a causal mask, it is essential to reorder the Query tensors using the [EXTRACT_FUNC_DICT](./yunchang/comm/extract_local.py) function.
+
+In Megatron-LM, you can reorder the input tokens before feeding them into the model and apply the same reordering to the RoPE parameters. For detailed instructions, please refer to our paper.
+
+For an example implementation, you can check out this [PR](https://github.com/FlagOpen/FlagScale/commit/f98ee1e293bd906cc77f512f7a884b2030c10a12), which integrates USP into a BAAI's Megatron-LM framework.
+
+### 6. Benchmark
+
+
+```bash
+bash ./scripts/run_qkvpack_compare.sh
+```
+
+On an 8xA100 NVLink machine, the benchmark results are as follows:
+
+<p align=""center"">
+    <img src=""./media/benchmark_results.png"">
+</p>
+
+On an 8xL20 PCIe machine and a 4xA100 PCIe machine, the benchmark results are as follows:
+
+<p align=""center"">
+    <img src=""./media/pcie_machine.jpg"">
+</p>
+
+Some Conclusions:
+
+1. If the head number is enough, Ulysses outperforms Ring-Attention. The All-to-All communication of Ulysses is highly efficient within a single machine, with a very low overhead ratio. In contrast, Ring splits computation and communication, which increases the overall of computation time, and even with complete overlap, it is slower than Ulysses.
+
+2. QKV packed (`LongContextAttentionQKVPacked`) is better than the QKV no packed (`LongContextAttention`) version, with the difference becoming more pronounced as the sequence length decreases. MAQ and GQA can only use the no packed version.
+
+3. Among the variants of the Ring-Attention implementation, `zigzag` and `stripe` perform better than `basic`. Typically, zigzag is slightly better than stripe, but as the sequence length increases, the difference between zigzag and stripe becomes less noticeable. It is worth noting that both zigzag and stripe have specific layout requirements for the sequence dimension.
+
+4. Hybrid parallelism works well to heterogeneous network devices. For example, on an 8-GPU L20 setup, the optimal performance is achieved when ulysess_degree is set to 2 and ring_degree is set to 4.
+
+### 7. Best Practice for 4D Parallelism
+
+We analyze the impact of introducing Sequnce Parallelism to Data/ZeRO/Tensor/Pipeline Parallelism in a technique report, which can be found at [here](https://arxiv.org/abs/2405.07719).
+
+Some best practices are listed here:
+
+1. We suggest using Unified-SP in place of SP-Ring and SP-Ulysses, as it encompasses the capabilities of both while offering additional benefits.
+
+2. DP (data parallelism) vs SP: We suggest prioritizing the use of DP over SP if possible. 
+Only when the batch size (bs) is insufficient for partitioning should one consider whether to employ SP
+
+3. Utilizing SP, it should always be used in conjunction wit ZeRO-1/2.
+
+4. Unified-SP has lower communication cost than Tensor Parallel with megatron-lm sequence parallelism (TP-sp)! You can use Unified-SP to replace TP for better speed. However, now switching TP (tensor parallelism) to SP+ZeRO2 cannot increase the sequence length in training. SP+ZeRO3 can train a similar sequence length as TP-sp. We suggest that SP may have an advantage over TP when employing GQA in terms of communication cost, as GQA can reduce the communication cost of SP without affecting TP.
+
+5. Setting a higher parallel degree of SP parallelism is possible, which may need to set a large ring degree when the head number is limited, to train a long sequence across a greater number of computational devices. But TP could not be set a high parallel.
+
+
+
+### 8. Projects apply USP
+I am honored that this repository has contributed to the following projects:
+
+1. [xdit-project/xDiT](https://github.com/xdit-project/xDiT)
+2. [NVlabs/VILA](https://github.com/NVlabs/VILA/blob/main/LongVILA.md)
+3. [feifeibear/Odysseus-Transformer](https://github.com/feifeibear/Odysseus-Transformer)
+4. [Ascend/AscendSpeed](https://gitee.com/ascend/AscendSpeed/blob/master/docs/features/hybrid-context-parallel.md)
+5. [jzhang38/EasyContext](https://github.com/jzhang38/EasyContext)
+6. [FlagOpen/FlagScale](https://github.com/FlagOpen/FlagScale/commit/f98ee1e293bd906cc77f512f7a884b2030c10a12)
+7. [zhiyuanhubj/LongRecipe](https://github.com/zhiyuanhubj/LongRecipe)
+8. [NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine/blob/54aa12a9a1f166c53a20f17f309adeab5698f5f6/transformer_engine/pytorch/attention.py#L1542)
+9. [xdit-project/mochi-xdit](https://github.com/xdit-project/mochi-xdit)
+ 
+### 9. Cite Us
+
+[USP: A Unified Sequence Parallelism Approach for Long Context Generative AI](https://arxiv.org/abs/2405.07719)
+
+```
+@article{fang2024unified,
+  title={A Unified Sequence Parallelism Approach for Long Context Generative AI},
+  author={Fang, Jiarui and Zhao, Shangchun},
+  journal={arXiv preprint arXiv:2405.07719},
+  year={2024}
+}
+
+```
+","1. repository_intent: This repository provides a unified sequence parallel approach for long context transformer model training and inference.  
+2. technical_focus: It synergizes the strengths of DeepSpeed-Ulysses-Attention and Ring-Attention for improved performance and versatility.  
+3. primary_use_cases: The repository supports long context LLM model training and inference using hybrid sequence parallelism.  
+4. system_design: The project is built on existing attention frameworks and incorporates various attention implementations for efficient computation.  
+5. key_technical_terms: attention-is-all-you-need, llm-inference, llm-training, pytorch, ring-attention, deepspeed-ulysses, flashinfer, LongContextAttention, hybrid sequence parallelism"
+benchmark_rmsnorm.py,benchmarking/vllm_online/benchmarks/kernels/benchmark_rmsnorm.py,eaf6b25e8ca4f33a0c5f9fb5ed2d915d8116aa8c,goliaro/flexllm,https://api.github.com/repositories/930142518/contents/benchmarking/vllm_online/benchmarks/kernels/benchmark_rmsnorm.py?ref=9703543086ea69eae5dbb21abee527d81c80678e,https://api.github.com/repositories/930142518/git/blobs/eaf6b25e8ca4f33a0c5f9fb5ed2d915d8116aa8c,https://github.com/goliaro/flexllm/blob/9703543086ea69eae5dbb21abee527d81c80678e/benchmarking/vllm_online/benchmarks/kernels/benchmark_rmsnorm.py,"This repository contains the code accompanying the FlexLLM paper presented at NSDI '26, which was evaluated by the artifact evaluation committee.",,0,0,1,90,2025-10-19T20:32:07Z,1,4,"# FlexLLM (paper 183 @ NSDI 2026) - Artifact Evaluation
+
+Paper PDF: [nsdi26spring-paper183.pdf](./nsdi26spring-paper183.pdf)
+
+## Getting Started Instructions
+
+### Hardware setup
+To begin, please spin up a machine with the following characteristics:
+- 4 NVIDIA A100-SXM4-80GB GPUs
+- CUDA 12.4
+- Docker support with NVIDIA container runtime
+- 500GB+ disk memory
+
+If you are using AWS, please create a `p4de.24xlarge` instance with the `Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.7 (Ubuntu 22.04)` AMI. If you do not have access to such a machine, let us know and we will start a machine for you.
+
+Once you have started the machine (or we started one for you), please connect to the machine via SSH. 
+
+### Preparation
+To start, please download the code with `git clone --recursive https://github.com/FlexLLM/artifact.git`. Then, follow the steps below to build a Docker container where you will be able to run all experiments.
+
+1. Run `./docker/build_container.sh` to build the container
+2. Run `./docker/start_container.sh` to start the container. It will continue running in the background until stopped.
+3. Run `./docker/setup_flexllm.sh` to install all the required libraries and download the Huggingface models in the container. When prompted, please provide your huggingface token to access the following models: `meta-llama/Llama-3.1-8B-Instruct`, `Qwen/Qwen2.5-14B-Instruct`, `Qwen/Qwen2.5-32B-Instruct`. If you do not have a token, we can provide one.
+4. Run `./docker/attach_to_container.sh` to open a new terminal connected to the container. You can run this multiple times if you'd like to connect multiple terminal windows.
+
+### Kick-the-tires instructions
+After running the steps above, connect to the Docker container via `./docker/attach_to_container.sh`. Run `./kickstart/kickstart.sh` to perform the kick-the-tires test. The script will run a small instance of Collie and of the baselines used in the evaluation, and run some small sanity checks. The script will print ""All tests completed successfully"" if there are no issues; otherwise it will show any error.
+
+### Teardown
+The teardown step is important to ensure that the next reviewer has access to a clean environment for their evaluation.
+
+- Run `./docker/cleanup_containers.sh` after you are done with the kick-the-tires test to stop and destroy the container and all docker images/data.
+- From the host machine, delete the `flexllm` repo and any other files you have created/downloaded
+
+## Detailed Instructions
+To perform the full artifact evaluation, first follow the steps in the ""Getting Started Instructions"" above (except the ""Teardown"") to setup the environment again. Next, continue with the steps below. The experiments are expected to each take several hours (~10h each) to complete.
+
+
+### Running the experiments
+To run all the experiments, launch the commands below one at a time within the Docker container. The commands use `nohup` to ensure that they will keep running if the SSH connection is broken. After launching a command, you can feel free to disconnect and come back later to check the progression. To check the progress (in real-time), you can run `tail -f <output_file>` (replace with `output1.log`, `output2.log` or `output3.log`) from the `/` folder in the container. If you are using a `tmux` terminal, you should avoid using `nohup` and instead use the tmux regular functionalities to run each script and check the output. 
+
+You can tell that each experiment has finished if no additional output is being appended to the output file. In the last few lines, you should also be able to see a message that says: ""All experiments completed!"" or something similar. Before launching the next experiment, to be safe, please also check that the GPU memory utilization is at 0% (by running `nvidia-smi`).
+1. Run the separate baseline experiments (LLaMAFactory + vLLM) with: `nohup bash -c './flexllm/benchmarking/finetuning/benchmark_llamafactory.sh && ./flexllm/benchmarking/vllm_online/run.sh' > output1.log 2>&1 &`
+2. Run the spatial/temporal baseline experiments with: `nohup bash -c './flexllm/benchmarking/coserving/run_spatial_sharing.sh && ./flexllm/benchmarking/coserving/run_temporal_sharing.sh' > output2.log 2>&1 &`
+3. Run the co-serving experiments with: `nohup ./flexllm/benchmarking/coserving/run_coserving.sh > output3.log 2>&1 &`
+
+Once you are done with all experiments, you can run `./flexllm/benchmarking/coserving/check_all_experiments.sh` to ensure that all FlexLLM experiments have produced their expected output successfully. If some data point is missing for any reason, you can rerun the missing experiments by calling the corresponding script again. The script will automatically detect which results are missing and only rerun the corresponding tasks. For example:
+- If some spatial sharing outputs are missing, run `./flexllm/benchmarking/coserving/run_spatial_sharing.sh`
+- If some temporal sharing outputs are missing, run `./flexllm/benchmarking/coserving/run_temporal_sharing.sh`
+- If some co-serving outputs are missing, run `./flexllm/benchmarking/coserving/run_coserving.sh`
+You do not have to rerun with `nohup`, but you can if you prefer.
+
+
+### Parsing and plotting the results
+
+#### Figure 10 and Figure 11
+
+After all experiments have completed, you should run the `python ./flexllm/benchmarking/parse_data.py` script to parse all the output data into a single pickle file. This will take about 10mins to complete. The output file will be saved at `./flexllm/output/benchmark_data.pkl`. Note that if that file already exists, you will need to delete it before it can be overwritten. After creating the pickle file, you can run `python ./flexllm/benchmarking/plot_data.py` to plot the results. The script will produce two plots: `./flexllm/output/external_baselines.pdf` (Fig 10 in the paper) and `./flexllm/output/internal_baselines.pdf` (Fig 11 in the paper).
+
+#### Figure 12
+To reproduce Figure 12 from the paper, run `python ./flexllm/benchmarking/plot_fig12.py`. It will save the output file at `./flexllm/output/fig12.pdf`
+
+#### Figure 13
+To reproduce Figure 13 from the paper, run `python ./flexllm/benchmarking/plot_fig13.py`. It will save the output file at `./flexllm/output/fig13.pdf`
+
+### Downloading the plots and results to the host
+To download the plots to the host, `cd` to the desired directory (on the host) where you'd like to save the output, and run the following commands:
+
+```
+docker cp <container id>:/flexllm/output/external_baselines.pdf ./
+docker cp <container id>:/flexllm/output/internal_baselines.pdf ./
+```
+
+Replace <container id> with the ID of your docker container. You can obtain this ID by running `docker ps`. The output will look similar to this (in the example below, the container id is `0cbc018ce9e5`)
+```
+ubuntu@ip-172-31-38-174:~$ docker ps
+CONTAINER ID   IMAGE                                   COMMAND            CREATED      STATUS          PORTS     NAMES
+0cbc018ce9e5   flexflow-environment-cuda-12.4:latest   ""sleep infinity""   6 days ago   Up 43 minutes             flexllm
+```
+
+We also recommend that you download the final output results by zipping the contents of the output folder, and downloading to the host in a similar fashion:
+
+- On the docker machine, run: `zip -r output_results.zip ./flexllm/output`
+- On the host machine, run: `docker cp <container id>:/output_results.zip ./`
+
+You can also use these instructions above to periodically checkpoint the output results before being done with all experiments. If you choose to do so, ensure that you are using different names for your zip archive.
+
+### Teardown
+⚠️⚠️⚠️ Make sure to save the plots and/or results before proceeding. The step below cannot be undone. ⚠️⚠️⚠️
+
+The teardown step is important to ensure that the next reviewer has access to a clean environment for their evaluation.
+
+- Run `./docker/cleanup_containers.sh` after you are done with the experiments to stop and destroy the container and all docker images/data.
+- Delete the `flexllm` repo and any other files you have created.
+
+
+## Troubleshooting
+If you are on AWS and your container cannot find the GPUs (a well-known issue):
+```
+root@<container id>:/flexllm# nvidia-smi
+Failed to initialize NVML: Unknown Error
+```
+Use this fix (on the host machine, not within docker): https://stackoverflow.com/a/78137688
+
+If that still doesn't help, please restart the container with `docker container restart <container id>`
+","1. repository_intent: This repository contains the code for the FlexLLM paper presented at NSDI '26, evaluated by the artifact evaluation committee.  
+2. technical_focus: The repository implements a framework for evaluating large language models using Docker and NVIDIA GPUs.  
+3. primary_use_cases: It supports running experiments and evaluations for various LLM configurations and baselines.  
+4. system_design: The system is designed to run within Docker containers on machines with specific GPU and memory requirements.  
+5. key_technical_terms: FlexLLM, artifact evaluation, Docker, NVIDIA A100, Huggingface models, benchmarking, co-serving, spatial sharing, temporal sharing, LLaMAFactory"
+main.py,simple_flashinfer/main.py,2ca5624ddfc5d1aba284862c7a1f9085449f7ccd,huseinzol05/simple-continuous-batching-flashinfer,https://api.github.com/repositories/1019248643/contents/simple_flashinfer/main.py?ref=78cda0285e23767282379d4affc3f06007da42a1,https://api.github.com/repositories/1019248643/git/blobs/2ca5624ddfc5d1aba284862c7a1f9085449f7ccd,https://github.com/huseinzol05/simple-continuous-batching-flashinfer/blob/78cda0285e23767282379d4affc3f06007da42a1/simple_flashinfer/main.py,Simple continuous batching CausalLM from HuggingFace Transformer using FlashInfer.,,1,0,0,31,2025-10-19T13:53:03Z,0,1,"# simple-continuous-batching-flashinfer
+
+Simple continuous batching CausalLM from HuggingFace Transformer using FlashInfer.
+
+1. Simple page KV cache manager.
+2. Torch compile support.
+3. FP32 support but downcast and upcast attention forward.
+4. Support top-k, top-p, temperature and repetition penalty for sampling.
+
+## how to install
+
+Using PIP with git,
+
+```bash
+pip3 install git+https://github.com/malaysia-ai/simple-continuous-batching-flashinfer
+```
+
+Or you can git clone,
+
+```bash
+git clone https://github.com/malaysia-ai/simple-continuous-batching-flashinfer && cd simple-continuous-batching-flashinfer
+```
+
+## how to local
+
+### Supported parameters
+
+```bash
+python3 -m simple_flashinfer.main --help
+```
+
+```text
+usage: main.py [-h] [--host HOST] [--port PORT] [--loglevel LOGLEVEL] [--microsleep MICROSLEEP]
+               [--max_sequence MAX_SEQUENCE] [--memory_utilization MEMORY_UTILIZATION]
+               [--compare-sdpa-prefill COMPARE_SDPA_PREFILL] [--model MODEL] [--torch_dtype TORCH_DTYPE]
+               [--torch_dtype_autocast TORCH_DTYPE_AUTOCAST] [--torch_profiling TORCH_PROFILING]
+               [--torch_compile TORCH_COMPILE] [--torch_compile_mode TORCH_COMPILE_MODE] [--cuda_graph CUDA_GRAPH]
+
+Configuration parser
+
+options:
+  -h, --help            show this help message and exit
+  --host HOST           host name to host the app (default: 0.0.0.0, env: HOSTNAME)
+  --port PORT           port to host the app (default: 7088, env: PORT)
+  --loglevel LOGLEVEL   Logging level (default: INFO, env: LOGLEVEL)
+  --microsleep MICROSLEEP
+                        microsleep to group batching to reduce CPU burden, 1 / 1e-4 = 10k steps for second (default: 0.0001,
+                        env: MICROSLEEP)
+  --max_sequence MAX_SEQUENCE
+                        max sequence aka batch size per filling or decoding (default: 128, env: MAX_SEQUENCE)
+  --memory_utilization MEMORY_UTILIZATION
+                        memory utilization on free memory after load the model for automatic number of paging for paged
+                        attention (default: 0.9, env: MEMORY_UTILIZATION)
+  --compare-sdpa-prefill COMPARE_SDPA_PREFILL
+                        Compare FlashInfer attention output with SDPA during prefill (default: False, env:
+                        COMPARE_SDPA_PREFILL)
+  --model MODEL         Model type (default: meta-llama/Llama-3.2-1B-Instruct, env: MODEL)
+  --torch_dtype TORCH_DTYPE
+                        Model dtype (default: float16, env: TORCH_DTYPE)
+  --torch_dtype_autocast TORCH_DTYPE_AUTOCAST
+                        Model dtype autocast if the model loaded in float32 (default: float16, env: TORCH_DTYPE_AUTOCAST)
+  --torch_profiling TORCH_PROFILING
+                        Use torch.autograd.profiler.profile() to profile prefill and step (default: False, env:
+                        TORCH_PROFILING)
+  --torch_compile TORCH_COMPILE
+                        Torch compile for decoding and sampling (default: False, env: TORCH_COMPILE)
+  --torch_compile_mode TORCH_COMPILE_MODE
+                        torch compile mode (default: default, env: TORCH_COMPILE_MODE)
+  --cuda_graph CUDA_GRAPH
+                        Capture CUDA Graph for decoding and sampling (default: False, env: CUDA_GRAPH)
+```
+
+**We support both args and OS environment**.
+
+### Run meta-llama/Llama-3.2-1B-Instruct
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct
+```
+
+```bash
+curl -X 'POST' \
+  'http://localhost:7088/chat/completions' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  ""model"": ""model"",
+  ""temperature"": 0.9,
+  ""top_p"": 0,
+  ""top_k"": 0,
+  ""max_tokens"": 256,
+  ""repetition_penalty"": 1,
+  ""messages"": [
+    {
+      ""role"": ""user"",
+      ""content"": ""Hello!""
+    }
+  ],
+  ""stream"": true
+}'
+```
+
+Output,
+
+```
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": ""Hello"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": ""!"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" How"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" can"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" I"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" assist"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" you"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": "" today"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+
+data: {""id"": ""bd793d41-3f8f-4142-b762-aec323664b83"", ""choices"": [{""delta"": {""content"": ""?"", ""function_call"": null, ""role"": null, ""tool_calls"": null}, ""finish_reason"": null, ""index"": 0, ""logprobs"": null}], ""created"": 1753606017, ""model"": ""model"", ""object"": ""chat.completion.chunk"", ""system_fingerprint"": null}
+```
+
+### Torch compile
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true
+```
+
+You should able to get a bump around 10-20%
+
+#### Reduce overhead
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true --torch_compile_mode reduce-overhead --max_sequence 10
+```
+
+Feel free to increase `--max_sequence` but it will take a longer time to compile.
+
+#### Max autotune
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true --torch_compile_mode max-autotune --max_sequence 10
+```
+
+Feel free to increase `--max_sequence` but it will take a longer time to compile.
+
+## Unit tests
+
+The unit tests will cover page append, prefilling causal attention and step decoding causal attention,
+
+```bash
+python3 -m unittest test.manager
+python3 -m unittest test.manager_append
+```
+
+## Benchmark
+
+1. We benchmark on 4096 prefilling and 384 decoding with ignore EOS.
+2. Benchmark run on a single RTX 3090 Ti.
+
+```python
+python3 benchmark.py \
+--model ""model"" \
+--save ""benchmark/Llama-3.2-1B-Instruct-warmup"" \
+--rps-list ""5"" \
+--start_token ""<|start_header_id|>"" --start_token_length 4096
+
+python3 benchmark.py \
+--model ""model"" \
+--save ""benchmark/Llama-3.2-1B-Instruct"" \
+--rps-list ""5,10,25,50,100"" \
+--start_token ""<|start_header_id|>"" --start_token_length 4096
+```
+
+### vLLM
+
+We benchmark with vLLM 0.10.0 disabled prefix caching,
+
+```bash
+./vllm/bin/vllm serve ""meta-llama/Llama-3.2-1B-Instruct"" \
+--served-model-name ""model"" \
+--tensor_parallel_size ""1"" \
+--no-enable-prefix-caching \
+--max-model-len=8192 \
+--port 7088
+```
+
+After that run the benchmark,
+
+```bash
+python3 benchmark.py \
+--model ""model"" \
+--url ""http://localhost:7088/v1/completions"" \
+--save ""benchmark/Llama-3.2-1B-Instruct-vllm-warmup"" \
+--rps-list ""5"" \
+--start_token ""<|start_header_id|>"" --start_token_length 4096
+
+python3 benchmark.py \
+--model ""model"" \
+--url ""http://localhost:7088/v1/completions"" \
+--save ""benchmark/Llama-3.2-1B-Instruct-vllm"" \
+--rps-list ""5,10,25,50,100"" \
+--start_token ""<|start_header_id|>"" --start_token_length 4096
+```
+
+### Comparison
+
+#### First Time Token VS Concurrency
+
+<img src=""pics/ft-vs-concurrency.png"" width=""50%"">
+
+#### Average Time Token VS Concurrency
+
+<img src=""pics/avg-vs-concurrency.png"" width=""50%"">
+
+## Stress test
+
+```bash
+locust -f stress_test.py -P 7001 -H http://localhost:7088 -r 10 -u 50 -t 60
+```
+
+<img src=""pics/locust-v3.png"" width=""50%"">
+
+### Stress test Torch compile
+
+Because compiling takes a very long time, we just stress test 20 users same size as `--max_sequence`,
+
+```bash
+locust -f stress_test.py -P 7001 -H http://localhost:7088 -r 10 -u 20 -t 60
+```
+
+The stress test done on `transformers==4.53.1`, `torch==2.7.1` and `flashinfer-python==0.2.8`.
+
+#### Disable
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile false --max_sequence 20
+```
+
+<img src=""pics/locust-torch-compile-disable.png"" width=""50%"">
+
+#### Default
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true --torch_compile_mode default --max_sequence 20
+```
+
+<img src=""pics/locust-torch-compile-default.png"" width=""50%"">
+
+#### Reduce overhead
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true --torch_compile_mode reduce-overhead --max_sequence 20
+```
+
+<img src=""pics/locust-torch-compile-reduce-overhead.png"" width=""50%"">
+
+#### Max autotune
+
+```bash
+python3 -m simple_flashinfer.main \
+--host 0.0.0.0 --port 7088 --model meta-llama/Llama-3.2-1B-Instruct \
+--torch_compile true --torch_compile_mode max-autotune --max_sequence 20
+```
+
+<img src=""pics/locust-torch-compile-max-autotune.png"" width=""50%"">","1. repository_intent: Simple continuous batching CausalLM from HuggingFace Transformer using FlashInfer.
+2. technical_focus: Implements a KV cache manager, Torch compile support, and attention forward downcasting/upcasting.
+3. primary_use_cases: Supports sampling with top-k, top-p, temperature, and repetition penalty.
+4. system_design: Utilizes a command-line interface for configuration and supports both arguments and OS environment variables.
+5. key_technical_terms: continuous batching, CausalLM, HuggingFace, FlashInfer, KV cache, Torch compile, FP32 support, sampling, benchmarking, stress test"
+modeling_qwen2.py,tests/ci-tests/qwen2.5/models/modeling_qwen2.py,54fb5f2d6ee6b0528f9f7d1ed88fe14ee8f3d71c,mirage-project/mirage,https://api.github.com/repositories/797553215/contents/tests/ci-tests/qwen2.5/models/modeling_qwen2.py?ref=77d18751af46972d66199b4ed5d7580dcf24d4ba,https://api.github.com/repositories/797553215/git/blobs/54fb5f2d6ee6b0528f9f7d1ed88fe14ee8f3d71c,https://github.com/mirage-project/mirage/blob/77d18751af46972d66199b4ed5d7580dcf24d4ba/tests/ci-tests/qwen2.5/models/modeling_qwen2.py,Mirage Persistent Kernel: Compiling LLMs into a MegaKernel,,172,81,304,462,2026-02-23T15:58:16Z,2149,181,"<div align=""center"">
+
+# Mirage Persistent Kernel: Compiling LLMs into a MegaKernel
+    
+| [Join Slack](https://join.slack.com/t/miragesystem/shared_invite/zt-37reobr1i-SKjxeYF3GXdPDoCvtVbjTQ) | [Roadmap](https://github.com/mirage-project/mirage/issues/325) | [Blog Post](https://zhihaojia.medium.com/compiling-llms-into-a-megakernel-a-path-to-low-latency-inference-cf7840913c17) | 
+
+</div>
+
+*Latest News* 🔥
+* [2025/06] We released [Mirage Persistent Kernel (MPK)](https://github.com/mirage-project/mirage/tree/mpk), a compiler and runtime that automatically transforms multi-GPU LLM inference into a high-performance megakernel.
+
+## About
+
+**Mirage Persistent Kernel (MPK)** is a compiler and runtime system that automatically transforms LLM inference into a single megakernel—a fused GPU kernel that performs all necessary computation and communication within a single kernel launch. This end-to-end GPU fusion approach reduces LLM inference latency by 1.2× to 6.7×, all while requiring minimal developer effort.
+
+## Quick Installation
+
+The fastest way to try MPK is to install it directly from source:
+```bash
+git clone --recursive --branch mpk https://www.github.com/mirage-project/mirage
+cd mirage
+pip install -e . -v
+export MIRAGE_HOME=$(pwd)
+```
+
+> 🔧[2025/06/19] We are working on pre-built binary wheels for MPK and will update the installation instructions once they are available.
+
+## Quickstart
+Mirage allows you to compile LLMs from the Hugging Face model zoo into a megakernel using just a few dozen lines of Python—mainly to define the kernel’s inputs and outputs. See [this demo script](https://github.com/mirage-project/mirage/blob/mpk/demo/qwen3/demo.py) that compiles the Qwen3-8B model into a megakernel.
+
+We start by running the demo with native Triton and FlashInfer kernels:
+```bash
+python demo/qwen3/demo.py
+```
+
+To compile and execute the megakernel using MPK:
+```bash
+python demo/qwen3/demo.py --use-mirage
+```
+
+To enable profiling (which visualizes the execution timeline of each task):
+```bash
+python demo/qwen3/demo.py --use-mirage --profiling
+```
+
+## How MPK Works
+Once you've imported the Mirage package, you can instantiate a persistent kernel using the following API:
+```python
+import mirage as mi
+mpk = mi.PersistentKernel(
+    world_size=world_size,
+    mpi_rank=rank,
+    num_workers=96,
+    num_local_schedulers=48,
+    num_remote_schedulers=0,
+    meta_tensors=[step, tokens],
+    profiler_tensor=profiler_tensor,
+)
+```
+* `world_size` and `mpi_rank`: number of GPUs and current GPU rank.
+* `num_workers`, `num_local_schedulers`, `num_remote_schedulers`: the number of workers, local schedulers, and remote schedulers. They must match the number of physical SMs (`num_workers` + (`num_local_schedulers` + `num_remote_schedulers`) / 4).
+* The megakernel currently requires two meta tensors: `step` is an array of integer tracking the current decoding step, and is incremented by MPK after each decoding iteration; `tokens` is a tensor of shape [`num_requests`, `seq_length`] storing prompts and MPK generated tokens.
+
+To attach an existing `PyTorch.Tensor`:
+```python
+x = mpk.attach_input(torch_tensor=torch_tensor, name=""torch_tensor_name"")
+```
+* `name` is used by MPK to refer to the tensor in the generated megakernel in CUDA.
+
+To allocate a new tensor:
+```python
+y = mpk.new_tensor(
+    dims=(batch_size, hidden_size),
+    dtype=mi.bfloat16,
+    name=""embed_out"",
+    io_category=""cuda_tensor"",
+)
+```
+* `dims` and `dtype` specify the dimensions and data type of the tensor. 
+* `name` is used by MPK to refer to this new tensor in the megakernel. 
+* `io_category` indicates how the tensor is allocated and must be `cuda_tensor` or `nvshmem_tensor` (the latter is required for remote GPU access, e.g., during all-reduce).
+
+### Defining the Computation Graph
+You can compose the LLM’s computation graph by chaining fused operations. For example: `rmsnorm_linear_layer` fuses an RMSNorm layer and a Linear layer in the megakernel.
+```python
+mpk.rmsnorm_linear_layer(
+    input=x,
+    weight_norm=w_norm,
+    weight_linear=w_qkv,
+    output=attn_in,
+    grid_dim=(96, 1, 1),
+    block_dim=(128, 1, 1),
+)
+```
+* `weight_norm` and `weight_linear` are the weight tensors for RMSNorm and Linear.
+* `input` and `output` are the input and output tensors of this fused layer. 
+* `grid_dim` and `block_dim` specifies the number of thread blocks (i.e., number of tasks in the task graph) and number of thread within each thread block. To minimize latency, it is suggested that the total number of thread blocks is a multiplier of the number of workers to avoid outliers.
+
+### Compilation & Execution
+Once the computation graph is defined, compile it with:
+```python
+mpk.compile()
+```
+Then, run the optimized megakernel as:
+```python
+mpk()
+```
+
+## Contribution
+We welcome feedback, contributions, and collaborations from the community! Please join our [Slack channel](https://join.slack.com/t/mirage-ag11870/shared_invite/zt-37reobr1i-SKjxeYF3GXdPDoCvtVbjTQ).
+
+Please let us know if you encounter any bugs or have any suggestions by [submitting an issue](https://github.com/mirage-project/mirage/issues).
+
+## Citation
+A paper describing Mirage's techniques is available [on arxiv](https://arxiv.org/abs/2405.05751). Please cite Mirage as:
+
+``` bibtex
+@inproceedings {wu2024mirage,
+title={Mirage: A Multi-Level Superoptimizer for Tensor Programs}, 
+author={Mengdi Wu and Xinhao Cheng and Shengyu Liu and Chunan Shi and Jianan Ji and Kit Ao and Praveen Velliengiri and Xupeng Miao and Oded Padon and Zhihao Jia},
+booktitle = {19th USENIX Symposium on Operating Systems Design and Implementation (OSDI 25)},
+year = {2025},
+address = {Boston, MA},
+publisher = {USENIX Association},
+month = jul
+}
+
+@misc{cheng2025mpk,
+      title={Mirage Persistent Kernel: A Compiler and Runtime for Mega-Kernelizing Tensor Programs}, 
+      author={Xinhao Cheng and Zhihao Zhang and Yu Zhou and Jianan Ji and Jinchen Jiang and Zepeng Zhao and Ziruo Xiao and Zihao Ye and Yingyi Huang and Ruihang Lai and Hongyi Jin and Bohan Hou and Mengdi Wu and Yixin Dong and Anthony Yip and Zihao Ye and Songting Wang and Wenqin Yang and Xupeng Miao and Tianqi Chen and Zhihao Jia},
+      year={2025},
+      eprint={2512.22219},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2512.22219}, 
+}
+```
+
+## Publications
+
+- **Mirage Persistent Kernel: A Compiler and Runtime for Mega-Kernelizing Tensor Programs**. *Arxiv 2025*. [[arXiv]](https://arxiv.org/abs/2512.22219)
+- **Mirage: A Multi-Level Superoptimizer for Tensor Programs**. *OSDI 2025*. [[PDF]](https://www.usenix.org/system/files/osdi25-wu-mengdi.pdf)
+- **Identity Testing for Circuits with Exponentiation Gates**. *ITCS 2026* [[arXiv]](https://arxiv.org/pdf/2506.04529)
+
+## License
+Mirage uses Apache License 2.0.
+","1. repository_intent: Mirage Persistent Kernel is designed to compile large language models (LLMs) into a high-performance megakernel for efficient inference.  
+2. technical_focus: The repository implements a compiler and runtime system that fuses multi-GPU LLM inference into a single megakernel to reduce latency.  
+3. primary_use_cases: It supports compiling LLMs from the Hugging Face model zoo into a megakernel and executing optimized inference workflows.  
+4. system_design: The system architecture involves a persistent kernel that manages computation and communication within a single kernel launch, utilizing a defined API for tensor management and computation graph definition.  
+5. key_technical_terms: megakernel, LLM inference, GPU fusion, persistent kernel, computation graph, PyTorch, tensor management, profiling, FlashInfer, Hugging Face."
+vllm_rollout_worker.py,cosmos_rl/rollout/vllm_rollout/vllm_rollout_worker.py,663c7a6f534dcb5ffe5ece5a09a801c9110e2e5e,nvidia-cosmos/cosmos-rl,https://api.github.com/repositories/999256448/contents/cosmos_rl/rollout/vllm_rollout/vllm_rollout_worker.py?ref=04f64fc487c0a5781eb82ebc4a4257b7f623a0a1,https://api.github.com/repositories/999256448/git/blobs/663c7a6f534dcb5ffe5ece5a09a801c9110e2e5e,https://github.com/nvidia-cosmos/cosmos-rl/blob/04f64fc487c0a5781eb82ebc4a4257b7f623a0a1/cosmos_rl/rollout/vllm_rollout/vllm_rollout_worker.py,Cosmos-RL is a flexible and scalable Reinforcement Learning framework specialized for Physical AI applications.,,55,46,457,457,2026-03-05T14:41:59Z,346,50,"<p align=""center"">
+    <img src=""https://raw.githubusercontent.com/nvidia-cosmos/cosmos-rl/main/assets/nvidia-cosmos-header.png"" alt=""NVIDIA Cosmos Header"">
+</p>
+
+
+## Getting Started
+
+Cosmos-RL is a flexible and scalable Reinforcement Learning framework specialized for Physical AI applications.
+
+[Documentation](https://nvidia-cosmos.github.io/cosmos-rl).
+
+## System Architecture
+Cosmos-RL provides toolchain to enable large scale RL training workload with following features:
+1. **Parallelism**
+    - Tensor Parallelism
+    - Sequence Parallelism
+    - Context Parallelism
+    - FSDP Parallelism
+    - Pipeline Parallelism
+2. **Fully asynchronous (replicas specialization)**
+    - Policy (Consumer): Replicas of training instances
+    - Rollout (Producer): Replicas of generation engines
+    - Low-precision training (FP8) and rollout (FP8 & FP4) support
+3. **Single-Controller Architecture**
+    - Efficient messaging system (e.g., `weight-sync`, `rollout`, `evaluate`) to coordinate policy and rollout replicas
+    - Dynamic NCCL Process Groups for on-the-fly GPU [un]registration to enable fault-tolerant and elastic large-scale RL training
+
+![Policy-Rollout-Controller Decoupled Architecture](https://raw.githubusercontent.com/nvidia-cosmos/cosmos-rl/main/assets/rl_infra.svg)
+
+## License and Contact
+
+This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use.
+
+NVIDIA Cosmos source code is released under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
+
+NVIDIA Cosmos models are released under the [NVIDIA Open Model License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license). For a custom license, please contact [cosmos-license@nvidia.com](mailto:cosmos-license@nvidia.com).
+","1. repository_intent: Cosmos-RL is a flexible and scalable Reinforcement Learning framework specialized for Physical AI applications.  
+2. technical_focus: Cosmos-RL implements various parallelism techniques and a single-controller architecture for efficient large-scale RL training.  
+3. primary_use_cases: The repository supports large-scale RL training workloads in Physical AI applications.  
+4. system_design: The system features a decoupled architecture with efficient messaging for coordinating policy and rollout replicas.  
+5. key_technical_terms: Tensor Parallelism, Sequence Parallelism, Context Parallelism, FSDP Parallelism, Pipeline Parallelism, low-precision training, single-controller architecture, dynamic NCCL Process Groups, asynchronous training."
+llama2_flashinfer_rmsnorm.py,examples/dynamo/llama2_flashinfer_rmsnorm.py,c724954a18ca9faa0873494766052c4ff907939d,pytorch/TensorRT,https://api.github.com/repositories/246634306/contents/examples/dynamo/llama2_flashinfer_rmsnorm.py?ref=b5dce1346157f92c4d9339ce6c446e2c7965452d,https://api.github.com/repositories/246634306/git/blobs/c724954a18ca9faa0873494766052c4ff907939d,https://github.com/pytorch/TensorRT/blob/b5dce1346157f92c4d9339ce6c446e2c7965452d/examples/dynamo/llama2_flashinfer_rmsnorm.py,PyTorch/TorchScript/FX compiler for NVIDIA GPUs using TensorRT,"tensorrt, libtorch, machine-learning, pytorch, deep-learning, jetson, nvidia, cuda",300,1533,1707,4815,2026-03-04T23:07:31Z,2952,383,"<div align=""center"">
+
+Torch-TensorRT
+===========================
+<h4> Easily achieve the best inference performance for any PyTorch model on the NVIDIA platform. </h4>
+
+[![Documentation](https://img.shields.io/badge/docs-master-brightgreen)](https://nvidia.github.io/Torch-TensorRT/)
+[![pytorch](https://img.shields.io/badge/PyTorch-2.12-green)](https://download.pytorch.org/whl/nightly/cu130)
+[![cuda](https://img.shields.io/badge/CUDA-13.0-green)](https://developer.nvidia.com/cuda-downloads)
+[![trt](https://img.shields.io/badge/TensorRT-10.14.1-green)](https://github.com/nvidia/tensorrt)
+[![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](./LICENSE)
+[![Linux x86-64 Nightly Wheels](https://github.com/pytorch/TensorRT/actions/workflows/build-test-linux-x86_64.yml/badge.svg?branch=nightly)](https://github.com/pytorch/TensorRT/actions/workflows/build-test-linux-x86_64.yml)
+[![Linux SBSA Nightly Wheels](https://github.com/pytorch/TensorRT/actions/workflows/build-test-linux-aarch64.yml/badge.svg?branch=nightly)](https://github.com/pytorch/TensorRT/actions/workflows/build-test-linux-aarch64.yml)
+[![Windows Nightly Wheels](https://github.com/pytorch/TensorRT/actions/workflows/build-test-windows.yml/badge.svg?branch=nightly)](https://github.com/pytorch/TensorRT/actions/workflows/build-test-windows.yml)
+
+---
+<div align=""left"">
+
+Torch-TensorRT brings the power of TensorRT to PyTorch. Accelerate inference latency by up to 5x compared to eager execution in just one line of code.
+</div></div>
+
+## Installation
+Stable versions of Torch-TensorRT are published on PyPI
+```bash
+pip install torch-tensorrt
+```
+
+Nightly versions of Torch-TensorRT are published on the PyTorch package index
+```bash
+pip install --pre torch-tensorrt --index-url https://download.pytorch.org/whl/nightly/cu130
+```
+
+Torch-TensorRT is also distributed in the ready-to-run [NVIDIA NGC PyTorch Container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) which has all dependencies with the proper versions and example notebooks included.
+
+For more advanced installation  methods, please see [here](https://pytorch.org/TensorRT/getting_started/installation.html)
+
+## Quickstart
+
+### Option 1: torch.compile
+You can use Torch-TensorRT anywhere you use `torch.compile`:
+
+```python
+import torch
+import torch_tensorrt
+
+model = MyModel().eval().cuda() # define your model here
+x = torch.randn((1, 3, 224, 224)).cuda() # define what the inputs to the model will look like
+
+optimized_model = torch.compile(model, backend=""tensorrt"")
+optimized_model(x) # compiled on first run
+
+optimized_model(x) # this will be fast!
+```
+
+### Option 2: Export
+If you want to optimize your model ahead-of-time and/or deploy in a C++ environment, Torch-TensorRT provides an export-style workflow that serializes an optimized module. This module can be deployed in PyTorch or with libtorch (i.e. without a Python dependency).
+
+#### Step 1: Optimize + serialize
+```python
+import torch
+import torch_tensorrt
+
+model = MyModel().eval().cuda() # define your model here
+inputs = [torch.randn((1, 3, 224, 224)).cuda()] # define a list of representative inputs here
+
+trt_gm = torch_tensorrt.compile(model, ir=""dynamo"", inputs=inputs)
+torch_tensorrt.save(trt_gm, ""trt.ep"", inputs=inputs) # PyTorch only supports Python runtime for an ExportedProgram. For C++ deployment, use a TorchScript file
+torch_tensorrt.save(trt_gm, ""trt.ts"", output_format=""torchscript"", inputs=inputs)
+```
+
+#### Step 2: Deploy
+##### Deployment in PyTorch:
+```python
+import torch
+import torch_tensorrt
+
+inputs = [torch.randn((1, 3, 224, 224)).cuda()] # your inputs go here
+
+# You can run this in a new python session!
+model = torch.export.load(""trt.ep"").module()
+# model = torch_tensorrt.load(""trt.ep"").module() # this also works
+model(*inputs)
+```
+
+##### Deployment in C++:
+```cpp
+#include ""torch/script.h""
+#include ""torch_tensorrt/torch_tensorrt.h""
+
+auto trt_mod = torch::jit::load(""trt.ts"");
+auto input_tensor = [...]; // fill this with your inputs
+auto results = trt_mod.forward({input_tensor});
+```
+
+## Further resources
+- [Double PyTorch Inference Speed for Diffusion Models Using Torch-TensorRT](https://developer.nvidia.com/blog/double-pytorch-inference-speed-for-diffusion-models-using-torch-tensorrt/)
+- [Up to 50% faster Stable Diffusion inference with one line of code](https://pytorch.org/TensorRT/tutorials/_rendered_examples/dynamo/torch_compile_stable_diffusion.html#sphx-glr-tutorials-rendered-examples-dynamo-torch-compile-stable-diffusion-py)
+- [Optimize LLMs from Hugging Face with Torch-TensorRT](https://docs.pytorch.org/TensorRT/tutorials/compile_hf_models.html#compile-hf-models)
+- [Run your model in FP8 with Torch-TensorRT](https://pytorch.org/TensorRT/tutorials/_rendered_examples/dynamo/vgg16_fp8_ptq.html)
+- [Accelerated Inference in PyTorch 2.X with Torch-TensorRT](https://www.youtube.com/watch?v=eGDMJ3MY4zk&t=1s)
+- [Tools to resolve graph breaks and boost performance]() \[coming soon\]
+- [Tech Talk (GTC '23)](https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51714/)
+- [Documentation](https://nvidia.github.io/Torch-TensorRT/)
+
+
+## Platform Support
+
+| Platform            | Support                                          |
+| ------------------- | ------------------------------------------------ |
+| Linux AMD64 / GPU   | **Supported**                                    |
+| Linux SBSA / GPU    | **Supported**                                    |
+| Windows / GPU       | **Supported (Dynamo only)**                      |
+| Linux Jetson / GPU | **Source Compilation Supported on JetPack-4.4+**  |
+| Linux Jetson / DLA | **Source Compilation Supported on JetPack-4.4+**  |
+| Linux ppc64le / GPU | Not supported                                    |
+
+> Note: Refer [NVIDIA L4T PyTorch NGC container](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-pytorch) for PyTorch libraries on JetPack.
+
+### Dependencies
+
+These are the following dependencies used to verify the testcases. Torch-TensorRT can work with other versions, but the tests are not guaranteed to pass.
+
+- Bazel 8.1.1
+- Libtorch 2.12.0.dev (latest nightly)
+- CUDA 13.0 (CUDA 12.6 on Jetson)
+- TensorRT 10.15.1.29 (TensorRT 10.3 on Jetson)
+
+## Deprecation Policy
+
+Deprecation is used to inform developers that some APIs and tools are no longer recommended for use. Beginning with version 2.3, Torch-TensorRT has the following deprecation policy:
+
+Deprecation notices are communicated in the Release Notes. Deprecated API functions will have a statement in the source documenting when they were deprecated. Deprecated methods and classes will issue deprecation warnings at runtime, if they are used. Torch-TensorRT provides a 6-month migration period after the deprecation. APIs and tools continue to work during the migration period. After the migration period ends, APIs and tools are removed in a manner consistent with semantic versioning.
+
+## Contributing
+
+Take a look at the [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+## License
+
+The Torch-TensorRT license can be found in the [LICENSE](./LICENSE) file. It is licensed with a BSD Style licence
+","1. repository_intent: Easily achieve the best inference performance for any PyTorch model on the NVIDIA platform.
+2. technical_focus: PyTorch/TorchScript/FX compiler for NVIDIA GPUs using TensorRT.
+3. primary_use_cases: Accelerate inference latency by up to 5x compared to eager execution.
+4. system_design: The repository supports both Python and C++ deployment with an export-style workflow for optimized models.
+5. key_technical_terms: tensorrt, libtorch, machine-learning, pytorch, deep-learning, jetson, nvidia, cuda"
+llama_swiftkv.py,arctic_inference/vllm/swiftkv/llama_swiftkv.py,93f0035797769a336a4b65ca990e990b9137f415,snowflakedb/ArcticInference,https://api.github.com/repositories/952800391/contents/arctic_inference/vllm/swiftkv/llama_swiftkv.py?ref=b6a94885f544e25e462e727fec12eac8ebc03bac,https://api.github.com/repositories/952800391/git/blobs/93f0035797769a336a4b65ca990e990b9137f415,https://github.com/snowflakedb/ArcticInference/blob/b6a94885f544e25e462e727fec12eac8ebc03bac/arctic_inference/vllm/swiftkv/llama_swiftkv.py,"ArcticInference: vLLM plugin for high-throughput, low-latency inference",,42,53,137,128,2026-02-24T04:22:55Z,407,51,"[![License Apache 2.0](https://badgen.net/badge/license/apache2.0/blue)](https://github.com/snowflakedb/ArcticInference/blob/main/LICENSE)
+[![PyPI version](https://badge.fury.io/py/arctic-inference.svg)](https://pypi.org/project/arctic-inference/)
+
+<h3 align=""center"">
+  <img src=""docs/images/arctic_inference_logo.svg"" width=500px><br>
+  | <a href=""https://arcticinference.readthedocs.io/en/latest/""><b>Documentation</b></a> | <a href=""https://www.snowflake.com/en/engineering-blog/arctic-inference-shift-parallelism/""><b>Blog</b></a> | <a href=""https://arxiv.org/pdf/2507.11830""><b>Paper</b></a> |
+</h3>
+
+## Latest news
+* [2025/08] - [Fast Reasoning on GPT-OSS with Speculative Decoding and Arctic Inference](https://www.snowflake.com/en/engineering-blog/faster-gpt-oss-reasoning-arctic-inference/)
+* [2025/05] - [Arctic Inference w. Shift Parallelism: The Fastest Open Source Inference System for Enterprise AI](https://www.snowflake.com/en/engineering-blog/arctic-inference-shift-parallelism/)
+* [2025/05] - [Scaling vLLM for Embeddings: 16x Throughput and Cost Reduction](https://www.snowflake.com/en/engineering-blog/embedding-inference-arctic-16x-faster/)
+* [2025/05] - [Fastest Speculative Decoding in vLLM with Arctic Inference and Arctic Training](https://www.snowflake.com/en/engineering-blog/fast-speculative-decoding-vllm-arctic/)
+* [2025/04] - [Low-Latency and High-Throughput Inference for Long Context w. Sequence Parallelism (Ulysses)](https://www.snowflake.com/en/engineering-blog/ulysses-low-latency-llm-inference/)
+
+# Arctic Inference
+
+<p align=""middle"">
+<img src=""projects/arctic_inference/imgs/figure1.png"" alt="""" width=""800"">
+</p>
+
+Arctic Inference is an open-source vLLM plugin that brings Snowflake’s inference innovations to the community, delivering the fastest and most cost-effective open-source inference for LLMs and Embeddings.
+
+Arctic Inference achieves high throughput and low latency through a wholistic set of inference optimizations:
+
+<div align=""center"">
+<table>
+    <thead>
+        <tr>
+            <th align=""center"">Advanced Parallelism</th>
+            <th align=""center"">Speculative Decoding</th>
+            <th align=""center"">Model Optimization</th>
+            <th align=""center"">Other Optimizations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align=""left"">
+                Arctic Ulysses (<a href=""https://www.snowflake.com/en/engineering-blog/ulysses-low-latency-llm-inference/"">blog</a>)
+                <br>
+                Shift Parallelism (<a href=""https://www.snowflake.com/en/engineering-blog/arctic-inference-shift-parallelism/"">blog</a>,
+                                   <a href=""https://arxiv.org/abs/2509.16495"">paper</a>)
+            </td>
+            <td align=""left"">
+                Arctic Speculator (<a href=""https://www.snowflake.com/en/engineering-blog/fast-speculative-decoding-vllm-arctic/"">blog</a>)
+                <br>
+                Suffix Decoding (<a href=""https://www.snowflake.com/en/engineering-blog/fast-speculative-decoding-vllm-arctic/"">blog</a>,
+                                 <a href=""https://arxiv.org/abs/2411.04975"">paper</a>)
+            </td>
+            <td align=""left"">
+                SwiftKV (<a href=""https://www.snowflake.com/en/blog/up-to-75-lower-inference-cost-llama-meta-llm/"">blog</a>,
+                         <a href=""https://arxiv.org/abs/2410.03960"">paper</a>)
+            </td>
+            <td align=""left"">
+                Embeddings (<a href=""https://www.snowflake.com/en/engineering-blog/embedding-inference-arctic-16x-faster/"">blog</a>)
+                <br>
+                Reasoning (<a href=""https://hao-ai-lab.github.io/blogs/dynasor-cot/"">blog</a>,
+                           <a href=""https://arxiv.org/abs/2412.20993"">paper</a>)
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+## Optimized LLM Inference
+
+For real-world LLM workloads, a single deployment of Arctic Inference + vLLM achieves:
+
+- 3.4x faster request completion and 1.06x higher throughput compared to the best throughput-optimized deployment (TP=1, DP=8)
+- 1.7x higher throughput and 1.28x faster request completion compared to the best latency-optimized deployment (TP=8, DP=1) 
+
+<p align=""middle"">
+<img src=""projects/arctic_inference/imgs/trifecta.png"" alt="""" width=""400"">
+</p>
+
+Arctic Inference + vLLM achieves the elusive ""trifecta"" of quicker response, higher throughput, and faster generation in a single deployment:
+- 2.25x faster response time (prefill throughput per request) 
+- 1.75x faster generation per request
+- SOTA combined throughput
+
+## Optimized Embeddings
+
+<p align=""middle"">
+<img src=""projects/arctic_inference/imgs/embedding.png"" alt="""" width=""500"">
+<br>
+See <a href=""https://www.snowflake.com/en/engineering-blog/embedding-inference-arctic-16x-faster/"">our blog</a> for evaluation details.
+</p>
+
+For embeddings, Arctic Inference + vLLM delivers a whopping 1.4M toks/sec per GPU:
+- 16x faster than plain vLLM on short sequences and 4.2x faster on long sequences
+- 2.4x faster than Text Embeddings Inference (TEI) on short sequences and at parity for long sequences
+
+## Quick Start
+
+```console
+$ pip install arctic-inference[vllm]
+```
+
+Once installed, Arctic Inference automatically patches vLLM to use Arctic Inference with Shift Parallelism and other optimizations implemented in Arctic Inference, and users can continue to use their familiar vLLM APIs and CLI. It’s easy to get started!
+
+### Running Arctic Inference with vLLM
+
+By using the examples below, you can get benefits from Shift Parallelism, Speculative Decoding, and SwiftKV all at once!
+
+#### Serving
+
+```console
+ARCTIC_INFERENCE_ENABLED=1 vllm serve Snowflake/Llama-3.1-SwiftKV-8B-Instruct \
+    --quantization ""fp8"" \
+    --tensor-parallel-size 1 \
+    --ulysses-sequence-parallel-size 2 \
+    --enable-shift-parallel \
+    --speculative-config '{
+        ""method"": ""arctic"",
+        ""model"":""Snowflake/Arctic-LSTM-Speculator-Llama-3.1-8B-Instruct"",
+        ""num_speculative_tokens"": 3,
+        ""enable_suffix_decoding"": true,
+        ""disable_by_batch_size"": 64
+    }'
+```
+
+#### Offline
+
+Save the following script to `arctic_example.py`:
+
+```python
+import vllm
+from vllm import LLM, SamplingParams
+
+vllm.plugins.load_general_plugins()
+
+llm = LLM(
+    model=""Snowflake/Llama-3.1-SwiftKV-8B-Instruct"",
+    quantization=""fp8"",
+    tensor_parallel_size=1,
+    ulysses_sequence_parallel_size=2,
+    enable_shift_parallel=True,
+    speculative_config={
+        ""method"": ""arctic"",
+        ""model"": ""Snowflake/Arctic-LSTM-Speculator-Llama-3.1-8B-Instruct"",
+        ""num_speculative_tokens"": 3,
+        ""enable_suffix_decoding"": True,
+        ""disable_by_batch_size"": 64,
+    },
+)
+
+conversation = [
+    {
+        ""role"": ""user"",
+        ""content"": ""Write an essay about the importance of higher education."",
+    },
+]
+
+sampling_params = SamplingParams(temperature=0.0, max_tokens=800)
+
+outputs = llm.chat(conversation, sampling_params=sampling_params)
+
+print(outputs[0].outputs[0].text)
+```
+
+Run the script with Arctic Inference enabled:
+
+```console
+ARCTIC_INFERENCE_ENABLED=1 python arctic_example.py
+```
+
+## Citation
+```
+@misc{arcticinference2025,
+      title={Arctic Inference with Shift Parallelism: Fast and Efficient Open Source Inference System for Enterprise AI}, 
+      author={Samyam Rajbhandari and Mert Hidayetoglu and Aurick Qiao and Ye Wang and Juncheng Yang and Jeff Rasley and Michael Wyatt and Yuxiong He},
+      year={2025},
+      url={https://arxiv.org/abs/2507.11830}, 
+}
+```
+","1. repository_intent: ArcticInference is a vLLM plugin designed for high-throughput, low-latency inference in LLMs and embeddings.  
+2. technical_focus: The repository implements advanced parallelism, speculative decoding, and model optimization techniques for efficient inference.  
+3. primary_use_cases: It supports tasks related to fast and cost-effective inference for large language models and embeddings.  
+4. system_design: The software architecture integrates with the vLLM framework, utilizing optimizations like Shift Parallelism and SwiftKV.  
+5. key_technical_terms: vLLM, inference, Shift Parallelism, speculative decoding, model optimization, high throughput, low latency, embeddings, Arctic Ulysses, SwiftKV."
+ref_rms.py,ref_rms.py,639e38cb48ca9f0de6f20196f86ceb7d3e6d2175,youngchan2/Trinity,https://api.github.com/repositories/999921161/contents/ref_rms.py?ref=448e0e10c2b24e3fc3711b5b67e5cb3fa93010cd,https://api.github.com/repositories/999921161/git/blobs/639e38cb48ca9f0de6f20196f86ceb7d3e6d2175,https://github.com/youngchan2/Trinity/blob/448e0e10c2b24e3fc3711b5b67e5cb3fa93010cd/ref_rms.py,Tile IR with equality saturation,,0,0,0,36,2025-11-17T16:21:05Z,0,0,"# Trinity: Tensor Optimization via Tile-level Equality Saturation
+
+## Data Structure
+- **NodeType**: Represent the type of operation in the IR
+- **AstNode**: Data class for representing the AST (Abstract Syntax Tree)
+## Helper Function
+- **IrParser**: Convert IR into AST format
+- **TritonGen**: Generate Triton kernel based on the parsed AST
+## Development Check List
+- [x] For `tl.dot` in `matmul`, `allow_tf32` should be `True`  
+  - Enable `allow_tf32` for performance. 
+  - Disable `allow_tf32` to verify correctness
+- [x] Add operator support: `elem`, `bcast`, `concat`, `dummy`,`permute3`, `squeeze`, `unsqueeze`, `const_tile`, `sigmoid`, `sqrt`, `rsqrt`
+- [x] Fix indexing issue for nested `for` loops in `fulltile fulltile`  
+- [x] Add kernel caller with different grid configs for `ploop` and `sloop`  
+  - Use `forward` to invoke the kernel
+- [x] Distinguish between on-chip and off-chip tensors to optimize memory usage and performance
+  - Support cross-kernel tensors with `tl.store`  
+  - Add condition to determine when `tl.store` is used
+- [x] Decide which intermediate tensors should be initialized with `tl.zeros`  
+- [x] Optimize the number of argument of kernel   
+- [x] Support applying tensor metadata from external files
+- [x] Add Evaluation for the various computation  
+- [x] Handle multiple tensors in one `input`&`tensor` operators.
+## Evaluation
+- Vanilla
+- PreNorm
+- QKNorm
+- KeyFormer
+- RoCo
+## Model Configuration
+- Falcon 7B
+- Llama3 8B
+## Target Hardware
+- NVIDIA H100
+- NVIDIA A100
+- NVIDIA A40
+- NVIDIA RTX5090
+- NVIDIA RTX4090","1. repository_intent: Optimize tensor operations using tile-level equality saturation.  
+2. technical_focus: Implements an intermediate representation (IR) with an abstract syntax tree (AST) for tensor operations.  
+3. primary_use_cases: Supports tensor optimization and kernel generation for various computation models.  
+4. system_design: Utilizes a data structure for nodes and helper functions for parsing and kernel generation.  
+5. key_technical_terms: NodeType, AstNode, IrParser, TritonGen, tl.dot, kernel caller, tensor metadata, evaluation, NVIDIA H100, flashinfer."

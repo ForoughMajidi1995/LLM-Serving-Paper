@@ -1,0 +1,61 @@
+topic,rank,word,score,topic_label
+0,1,language models,0.035336327233994685,language models | supports | system_design | key_technical_terms | vllm
+0,2,supports,0.033853938722739396,language models | supports | system_design | key_technical_terms | vllm
+0,3,system_design,0.03261970072716633,language models | supports | system_design | key_technical_terms | vllm
+0,4,key_technical_terms,0.03261970072716633,language models | supports | system_design | key_technical_terms | vllm
+0,5,vllm,0.02538747893334778,language models | supports | system_design | key_technical_terms | vllm
+0,6,primary_use_cases supports,0.0251009045753312,language models | supports | system_design | key_technical_terms | vllm
+0,7,technical_focus repository,0.02303329365659924,language models | supports | system_design | key_technical_terms | vllm
+0,8,framework,0.022356308406905296,language models | supports | system_design | key_technical_terms | vllm
+0,9,multimodal,0.021400870923362642,language models | supports | system_design | key_technical_terms | vllm
+0,10,fine tuning,0.020875240525798866,language models | supports | system_design | key_technical_terms | vllm
+1,1,performance,0.04413187184840523,performance | system_design | repository_intent | key_technical_terms | vllm
+1,2,system_design,0.03372548309080888,performance | system_design | repository_intent | key_technical_terms | vllm
+1,3,repository_intent,0.03372548309080888,performance | system_design | repository_intent | key_technical_terms | vllm
+1,4,key_technical_terms,0.03372548309080888,performance | system_design | repository_intent | key_technical_terms | vllm
+1,5,vllm,0.028178758052906535,performance | system_design | repository_intent | key_technical_terms | vllm
+1,6,sglang,0.023063000306830728,performance | system_design | repository_intent | key_technical_terms | vllm
+1,7,quantization,0.02263824492536998,performance | system_design | repository_intent | key_technical_terms | vllm
+1,8,language models,0.02222275006890654,performance | system_design | repository_intent | key_technical_terms | vllm
+1,9,llms,0.020184380226598544,performance | system_design | repository_intent | key_technical_terms | vllm
+1,10,primary_use_cases supports,0.019919149054329212,performance | system_design | repository_intent | key_technical_terms | vllm
+2,1,system_design,0.03423224203678923,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,2,key_technical_terms,0.03423224203678923,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,3,speech,0.0300641820678437,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,4,primary_use_cases supports,0.026951776974461893,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,5,technical_focus repository,0.022560472599731287,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,6,distributed,0.02087288694240329,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,7,python,0.020335597488750398,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,8,docker,0.01892650945575385,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,9,api,0.01889109327146141,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+2,10,applications,0.018862276284522663,system_design | key_technical_terms | speech | primary_use_cases supports | technical_focus repository
+3,1,reinforcement learning,0.07438590607414985,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,2,rl,0.039164764553599414,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,3,language models,0.030596236631685453,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,4,key_technical_terms,0.028772694418678343,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,5,repository_intent,0.028772694418678343,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,6,large language,0.027185706143927353,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,7,framework,0.024299649881034956,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,8,tasks,0.02419104063409516,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,9,primary_use_cases supports,0.022301358440988104,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+3,10,agentic,0.021084630885887596,reinforcement learning | rl | language models | key_technical_terms | repository_intent
+4,1,serving framework,0.12944468626302064,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,2,vllm llm,0.11744201001433044,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,3,primary_use_cases system_design,0.07838930200946052,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,4,framework repository_intent,0.05932879511128059,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,5,key_technical_terms vllm,0.05908253180243639,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,6,technical_focus uses,0.042981750227292614,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,7,sglang llm,0.02836246335910669,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,8,tensorrt_llm,0.02704617898117953,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,9,docker,0.025437506568073462,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+4,10,utilizes,0.024045828415578976,serving framework | vllm llm | primary_use_cases system_design | framework repository_intent | key_technical_terms vllm
+5,1,key_technical_terms,0.2315452990870182,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,2,system_design,0.2315452990870182,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,3,primary_use_cases,0.2315452990870182,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,4,llm,0.08738842614000833,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,5,vllm repository_intent,0.07230682072370773,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,6,face modelscope,0.06040807173961215,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,7,大模型,0.058187619323892575,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,8,langchain,0.050383240806973116,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,9,python,0.04672182038860823,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
+5,10,transformer,0.04192236930779863,key_technical_terms | system_design | primary_use_cases | llm | vllm repository_intent
