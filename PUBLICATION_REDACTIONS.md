@@ -60,3 +60,15 @@ The publication commit has no parents, so the previous local Git history contain
 | `dataset/repo_info/old repo info/vllm/vllm_repo_summary_keywords_chunk_2.csv` | 1 |
 
 Total: 51 files, 452 replacements.
+
+## Large dataset publication
+
+Five additional large datasets were scanned before publication through Git LFS. Original files are retained in the ignored `.local-publication-backup/large-files-20261108/` directory.
+
+| File | Replacements |
+| --- | ---: |
+| `dataset/Extracted_models/vllm_extracted_models.csv` | 341 |
+| `dataset/code_content/code_content_concated_files_sglang.csv` | 13 |
+| `dataset/code_content/code_content_concated_files_vllm.csv` | 375 |
+| `dataset/code_content_processed_results/vllm_all_info.csv` | 242 |
+| `dataset/code_content_with_imports_asnames_subimports/sglang.csv` | 13 |
