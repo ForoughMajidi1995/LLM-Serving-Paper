@@ -7,8 +7,7 @@ __pycache__/
 *.py[cod]
 
 # Archived datasets explicitly excluded from publication
-/dataset/archived_old_code_content_processed_results/vllm_all_info.csv
-/dataset/archived_old_code_content_processed_results/vllm_all_info_cleaned.csv
+/dataset/archived_old_code_content_processed_results/
 
 # Original credential-bearing files; never publish this backup
 /.local-publication-backup/
